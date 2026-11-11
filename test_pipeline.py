@@ -5,7 +5,7 @@ import cv2 as cv
 
 from dartboard import (Board, Tracker, automatic_homography, gray_image,
                        change_mask, intersect_lines, project, shaft_line, warp,
-                       nominal_homography)
+                       nominal_homography, binarize, board_color_masks)
 from render_synthetic import board_texture, render_camera, camera_matrix
 
 
@@ -16,6 +16,49 @@ class PipelineTests(unittest.TestCase):
         cv.setRNGSeed(0)
         cls.board = Board()
         cls.texture = board_texture(cls.board)
+
+    def test_binary_wedge_interiors_survive_texture_and_lighting(self):
+        # Test the requested behavior, including a smooth illumination gradient.
+        b = self.board
+        gray = cv.cvtColor(self.texture, cv.COLOR_BGR2GRAY)
+        lighting = np.linspace(.65, 1.2, b.size)[None, :]
+        observed = np.uint8(np.clip(gray*lighting, 0, 255))
+        binary = binarize(observed)
+        yy, xx = np.mgrid[:b.size, :b.size]
+        x,y = (xx-b.center[0])/b.ppm, (yy-b.center[1])/b.ppm
+        radius = np.hypot(x,y)
+        angle = np.degrees(np.arctan2(x,-y)) % 360
+        sector = ((angle+9)//18).astype(int)%20
+        margin = np.abs((angle+9)%18-9) < 6
+        interior = (radius>25)&(radius<155)&((radius<95)|(radius>111))&margin
+        for s in range(20):
+            values = binary[interior&(sector==s)]
+            correct = values== (0 if s%2==0 else 255)
+            self.assertGreater(float(correct.mean()), .995, f"sector {s}")
+
+    def test_hsv_ring_masks_handle_red_wrap_and_achromatic_wedges(self):
+        # A patch per hue, including both ends of the red hue range and shadows.
+        hsv = np.zeros((40, 240, 3), np.uint8)
+        colours = [(0,220,170),(179,220,170),(60,220,170),(90,220,70),
+                   (0,0,190),(0,0,40)]
+        for i, colour in enumerate(colours):
+            hsv[:,i*40:(i+1)*40] = colour
+        masks = board_color_masks(cv.cvtColor(hsv,cv.COLOR_HSV2BGR))
+        for i in range(6):
+            p=(20,20+i*40)
+            self.assertEqual(int(masks['red'][p]),255 if i in (0,1) else 0)
+            self.assertEqual(int(masks['green'][p]),255 if i in (2,3) else 0)
+
+    def test_real_board_photo_rectifies_without_manual_points(self):
+        from pathlib import Path
+        from threshold_evidence import wedge_accuracy
+        image=cv.imread(str(Path(__file__).parent/'real_photo_validation/photo_1_source.png'))
+        self.assertIsNotNone(image)
+        H,report=automatic_homography(image,self.board)
+        self.assertGreaterEqual(report['inliers'],40)
+        self.assertGreater(report['binary_template_support'],.8)
+        binary=binarize(cv.cvtColor(warp(image,H,self.board),cv.COLOR_BGR2GRAY))
+        self.assertGreater(wedge_accuracy(binary,self.board)['correct_fraction'],.99)
 
     def test_known_scoring_locations(self):
         b = self.board

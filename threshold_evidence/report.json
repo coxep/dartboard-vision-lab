@@ -1,0 +1,985 @@
+{
+  "method": "Gaussian adaptive, C=5, block=nearest odd to half the shorter image dimension; Gaussian preblur 5x5 sigma1.2",
+  "evaluation": "Single-score wedge interiors only: radius 25-155mm excluding 95-111mm and within 6 degrees of sector centers. Colours, wire boundaries and bull excluded.",
+  "note": "Fixed synthetic camera inputs only; this measures binary wedge classification, not pose or dart accuracy.",
+  "cameras": [
+    {
+      "camera": 0,
+      "source_block": 541,
+      "plane_block": 451,
+      "before": {
+        "correct_fraction": 0.5797107135383972,
+        "worst_sector_fraction": 0.1872629789459919,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 0.2530718954248366
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 0.9090790162218734
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 0.28612527788675296
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 0.926637897214594
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 0.2770800627943485
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 0.9549019607843138
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 0.25798011512297225
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 0.8891068392833791
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 0.2665097423826337
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 0.9149659863945578
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 0.30640522875816995
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 0.9199372056514914
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 0.288217601673859
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 0.9067608212370865
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 0.24620617477760334
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 0.8747712418300654
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 0.21271585557299844
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 0.8434680266771283
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 0.1872629789459919
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 0.8729722658294087
+          }
+        ],
+        "evaluated_pixels": 152928
+      },
+      "after": {
+        "correct_fraction": 1.0,
+        "worst_sector_fraction": 1.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 1.0
+          }
+        ],
+        "evaluated_pixels": 152928
+      },
+      "threshold_in_plane": {
+        "correct_fraction": 1.0,
+        "worst_sector_fraction": 1.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 1.0
+          }
+        ],
+        "evaluated_pixels": 152928
+      }
+    },
+    {
+      "camera": 1,
+      "source_block": 541,
+      "plane_block": 451,
+      "before": {
+        "correct_fraction": 0.5793968403431681,
+        "worst_sector_fraction": 0.19013992415326272,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 0.252156862745098
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 0.8737571951857667
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 0.19013992415326272
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 0.8420295540734929
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 0.19845630559916275
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 0.8752941176470588
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 0.2519623233908948
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 0.9058454295802275
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 0.27775598273832874
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 0.9344583987441131
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 0.3022222222222222
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 0.8940345368916798
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 0.2927945599581535
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 0.8789067608212371
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 0.2804814233385662
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 0.9364705882352942
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 0.28414442700156983
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 0.9249378841375703
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 0.28194063031254085
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 0.9101255886970173
+          }
+        ],
+        "evaluated_pixels": 152928
+      },
+      "after": {
+        "correct_fraction": 1.0,
+        "worst_sector_fraction": 1.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 1.0
+          }
+        ],
+        "evaluated_pixels": 152928
+      },
+      "threshold_in_plane": {
+        "correct_fraction": 1.0,
+        "worst_sector_fraction": 1.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 1.0
+          }
+        ],
+        "evaluated_pixels": 152928
+      }
+    },
+    {
+      "camera": 2,
+      "source_block": 541,
+      "plane_block": 451,
+      "before": {
+        "correct_fraction": 0.575355722954593,
+        "worst_sector_fraction": 0.19594771241830064,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 0.27137254901960783
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 0.9175824175824175
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 0.26807898522296325
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 0.921537857983523
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 0.28440607012035585
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 0.8983006535947713
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 0.27106227106227104
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 0.8813913953184255
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 0.22113247024977115
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 0.8528257456828885
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 0.19594771241830064
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 0.8472004186289901
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 0.22165555119654767
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 0.8821760167385903
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 0.2755102040816326
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 0.8934640522875817
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 0.29212454212454214
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 0.9329148685759121
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 0.2710867006669282
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 0.9073783359497645
+          }
+        ],
+        "evaluated_pixels": 152928
+      },
+      "after": {
+        "correct_fraction": 1.0,
+        "worst_sector_fraction": 1.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 1.0
+          }
+        ],
+        "evaluated_pixels": 152928
+      },
+      "threshold_in_plane": {
+        "correct_fraction": 1.0,
+        "worst_sector_fraction": 1.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 1.0
+          }
+        ],
+        "evaluated_pixels": 152928
+      }
+    }
+  ]
+}

@@ -16,7 +16,7 @@ import numpy as np
 
 from dartboard import (Board, Lens, automatic_homography, binarize, change_mask,
                        gray_image, intersect_lines, project, shaft_line, text, warp,
-                       nominal_homography)
+                       nominal_homography, adaptive_block_size, board_color_masks)
 from render_synthetic import board_texture, panel, render_camera, COLORS
 from pose_alignment import homography_from_pose
 
@@ -167,12 +167,16 @@ def main():
         binary = binarize(cv.cvtColor(corrected, cv.COLOR_BGR2GRAY))
         cv.imwrite(str(OUT / f"camera_{i}_adaptive.png"), binary)
         roi = cv.warpPerspective(board.mask(1.04), np.linalg.inv(H), (WIDTH, HEIGHT), flags=cv.INTER_NEAREST)
-        corners = cv.goodFeaturesToTrack(binary, 3000, .005, 3, mask=roi,
-                                        blockSize=3, useHarrisDetector=True, k=.04)
+        masks = board_color_masks(corrected)
+        for name, mask in masks.items():
+            write_image(OUT / f"camera_{i}_hsv_{name}.png", mask)
         overlay = corrected.copy()
-        if corners is not None:
-            for p in corners.reshape(-1, 2):
-                cv.circle(overlay, tuple(np.rint(p).astype(int)), 2, (90, 255, 130), -1)
+        for feature_image in [binary, *masks.values()]:
+            corners = cv.goodFeaturesToTrack(feature_image, 3000, .005, 3, mask=roi,
+                                            blockSize=3, useHarrisDetector=True, k=.04)
+            if corners is not None:
+                for p in corners.reshape(-1, 2):
+                    cv.circle(overlay, tuple(np.rint(p).astype(int)), 2, (90, 255, 130), -1)
         for p in report["matched_source_px"]:
             cv.circle(overlay, tuple(np.rint(p).astype(int)), 5, (0, 210, 255), 2)
         write_image(OUT / f"camera_{i}_harris.jpg", overlay)
@@ -182,7 +186,7 @@ def main():
         # Separate raw, binary, detected corners, rectified output for inspection.
         calibration_rows.append(np.hstack([
             panel(raw, f"CAMERA {i + 1}: INPUT", "Injected mild distortion + noise", COLORS[i], 480, 380),
-            panel(binary, "ADAPTIVE THRESHOLD", "Gaussian adaptive, block 31, C = 5", COLORS[i], 480, 380),
+            panel(binary, "ADAPTIVE THRESHOLD", f"Gaussian adaptive, block {adaptive_block_size(binary.shape)}, C = 5", COLORS[i], 480, 380),
             panel(overlay, "HARRIS CORNERS", f"{report['inliers']} model inliers", COLORS[i], 480, 380),
             panel(grid, "AUTOMATIC RECTIFICATION", f"GT landmark median error {np.median(error):.2f} px", COLORS[i], 480, 380),
         ]))

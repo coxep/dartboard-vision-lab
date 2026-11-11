@@ -128,9 +128,48 @@ def seed_homography(clicks, board):
     return H
 
 
-def binarize(gray):
-    return cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                cv.THRESH_BINARY, 31, 5)
+def adaptive_block_size(shape):
+    """A wedge-scale neighborhood, rather than a board-texture neighborhood."""
+    return max(3, round(min(shape[:2]) * .5) | 1)
+
+
+def binarize(gray, block_size=None):
+    """Preserve solid dark/light wedges under slowly changing illumination.
+
+    At 1920x1080 the default block is 541; at 900x900 it is 451. A 31px
+    neighborhood estimates the local wedge itself and enhances texture instead.
+    The output comes only from observed pixels, never from model-filled sectors.
+    """
+    block_size = adaptive_block_size(gray.shape) if block_size is None else int(block_size)
+    if block_size < 3 or block_size % 2 == 0:
+        raise ValueError("Adaptive threshold block_size must be odd and >= 3")
+    smooth = cv.GaussianBlur(gray, (5, 5), 1.2)
+    return cv.adaptiveThreshold(smooth, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                cv.THRESH_BINARY, block_size, 5)
+
+
+
+def board_color_masks(frame):
+    """Observed red/green ring segments in HSV; keep colours separate for corners.
+
+    Saturation gates prevent black/white wedges (whose hue is unreliable) from
+    entering these masks. Red spans both ends of OpenCV's 0..179 hue range.
+    """
+    hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+    red = (cv.inRange(hsv, (0, 65, 30), (12, 255, 255))
+           | cv.inRange(hsv, (170, 65, 30), (179, 255, 255)))
+    green = cv.inRange(hsv, (35, 55, 30), (110, 255, 255))
+    return dict(red=cv.medianBlur(red, 3), green=cv.medianBlur(green, 3))
+
+
+
+def board_feature_edges(frame):
+    """Observed wedge + colour-boundary edges for the full geometry check."""
+    images = [binarize(cv.cvtColor(frame, cv.COLOR_BGR2GRAY)), *board_color_masks(frame).values()]
+    edges = np.zeros(frame.shape[:2], np.uint8)
+    for image in images:
+        edges |= cv.Canny(image, 50, 150)
+    return edges
 
 
 def ellipse_normalizer(ellipse):
@@ -340,8 +379,11 @@ def refine_plane_template(frame, seed, board):
 
 def automatic_homography(frame, board, nominal_H=None, K=None):
     """Rectify actual pixels; optional known K enables pose/association hypotheses."""
+    bootstrap = None
     if nominal_H is None:
-        return ellipse_homography(frame, board)
+        # The colour/ellipse fit is an INITIALIZER, not a final calibration.
+        # Real boards expose the sparse-fit bias; refine their observed pixels too.
+        nominal_H, bootstrap = ellipse_homography(frame, board)
     candidates, pose_search = [], None
     if K is not None:
         from pose_alignment import seeded_pose_hypotheses
@@ -364,7 +406,7 @@ def automatic_homography(frame, board, nominal_H=None, K=None):
                 raise ValueError("Final alignment violates original upright pose belief")
             _, corners = harris_refine(warp(frame, H, board), np.eye(3), board, gate=6)
             if not corners["refined"]:
-                raise ValueError("Plane-template fit did not pass the Harris geometry check")
+                raise ValueError("Plane-template fit did not pass the Harris geometry check: "+corners.get("reason", "unknown"))
             # Sparse wire-edge corners can bias a dense fit; use for validation.
             corners["harris_role"] = "validation only; dense plane-template H retained"
             corners["matched_source_px"] = project(corners["matched_source_px"], np.linalg.inv(H)).tolist()
@@ -372,6 +414,9 @@ def automatic_homography(frame, board, nominal_H=None, K=None):
             corners["binary_template_support"] = binary_template_support(frame, H, board)
             if corners["binary_template_support"] < .6:
                 raise ValueError("Final plane-template edge support is too low")
+            corners["edge_inputs"] = ["adaptive wedges", "HSV red", "HSV green"]
+            corners["threshold_block_size_in_plane"] = adaptive_block_size((board.size,board.size))
+            corners["ellipse_bootstrap"] = bootstrap
             corners["pose_search"] = pose_search
             corners["pose_initialization"] = pose_info
             corners["pose_initializer_used"] = pose_info is not None
@@ -383,7 +428,7 @@ def automatic_homography(frame, board, nominal_H=None, K=None):
 
 
 def binary_template_support(frame, H, board):
-    edges = cv.Canny(binarize(cv.cvtColor(warp(frame, H, board), cv.COLOR_BGR2GRAY)), 50, 150)
+    edges = board_feature_edges(warp(frame, H, board))
     distance = cv.distanceTransform(255 - edges, cv.DIST_L2, 3)
     samples = [board.point(r, a) for r in board.radii for a in np.linspace(0, 360, 360, endpoint=False)]
     samples += [board.point(r, -9 + 18 * s) for s in range(20) for r in np.linspace(20, board.radii[-1], 100)]
@@ -392,7 +437,7 @@ def binary_template_support(frame, H, board):
 
 
 def ellipse_homography(frame, board):
-    """No-click bootstrap for a red/green bristle board and UPRIGHT cameras.
+    """Coarse initializer, not final acceptance, for a red/green upright board.
 
     Outer double ellipse + projected bull center determine a metric plane
     rectification up to rotation. Camera-up supplies the remaining orientation.
@@ -477,20 +522,23 @@ def ellipse_homography(frame, board):
     if not report["refined"]:
         raise ValueError("Automatic ring fit found, but distributed binary Harris corners did not verify it")
     # Check binary edges against the known ring/spoke template in canonical space.
-    edges = cv.Canny(binarize(cv.cvtColor(warp(frame, H, board), cv.COLOR_BGR2GRAY)), 50, 150)
+    edges = board_feature_edges(warp(frame, H, board))
     distance = cv.distanceTransform(255 - edges, cv.DIST_L2, 3)
     samples = [board.point(r, a) for r in board.radii for a in np.linspace(0, 360, 360, endpoint=False)]
     samples += [board.point(r, -9 + 18 * s) for s in range(20) for r in np.linspace(20, board.radii[-1], 100)]
     samples = np.rint(samples).astype(int)
     support = float(np.mean(distance[samples[:, 1], samples[:, 0]] <= 3 * board.size / 900))
-    if support < .60:
-        raise ValueError(f"Binary board template check failed: edge support {support:.2f}")
+    # Return this coarse candidate to automatic_homography for mandatory dense
+    # refinement and final geometry validation, even if initial support is low.
     report["binary_template_support"] = support
+    report["bootstrap_only"] = True
     return H, report
 
 
 def harris_refine(frame, seed, board, gate=6.0):
-    """Match Harris corners near predicted ring/spoke crossings, then RANSAC.
+    """Match Harris corners from clean wedges and separate HSV ring masks.
+
+    The union of candidate POINTS retains boundaries lost in black/white alone.
 
     goodFeaturesToTrack(useHarrisDetector=True) uses the Harris response and
     non-maximum suppression, NOT the default Shi-Tomasi detector.
@@ -498,9 +546,17 @@ def harris_refine(frame, seed, board, gate=6.0):
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     roi = cv.warpPerspective(board.mask(1.04), np.linalg.inv(seed),
                              (frame.shape[1], frame.shape[0]), flags=cv.INTER_NEAREST)
-    corners = cv.goodFeaturesToTrack(binarize(gray), maxCorners=3000, qualityLevel=.005,
-                                    minDistance=3, mask=roi, blockSize=3,
-                                    useHarrisDetector=True, k=.04)
+    feature_images = dict(wedges=binarize(gray), **board_color_masks(frame))
+    detected = []
+    counts = {}
+    for name, feature_image in feature_images.items():
+        candidates = cv.goodFeaturesToTrack(feature_image, maxCorners=3000, qualityLevel=.005,
+                                            minDistance=3, mask=roi, blockSize=3,
+                                            useHarrisDetector=True, k=.04)
+        counts[name] = 0 if candidates is None else len(candidates)
+        if candidates is not None:
+            detected.append(candidates)
+    corners = np.concatenate(detected) if detected else None
     if corners is None:
         return seed, dict(refined=False, reason="No Harris corners")
     corners = cv.cornerSubPix(gray, corners, (3, 3), (-1, -1),
@@ -533,7 +589,8 @@ def harris_refine(frame, seed, board, gate=6.0):
     if not enough or not np.isfinite(H).all() or shift > 2 * gate * board.size / 900:
         return seed, dict(refined=False, reason="Harris support/geometry check failed")
     error = np.linalg.norm(project(corners[c[good]], H) - target[ids], axis=1)
-    return H, dict(refined=True, inliers=int(good.sum()),
+    return H, dict(refined=True, inliers=int(good.sum()), corner_candidates=counts,
+                   corner_inputs=list(feature_images),
                    fit_median_px=float(np.median(error)),
                    matched_source_px=corners[c[good]].tolist(), matched_target_px=target[ids].tolist())
 

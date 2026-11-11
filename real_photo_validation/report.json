@@ -1,0 +1,175 @@
+{
+  "photos": [
+    {
+      "photo": 1,
+      "calibrated": true,
+      "reason": null,
+      "inliers": 67,
+      "fit_median_canonical_px": 1.228793978691101,
+      "binary_template_support": 0.9029069767441861,
+      "corner_inputs": [
+        "wedges",
+        "red",
+        "green"
+      ],
+      "wedge_consistency": {
+        "correct_fraction": 0.9995880414312618,
+        "worst_sector_fraction": 0.9917582417582418,
+        "per_sector": [
+          {
+            "sector": 0,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 1,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 2,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 3,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 4,
+            "expected": 0,
+            "correct_fraction": 0.9917582417582418
+          },
+          {
+            "sector": 5,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 6,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 7,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 8,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 9,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 10,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 11,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 12,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 13,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 14,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 15,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 16,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 17,
+            "expected": 255,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 18,
+            "expected": 0,
+            "correct_fraction": 1.0
+          },
+          {
+            "sector": 19,
+            "expected": 255,
+            "correct_fraction": 1.0
+          }
+        ],
+        "evaluated_pixels": 152928
+      },
+      "H": [
+        [
+          0.9984508805054458,
+          -0.020875862274257164,
+          -28.32156633995328
+        ],
+        [
+          -0.0532266757847043,
+          0.9797024225412576,
+          -133.89771535670565
+        ],
+        [
+          -5.285387343559481e-05,
+          -0.0001037002368018214,
+          1.0254096431609965
+        ]
+      ],
+      "note": "Real photo, no manual points, no supplied lens K/D. Fit residual and wedge consistency are internal checks; no independent geometric ground truth."
+    },
+    {
+      "photo": 2,
+      "calibrated": false,
+      "reason": "All pose/template hypotheses failed: Whole-board template registration failed all bounded starts: Whole-board template correlation is too low",
+      "inliers": 16,
+      "fit_median_canonical_px": 1.9512152671813965,
+      "binary_template_support": 0.5223837209302326,
+      "corner_inputs": [
+        "wedges",
+        "red",
+        "green"
+      ],
+      "wedge_consistency": null,
+      "H": [
+        [
+          1.6955527484751427,
+          0.08501059106538868,
+          -317.00771900913213
+        ],
+        [
+          0.16452681307655365,
+          1.7351768207955751,
+          -638.1706205145027
+        ],
+        [
+          0.0001891241233914571,
+          9.639091157142235e-05,
+          1.0
+        ]
+      ],
+      "note": "Real photo, no manual points, no supplied lens K/D. Fit residual and wedge consistency are internal checks; no independent geometric ground truth."
+    }
+  ],
+  "independent_geometric_ground_truth": false
+}

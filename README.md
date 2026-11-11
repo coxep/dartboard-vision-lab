@@ -62,14 +62,16 @@ matrix K, it uses this sequence:
 5. Rank pose hypotheses by observed whole-board image correlation. Refine the best
    candidates using multiscale ECC and metric wire-edge alignment. The final dense
    refinement has eight homography parameters; it is not a six-parameter PnP pose.
-6. Validate with adaptive-binary Harris features and the full wire template.
+6. Validate with Harris features from the clean adaptive wedge image and separate
+   HSV red/green masks. Check the full wire template against their combined edges.
    Check final orientation against the original belief. Retain the previous
    dense-only initializer as an explicit fallback if pose hypotheses fail.
 
 The geometry model is separate from the textured renderer. All rectified outputs
 contain warped input pixels, never a replacement rendering. K and lens distortion
 are fixed during these fits; this is not blind intrinsic calibration. Without a
-mount prior, the script falls back to color-assisted ellipse/bull initialization.
+mount prior, the script uses color-assisted ellipse/bull initialization followed
+by mandatory dense image refinement and validation.
 `--manual` enables an optional four-click fallback. Nominal radii are configurable
 with `--radii 99 107 162 170`.
 
@@ -129,6 +131,44 @@ on 8 fixed targets; the original 100-trial run produced 18 correct estimates,
 reports use the corrected mount dimensions and/or optimizer and must be read as
 separate experiments. The website reports which experiment each image belongs to.
 
+## Wedge-scale thresholding and real-photo validation
+
+The old 31-pixel adaptive window highlighted board texture and turned dark wedge
+interiors white. `binarize()` now uses a Gaussian adaptive window equal to half the
+shorter image dimension, rounded to an odd integer: **541 pixels at 1920×1080**,
+**451 at 900×900**. A 5×5 Gaussian blur (sigma 1.2) suppresses fine texture before
+thresholding; C remains 5. `binarize(gray, block_size=...)` allows an explicit odd
+window override. No model sectors are painted into the result.
+
+Separate HSV masks preserve scoring-ring boundaries lost in black/white conversion:
+red H=0–12 or 170–179, S>=65, V>=30; green H=35–110, S>=55, V>=30. OpenCV hue is
+0–179. Each mask gets a 3×3 median filter. Harris candidates and geometry-check
+edges combine adaptive wedges, red, and green; the masks remain separate so their
+segment boundaries survive. These defaults assume a red/green board.
+
+`threshold_evidence/comparison.jpg` shows the old and new outputs on all three
+fixed synthetic views. Correct black/white classification in the evaluated wedge
+interiors rises from about 58% to 100%. This excludes coloured bands, bull and
+wire neighborhoods, and is not a pose accuracy measurement.
+
+The supplied original close-up also passes the no-click calibration: 67 Harris
+inliers, 90.3% combined wire-edge support, and 99.96% correct wedge-interior
+classification. Its 1.23-pixel median correspondence residual is an internal fit
+statistic, not independent ground-truth error. No real-camera lens K/D were
+available. The wider setup photo's automatic calibration remains rejected for low
+whole-pattern correlation; its threshold/masks are still available for inspection.
+Only board crops and derived outputs are included in `real_photo_validation/`.
+The current 300-view regression with large-window adaptive + HSV features still
+calibrates 297/300 views (97/100 complete setups), with the same three initialization
+failures and worst accepted landmark error of 0.996 canonical pixels.
+
+```sh
+python benchmark_c920.py
+python threshold_evidence.py
+python validate_photo.py /path/to/board.jpg /path/to/setup.jpg
+python monte_carlo.py --trials 100 --workers 8 --calibration-only --output c920_benchmark/calibration_sweep_hsv.json
+```
+
 ## Seeded pose experiment
 
 With the same 100 randomized setups (300 views, seed 20261110), the dense-only
@@ -149,7 +189,7 @@ of different board textures and lighting.
 Reports: `c920_benchmark/calibration_sweep_before_pnp.json`,
 `c920_benchmark/calibration_sweep.json`, and `c920_benchmark/calibration_holdout.json`.
 `calibration_evidence/pipeline.jpg` shows actual pixels at every stage of trial 0,
-including the previously failing bottom view. The nine unit/integration checks
+including the previously failing bottom view. The twelve unit/integration checks
 include 25% corrupted correspondences and a 12-frame moving-camera sequence.
 
 ## Important practical limits

@@ -172,6 +172,8 @@ def main():
         worst_interior_probe_error_px=max((c["probe_max_px"] for c in successful),default=None),
         views_above_2px=sum(c["max_px"]>2 or c["probe_max_px"]>2 for c in successful))
     result = dict(seed=args.seed, priors=PRIORS, summary=summary, trials=rows,
+                  feature_preprocessing=dict(adaptive_block_fraction=.5, adaptive_C=5, preblur="Gaussian 5x5 sigma1.2",
+                                             harris_inputs=["adaptive wedges", "HSV red", "HSV green"]),
                   method="dense template only" if args.no_pose else "seeded PnP / reassociation + dense template, with explicit dense-only fallback",
                   limitations=["Synthetic-only; these coefficient/extrinsic priors are assumed, not measured.",
                                "Exact lens K/D supplied. No test of blind lens calibration.",
