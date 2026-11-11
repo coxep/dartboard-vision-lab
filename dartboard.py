@@ -762,10 +762,8 @@ def calibrate(args, inputs):
             elif seed is not None:
                 H,report=detector.acquire(frame,seed,K)
             else:
-                # Legacy colour/ellipse acquisition supplies only the initial
-                # orientation/scale belief; the accepted fit is fresh geometry.
-                initial_H,initialization=automatic_homography(frame,board)
-                H,report=detector.detect(frame,initial_H,search=9,iterations=2,colour=True,K=K)
+                raise ValueError('Automatic grayscale calibration requires --geometry-prior; '
+                                 'provide nominal camera centres to seed scale and orientation')
             if H is None:
                 raise ValueError(f"Camera {i}: board pattern rejected: {report['reason']}")
             report['initialization']=initialization

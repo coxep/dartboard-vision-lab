@@ -17,14 +17,14 @@ def contrast_normalized(gray,scale=1.):
     return np.clip((smooth-mean)/np.sqrt(np.maximum(variance,12.**2)),-3,3).astype(np.float32)
 
 
-def coarse_binary_seed(image,seed,board,wire_geometry=None):
-    """Direct large-window binary template registration, before appearance fit."""
-    from dartboard import binarize
+def coarse_grayscale_seed(image,seed,board,wire_geometry=None):
+    """Direct grayscale pyramid registration; no thresholded input or contours."""
     from wire_model import canonical_template
     gray=image if image.ndim==2 else cv.cvtColor(image,cv.COLOR_BGR2GRAY)
     observed=cv.warpPerspective(gray,seed,(board.size,board.size))
     template=canonical_template(board,wire_geometry)
-    ref=binarize(template);observed=binarize(observed)
+    ref=contrast_normalized(template,board.size/900)
+    observed=contrast_normalized(observed,board.size/900)
     valid=cv.warpPerspective(np.full(gray.shape,255,np.uint8),seed,(board.size,board.size),flags=cv.INTER_NEAREST)
     yy,xx=np.mgrid[:board.size,:board.size]
     radius=np.hypot(xx-board.center[0],yy-board.center[1])/board.ppm
@@ -38,8 +38,8 @@ def coarse_binary_seed(image,seed,board,wire_geometry=None):
             (cv.TERM_CRITERIA_COUNT|cv.TERM_CRITERIA_EPS,40,1e-5),
             inputMask=cv.resize(mask,shape,interpolation=cv.INTER_NEAREST),gaussFiltSize=5)
         W=np.linalg.inv(S)@local@S;history.append(dict(scale=scale,correlation=float(correlation)))
-    if correlation<.75:raise ValueError('Binary board template lacks correlation')
-    return np.linalg.inv(W)@seed,dict(objective='large-window adaptive binary board-template appearance',history=history)
+    if correlation<.75:raise ValueError('Grayscale board template lacks correlation')
+    return np.linalg.inv(W)@seed,dict(objective='locally contrast-normalized grayscale board-template pyramid',history=history)
 
 
 def refine_appearance(image,seed,board,wire_geometry=None):
@@ -53,8 +53,16 @@ def refine_appearance(image,seed,board,wire_geometry=None):
     # Include pixels on BOTH sides of the outer double boundary. A mask cropped
     # inside the scoring radius omits the very edge we need to align.
     roi=np.uint8((valid>250)&(board.mask(1.04)>0))*255
-    edges=cv.Canny(template,20,60)
-    support=cv.dilate(edges,np.ones((13,13),np.uint8))
+    # Select neighbourhoods from known metric geometry, not segmented pixels.
+    yy,xx=np.mgrid[:board.size,:board.size]
+    delta=np.stack([xx,yy],axis=-1)-board.center
+    radius=np.linalg.norm(delta,axis=-1)
+    angle=np.arctan2(delta[...,0],-delta[...,1])
+    spoke_angle=(angle+np.deg2rad(9))%np.deg2rad(18)
+    spoke_distance=radius*np.sin(np.minimum(spoke_angle,np.deg2rad(18)-spoke_angle))
+    ring_distance=np.min(abs(radius[...,None]-np.array([6.35,15.9,*board.radii])*board.ppm),axis=-1)
+    support=np.uint8((ring_distance<7*board.size/900)|
+                     ((spoke_distance<7*board.size/900)&(radius>15.9*board.ppm)))*255
     reference=contrast_normalized(template,board.size/900)
     observed=contrast_normalized(observed,board.size/900)
     W=np.eye(3,dtype=np.float32);history=[]

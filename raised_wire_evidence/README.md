@@ -16,14 +16,17 @@ Nominal fixtures intentionally have an exact nominal seed; displaced fixtures
 check refinement from an inexact seed.
 
 - `*_input.jpg`: rendered image.
-- `*_binary.jpg`: large-window adaptive threshold of the initial plane warp.
+- `*_normalized.jpg`: locally contrast-normalized grayscale initial plane warp.
 - `*_rectified.jpg`: actual pixels warped by the estimated homography.
 - `*_boundaries.jpg`: independent measured junction/edge-profile checks.
 - `*_truth.jpg`: actual pixels warped by the exact board-plane homography.
-- `*_truth_binary.jpg`: thresholding after the exact transform.
+- `*_truth_gray.jpg`: grayscale pixels after the exact transform.
 - `three_views.jpg`: nominal input / exact H / estimated H / validation panels.
 - `spider_mm.obj`: 3D spider in millimetres, surface Z=0.
 - `validation.json`: evaluation on independent interior plane probes, not junctions.
+
+Calibration uses grayscale intensities throughout; junction localization uses
+multiscale normalized templates, not OpenCV SB or a Radon-transform port.
 
 Exact-H panels preserve dart occlusion, cropping, resampling and elevated-wire
 parallax. Their purpose is to distinguish image/model limitations from estimated

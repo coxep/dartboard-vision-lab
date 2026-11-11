@@ -13,8 +13,8 @@ across cameras to estimate the hit.
 
 1. **Seed the plane warp.** Use the approximate mount pose or previous accepted
    homography. This resolves orientation and the repeated sector pattern.
-2. **Align the observed pattern.** Apply large-window adaptive binarization and
-   multiscale template registration for a coarse alignment. Then refine an
+2. **Align the observed grayscale pattern.** Normalize local contrast and use
+   multiscale grayscale template registration for a coarse alignment. Then refine an
    eight-parameter homography using locally contrast-normalized image appearance.
    The objective aligns observed pixels to the canonical board template.
 3. **Verify the fit.** Independently check distributed grayscale junctions and
@@ -28,6 +28,16 @@ across cameras to estimate the hit.
    candidates, and jointly select axes across cameras. Their supported intersection
    gives the hit and score. Close wire calls and ambiguous intersections require
    review.
+
+Calibration operates on grayscale intensities without binary segmentation. Its
+multiscale local-template responses, subpixel localization and radial/cyclic
+pattern checks borrow general principles from modern checkerboard detection.
+OpenCV's [sector-based checkerboard detector](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html)
+uses localized Radon responses approximated by box filters and a rectangular grid.
+**This dartboard detector is not a port of that Radon response or of
+`findChessboardCornersSB`.** It uses normalized grayscale template correlations
+for junction validation, then direct appearance registration for the final warp.
+Dart detection separately thresholds before/after frame differences.
 
 The final plane fit does not require camera intrinsics. Significant radial lens
 curvature still needs a nonlinear correction: a homography alone cannot represent
@@ -71,6 +81,7 @@ The nominal setup in `measured_setup/scene.json` places each lens approximately
 Update those positions to match the mounts. Coordinates are x right, y up and
 z toward the player; the scoring plane is Z=0.
 
+Automatic calibration requires `--geometry-prior` to seed scale and orientation.
 The initial mount/orientation prior resolves the repeating sector pattern.
 Recovery searches around that belief; this is not unconstrained discovery of an
 arbitrarily oriented board in a room.

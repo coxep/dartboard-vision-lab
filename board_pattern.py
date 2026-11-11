@@ -185,13 +185,13 @@ class PatternDetector:
         H=np.asarray(prior_H,float).copy();report={};found=False
         if gray.std()<5:
             return None,dict(found=False,reason='image lacks contrast',elapsed_ms=(time.perf_counter()-start)*1000)
-        from template_registration import coarse_binary_seed,refine_appearance,measure_ring_boundaries,verify_scoring_boundaries
+        from template_registration import coarse_grayscale_seed,refine_appearance,measure_ring_boundaries,verify_scoring_boundaries
         try:
             seed=H.copy()
             try:
-                H,binary=coarse_binary_seed(image,H,self.board,self.wire_geometry)
+                H,coarse=coarse_grayscale_seed(image,H,self.board,self.wire_geometry)
             except (cv.error,ValueError) as exc:
-                binary=dict(found=False,reason=str(exc))
+                coarse=dict(found=False,reason=str(exc))
                 # A bounded geometric hypothesis is only a coarse fallback.
                 proposal,_=self._measure(gray,H,search)
                 if proposal is not None:H=proposal
@@ -201,7 +201,7 @@ class PatternDetector:
             checked,report=self._measure(gray,H,6)
             if checked is None:raise ValueError(report['reason'])
             boundaries=measure_ring_boundaries(image,H,self.board,self.wire_geometry)
-            report.update(binary=binary,appearance=appearance,boundaries=boundaries,geometric_seed_H=seed.tolist(),
+            report.update(coarse_grayscale=coarse,appearance=appearance,boundaries=boundaries,geometric_seed_H=seed.tolist(),
                           corner_role='validation only; sparse refit discarded',wire_geometry=self.wire_geometry)
             if not verify_scoring_boundaries(boundaries,self.board):
                 raise ValueError('template fit lacks consistent observed support on every treble/double boundary')
@@ -255,10 +255,11 @@ class PatternDetector:
         if H is not None:
             H,report=self.stabilize(image,H,report,K)
             if H is not None:
-                report.update(acquisition='binary and appearance registration from the current belief',elapsed_ms=(time.perf_counter()-start)*1000)
+                report.update(acquisition='grayscale pattern and appearance registration from the current belief',elapsed_ms=(time.perf_counter()-start)*1000)
                 return H,report
         if gray_image(image).std()<5:return None,report
-        from dartboard import refine_plane_template,ideal_board_template
+        from dartboard import ideal_board_template
+        from template_registration import coarse_grayscale_seed
         frame=cv.cvtColor(gray_image(image),cv.COLOR_GRAY2BGR)
         candidates=[np.asarray(prior_H,float)]
         if K is not None:
@@ -270,8 +271,8 @@ class PatternDetector:
         failures=[]
         for seed in candidates:
             try:
-                coarse,_=refine_plane_template(frame,seed,self.board)
-                H,report=self.detect(image,coarse,search=6,iterations=2,K=K)
+                initial,_=coarse_grayscale_seed(gray_image(image),seed,self.board,self.wire_geometry)
+                H,report=self.detect(image,initial,search=18,iterations=2,K=K)
                 if H is not None:
                     H,report=self.stabilize(image,H,report,K)
                     if H is not None:

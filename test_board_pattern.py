@@ -1,5 +1,6 @@
 """Geometry-only detection tests, including loss and reference independence."""
 import unittest
+from unittest.mock import patch
 import cv2 as cv
 import numpy as np
 from board_pattern import PatternDetector,GeometryTracker
@@ -73,6 +74,25 @@ class PatternTests(unittest.TestCase):
         error=np.linalg.norm(project(b.landmarks(),H@np.linalg.inv(truth))-b.landmarks(),axis=1)
         self.assertLess(float(error.max()),2.)
         self.assertTrue(all(r['found'] for r in report['boundaries'][2:]))
+
+    def test_calibration_and_recovery_do_not_segment_the_input(self):
+        b=self.board
+        _,prior,_=render_camera(self.texture,b,[285,243,216],dart=False)
+        image,truth,_=render_camera(self.texture,b,[315,233,221],dart=True)
+        # Catch accidental re-entry into legacy threshold/colour/contour seeding.
+        with patch.object(cv,'adaptiveThreshold',side_effect=AssertionError('adaptive segmentation')), \
+             patch.object(cv,'threshold',side_effect=AssertionError('binary segmentation')), \
+             patch.object(cv,'inRange',side_effect=AssertionError('colour segmentation')), \
+             patch.object(cv,'findContours',side_effect=AssertionError('segmented contours')):
+            detector=PatternDetector(b)
+            H,report=detector.acquire(cv.cvtColor(image,cv.COLOR_BGR2GRAY),prior)
+            self.assertIsNotNone(H,report)
+            self.assertIn('coarse_grayscale',report)
+            tracker=GeometryTracker(None,H,b)
+            tracker.update(np.zeros_like(image));self.assertFalse(tracker.valid)
+            tracker.update(image);self.assertTrue(tracker.valid,tracker.reason)
+        error=np.linalg.norm(project(b.landmarks(),H@np.linalg.inv(truth))-b.landmarks(),axis=1)
+        self.assertLess(float(error.max()),2.)
 
     def test_discrete_boundary_check_rejects_wrong_ring_widths(self):
         from boundary_audit import audit_boundaries,boundary_geometry_valid

@@ -8,10 +8,11 @@ import json
 from pathlib import Path
 import cv2 as cv
 import numpy as np
-from dartboard import Board,project,warp,binarize
+from dartboard import Board,project,warp
 from board_pattern import PatternDetector,draw_pattern
 from render_synthetic import board_texture,render_camera
 from wire_model import mesh,export_obj
+from template_registration import contrast_normalized
 
 
 def run(folder='raised_wire_evidence'):
@@ -49,9 +50,12 @@ def run(folder='raised_wire_evidence'):
             cv.imwrite(str(prefix)+'_input.jpg',image)
             truth_rect=warp(image,truth,b)
             cv.imwrite(str(prefix)+'_truth.jpg',truth_rect)
-            cv.imwrite(str(prefix)+'_truth_binary.jpg',binarize(cv.cvtColor(truth_rect,cv.COLOR_BGR2GRAY)))
+            truth_gray=cv.cvtColor(truth_rect,cv.COLOR_BGR2GRAY)
+            cv.imwrite(str(prefix)+'_truth_gray.jpg',truth_gray)
             initial=warp(image,prior,b)
-            cv.imwrite(str(prefix)+'_binary.jpg',binarize(cv.cvtColor(initial,cv.COLOR_BGR2GRAY)))
+            gray=cv.cvtColor(initial,cv.COLOR_BGR2GRAY)
+            normalized=np.uint8(np.clip(128+42*contrast_normalized(gray),0,255))
+            cv.imwrite(str(prefix)+'_normalized.jpg',normalized)
             if H is not None:
                 rect=warp(image,H,b)
                 overlay=draw_pattern(rect,b,report,H)
