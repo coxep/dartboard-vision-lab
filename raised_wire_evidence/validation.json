@@ -4395,7 +4395,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1195.1214940054342,
+        "elapsed_ms": 1107.0490450365469,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -8677,7 +8677,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1268.5812250128947,
+        "elapsed_ms": 1184.1957879951224,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -13086,7 +13086,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1131.2532459851354,
+        "elapsed_ms": 1050.9234999772161,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -17273,7 +17273,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1113.6289579444565,
+        "elapsed_ms": 1020.7373260054737,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -21668,7 +21668,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1162.2242589946836,
+        "elapsed_ms": 1066.8724969727919,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -26056,7 +26056,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1176.3592030038126,
+        "elapsed_ms": 1036.7671289714053,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -30405,7 +30405,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 2862.093976000324,
+        "elapsed_ms": 2697.0345730078407,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -34600,7 +34600,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1113.8957790099084,
+        "elapsed_ms": 1022.6052930229343,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -39024,7 +39024,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1101.5071669826284,
+        "elapsed_ms": 1025.7460080320016,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -43419,7 +43419,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1169.018190994393,
+        "elapsed_ms": 1086.3928539911285,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -47763,7 +47763,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1093.6763259815052,
+        "elapsed_ms": 988.2198160048574,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,
@@ -51993,7 +51993,7 @@
           ]
         },
         "found": true,
-        "elapsed_ms": 1144.8721080087125,
+        "elapsed_ms": 1044.11134601105,
         "method": "geometric pattern seed + direct multiscale template registration + explicit boundary verification",
         "fit_model": "direct template homography (8 DOF)",
         "appearance_reference_used": false,

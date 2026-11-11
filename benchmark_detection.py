@@ -114,6 +114,11 @@ def trial(task):
             rect=warp(changed,h,board);base=warp(reference,h,board)
             mask=change_mask(gray_image(rect),gray_image(base),board.mask(1.08),28)
             masks[key].append(mask);images[key].append(rect)
+            if save_images and key=='estimated':
+                folder=Path(output)/name
+                write_image(folder/f'camera_{i}_before.jpg',base)
+                write_image(folder/f'camera_{i}_after.jpg',rect)
+                write_image(folder/f'camera_{i}_difference.jpg',cv.absdiff(gray_image(rect),gray_image(base)))
     results={};evidence=[]
     folder=Path(output)/name
     for mode in MODES:

@@ -16,11 +16,15 @@ Nominal fixtures intentionally have an exact nominal seed; displaced fixtures
 check refinement from an inexact seed.
 
 - `*_input.jpg`: rendered image.
+- `*_prior.jpg`: observed pixels under the nominal mount belief.
+- `*_coarse.jpg`: observed pixels after replaying the actual first coarse grayscale alignment from that belief.
+- `*_appearance.jpg`: continuous normalized observed grayscale in red, canonical template in cyan; agreement is neutral. This uses estimated H, not true H.
 - `*_normalized.jpg`: locally contrast-normalized grayscale initial plane warp.
 - `*_rectified.jpg`: actual pixels warped by the estimated homography.
 - `*_boundaries.jpg`: independent measured junction/edge-profile checks.
 - `*_truth.jpg`: actual pixels warped by the exact board-plane homography.
 - `*_truth_gray.jpg`: grayscale pixels after the exact transform.
+- `pipeline_steps.jpg`: six image stages for all three moved-camera cases.
 - `three_views.jpg`: nominal input / exact H / estimated H / validation panels.
 - `spider_mm.obj`: 3D spider in millimetres, surface Z=0.
 - `validation.json`: evaluation on independent interior plane probes, not junctions.
