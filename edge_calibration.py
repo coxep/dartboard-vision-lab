@@ -110,33 +110,81 @@ def joint_edge_fit(frame, board, K, seed_H, distortion_prior=None, radial_terms=
 
 
 def detect_rectified_circles(rectified,board):
-    """Hough gradient detector on actual image intensities, with radius search bands.
+    """Measure paired HSV annulus boundaries, then fit free circles separately.
 
-    This is a post-fit diagnostic, not an input to joint_edge_fit, and not an
-    independent accuracy measurement against physical ground truth.
+    Broad radial zones find coloured RUNS; the two endpoints of the same run
+    identify inner/outer edges. No nominal circle is drawn in place of a fit.
+    Colour edges are not necessarily the wire apex / scoring boundary.
     """
-    gray=cv.GaussianBlur(cv.cvtColor(rectified,cv.COLOR_BGR2GRAY),(5,5),1.2)
-    overlay=rectified.copy();results=[]
-    for radius in (15.9,*board.radii):
-        expected=radius*board.ppm
-        circles=cv.HoughCircles(gray,cv.HOUGH_GRADIENT,dp=1.,minDist=30,
-                               param1=90,param2=12 if expected<50 else 18,minRadius=max(4,round(expected-5)),
-                               maxRadius=round(expected+5))
-        if circles is None:
-            results.append(dict(nominal_radius_mm=radius,found=False));continue
-        candidates=circles[0]
-        candidates=candidates[np.linalg.norm(candidates[:,:2]-board.center,axis=1)<25]
-        if not len(candidates):
-            results.append(dict(nominal_radius_mm=radius,found=False));continue
-        circle=min(candidates,key=lambda c:np.linalg.norm(c[:2]-board.center)+.5*abs(c[2]-expected))
-        x,y,r=map(float,circle)
-        consistent=np.linalg.norm(circle[:2]-board.center)<=4 and abs(r-expected)<=3
+    from dartboard import board_color_masks, text
+    masks=board_color_masks(rectified)
+    coloured=masks['red']|masks['green']
+    scale=board.size/900
+    angles=np.linspace(0,2*np.pi,720,endpoint=False)
+    direction=np.c_[np.sin(angles),-np.cos(angles)]
+    radii=np.arange(3,board.radii[-1]*board.ppm*1.13,.25*scale)
+    xy=board.center+direction[:,None,:]*radii[None,:,None]
+    samples=cv.remap(coloured,xy[:,:,0].astype(np.float32),xy[:,:,1].astype(np.float32),
+                     cv.INTER_NEAREST,borderMode=cv.BORDER_CONSTANT)>0
+    results=[];overlay=rectified.copy()
+
+    def fit_boundary(points,nominal,coverage,label):
+        if len(points)<40 or coverage<.35:
+            return dict(nominal_radius_mm=nominal,found=False,coverage=float(coverage),boundary=label)
+        points=np.asarray(points,float)
+        initial=np.r_[board.center, np.median(np.linalg.norm(points-board.center,axis=1))]
+        def residual(p):return np.linalg.norm(points-p[:2],axis=1)-p[2]
+        fit=least_squares(residual,initial,loss='soft_l1',f_scale=1.*scale)
+        errors=residual(fit.x)
+        keep=abs(errors)<max(2.5*scale,3*np.median(abs(errors)))
+        # Refit only a consensus of actual edge samples; do not constrain radius.
+        points=points[keep]
+        if len(points)<40:return dict(nominal_radius_mm=nominal,found=False,boundary=label)
+        fit=least_squares(residual,fit.x,loss='soft_l1',f_scale=scale)
+        x,y,r=map(float,fit.x)
+        err=residual(fit.x)
+        center_offset=float(np.linalg.norm(fit.x[:2]-board.center))
+        radius_offset=float(r-nominal*board.ppm)
+        consistent=center_offset<=4*scale and abs(radius_offset)<=3*scale
         colour=(40,220,255) if consistent else (40,40,255)
-        cv.circle(overlay,(round(x),round(y)),round(r),colour,2,cv.LINE_AA)
-        cv.drawMarker(overlay,(round(x),round(y)),(40,220,255),cv.MARKER_CROSS,10,1)
-        results.append(dict(nominal_radius_mm=radius,found=True,consistent=bool(consistent),center_px=[x,y],radius_px=r,
-                            center_offset_px=float(np.linalg.norm(circle[:2]-board.center)),
-                            radius_offset_px=float(r-expected)))
+        for q in points[::max(1,len(points)//180)]:
+            cv.circle(overlay,tuple(np.rint(q).astype(int)),1,(255,220,40),-1)
+        cv.circle(overlay,(round(x),round(y)),round(r),colour,1,cv.LINE_AA)
+        text(overlay,f'{label}: r={r:.1f}px; delta={radius_offset:+.1f}px',
+             (16,board.size-150+len(results)*21),scale=.43)
+        return dict(nominal_radius_mm=nominal,found=True,consistent=bool(consistent),boundary=label,
+                    center_px=[x,y],radius_px=r,center_offset_px=center_offset,
+                    radius_offset_px=radius_offset,coverage=float(coverage),samples=len(points),
+                    fit_rms_px=float(np.sqrt(np.mean(err**2))),
+                    method='observed HSV boundary samples, free-centre free-radius robust circle fit')
+
+    for nominal,mask,label in [(6.35,masks['red'],'inner bull'),(15.9,coloured,'outer bull')]:
+        contours,_=cv.findContours(mask,cv.RETR_LIST,cv.CHAIN_APPROX_NONE)
+        candidates=[c.reshape(-1,2) for c in contours if len(c)>=40
+                    and np.linalg.norm(c.reshape(-1,2).mean(axis=0)-board.center)<25*scale
+                    and cv.contourArea(c)<np.pi*(35*scale)**2]
+        points=max(candidates,key=len) if candidates else []
+        results.append(fit_boundary(points,nominal,1. if len(points) else 0.,label))
+    for pair,labels in [(board.radii[:2],('treble inner','treble outer')),
+                         (board.radii[2:],('double inner','double outer'))]:
+        zone=(radii>(np.mean(pair)-22)*board.ppm)&(radii<(np.mean(pair)+22)*board.ppm)
+        inner=[];outer=[]
+        for ray in samples:
+            use=ray&zone
+            # Close subpixel sampling holes only along the radial ray.
+            use=cv.morphologyEx(np.uint8(use)[None,:],cv.MORPH_CLOSE,np.ones((1,3),np.uint8))[0]>0
+            transitions=np.diff(np.r_[False,use,False].astype(int))
+            starts=np.flatnonzero(transitions==1);ends=np.flatnonzero(transitions==-1)-1
+            runs=[(a,b) for a,b in zip(starts,ends)
+                  if 3*board.ppm<radii[b]-radii[a]<18*board.ppm]
+            if runs:
+                a,b=min(runs,key=lambda ab:abs((radii[ab[0]]+radii[ab[1]])/2-np.mean(pair)*board.ppm))
+                inner.append((radii[a]-.125*scale));outer.append((radii[b]+.125*scale))
+            else:inner.append(np.nan);outer.append(np.nan)
+        for rr,nominal,label in zip((inner,outer),pair,labels):
+            rr=np.asarray(rr);valid=np.isfinite(rr)
+            points=board.center+direction[valid]*rr[valid,None]
+            results.append(fit_boundary(points,nominal,valid.mean(),label))
     return results,overlay
 
 
@@ -171,5 +219,5 @@ def calibrate_unknown_radial(raw,board,K,nominal_H=None,distortion_prior=None):
     report['joint_edge_fit']=fit
     circles,overlay=detect_rectified_circles(rectified,board)
     report['postfit_circle_detections']=circles
-    report['circle_role']='post-fit Hough diagnostic, not used by edge optimizer'
+    report['circle_role']='post-fit paired HSV-boundary circle diagnostic, not used by edge optimizer'
     return H,lens_data,report,corrected,overlay

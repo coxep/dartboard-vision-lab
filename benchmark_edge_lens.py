@@ -44,11 +44,11 @@ def main():
             (edge_overlay,f'CAMERA {i+1}: OBSERVED EDGES','Yellow: HSV rings; green: adaptive wedge edges'),
             (before,'DISTORTION ASSUMED ZERO',f'H-only probe median {np.median(before_error):.2f}px; max {before_error.max():.2f}px'),
             (after,'JOINT H + K1 DISTORTION',f'Probe median {np.median(after_error):.2f}px; max {after_error.max():.2f}px'),
-            (overlay,'POST-FIT HOUGH CIRCLES','Detected from actual rectified intensities; no redrawing')]]))
+            (overlay,'PAIRED HSV BOUNDARY CIRCLES','Free circle fits to observed samples; no nominal redraw')]]))
     write_image(out/'comparison.jpg',np.vstack(rows))
     (out/'report.json').write_text(json.dumps(dict(cameras=results,
         known_to_fit='Exact K, board geometry, nominal camera pose. Distortion prior is zero.',
         withheld='All true distortion coefficients, true H, independent probe locations.',
-        limitation='Fixed synthetic poses only. H+k1 estimated; k2/p1/p2/k3 fixed to zero. Hough uses nominal radius search bands and is a post-fit consistency diagnostic, not independent accuracy ground truth.'),indent=2)+'\n')
+        limitation='Fixed synthetic poses only. H+k1 estimated; k2/p1/p2/k3 fixed to zero. Paired HSV boundary circles are a post-fit consistency diagnostic, not independent accuracy ground truth.'),indent=2)+'\n')
 
 if __name__=='__main__':main()

@@ -227,6 +227,42 @@ Reports: `c920_benchmark/calibration_sweep_before_pnp.json`,
 including the previously failing bottom view. The fourteen unit/integration checks
 include 25% corrupted correspondences and a 12-frame moving-camera sequence.
 
+## Colour topology and explicit corner least squares
+
+`corner_geometry.py` checks four observed patches around every geometrically
+plausible band/spoke match. The expected dark/light/red/green arrangement rejects
+wrong inward/outward assignments before Hungarian matching. Unmatched corners
+are allowed. RANSAC selects a distributed consensus; explicit soft-L1 least
+squares fits its image coordinates to fixed metric board coordinates. The coarse
+ellipse initializer uses this fit. The final default calibration still retains
+the dense template homography and uses these corners for validation.
+
+Run `python corner_evidence.py` for a separate comparison of the dense and corner
+homographies on actual input pixels. Correct colour patterns pass 80/80 controlled
+synthetic assignments; swapping every inner/outer band association passes 0/80.
+With exact synthetic K/D supplied, three fixed camera views have withheld-probe
+median errors of 0.324, 0.504 and 0.478 pixels after corner fitting (maximum errors
+1.660, 0.972 and 1.397 pixels). This is not a new scoring or Monte Carlo result.
+
+The original photo yields 39 consensus corners with the historical 8 mm profile,
+median fitting residual 1.00 pixels. A nominal strip profile
+`--radii 97.4 107.4 160 170` yields 46 corners and a 1.29 pixel median. Neither is
+a measured physical profile or independent real-photo accuracy result. The
+post-fit detector now measures paired HSV annulus boundaries with free circle
+centres/radii, replacing independent Hough radius queries. Visible colour edges
+can differ from wire apexes, and the photo still exposes model/rectification
+disagreement. Earlier Hough figures and Monte Carlo reports are historical.
+
+`corner_evidence/real_comparison.jpg`, `synthetic_comparison.jpg`, and `report.json`
+retain the observed points, rejected associations, fitted mappings, and residuals.
+Seventeen unit/integration checks cover topology swaps, withheld-plane-point
+accuracy, both measured band edges, and the existing pose/tracking paths.
+The updated default calibration also passes all 60 views in a 20-setup randomized
+regression (seed 20261110, first 20 setups of the existing sweep), with worst
+landmark error 0.942 pixels. This tests the default dense calibration plus the
+new corner validation, not the separate corner-corrected homography. Full report:
+`c920_benchmark/calibration_sweep_colour_corners.json`.
+
 ## Important practical limits
 
 The latest measured-setup fixed-target run produced 4 correct estimates and

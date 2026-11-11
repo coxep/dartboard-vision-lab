@@ -55,10 +55,45 @@ class PipelineTests(unittest.TestCase):
         image=cv.imread(str(Path(__file__).parent/'real_photo_validation/photo_1_source.png'))
         self.assertIsNotNone(image)
         H,report=automatic_homography(image,self.board)
-        self.assertGreaterEqual(report['inliers'],40)
+        # Colour filtering deliberately removes geometrically close impostors;
+        # retain distributed support rather than requiring the old raw count.
+        self.assertGreaterEqual(report['inliers'],32)
+        self.assertGreater(report['colour_validation']['rejected_pairs'],0)
         self.assertGreater(report['binary_template_support'],.8)
         binary=binarize(cv.cvtColor(warp(image,H,self.board),cv.COLOR_BGR2GRAY))
         self.assertGreater(wedge_accuracy(binary,self.board)['correct_fraction'],.99)
+
+    def test_colour_topology_rejects_swapped_band_boundaries(self):
+        from corner_geometry import colour_corner_scores
+        b=self.board;ids=np.arange(80);corners=b.landmarks()
+        score,weak=colour_corner_scores(self.texture,np.eye(3),b,corners,ids,ids)
+        self.assertTrue(((score>=.72)&(weak>=.44)).all())
+        swapped=ids.copy()
+        swapped[:20]+=20;swapped[20:40]-=20
+        swapped[40:60]+=20;swapped[60:]-=20
+        score,weak=colour_corner_scores(self.texture,np.eye(3),b,corners,ids,swapped)
+        self.assertFalse(((score>=.72)&(weak>=.44)).any())
+
+    def test_corner_fit_generalizes_to_withheld_plane_points(self):
+        from corner_geometry import fit_corner_homography
+        b=self.board;rng=np.random.default_rng(42)
+        truth=np.array([[1.08,.13,-25.],[-.08,.94,30.],[.00008,-.0001,1.]])
+        target=b.landmarks();source=project(target,np.linalg.inv(truth))
+        source+=rng.normal(0,.15,source.shape)
+        H,report=fit_corner_homography(source,target,np.eye(3),b)
+        probes=b.center+rng.uniform(-180,180,(100,2))
+        error=np.linalg.norm(project(project(probes,np.linalg.inv(truth)),H)-probes,axis=1)
+        self.assertLess(float(error.max()),.15)
+        self.assertLess(report['rmse_px'],.4)
+
+    def test_circle_detector_measures_both_edges_of_each_band(self):
+        from edge_calibration import detect_rectified_circles
+        results,_=detect_rectified_circles(self.texture,self.board)
+        self.assertEqual(len(results),6)
+        for r in results:
+            self.assertTrue(r['found'])
+            self.assertLess(abs(r['radius_offset_px']),2.)
+            self.assertLess(r['center_offset_px'],1.)
 
     def test_forward_distortion_matches_opencv(self):
         from edge_calibration import distort_pixels

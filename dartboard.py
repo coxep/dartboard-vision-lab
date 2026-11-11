@@ -543,6 +543,7 @@ def harris_refine(frame, seed, board, gate=6.0):
     goodFeaturesToTrack(useHarrisDetector=True) uses the Harris response and
     non-maximum suppression, NOT the default Shi-Tomasi detector.
     """
+    from corner_geometry import colour_corner_scores, fit_corner_homography
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     roi = cv.warpPerspective(board.mask(1.04), np.linalg.inv(seed),
                              (frame.shape[1], frame.shape[0]), flags=cv.INTER_NEAREST)
@@ -567,13 +568,26 @@ def harris_refine(frame, seed, board, gate=6.0):
     # Gated global one-to-one association, with explicit unmatched model slots.
     # This avoids the order-dependent correspondences of greedy nearest matching.
     limit = gate * board.size / 900
-    costs = np.where(distance.T < limit, distance.T/limit, 1e6)
+    ci, ti = np.where(distance < limit)
+    if not len(ci):
+        return seed, dict(refined=False, reason="No corners within geometric gate")
+    agreement, weakest = colour_corner_scores(frame, seed, board, corners, ci, ti)
+    valid_colour = (agreement >= .72) & (weakest >= .44)
+    costs = np.full((len(target), len(corners)), 1e6)
+    costs[ti[valid_colour], ci[valid_colour]] = (
+        distance[ci[valid_colour], ti[valid_colour]]/limit + 2*(1-agreement[valid_colour]))
     costs = np.c_[costs, np.full((len(target), len(target)), 100.)]
     model_ids, detections = linear_sum_assignment(costs)
     pairs = [(int(c), int(t)) for t,c in zip(model_ids,detections)
-             if c < len(corners) and distance[c,t] < limit]
+             if c < len(corners) and costs[t,c] < 100]
+    colour_report = dict(tested_pairs=len(ci), accepted_pairs=int(valid_colour.sum()),
+                         rejected_pairs=int((~valid_colour).sum()),
+                         mean_agreement_threshold=.72, weakest_region_threshold=.44,
+                         note="Four observed region patches; pose prior resolves repeated sector colours")
+    diagnostics = dict(colour_validation=colour_report,
+                       rejected_colour_source_px=corners[np.setdiff1d(ci,ci[valid_colour])].tolist())
     if len(pairs) < 12:
-        return seed, dict(refined=False, reason=f"Only {len(pairs)} matched corners")
+        return seed, dict(refined=False, reason=f"Only {len(pairs)} colour-valid matched corners", **diagnostics)
     c, t = np.array(pairs).T
     H, inliers = cv.findHomography(corners[c], target[t], cv.RANSAC,
                                   3 * board.size / 900)
@@ -581,6 +595,7 @@ def harris_refine(frame, seed, board, gate=6.0):
         return seed, dict(refined=False, reason="Harris homography failed")
     good = inliers.ravel().astype(bool)
     ids = t[good]
+    H, fit_info = fit_corner_homography(corners[c[good]], target[ids], H, board)
     # Require support spread around the board and across at least three rings.
     enough = (good.sum() >= 12 and len(set(ids % 20)) >= 8
               and len(set(ids // 20)) >= 3 and len(set((ids % 20) // 5)) == 4)
@@ -591,6 +606,7 @@ def harris_refine(frame, seed, board, gate=6.0):
     error = np.linalg.norm(project(corners[c[good]], H) - target[ids], axis=1)
     return H, dict(refined=True, inliers=int(good.sum()), corner_candidates=counts,
                    corner_inputs=list(feature_images),
+                   **diagnostics, corner_least_squares=fit_info,
                    fit_median_px=float(np.median(error)),
                    matched_source_px=corners[c[good]].tolist(), matched_target_px=target[ids].tolist())
 
