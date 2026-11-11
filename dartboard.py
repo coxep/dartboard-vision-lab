@@ -23,6 +23,7 @@ NUMBERS = np.array([20, 1, 18, 4, 13, 6, 10, 15, 2, 17,
                     3, 19, 7, 16, 8, 11, 14, 9, 12, 5])
 # Nominal radii in mm; measure your board if wire/colour boundaries differ.
 DEFAULT_RADII = (99.0, 107.0, 162.0, 170.0)
+BOARD_PROFILES = {'legacy8': DEFAULT_RADII, 'strip10': (97.4,107.4,160.,170.)}
 ANCHOR_SPOKES = [0, 5, 10, 15]
 ANCHOR_LABELS = ["5 / 20 (upper left)", "13 / 6 (upper right)",
                  "17 / 3 (lower right)", "8 / 11 (lower left)"]
@@ -730,6 +731,7 @@ def calibrate(args, inputs):
             with np.load(args.intrinsics[i], allow_pickle=False) as z:
                 data = {k: z[k].tolist() for k in ("K", "D", "image_size")}
         frame = Lens(raw.shape, data).apply(raw)
+        K = np.asarray(data['K'],np.float64) if data else None
         if not args.manual:
             seed = None
             if positions is not None:
@@ -746,19 +748,34 @@ def calibrate(args, inputs):
                 Path(args.output).mkdir(parents=True,exist_ok=True)
                 cv.imwrite(str(Path(args.output)/f"camera_{i}_postfit_circles.png"),circle_overlay)
             else:
-                H, report = automatic_homography(frame, board, seed, K if positions is not None else None)
-            print(f"Camera {i}: automatic calibration; {report['inliers']} Harris inliers; template support {report['binary_template_support']:.3f}")
+                report = None
+            from board_pattern import PatternDetector
+            detector=PatternDetector(board)
+            initialization=report
+            if args.estimate_radial_distortion:
+                H,report=detector.detect(frame,H,search=6,iterations=2,colour=True,K=K)
+            elif seed is not None:
+                H,report=detector.acquire(frame,seed,K)
+            else:
+                # Legacy colour/ellipse acquisition supplies only the initial
+                # orientation/scale belief; the accepted fit is fresh geometry.
+                initial_H,initialization=automatic_homography(frame,board)
+                H,report=detector.detect(frame,initial_H,search=9,iterations=2,colour=True,K=K)
+            if H is None:
+                raise ValueError(f"Camera {i}: board pattern rejected: {report['reason']}")
+            report['initialization']=initialization
+            print(f"Camera {i}: grayscale board pattern; {report['inliers']} junctions; median residual {report['median_residual_px']:.3f}px")
             Path(args.output).mkdir(parents=True, exist_ok=True)
             cv.imwrite(str(Path(args.output) / f"camera_{i}_calibration.png"), board.grid(warp(frame, H, board)))
         else:
             H, report = manual_calibration(frame, board, i)
-        # Immutable appearance reference for automatic recovery after camera movement.
+        # Diagnostic reference retained for old configs; default tracking does not use its texture.
         ref = Path(args.calibration).stem + f"_camera_{i}_reference.png"
         if not cv.imwrite(str(folder / ref), frame):
             raise IOError("Could not save calibration reference")
         entries.append(dict(H=H.tolist(), shape=list(raw.shape[:2]), lens=data,
-                            reference=ref, harris=report,
-                            pose_K=K.tolist() if (positions is not None or args.estimate_radial_distortion) and not args.manual else None))
+                            reference=ref, pattern=report, harris=report if args.manual else None,
+                            pose_K=K.tolist() if K is not None else None))
     config = dict(version=1, size=board.size, radii=board.radii, cameras=entries)
     Path(args.calibration).write_text(json.dumps(config, indent=2) + "\n")
     print(f"Saved {args.calibration}. Camera order must remain the same when running.")
@@ -789,8 +806,8 @@ def manual_calibration(frame, board, i):
                 return H, report
 
 
-class Tracker:
-    """Track fixed board features; known K enables seeded physical pose updates."""
+class ReferenceTracker:
+    """Historical appearance tracker, retained only for explicit comparisons."""
     def __init__(self, reference, H, board, K=None):
         self.board, self.H = board, np.asarray(H, np.float64)
         self.reference_H = self.H.copy()
@@ -930,6 +947,9 @@ class Tracker:
         return bool(moved)
 
 
+# Default tracking now re-detects known board geometry in every frame.
+from board_pattern import GeometryTracker as Tracker
+
 def gray_image(image):
     return cv.GaussianBlur(cv.cvtColor(image, cv.COLOR_BGR2GRAY), (3, 3), 0)
 
@@ -984,12 +1004,10 @@ def run(args, inputs):
     lenses, trackers = [], []
     for entry in entries:
         lenses.append(Lens(tuple(entry["shape"]) + (3,), entry["lens"]))
-        ref = cv.imread(str(config_path.parent / entry["reference"]))
-        if ref is None:
-            raise ValueError("Missing calibration reference image")
-        trackers.append(Tracker(ref, entry["H"], board, entry.get("pose_K")))
+        trackers.append(Tracker(None, entry["H"], board, entry.get("pose_K")))
     board_mask = board.mask(1.08)
     background, previous, stable_since = None, None, None
+    background_H = None
     last_check, last_status = -math.inf, ""
     last_event = "Ready: throw ONE dart, then wait for the estimate"
     grid_enabled, reset, paused = True, False, False
@@ -1001,9 +1019,14 @@ def run(args, inputs):
         was_valid = all(t.valid for t in trackers)
         moved = any([t.track(f) for t, f in zip(trackers, frames)])
         if now - last_check >= args.rectify_interval:
-            moved = any([t.update(f) for t, f in zip(trackers, frames)]) or moved
+            moved = any([t.update(f) if not t.valid else False for t, f in zip(trackers, frames)]) or moved
             last_check = time.monotonic()
         valid = all(t.valid for t in trackers)
+        if valid and background_H is not None:
+            # Compare to the baseline pose, so slow motion cannot accumulate
+            # underneath the per-frame movement threshold.
+            moved = moved or any(float(np.linalg.norm(project(board.anchors(),t.H@np.linalg.inv(old))-board.anchors(),axis=1).max())
+                                >.75*board.size/900 for t,old in zip(trackers,background_H))
         images = [warp(f, t.H, board) for f, t in zip(frames, trackers)]
         masks = [warp(np.full(f.shape[:2], 255, np.uint8), t.H, board)
                  for f, t in zip(frames, trackers)]
@@ -1016,6 +1039,7 @@ def run(args, inputs):
         # Any recovered/moved camera invalidates temporal differences. Rebase together.
         if background is None or moved or reset or (valid and not was_valid):
             background = [g.copy() for g in gray]
+            background_H = [t.H.copy() for t in trackers]
             previous = gray
             stable_since, reset = None, False
             if moved:
@@ -1035,10 +1059,9 @@ def run(args, inputs):
             stable_since = time.monotonic()
         changed = sum(np.count_nonzero(d) >= 30 * (board.size / 900) ** 2 for d in deltas) >= 2
         if valid and not paused and changed and stable_since is not None and time.monotonic() - stable_since >= args.settle_seconds:
-            # Check CURRENT alignment again immediately before considering a score.
-            moved_at_event = any([t.update(f) for t, f in zip(trackers, frames)])
-            last_check = time.monotonic()
-            if moved_at_event or not all(t.valid for t in trackers):
+            # These exact frame pixels just passed fresh geometric detection;
+            # repeating the detector on the same arrays adds no new evidence.
+            if moved or not all(t.valid for t in trackers):
                 background, stable_since = None, None
                 last_event = "Alignment changed: event skipped; throw next dart after TRACKING"
                 print(last_event)
@@ -1070,6 +1093,7 @@ def run(args, inputs):
                 diagnostic = diagnostic_image(images[i],d,detection_info['candidates'][i],line,p)
                 cv.imwrite(str(event_dir / f"camera_{i}_shaft.png"), diagnostic)
             background = [g.copy() for g in gray]
+            background_H = [t.H.copy() for t in trackers]
             stable_since = None
         if not args.headless:
             tiles = []
@@ -1100,9 +1124,62 @@ def run(args, inputs):
                 save_views(Path(args.output) / "snapshot", images, blend, board)
 
 
+def track_board(args, inputs):
+    """Calibration-only stream: fresh junctions, no dart detection or scoring."""
+    from board_pattern import GeometryTracker
+    config_path=Path(args.calibration).resolve()
+    if not config_path.exists():
+        if not args.geometry_prior:
+            raise ValueError('Provide a saved calibration or a nominal --geometry-prior for orientation/scale')
+        calibrate(args,inputs)
+    config=json.loads(config_path.read_text())
+    if config.get('version')!=1 or len(config['cameras'])!=len(inputs.sources):
+        raise ValueError('Input count/order must match version-1 calibration')
+    board=Board(config['size'],tuple(config['radii']))
+    lenses=[];trackers=[]
+    for entry in config['cameras']:
+        lenses.append(Lens(tuple(entry['shape'])+(3,),entry['lens']))
+        trackers.append(GeometryTracker(None,entry['H'],board,entry.get('pose_K')))
+    folder=Path(args.output);folder.mkdir(parents=True,exist_ok=True)
+    log_path=Path(args.log);log_path.parent.mkdir(parents=True,exist_ok=True)
+    last_recovery=-math.inf;frame_number=0
+    while True:
+        frames=[lens.apply(raw) for lens,raw in zip(lenses,inputs.read())]
+        now=time.monotonic();tiles=[];rows=[]
+        for i,(frame,tracker) in enumerate(zip(frames,trackers)):
+            if list(frame.shape[:2])!=config['cameras'][i]['shape']:
+                raise ValueError('Camera resolution changed; reinitialize lens calibration')
+            tracker.track(frame)
+            if not tracker.valid and now-last_recovery>=args.rectify_interval:
+                tracker.update(frame)
+            report={k:v for k,v in tracker.report.items() if k not in
+                    ('source_px','target_px','observed_plane_px','correlation','inlier_mask','model_ids')}
+            rows.append(dict(camera=i,valid=tracker.valid,H=tracker.H.tolist() if tracker.valid else None,report=report))
+            rect=warp(frame,tracker.H,board)
+            from board_pattern import draw_pattern
+            overlay=draw_pattern(rect,board,tracker.report,tracker.H)
+            text(overlay,f"Camera {i}: {'DETECTED' if tracker.valid else 'LOST'}",(12,28),
+                 color=(80,255,100) if tracker.valid else (40,40,255))
+            text(overlay,tracker.reason[:85],(12,52),scale=.45)
+            tiles.append(cv.resize(overlay,(480,480)))
+            if args.once:
+                cv.imwrite(str(folder/f'camera_{i}_pattern.jpg'),overlay)
+        if now-last_recovery>=args.rectify_interval:last_recovery=now
+        event=dict(frame=frame_number,timestamp=time.time(),cameras=rows)
+        with log_path.open('a') as handle:handle.write(json.dumps(event)+'\n')
+        frame_number+=1
+        if args.once:
+            (folder/'pattern_report.json').write_text(json.dumps(event,indent=2)+'\n')
+            print(f"Saved board-pattern detections; {sum(t.valid for t in trackers)}/{len(trackers)} views valid")
+            return
+        if not args.headless:
+            cv.imshow('Dartboard geometry detector',np.hstack(tiles))
+            if cv.waitKey(1)&0xff in (27,ord('q')):return
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("command", choices=["calibrate", "run"])
+    parser.add_argument("command", choices=["calibrate", "track-board", "run"])
     source = parser.add_mutually_exclusive_group()
     source.add_argument("--sources", nargs="+", default=["0", "1", "2"], help="Camera indices, stream URLs, or video paths, IN CALIBRATION ORDER")
     source.add_argument("--images", nargs="+", help="Saved images; useful for offline calibration or run --once")
@@ -1110,13 +1187,15 @@ def main():
     parser.add_argument("--width", type=int)
     parser.add_argument("--height", type=int)
     parser.add_argument("--size", type=int, default=900, help="Calibration: canonical output size")
-    parser.add_argument("--radii", type=float, nargs=4, default=DEFAULT_RADII,
+    parser.add_argument('--board-profile',choices=BOARD_PROFILES,default='legacy8',
+                        help='Nominal metric profile; strip10 for a strip/blade spider; legacy8 reproduces historical experiments')
+    parser.add_argument("--radii", type=float, nargs=4, default=None,
                         metavar=("TREBLE_IN", "TREBLE_OUT", "DOUBLE_IN", "DOUBLE_OUT"))
     parser.add_argument("--intrinsics", nargs="+", help="Calibration: one NPZ per camera, containing K, D, image_size")
-    parser.add_argument("--estimate-radial-distortion", action="store_true", help="Experimental calibration: jointly fit H and k1 to raw edges; hold K and other distortion terms fixed; save post-fit Hough circles")
+    parser.add_argument("--estimate-radial-distortion", action="store_true", help="Experimental calibration: jointly fit H and k1 to raw edges; hold K and other distortion terms fixed; save paired-boundary circle diagnostics")
     parser.add_argument("--manual", action="store_true", help="Optional four-click calibration fallback; default is automatic upright-board detection")
     parser.add_argument("--geometry-prior", help="JSON with nominal camera_positions_mm or positions_mm, in source order")
-    parser.add_argument("--rectify-interval", type=float, default=.5, help="Seconds between automatic registration checks")
+    parser.add_argument("--rectify-interval", type=float, default=.5, help="Seconds between broad pattern reacquisition checks; local geometric detection runs each frame")
     parser.add_argument("--settle-seconds", type=float, default=.8)
     parser.add_argument("--diff-threshold", type=int, default=28)
     parser.add_argument("--boundary-mm", type=float, default=2., help="Flag scores near a wire for review")
@@ -1125,19 +1204,22 @@ def main():
     parser.add_argument("--once", action="store_true", help="Run: save one aligned set and exit without a window or scoring")
     parser.add_argument("--headless", action="store_true", help="Run without dashboard; Ctrl+C to stop")
     args = parser.parse_args()
+    if args.radii is None:args.radii=BOARD_PROFILES[args.board_profile]
     if (args.size < 400 or not 0 < args.rectify_interval or not 0 < args.settle_seconds
             or not 0 < args.diff_threshold < 256 or args.boundary_mm < 0
             or not 15.9 < args.radii[0] < args.radii[1] < args.radii[2] < args.radii[3]):
         parser.error("Invalid size, timing, threshold, uncertainty, or increasing ring radii")
     if args.manual and args.estimate_radial_distortion:
         parser.error("Choose automatic radial fitting or manual calibration")
-    if args.command == "run" and args.images and not args.once:
+    if args.command in ("run", "track-board") and args.images and not args.once:
         parser.error("Use --once with still images; live scoring requires streams/videos")
     inputs = None
     try:
         inputs = Input(args.sources, args.images, args.width, args.height)
         if args.command == "calibrate":
             calibrate(args, inputs)
+        elif args.command == "track-board":
+            track_board(args, inputs)
         else:
             run(args, inputs)
     except KeyboardInterrupt:

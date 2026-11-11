@@ -1,0 +1,5402 @@
+{
+  "seed": 20261115,
+  "summary": {
+    "views": 300,
+    "found": 297,
+    "rejected": 3,
+    "median_detection_ms": 1595.3241759561934,
+    "p95_detection_ms": 4243.782482622191,
+    "worst_detection_ms": 10083.063455997035,
+    "median_view_probe_error_px": 0.26410754698804767,
+    "worst_probe_error_px": 0.7865974240678288,
+    "accepted_above_2px": 0,
+    "median_rotation_error_deg": 0.03238318259801673,
+    "worst_rotation_error_deg": 0.08725474268923143,
+    "median_camera_center_error_mm": 0.4528144505558961,
+    "worst_camera_center_error_mm": 0.7884122409695001,
+    "same_points_free_H_median_view_probe_error_px": 0.40309140274964683,
+    "same_points_free_H_worst_probe_error_px": 0.765784702762938
+  },
+  "views": [
+    {
+      "trial": 0,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4638.234257989097,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 484510610,
+      "probe_median_px": 0.27308282121845745,
+      "probe_max_px": 0.4014454007810869,
+      "rotation_error_deg": 0.022950539354924842,
+      "camera_center_error_mm": 0.4808129074547068,
+      "same_points_free_H": {
+        "probe_median_px": 0.3774901325185425,
+        "probe_max_px": 0.4672803273836209
+      }
+    },
+    {
+      "trial": 0,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 7024.844351981301,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 52,
+      "seed": 484510610,
+      "probe_median_px": 0.25318451041566675,
+      "probe_max_px": 0.4159053477100698,
+      "rotation_error_deg": 0.022309641137213267,
+      "camera_center_error_mm": 0.3192585273096232,
+      "same_points_free_H": {
+        "probe_median_px": 0.36584466937469484,
+        "probe_max_px": 0.4387595933290806
+      }
+    },
+    {
+      "trial": 0,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 318.4731540386565,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 484510610,
+      "probe_median_px": 0.2405199344027569,
+      "probe_max_px": 0.3643624545465246,
+      "rotation_error_deg": 0.014032267127500943,
+      "camera_center_error_mm": 0.30472176698047054,
+      "same_points_free_H": {
+        "probe_median_px": 0.4086549065609933,
+        "probe_max_px": 0.5228178408468542
+      }
+    },
+    {
+      "trial": 1,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3265.558179002255,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 538897621,
+      "probe_median_px": 0.27570241797427825,
+      "probe_max_px": 0.5202287275089008,
+      "rotation_error_deg": 0.039694351497472254,
+      "camera_center_error_mm": 0.44800773418988465,
+      "same_points_free_H": {
+        "probe_median_px": 0.4407564877289382,
+        "probe_max_px": 0.5872357766047802
+      }
+    },
+    {
+      "trial": 1,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 7594.543321989477,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 538897621,
+      "probe_median_px": 0.2701721688765646,
+      "probe_max_px": 0.5048085061871431,
+      "rotation_error_deg": 0.032094991330972,
+      "camera_center_error_mm": 0.47292257926025233,
+      "same_points_free_H": {
+        "probe_median_px": 0.40315539697010255,
+        "probe_max_px": 0.5523437074454897
+      }
+    },
+    {
+      "trial": 1,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3137.0841239695437,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 538897621,
+      "probe_median_px": 0.23018754789597853,
+      "probe_max_px": 0.32634189257692864,
+      "rotation_error_deg": 0.02237343269384811,
+      "camera_center_error_mm": 0.35640324602463613,
+      "same_points_free_H": {
+        "probe_median_px": 0.3891908721251698,
+        "probe_max_px": 0.45519082933093075
+      }
+    },
+    {
+      "trial": 2,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4324.673146998975,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 149733057,
+      "probe_median_px": 0.30100558363794344,
+      "probe_max_px": 0.5429144091909589,
+      "rotation_error_deg": 0.030580039340965523,
+      "camera_center_error_mm": 0.4632230665975319,
+      "same_points_free_H": {
+        "probe_median_px": 0.4206661039430444,
+        "probe_max_px": 0.5390764850114355
+      }
+    },
+    {
+      "trial": 2,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 8306.980466004461,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 149733057,
+      "probe_median_px": 0.2726512881019751,
+      "probe_max_px": 0.49193291368325726,
+      "rotation_error_deg": 0.0324329675473127,
+      "camera_center_error_mm": 0.4314214257088803,
+      "same_points_free_H": {
+        "probe_median_px": 0.3883263164367227,
+        "probe_max_px": 0.5411760550823423
+      }
+    },
+    {
+      "trial": 2,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3370.1216480112635,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 149733057,
+      "probe_median_px": 0.23104672484647623,
+      "probe_max_px": 0.3333905519784741,
+      "rotation_error_deg": 0.018086287716959592,
+      "camera_center_error_mm": 0.3283201808351722,
+      "same_points_free_H": {
+        "probe_median_px": 0.37818978701187433,
+        "probe_max_px": 0.4468783312116264
+      }
+    },
+    {
+      "trial": 3,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3900.6172110093758,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 345186209,
+      "probe_median_px": 0.2886816581953176,
+      "probe_max_px": 0.5791596515696654,
+      "rotation_error_deg": 0.057521068976172506,
+      "camera_center_error_mm": 0.4842895884215083,
+      "same_points_free_H": {
+        "probe_median_px": 0.4023173324642888,
+        "probe_max_px": 0.5445640105595995
+      }
+    },
+    {
+      "trial": 3,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 10083.063455997035,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 345186209,
+      "probe_median_px": 0.2729568390871646,
+      "probe_max_px": 0.4936210688002237,
+      "rotation_error_deg": 0.03953153071176112,
+      "camera_center_error_mm": 0.4528144505558961,
+      "same_points_free_H": {
+        "probe_median_px": 0.3884724820763364,
+        "probe_max_px": 0.49277214668520813
+      }
+    },
+    {
+      "trial": 3,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2570.4588490189053,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 345186209,
+      "probe_median_px": 0.24250655675211769,
+      "probe_max_px": 0.3696936318972004,
+      "rotation_error_deg": 0.014152675396786763,
+      "camera_center_error_mm": 0.3162208309822118,
+      "same_points_free_H": {
+        "probe_median_px": 0.4106493410833077,
+        "probe_max_px": 0.531283384974301
+      }
+    },
+    {
+      "trial": 4,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 6753.651967970654,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 891802225,
+      "probe_median_px": 0.28523610435833086,
+      "probe_max_px": 0.5651468649719397,
+      "rotation_error_deg": 0.05048824141085728,
+      "camera_center_error_mm": 0.46105332394094606,
+      "same_points_free_H": {
+        "probe_median_px": 0.41420901826927775,
+        "probe_max_px": 0.46374144034517456
+      }
+    },
+    {
+      "trial": 4,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3531.0815750272013,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 891802225,
+      "probe_median_px": 0.2687860704127517,
+      "probe_max_px": 0.48265341512943244,
+      "rotation_error_deg": 0.032276797709550296,
+      "camera_center_error_mm": 0.44364552086115017,
+      "same_points_free_H": {
+        "probe_median_px": 0.40717984034420823,
+        "probe_max_px": 0.5622186065900674
+      }
+    },
+    {
+      "trial": 4,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3367.5922870170325,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 891802225,
+      "probe_median_px": 0.23271006983762396,
+      "probe_max_px": 0.3781589857573301,
+      "rotation_error_deg": 0.01619447444971458,
+      "camera_center_error_mm": 0.3447757936630166,
+      "same_points_free_H": {
+        "probe_median_px": 0.39699615251942644,
+        "probe_max_px": 0.5323920505926948
+      }
+    },
+    {
+      "trial": 5,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2502.52746604383,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 630164053,
+      "probe_median_px": 0.28464770297801545,
+      "probe_max_px": 0.5155813162252754,
+      "rotation_error_deg": 0.03174926304695514,
+      "camera_center_error_mm": 0.4271525286793027,
+      "same_points_free_H": {
+        "probe_median_px": 0.3946906995681677,
+        "probe_max_px": 0.4628580636369806
+      }
+    },
+    {
+      "trial": 5,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2520.127333002165,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 630164053,
+      "probe_median_px": 0.26385450377539527,
+      "probe_max_px": 0.4876437592146705,
+      "rotation_error_deg": 0.03549846690293754,
+      "camera_center_error_mm": 0.4470024963502498,
+      "same_points_free_H": {
+        "probe_median_px": 0.3969132583027391,
+        "probe_max_px": 0.4761021411174708
+      }
+    },
+    {
+      "trial": 5,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4664.876826980617,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 630164053,
+      "probe_median_px": 0.2371723679503222,
+      "probe_max_px": 0.3675414529779684,
+      "rotation_error_deg": 0.014718322517025187,
+      "camera_center_error_mm": 0.3162092881966345,
+      "same_points_free_H": {
+        "probe_median_px": 0.4043608370555035,
+        "probe_max_px": 0.5213719821861216
+      }
+    },
+    {
+      "trial": 6,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3402.1452669985592,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 875810262,
+      "probe_median_px": 0.2962919397524807,
+      "probe_max_px": 0.5169705382382358,
+      "rotation_error_deg": 0.029264777559487976,
+      "camera_center_error_mm": 0.5470895865343776,
+      "same_points_free_H": {
+        "probe_median_px": 0.40845934635790854,
+        "probe_max_px": 0.5381935027799448
+      }
+    },
+    {
+      "trial": 6,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3740.11244403664,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 875810262,
+      "probe_median_px": 0.2427975165260301,
+      "probe_max_px": 0.6191248458970162,
+      "rotation_error_deg": 0.07690518542912665,
+      "camera_center_error_mm": 0.6892540149324723,
+      "same_points_free_H": {
+        "probe_median_px": 0.33090774883487223,
+        "probe_max_px": 0.6445965600636488
+      }
+    },
+    {
+      "trial": 6,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2973.2474770280533,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 875810262,
+      "probe_median_px": 0.2388506551173712,
+      "probe_max_px": 0.4015144818150435,
+      "rotation_error_deg": 0.02204839985119926,
+      "camera_center_error_mm": 0.38199692536733026,
+      "same_points_free_H": {
+        "probe_median_px": 0.39989510261945344,
+        "probe_max_px": 0.5518650006598987
+      }
+    },
+    {
+      "trial": 7,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 160.4489220189862,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 322049400,
+      "probe_median_px": 0.29903998697089906,
+      "probe_max_px": 0.4918248405484748,
+      "rotation_error_deg": 0.03113853797134186,
+      "camera_center_error_mm": 0.589771484029952,
+      "same_points_free_H": {
+        "probe_median_px": 0.4141689170459641,
+        "probe_max_px": 0.5353655221596049
+      }
+    },
+    {
+      "trial": 7,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1821.0104099707678,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 322049400,
+      "probe_median_px": 0.2548421171973733,
+      "probe_max_px": 0.5523706902741352,
+      "rotation_error_deg": 0.041552814096973326,
+      "camera_center_error_mm": 0.5292979728041501,
+      "same_points_free_H": {
+        "probe_median_px": 0.4143793224223835,
+        "probe_max_px": 0.5456309586434163
+      }
+    },
+    {
+      "trial": 7,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4796.733101014979,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 322049400,
+      "probe_median_px": 0.27643478634917207,
+      "probe_max_px": 0.33823452342524757,
+      "rotation_error_deg": 0.023633967412140234,
+      "camera_center_error_mm": 0.4007622321879718,
+      "same_points_free_H": {
+        "probe_median_px": 0.4001636250615824,
+        "probe_max_px": 0.49344066634000694
+      }
+    },
+    {
+      "trial": 8,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 155.4120570071973,
+      "acquisition": "wide junction search",
+      "inliers": 49,
+      "seed": 334669275,
+      "probe_median_px": 0.2763549273197194,
+      "probe_max_px": 0.7143231353736653,
+      "rotation_error_deg": 0.05891414982685206,
+      "camera_center_error_mm": 0.44851867927429595,
+      "same_points_free_H": {
+        "probe_median_px": 0.4160178231035756,
+        "probe_max_px": 0.6090378870661192
+      }
+    },
+    {
+      "trial": 8,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2989.268584002275,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 334669275,
+      "probe_median_px": 0.2559093653760256,
+      "probe_max_px": 0.5031552920891611,
+      "rotation_error_deg": 0.036237252186773095,
+      "camera_center_error_mm": 0.5053865370048322,
+      "same_points_free_H": {
+        "probe_median_px": 0.38917005448277286,
+        "probe_max_px": 0.5554305071298565
+      }
+    },
+    {
+      "trial": 8,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2325.635886983946,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 334669275,
+      "probe_median_px": 0.25050808242808714,
+      "probe_max_px": 0.3661580244519193,
+      "rotation_error_deg": 0.018372372411326974,
+      "camera_center_error_mm": 0.3725076315458304,
+      "same_points_free_H": {
+        "probe_median_px": 0.41223874895373575,
+        "probe_max_px": 0.5292610768815702
+      }
+    },
+    {
+      "trial": 9,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2224.8859190149233,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 748893696,
+      "probe_median_px": 0.2910513164712701,
+      "probe_max_px": 0.5279957168809599,
+      "rotation_error_deg": 0.04236595761369565,
+      "camera_center_error_mm": 0.6497714542708325,
+      "same_points_free_H": {
+        "probe_median_px": 0.37977220010439877,
+        "probe_max_px": 0.5312210104925739
+      }
+    },
+    {
+      "trial": 9,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2470.1760039897636,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 748893696,
+      "probe_median_px": 0.27473238019351093,
+      "probe_max_px": 0.510328215101138,
+      "rotation_error_deg": 0.03393586070684466,
+      "camera_center_error_mm": 0.4907468448969465,
+      "same_points_free_H": {
+        "probe_median_px": 0.4292108694507641,
+        "probe_max_px": 0.5454937471752381
+      }
+    },
+    {
+      "trial": 9,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2726.860738999676,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 748893696,
+      "probe_median_px": 0.2913757932796623,
+      "probe_max_px": 0.39243091993736096,
+      "rotation_error_deg": 0.0564094509434468,
+      "camera_center_error_mm": 0.6804497807320088,
+      "same_points_free_H": {
+        "probe_median_px": 0.4014397672430632,
+        "probe_max_px": 0.5204559036469788
+      }
+    },
+    {
+      "trial": 10,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 243.31014999188483,
+      "acquisition": "wide junction search",
+      "inliers": 57,
+      "seed": 128972761,
+      "probe_median_px": 0.24786693821564112,
+      "probe_max_px": 0.4451825375869599,
+      "rotation_error_deg": 0.0368396069740226,
+      "camera_center_error_mm": 0.42895751568583407,
+      "same_points_free_H": {
+        "probe_median_px": 0.4044337182276931,
+        "probe_max_px": 0.5410493170221333
+      }
+    },
+    {
+      "trial": 10,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3286.547571013216,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 128972761,
+      "probe_median_px": 0.25834405626425255,
+      "probe_max_px": 0.5189758046014072,
+      "rotation_error_deg": 0.027326965835997728,
+      "camera_center_error_mm": 0.4863476919947081,
+      "same_points_free_H": {
+        "probe_median_px": 0.3983520186514731,
+        "probe_max_px": 0.506114432717321
+      }
+    },
+    {
+      "trial": 10,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4876.780463033356,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 128972761,
+      "probe_median_px": 0.25697887201950415,
+      "probe_max_px": 0.3501779802542208,
+      "rotation_error_deg": 0.01917085399979035,
+      "camera_center_error_mm": 0.33542399004947365,
+      "same_points_free_H": {
+        "probe_median_px": 0.39984899386591993,
+        "probe_max_px": 0.4716660797319565
+      }
+    },
+    {
+      "trial": 11,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4235.852927027736,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 418166864,
+      "probe_median_px": 0.26081069017025255,
+      "probe_max_px": 0.49934977873829767,
+      "rotation_error_deg": 0.042178537972666866,
+      "camera_center_error_mm": 0.45704736048525496,
+      "same_points_free_H": {
+        "probe_median_px": 0.40359571660486626,
+        "probe_max_px": 0.5109436587559141
+      }
+    },
+    {
+      "trial": 11,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 247.4743400234729,
+      "acquisition": "wide junction search",
+      "inliers": 57,
+      "seed": 418166864,
+      "probe_median_px": 0.24801544653104535,
+      "probe_max_px": 0.4958006386614768,
+      "rotation_error_deg": 0.04390157096195952,
+      "camera_center_error_mm": 0.5052638509484034,
+      "same_points_free_H": {
+        "probe_median_px": 0.36634929994885645,
+        "probe_max_px": 0.6633132312191308
+      }
+    },
+    {
+      "trial": 11,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3733.426632010378,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 418166864,
+      "probe_median_px": 0.24700813733191512,
+      "probe_max_px": 0.32545722105277125,
+      "rotation_error_deg": 0.017181933427866593,
+      "camera_center_error_mm": 0.33030901210544955,
+      "same_points_free_H": {
+        "probe_median_px": 0.3908421571675017,
+        "probe_max_px": 0.44492375270190254
+      }
+    },
+    {
+      "trial": 12,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4275.500705000013,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 379990764,
+      "probe_median_px": 0.27659805236821405,
+      "probe_max_px": 0.5520460274330988,
+      "rotation_error_deg": 0.03022679655400799,
+      "camera_center_error_mm": 0.36438745602844586,
+      "same_points_free_H": {
+        "probe_median_px": 0.4256089370117458,
+        "probe_max_px": 0.5641862112888406
+      }
+    },
+    {
+      "trial": 12,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2822.438773000613,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 379990764,
+      "probe_median_px": 0.2727067143889811,
+      "probe_max_px": 0.4838304203282869,
+      "rotation_error_deg": 0.0406963978665346,
+      "camera_center_error_mm": 0.45830335235294517,
+      "same_points_free_H": {
+        "probe_median_px": 0.4030959705373453,
+        "probe_max_px": 0.4975974489630419
+      }
+    },
+    {
+      "trial": 12,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1876.6867800150067,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 379990764,
+      "probe_median_px": 0.2556021745585314,
+      "probe_max_px": 0.3833643713988109,
+      "rotation_error_deg": 0.01600176291743631,
+      "camera_center_error_mm": 0.3651679563517564,
+      "same_points_free_H": {
+        "probe_median_px": 0.42357493006710306,
+        "probe_max_px": 0.5447517266843579
+      }
+    },
+    {
+      "trial": 13,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2688.7379269464873,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 447173356,
+      "probe_median_px": 0.3595809556577895,
+      "probe_max_px": 0.5645167058248018,
+      "rotation_error_deg": 0.03231034423735082,
+      "camera_center_error_mm": 0.6784598589299998,
+      "same_points_free_H": {
+        "probe_median_px": 0.46149318009238327,
+        "probe_max_px": 0.5463953502553731
+      }
+    },
+    {
+      "trial": 13,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2037.1393309906125,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 447173356,
+      "probe_median_px": 0.26410754698804767,
+      "probe_max_px": 0.5291516695823453,
+      "rotation_error_deg": 0.039147329272200944,
+      "camera_center_error_mm": 0.4991305094347833,
+      "same_points_free_H": {
+        "probe_median_px": 0.4110191042084588,
+        "probe_max_px": 0.55732075795774
+      }
+    },
+    {
+      "trial": 13,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2494.6413800353184,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 447173356,
+      "probe_median_px": 0.2348633247557799,
+      "probe_max_px": 0.39103706397484317,
+      "rotation_error_deg": 0.014379784862343094,
+      "camera_center_error_mm": 0.34136369128211147,
+      "same_points_free_H": {
+        "probe_median_px": 0.4041590740400244,
+        "probe_max_px": 0.5366790420725265
+      }
+    },
+    {
+      "trial": 14,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4107.149102026597,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 727556488,
+      "probe_median_px": 0.26933517904491844,
+      "probe_max_px": 0.6106779044614565,
+      "rotation_error_deg": 0.06043588185043802,
+      "camera_center_error_mm": 0.49751723641943035,
+      "same_points_free_H": {
+        "probe_median_px": 0.3563095006045599,
+        "probe_max_px": 0.595635733859833
+      }
+    },
+    {
+      "trial": 14,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 221.00723901530728,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 727556488,
+      "probe_median_px": 0.2856882417207277,
+      "probe_max_px": 0.49407098803041244,
+      "rotation_error_deg": 0.030135619314051273,
+      "camera_center_error_mm": 0.44293426439196415,
+      "same_points_free_H": {
+        "probe_median_px": 0.4061016493230384,
+        "probe_max_px": 0.5426744903653323
+      }
+    },
+    {
+      "trial": 14,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3511.26815401949,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 727556488,
+      "probe_median_px": 0.23247753071022811,
+      "probe_max_px": 0.3602176725815034,
+      "rotation_error_deg": 0.017067765429190487,
+      "camera_center_error_mm": 0.35042866024594793,
+      "same_points_free_H": {
+        "probe_median_px": 0.3901014913239745,
+        "probe_max_px": 0.5084336961725869
+      }
+    },
+    {
+      "trial": 15,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3533.5169159807265,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 593498643,
+      "probe_median_px": 0.278573911305917,
+      "probe_max_px": 0.5342952749297109,
+      "rotation_error_deg": 0.033949946418417684,
+      "camera_center_error_mm": 0.5122520324429521,
+      "same_points_free_H": {
+        "probe_median_px": 0.4103947496075053,
+        "probe_max_px": 0.5272397930835583
+      }
+    },
+    {
+      "trial": 15,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3358.787350996863,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 593498643,
+      "probe_median_px": 0.22589580504873197,
+      "probe_max_px": 0.518878088705772,
+      "rotation_error_deg": 0.042675774902424836,
+      "camera_center_error_mm": 0.562034233742014,
+      "same_points_free_H": {
+        "probe_median_px": 0.39449799259231255,
+        "probe_max_px": 0.5501683842776927
+      }
+    },
+    {
+      "trial": 15,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3188.1880380096845,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 593498643,
+      "probe_median_px": 0.26814912187458967,
+      "probe_max_px": 0.3569717168793714,
+      "rotation_error_deg": 0.022962485643813136,
+      "camera_center_error_mm": 0.4205894500412295,
+      "same_points_free_H": {
+        "probe_median_px": 0.398047543656213,
+        "probe_max_px": 0.47330966897212756
+      }
+    },
+    {
+      "trial": 16,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4765.318106045015,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 48,
+      "seed": 10506466,
+      "probe_median_px": 0.2626715168406375,
+      "probe_max_px": 0.712580270494708,
+      "rotation_error_deg": 0.06497841903922282,
+      "camera_center_error_mm": 0.5048548221062874,
+      "same_points_free_H": {
+        "probe_median_px": 0.390104485136532,
+        "probe_max_px": 0.5303817665299815
+      }
+    },
+    {
+      "trial": 16,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2197.098071977962,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 10506466,
+      "probe_median_px": 0.23218221216919713,
+      "probe_max_px": 0.5236651745126083,
+      "rotation_error_deg": 0.040684414969240024,
+      "camera_center_error_mm": 0.5508022591661418,
+      "same_points_free_H": {
+        "probe_median_px": 0.39610277108055697,
+        "probe_max_px": 0.5571987116854932
+      }
+    },
+    {
+      "trial": 16,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4878.1980170169845,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 10506466,
+      "probe_median_px": 0.2713121801896845,
+      "probe_max_px": 0.36798074724633884,
+      "rotation_error_deg": 0.018270128852063566,
+      "camera_center_error_mm": 0.35205588710468594,
+      "same_points_free_H": {
+        "probe_median_px": 0.4193350152829829,
+        "probe_max_px": 0.5429526660787137
+      }
+    },
+    {
+      "trial": 17,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 167.10450098617002,
+      "acquisition": "wide junction search",
+      "inliers": 59,
+      "seed": 1039451674,
+      "probe_median_px": 0.2951219698644226,
+      "probe_max_px": 0.4603373782472448,
+      "rotation_error_deg": 0.02433628268137282,
+      "camera_center_error_mm": 0.3915176120258408,
+      "same_points_free_H": {
+        "probe_median_px": 0.40572236418264296,
+        "probe_max_px": 0.4678603555203806
+      }
+    },
+    {
+      "trial": 17,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2529.3023450067267,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 1039451674,
+      "probe_median_px": 0.23671104086136158,
+      "probe_max_px": 0.5225219020624504,
+      "rotation_error_deg": 0.04155648759574031,
+      "camera_center_error_mm": 0.5662680864824055,
+      "same_points_free_H": {
+        "probe_median_px": 0.408825533236687,
+        "probe_max_px": 0.5500508292767649
+      }
+    },
+    {
+      "trial": 17,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2026.4182040118612,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 1039451674,
+      "probe_median_px": 0.23708919936862108,
+      "probe_max_px": 0.38357231933100083,
+      "rotation_error_deg": 0.01244428042270563,
+      "camera_center_error_mm": 0.31233489366698364,
+      "same_points_free_H": {
+        "probe_median_px": 0.4004482957740902,
+        "probe_max_px": 0.5223092310005941
+      }
+    },
+    {
+      "trial": 18,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3363.73130598804,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 520007367,
+      "probe_median_px": 0.2966001198134564,
+      "probe_max_px": 0.4710591076232343,
+      "rotation_error_deg": 0.028975330642850544,
+      "camera_center_error_mm": 0.40889305742611126,
+      "same_points_free_H": {
+        "probe_median_px": 0.410021393332568,
+        "probe_max_px": 0.455213404645949
+      }
+    },
+    {
+      "trial": 18,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3432.9011880327016,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 520007367,
+      "probe_median_px": 0.2663449283697697,
+      "probe_max_px": 0.4776827238932493,
+      "rotation_error_deg": 0.03612687619618393,
+      "camera_center_error_mm": 0.4577825005447079,
+      "same_points_free_H": {
+        "probe_median_px": 0.3399632650871624,
+        "probe_max_px": 0.6360446058013884
+      }
+    },
+    {
+      "trial": 18,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2727.6661960058846,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 520007367,
+      "probe_median_px": 0.2625891181012227,
+      "probe_max_px": 0.37483123446417305,
+      "rotation_error_deg": 0.01715006682026813,
+      "camera_center_error_mm": 0.3462896102202075,
+      "same_points_free_H": {
+        "probe_median_px": 0.4025633001895988,
+        "probe_max_px": 0.536296687766923
+      }
+    },
+    {
+      "trial": 19,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2214.1449789633043,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 341117199,
+      "probe_median_px": 0.2958585242340424,
+      "probe_max_px": 0.5362693628318256,
+      "rotation_error_deg": 0.0338471898562289,
+      "camera_center_error_mm": 0.42125416192707843,
+      "same_points_free_H": {
+        "probe_median_px": 0.4125792082649479,
+        "probe_max_px": 0.49567823578483955
+      }
+    },
+    {
+      "trial": 19,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 184.2046669917181,
+      "acquisition": "wide junction search",
+      "inliers": 59,
+      "seed": 341117199,
+      "probe_median_px": 0.2580088594306752,
+      "probe_max_px": 0.5052266231148383,
+      "rotation_error_deg": 0.03999488871103788,
+      "camera_center_error_mm": 0.4989628685717399,
+      "same_points_free_H": {
+        "probe_median_px": 0.40327149638358983,
+        "probe_max_px": 0.5479826063060612
+      }
+    },
+    {
+      "trial": 19,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2623.213245999068,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 341117199,
+      "probe_median_px": 0.2497184286827097,
+      "probe_max_px": 0.3716733566903209,
+      "rotation_error_deg": 0.016884350384343317,
+      "camera_center_error_mm": 0.33925197215458125,
+      "same_points_free_H": {
+        "probe_median_px": 0.4218740032709323,
+        "probe_max_px": 0.5336407076727325
+      }
+    },
+    {
+      "trial": 20,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 303.2624910119921,
+      "acquisition": "wide junction search",
+      "inliers": 59,
+      "seed": 1049723886,
+      "probe_median_px": 0.26896776177583315,
+      "probe_max_px": 0.45636917565157864,
+      "rotation_error_deg": 0.03004116523553066,
+      "camera_center_error_mm": 0.4325914816398752,
+      "same_points_free_H": {
+        "probe_median_px": 0.3878819113350069,
+        "probe_max_px": 0.45889797587790215
+      }
+    },
+    {
+      "trial": 20,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3297.924248035997,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 47,
+      "seed": 1049723886,
+      "probe_median_px": 0.3175884021550631,
+      "probe_max_px": 0.3496784493668082,
+      "rotation_error_deg": 0.01711223860820446,
+      "camera_center_error_mm": 0.25037364171840804,
+      "same_points_free_H": {
+        "probe_median_px": 0.37080475264830476,
+        "probe_max_px": 0.4773030166162138
+      }
+    },
+    {
+      "trial": 20,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2293.622998986393,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 1049723886,
+      "probe_median_px": 0.24660028298438522,
+      "probe_max_px": 0.389294406088827,
+      "rotation_error_deg": 0.013988844374078279,
+      "camera_center_error_mm": 0.3517617532762805,
+      "same_points_free_H": {
+        "probe_median_px": 0.4193454720764801,
+        "probe_max_px": 0.5424861323711729
+      }
+    },
+    {
+      "trial": 21,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2280.18159000203,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 648245906,
+      "probe_median_px": 0.2896103218497268,
+      "probe_max_px": 0.48998199685227617,
+      "rotation_error_deg": 0.03019456083675635,
+      "camera_center_error_mm": 0.5604432824101055,
+      "same_points_free_H": {
+        "probe_median_px": 0.4030206371592863,
+        "probe_max_px": 0.5177320005808853
+      }
+    },
+    {
+      "trial": 21,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2362.7378820092417,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 648245906,
+      "probe_median_px": 0.24955378969535078,
+      "probe_max_px": 0.38847953306615507,
+      "rotation_error_deg": 0.01864122888527164,
+      "camera_center_error_mm": 0.302459587468691,
+      "same_points_free_H": {
+        "probe_median_px": 0.35573906208312195,
+        "probe_max_px": 0.40950355037191966
+      }
+    },
+    {
+      "trial": 21,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1712.2857649810612,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 648245906,
+      "probe_median_px": 0.256517889565232,
+      "probe_max_px": 0.374655553947828,
+      "rotation_error_deg": 0.016704462510856014,
+      "camera_center_error_mm": 0.3571004631104572,
+      "same_points_free_H": {
+        "probe_median_px": 0.41167230684964373,
+        "probe_max_px": 0.5296852618023035
+      }
+    },
+    {
+      "trial": 22,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 185.8113369671628,
+      "acquisition": "wide junction search",
+      "inliers": 57,
+      "seed": 646046056,
+      "probe_median_px": 0.27226821493179815,
+      "probe_max_px": 0.5713055574808745,
+      "rotation_error_deg": 0.049767116379545576,
+      "camera_center_error_mm": 0.4368765945497486,
+      "same_points_free_H": {
+        "probe_median_px": 0.3951098801380744,
+        "probe_max_px": 0.5225990037647081
+      }
+    },
+    {
+      "trial": 22,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 137.61947600869462,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 646046056,
+      "probe_median_px": 0.2533388602115586,
+      "probe_max_px": 0.5030112032456402,
+      "rotation_error_deg": 0.044716965473552216,
+      "camera_center_error_mm": 0.5225145007578522,
+      "same_points_free_H": {
+        "probe_median_px": 0.4077735868577881,
+        "probe_max_px": 0.4986404049783931
+      }
+    },
+    {
+      "trial": 22,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4642.161349998787,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 646046056,
+      "probe_median_px": 0.24637746981851252,
+      "probe_max_px": 0.4116801090832924,
+      "rotation_error_deg": 0.023998420937512456,
+      "camera_center_error_mm": 0.43784121988611086,
+      "same_points_free_H": {
+        "probe_median_px": 0.4027760332028512,
+        "probe_max_px": 0.5480542739470591
+      }
+    },
+    {
+      "trial": 23,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2225.5290239700116,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 835584878,
+      "probe_median_px": 0.27593436668255944,
+      "probe_max_px": 0.5136123267806147,
+      "rotation_error_deg": 0.03268595639687061,
+      "camera_center_error_mm": 0.46942243014852364,
+      "same_points_free_H": {
+        "probe_median_px": 0.4035568081679139,
+        "probe_max_px": 0.49796893617971777
+      }
+    },
+    {
+      "trial": 23,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2279.3630129890516,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 835584878,
+      "probe_median_px": 0.2695108631372986,
+      "probe_max_px": 0.5001148580187517,
+      "rotation_error_deg": 0.03115761947982664,
+      "camera_center_error_mm": 0.47242020007618085,
+      "same_points_free_H": {
+        "probe_median_px": 0.4060850483267972,
+        "probe_max_px": 0.5444882535827396
+      }
+    },
+    {
+      "trial": 23,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2922.1478709951043,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 835584878,
+      "probe_median_px": 0.2399877266967952,
+      "probe_max_px": 0.3613600915305189,
+      "rotation_error_deg": 0.014057256311626451,
+      "camera_center_error_mm": 0.30720814773064575,
+      "same_points_free_H": {
+        "probe_median_px": 0.4043284185574059,
+        "probe_max_px": 0.515890675846695
+      }
+    },
+    {
+      "trial": 24,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 175.6900799809955,
+      "acquisition": "wide junction search",
+      "inliers": 60,
+      "seed": 925659239,
+      "probe_median_px": 0.2867832639497559,
+      "probe_max_px": 0.5713012040362692,
+      "rotation_error_deg": 0.032213704918588576,
+      "camera_center_error_mm": 0.45810917845180216,
+      "same_points_free_H": {
+        "probe_median_px": 0.4179426040995964,
+        "probe_max_px": 0.5331456928627746
+      }
+    },
+    {
+      "trial": 24,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4816.752066952176,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 925659239,
+      "probe_median_px": 0.23925580369014599,
+      "probe_max_px": 0.4562173015982376,
+      "rotation_error_deg": 0.02512015353432162,
+      "camera_center_error_mm": 0.383821564030208,
+      "same_points_free_H": {
+        "probe_median_px": 0.3888140527767313,
+        "probe_max_px": 0.4363092355945485
+      }
+    },
+    {
+      "trial": 24,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 149.5007640332915,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 925659239,
+      "probe_median_px": 0.2230784423828228,
+      "probe_max_px": 0.3985390048806701,
+      "rotation_error_deg": 0.023796556597675995,
+      "camera_center_error_mm": 0.44958624088673427,
+      "same_points_free_H": {
+        "probe_median_px": 0.4039365917798047,
+        "probe_max_px": 0.5351033265982232
+      }
+    },
+    {
+      "trial": 25,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2101.1261109961197,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 805215725,
+      "probe_median_px": 0.2721147205906898,
+      "probe_max_px": 0.4888282319557849,
+      "rotation_error_deg": 0.025741912504448287,
+      "camera_center_error_mm": 0.5526921360369312,
+      "same_points_free_H": {
+        "probe_median_px": 0.38753111574049864,
+        "probe_max_px": 0.5254809034885438
+      }
+    },
+    {
+      "trial": 25,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2065.0779679999687,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 805215725,
+      "probe_median_px": 0.2809275223565796,
+      "probe_max_px": 0.5210217542183985,
+      "rotation_error_deg": 0.03298023453774682,
+      "camera_center_error_mm": 0.4492745379158723,
+      "same_points_free_H": {
+        "probe_median_px": 0.4143549843424419,
+        "probe_max_px": 0.5559116448301389
+      }
+    },
+    {
+      "trial": 25,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1678.6519900197163,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 805215725,
+      "probe_median_px": 0.20801115922532,
+      "probe_max_px": 0.3982620855468634,
+      "rotation_error_deg": 0.02567037323625068,
+      "camera_center_error_mm": 0.47472545470815153,
+      "same_points_free_H": {
+        "probe_median_px": 0.3805823279027707,
+        "probe_max_px": 0.5292346416696926
+      }
+    },
+    {
+      "trial": 26,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 153.04768300848082,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 74636182,
+      "probe_median_px": 0.2782459871899598,
+      "probe_max_px": 0.5768363538702184,
+      "rotation_error_deg": 0.050583541622634814,
+      "camera_center_error_mm": 0.46613037442712457,
+      "same_points_free_H": {
+        "probe_median_px": 0.3942415205594191,
+        "probe_max_px": 0.44741192912153893
+      }
+    },
+    {
+      "trial": 26,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 4140.82587097073,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 74636182,
+      "probe_median_px": 0.2814421547373003,
+      "probe_max_px": 0.4901616287541142,
+      "rotation_error_deg": 0.03193648703887186,
+      "camera_center_error_mm": 0.44752380381367896,
+      "same_points_free_H": {
+        "probe_median_px": 0.41756748228819623,
+        "probe_max_px": 0.5557929463485158
+      }
+    },
+    {
+      "trial": 26,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2199.5090330019593,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 74636182,
+      "probe_median_px": 0.294142447795794,
+      "probe_max_px": 0.36621556131167593,
+      "rotation_error_deg": 0.019635730166220746,
+      "camera_center_error_mm": 0.35330796695796257,
+      "same_points_free_H": {
+        "probe_median_px": 0.4582479038188179,
+        "probe_max_px": 0.5194771485031814
+      }
+    },
+    {
+      "trial": 27,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3535.092168021947,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 655436570,
+      "probe_median_px": 0.3292289559840098,
+      "probe_max_px": 0.7865974240678288,
+      "rotation_error_deg": 0.06731495454731978,
+      "camera_center_error_mm": 0.5785265700576507,
+      "same_points_free_H": {
+        "probe_median_px": 0.4376530248857822,
+        "probe_max_px": 0.6656107222010177
+      }
+    },
+    {
+      "trial": 27,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2661.5985020180233,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 655436570,
+      "probe_median_px": 0.23304171347914346,
+      "probe_max_px": 0.5209267908367993,
+      "rotation_error_deg": 0.043371665626775475,
+      "camera_center_error_mm": 0.5607966882324927,
+      "same_points_free_H": {
+        "probe_median_px": 0.408825654377541,
+        "probe_max_px": 0.5513624643584715
+      }
+    },
+    {
+      "trial": 27,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1555.6501389946789,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 655436570,
+      "probe_median_px": 0.242461379157777,
+      "probe_max_px": 0.3674800053218492,
+      "rotation_error_deg": 0.017557111767417772,
+      "camera_center_error_mm": 0.34224651890761276,
+      "same_points_free_H": {
+        "probe_median_px": 0.41053648658571323,
+        "probe_max_px": 0.529560697009092
+      }
+    },
+    {
+      "trial": 28,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1989.392111019697,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 1031121862,
+      "probe_median_px": 0.29825069777437035,
+      "probe_max_px": 0.5053481111740654,
+      "rotation_error_deg": 0.035254283741228895,
+      "camera_center_error_mm": 0.6066559929959545,
+      "same_points_free_H": {
+        "probe_median_px": 0.41634055676052456,
+        "probe_max_px": 0.5368456158083176
+      }
+    },
+    {
+      "trial": 28,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1350.2244080300443,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 1031121862,
+      "probe_median_px": 0.26554094790299365,
+      "probe_max_px": 0.5960284670317247,
+      "rotation_error_deg": 0.06870839551079576,
+      "camera_center_error_mm": 0.6345887740147497,
+      "same_points_free_H": {
+        "probe_median_px": 0.3354130633898832,
+        "probe_max_px": 0.5801155227763888
+      }
+    },
+    {
+      "trial": 28,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1356.1833080020733,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 1031121862,
+      "probe_median_px": 0.240427871748684,
+      "probe_max_px": 0.371627306982927,
+      "rotation_error_deg": 0.012134600728650599,
+      "camera_center_error_mm": 0.31728230815936453,
+      "same_points_free_H": {
+        "probe_median_px": 0.4111455543856876,
+        "probe_max_px": 0.5192924811188633
+      }
+    },
+    {
+      "trial": 29,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 137.82967295264825,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 261196539,
+      "probe_median_px": 0.30142332566823865,
+      "probe_max_px": 0.6274804066647022,
+      "rotation_error_deg": 0.05799070698968323,
+      "camera_center_error_mm": 0.48059082544767207,
+      "same_points_free_H": {
+        "probe_median_px": 0.4265567414958063,
+        "probe_max_px": 0.5673467625096322
+      }
+    },
+    {
+      "trial": 29,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1326.8222410115413,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 261196539,
+      "probe_median_px": 0.23022975662036407,
+      "probe_max_px": 0.5219831055226168,
+      "rotation_error_deg": 0.043868937598912985,
+      "camera_center_error_mm": 0.5800117628541774,
+      "same_points_free_H": {
+        "probe_median_px": 0.4120661404036158,
+        "probe_max_px": 0.5552580993316062
+      }
+    },
+    {
+      "trial": 29,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2447.0576170133427,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 261196539,
+      "probe_median_px": 0.24413723059819167,
+      "probe_max_px": 0.3715672450892167,
+      "rotation_error_deg": 0.012397490126256577,
+      "camera_center_error_mm": 0.31774410849603096,
+      "same_points_free_H": {
+        "probe_median_px": 0.4119836721696205,
+        "probe_max_px": 0.5250553921986882
+      }
+    },
+    {
+      "trial": 30,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1478.7337289890274,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 598493923,
+      "probe_median_px": 0.26946573068574076,
+      "probe_max_px": 0.43340789145047903,
+      "rotation_error_deg": 0.029939194544610886,
+      "camera_center_error_mm": 0.4334093054633943,
+      "same_points_free_H": {
+        "probe_median_px": 0.38836642320407333,
+        "probe_max_px": 0.45420907403958133
+      }
+    },
+    {
+      "trial": 30,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1619.5681529934518,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 598493923,
+      "probe_median_px": 0.25492637596724305,
+      "probe_max_px": 0.447543770775036,
+      "rotation_error_deg": 0.026827703836530565,
+      "camera_center_error_mm": 0.38690705970498696,
+      "same_points_free_H": {
+        "probe_median_px": 0.38110812856347737,
+        "probe_max_px": 0.4420998177023395
+      }
+    },
+    {
+      "trial": 30,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1443.0419059935957,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 598493923,
+      "probe_median_px": 0.21069960111473093,
+      "probe_max_px": 0.4017702589197744,
+      "rotation_error_deg": 0.022735757792323303,
+      "camera_center_error_mm": 0.42500604329404745,
+      "same_points_free_H": {
+        "probe_median_px": 0.39265455258684323,
+        "probe_max_px": 0.5345450297595562
+      }
+    },
+    {
+      "trial": 31,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1664.875751012005,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 552103964,
+      "probe_median_px": 0.26995418293637613,
+      "probe_max_px": 0.5843959231049578,
+      "rotation_error_deg": 0.043712518518539197,
+      "camera_center_error_mm": 0.5509283865066569,
+      "same_points_free_H": {
+        "probe_median_px": 0.43950739954152307,
+        "probe_max_px": 0.5775588223358173
+      }
+    },
+    {
+      "trial": 31,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1522.5441660149954,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 552103964,
+      "probe_median_px": 0.2535356523694584,
+      "probe_max_px": 0.5928264181342535,
+      "rotation_error_deg": 0.06706073487753522,
+      "camera_center_error_mm": 0.635789342907864,
+      "same_points_free_H": {
+        "probe_median_px": 0.32708445050516854,
+        "probe_max_px": 0.5839020133567735
+      }
+    },
+    {
+      "trial": 31,
+      "camera": 2,
+      "found": false,
+      "reason": "too few compatible grayscale junctions",
+      "elapsed_ms": 486.60790198482573,
+      "acquisition": "failed",
+      "inliers": null,
+      "seed": 552103964
+    },
+    {
+      "trial": 32,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1605.1261899992824,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 340941670,
+      "probe_median_px": 0.29714048394316395,
+      "probe_max_px": 0.5211828195074909,
+      "rotation_error_deg": 0.028658628001972813,
+      "camera_center_error_mm": 0.38151551136856576,
+      "same_points_free_H": {
+        "probe_median_px": 0.41824359073549544,
+        "probe_max_px": 0.46442995161798895
+      }
+    },
+    {
+      "trial": 32,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1994.190384983085,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 340941670,
+      "probe_median_px": 0.26031830056325134,
+      "probe_max_px": 0.4156472603748148,
+      "rotation_error_deg": 0.03057182770945061,
+      "camera_center_error_mm": 0.3767874982027204,
+      "same_points_free_H": {
+        "probe_median_px": 0.336186913432207,
+        "probe_max_px": 0.44300685330375844
+      }
+    },
+    {
+      "trial": 32,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2539.7114700172096,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 340941670,
+      "probe_median_px": 0.2880542232715975,
+      "probe_max_px": 0.35879693048466826,
+      "rotation_error_deg": 0.020406762207916603,
+      "camera_center_error_mm": 0.34768576143927415,
+      "same_points_free_H": {
+        "probe_median_px": 0.44553670256224726,
+        "probe_max_px": 0.5009994599186939
+      }
+    },
+    {
+      "trial": 33,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1447.243407019414,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 798102449,
+      "probe_median_px": 0.29023808649804517,
+      "probe_max_px": 0.5968221369022796,
+      "rotation_error_deg": 0.06046466521371179,
+      "camera_center_error_mm": 0.5052339382088269,
+      "same_points_free_H": {
+        "probe_median_px": 0.4126940138667954,
+        "probe_max_px": 0.5499031361002983
+      }
+    },
+    {
+      "trial": 33,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 117.69069597357884,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 798102449,
+      "probe_median_px": 0.22280447630816239,
+      "probe_max_px": 0.501547437199223,
+      "rotation_error_deg": 0.054038084996127916,
+      "camera_center_error_mm": 0.5461108845747378,
+      "same_points_free_H": {
+        "probe_median_px": 0.29852413614904577,
+        "probe_max_px": 0.6260269556331907
+      }
+    },
+    {
+      "trial": 33,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1384.8068930092268,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 798102449,
+      "probe_median_px": 0.24663045260498345,
+      "probe_max_px": 0.3598498062457762,
+      "rotation_error_deg": 0.01806984109816691,
+      "camera_center_error_mm": 0.3505466486643503,
+      "same_points_free_H": {
+        "probe_median_px": 0.41643553783396386,
+        "probe_max_px": 0.5203637289515023
+      }
+    },
+    {
+      "trial": 34,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2508.176251023542,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 719083570,
+      "probe_median_px": 0.2527398602516402,
+      "probe_max_px": 0.49543727038190916,
+      "rotation_error_deg": 0.034495198193634405,
+      "camera_center_error_mm": 0.41271839550962164,
+      "same_points_free_H": {
+        "probe_median_px": 0.3904777055283796,
+        "probe_max_px": 0.54103174290857
+      }
+    },
+    {
+      "trial": 34,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1997.9073929716833,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 719083570,
+      "probe_median_px": 0.2684366431795578,
+      "probe_max_px": 0.4898415674182321,
+      "rotation_error_deg": 0.042930546924028506,
+      "camera_center_error_mm": 0.4905344361751236,
+      "same_points_free_H": {
+        "probe_median_px": 0.3938225144184632,
+        "probe_max_px": 0.4767037087416283
+      }
+    },
+    {
+      "trial": 34,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1624.2105929995887,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 719083570,
+      "probe_median_px": 0.24122543774070035,
+      "probe_max_px": 0.3792459227414714,
+      "rotation_error_deg": 0.01341298036343828,
+      "camera_center_error_mm": 0.33857020052653664,
+      "same_points_free_H": {
+        "probe_median_px": 0.41188777085293554,
+        "probe_max_px": 0.5249723461947974
+      }
+    },
+    {
+      "trial": 35,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1392.4218349857256,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 738531456,
+      "probe_median_px": 0.30430577169321515,
+      "probe_max_px": 0.6563395261791236,
+      "rotation_error_deg": 0.05918810550872308,
+      "camera_center_error_mm": 0.47722259259385613,
+      "same_points_free_H": {
+        "probe_median_px": 0.42011652967800206,
+        "probe_max_px": 0.565762746480634
+      }
+    },
+    {
+      "trial": 35,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1750.883975008037,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 738531456,
+      "probe_median_px": 0.2665499932901791,
+      "probe_max_px": 0.4932139693090792,
+      "rotation_error_deg": 0.047535615910114945,
+      "camera_center_error_mm": 0.5071908174441755,
+      "same_points_free_H": {
+        "probe_median_px": 0.39366999983239365,
+        "probe_max_px": 0.47820466143244456
+      }
+    },
+    {
+      "trial": 35,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1489.4750899984501,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 738531456,
+      "probe_median_px": 0.2413450486131547,
+      "probe_max_px": 0.37467106511809867,
+      "rotation_error_deg": 0.013958744162904864,
+      "camera_center_error_mm": 0.33407450830578517,
+      "same_points_free_H": {
+        "probe_median_px": 0.41445358491284745,
+        "probe_max_px": 0.5343576909063917
+      }
+    },
+    {
+      "trial": 36,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1596.9424610375427,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 52,
+      "seed": 859375878,
+      "probe_median_px": 0.2660507070524242,
+      "probe_max_px": 0.5760486293279611,
+      "rotation_error_deg": 0.0495754666083873,
+      "camera_center_error_mm": 0.37435912272115235,
+      "same_points_free_H": {
+        "probe_median_px": 0.3788418732564087,
+        "probe_max_px": 0.4962661233410608
+      }
+    },
+    {
+      "trial": 36,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1578.023731999565,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 859375878,
+      "probe_median_px": 0.2556125696668517,
+      "probe_max_px": 0.5455378333445459,
+      "rotation_error_deg": 0.029663835352840236,
+      "camera_center_error_mm": 0.49757379456572653,
+      "same_points_free_H": {
+        "probe_median_px": 0.4201800559990724,
+        "probe_max_px": 0.537479959852655
+      }
+    },
+    {
+      "trial": 36,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1842.3316170228645,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 859375878,
+      "probe_median_px": 0.2029615263681458,
+      "probe_max_px": 0.41303059319911917,
+      "rotation_error_deg": 0.023270008036780563,
+      "camera_center_error_mm": 0.4133302335214411,
+      "same_points_free_H": {
+        "probe_median_px": 0.3837134428643617,
+        "probe_max_px": 0.5401840905707203
+      }
+    },
+    {
+      "trial": 37,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1208.3869579946622,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 976955500,
+      "probe_median_px": 0.2867117780712663,
+      "probe_max_px": 0.6099947510136403,
+      "rotation_error_deg": 0.05713775383941731,
+      "camera_center_error_mm": 0.4656665106035953,
+      "same_points_free_H": {
+        "probe_median_px": 0.4048524686428181,
+        "probe_max_px": 0.558725149782348
+      }
+    },
+    {
+      "trial": 37,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2702.6415540021844,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 976955500,
+      "probe_median_px": 0.26144722856102753,
+      "probe_max_px": 0.4839944046915801,
+      "rotation_error_deg": 0.04105100571659545,
+      "camera_center_error_mm": 0.4710094063917805,
+      "same_points_free_H": {
+        "probe_median_px": 0.382528389924619,
+        "probe_max_px": 0.46562458400189854
+      }
+    },
+    {
+      "trial": 37,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1657.1912800427526,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 976955500,
+      "probe_median_px": 0.2302215482714535,
+      "probe_max_px": 0.3525709271429968,
+      "rotation_error_deg": 0.013343533595635969,
+      "camera_center_error_mm": 0.3155129333537562,
+      "same_points_free_H": {
+        "probe_median_px": 0.40256009856867125,
+        "probe_max_px": 0.5026098172274491
+      }
+    },
+    {
+      "trial": 38,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1488.6132819810882,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 325534282,
+      "probe_median_px": 0.30687180179048706,
+      "probe_max_px": 0.5163225084628661,
+      "rotation_error_deg": 0.02415317418118923,
+      "camera_center_error_mm": 0.5499593871717592,
+      "same_points_free_H": {
+        "probe_median_px": 0.4089210192740738,
+        "probe_max_px": 0.6281180792425906
+      }
+    },
+    {
+      "trial": 38,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2674.8156230314635,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 325534282,
+      "probe_median_px": 0.2509103241775164,
+      "probe_max_px": 0.5310487597172155,
+      "rotation_error_deg": 0.052109852419312555,
+      "camera_center_error_mm": 0.5579809436753165,
+      "same_points_free_H": {
+        "probe_median_px": 0.4127207264315449,
+        "probe_max_px": 0.49439808686364467
+      }
+    },
+    {
+      "trial": 38,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1352.0826220046729,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 325534282,
+      "probe_median_px": 0.20420612963394094,
+      "probe_max_px": 0.4117286677524861,
+      "rotation_error_deg": 0.023757483197015455,
+      "camera_center_error_mm": 0.43664682944367494,
+      "same_points_free_H": {
+        "probe_median_px": 0.38070259103697435,
+        "probe_max_px": 0.5340673789496327
+      }
+    },
+    {
+      "trial": 39,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 115.66927400417626,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 1067293490,
+      "probe_median_px": 0.27379120005335816,
+      "probe_max_px": 0.5525996658587934,
+      "rotation_error_deg": 0.05047603131823957,
+      "camera_center_error_mm": 0.4447323668524896,
+      "same_points_free_H": {
+        "probe_median_px": 0.38630062382932934,
+        "probe_max_px": 0.4438071483059847
+      }
+    },
+    {
+      "trial": 39,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1521.9013420282863,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 1067293490,
+      "probe_median_px": 0.21646995155993987,
+      "probe_max_px": 0.5398386423209676,
+      "rotation_error_deg": 0.052529724970053336,
+      "camera_center_error_mm": 0.6165520297088044,
+      "same_points_free_H": {
+        "probe_median_px": 0.3854301765097298,
+        "probe_max_px": 0.5640193314202937
+      }
+    },
+    {
+      "trial": 39,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 111.90448998240754,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 1067293490,
+      "probe_median_px": 0.22293930247431445,
+      "probe_max_px": 0.3464045350261497,
+      "rotation_error_deg": 0.01784488438268981,
+      "camera_center_error_mm": 0.3587277995512972,
+      "same_points_free_H": {
+        "probe_median_px": 0.3750492781907479,
+        "probe_max_px": 0.43530219948277277
+      }
+    },
+    {
+      "trial": 40,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1389.2562929540873,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 362592075,
+      "probe_median_px": 0.3008906369957579,
+      "probe_max_px": 0.5782467026340092,
+      "rotation_error_deg": 0.04679662136708118,
+      "camera_center_error_mm": 0.43190345734011254,
+      "same_points_free_H": {
+        "probe_median_px": 0.4170416264333633,
+        "probe_max_px": 0.4604849473396006
+      }
+    },
+    {
+      "trial": 40,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 117.70112998783588,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 362592075,
+      "probe_median_px": 0.26185775031839875,
+      "probe_max_px": 0.49303685174085804,
+      "rotation_error_deg": 0.02713503180093791,
+      "camera_center_error_mm": 0.4499277919252392,
+      "same_points_free_H": {
+        "probe_median_px": 0.4305348788437343,
+        "probe_max_px": 0.5706940446982043
+      }
+    },
+    {
+      "trial": 40,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1547.788314986974,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 362592075,
+      "probe_median_px": 0.24133331603146346,
+      "probe_max_px": 0.36461892035699595,
+      "rotation_error_deg": 0.013787535425308865,
+      "camera_center_error_mm": 0.32556628849689306,
+      "same_points_free_H": {
+        "probe_median_px": 0.4112475772497202,
+        "probe_max_px": 0.5289827953252614
+      }
+    },
+    {
+      "trial": 41,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1628.7923289928585,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 443600254,
+      "probe_median_px": 0.28936585171334583,
+      "probe_max_px": 0.6173065671131484,
+      "rotation_error_deg": 0.054130302340278304,
+      "camera_center_error_mm": 0.43733118871478777,
+      "same_points_free_H": {
+        "probe_median_px": 0.4007021503379363,
+        "probe_max_px": 0.5519015377562746
+      }
+    },
+    {
+      "trial": 41,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2429.917794011999,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 443600254,
+      "probe_median_px": 0.30934954859339,
+      "probe_max_px": 0.5664385752736603,
+      "rotation_error_deg": 0.05555574572083832,
+      "camera_center_error_mm": 0.6033320652740888,
+      "same_points_free_H": {
+        "probe_median_px": 0.40716360469401985,
+        "probe_max_px": 0.5378986120360072
+      }
+    },
+    {
+      "trial": 41,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1515.148835023865,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 443600254,
+      "probe_median_px": 0.22970072402206176,
+      "probe_max_px": 0.36245841631988374,
+      "rotation_error_deg": 0.015923735280057288,
+      "camera_center_error_mm": 0.32311695889555303,
+      "same_points_free_H": {
+        "probe_median_px": 0.40309140274964683,
+        "probe_max_px": 0.5168383244088185
+      }
+    },
+    {
+      "trial": 42,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 113.36242198012769,
+      "acquisition": "wide junction search",
+      "inliers": 57,
+      "seed": 430996983,
+      "probe_median_px": 0.2775783055287263,
+      "probe_max_px": 0.5674990369570074,
+      "rotation_error_deg": 0.05128749202104451,
+      "camera_center_error_mm": 0.47023290224346836,
+      "same_points_free_H": {
+        "probe_median_px": 0.40699040803066766,
+        "probe_max_px": 0.5115485091196796
+      }
+    },
+    {
+      "trial": 42,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1675.6006460054778,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 430996983,
+      "probe_median_px": 0.24084479050115215,
+      "probe_max_px": 0.5209269935251554,
+      "rotation_error_deg": 0.039323197052365685,
+      "camera_center_error_mm": 0.5470785412531423,
+      "same_points_free_H": {
+        "probe_median_px": 0.40928695275695953,
+        "probe_max_px": 0.5498821632935739
+      }
+    },
+    {
+      "trial": 42,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1731.7082429653965,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 430996983,
+      "probe_median_px": 0.2546661398604286,
+      "probe_max_px": 0.3724023915196095,
+      "rotation_error_deg": 0.017458146381543544,
+      "camera_center_error_mm": 0.3299124173695373,
+      "same_points_free_H": {
+        "probe_median_px": 0.42083729776368706,
+        "probe_max_px": 0.5381190589850472
+      }
+    },
+    {
+      "trial": 43,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 118.50353801855817,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 229814414,
+      "probe_median_px": 0.3061351727062391,
+      "probe_max_px": 0.5758587501754284,
+      "rotation_error_deg": 0.03405004705501924,
+      "camera_center_error_mm": 0.6230176948530445,
+      "same_points_free_H": {
+        "probe_median_px": 0.4205284985588524,
+        "probe_max_px": 0.5679286608107682
+      }
+    },
+    {
+      "trial": 43,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2873.450262006372,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 229814414,
+      "probe_median_px": 0.2672739698905082,
+      "probe_max_px": 0.503534678837449,
+      "rotation_error_deg": 0.0450218449257889,
+      "camera_center_error_mm": 0.4802449471448271,
+      "same_points_free_H": {
+        "probe_median_px": 0.3876785907926652,
+        "probe_max_px": 0.48314884456213003
+      }
+    },
+    {
+      "trial": 43,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1378.3868869650178,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 229814414,
+      "probe_median_px": 0.24451757216106096,
+      "probe_max_px": 0.3723087175996773,
+      "rotation_error_deg": 0.013856631633796955,
+      "camera_center_error_mm": 0.30596199350149916,
+      "same_points_free_H": {
+        "probe_median_px": 0.4078196734539915,
+        "probe_max_px": 0.5205614348816822
+      }
+    },
+    {
+      "trial": 44,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1512.9547900287434,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 795960565,
+      "probe_median_px": 0.2922512688029171,
+      "probe_max_px": 0.5942569957483774,
+      "rotation_error_deg": 0.05984522514511585,
+      "camera_center_error_mm": 0.5059437461127576,
+      "same_points_free_H": {
+        "probe_median_px": 0.41393216642701697,
+        "probe_max_px": 0.5715833543454564
+      }
+    },
+    {
+      "trial": 44,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2516.139312006999,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 795960565,
+      "probe_median_px": 0.25904100622677384,
+      "probe_max_px": 0.474208015868847,
+      "rotation_error_deg": 0.03970440754001232,
+      "camera_center_error_mm": 0.46877703706122026,
+      "same_points_free_H": {
+        "probe_median_px": 0.38528319381840287,
+        "probe_max_px": 0.4729234523958089
+      }
+    },
+    {
+      "trial": 44,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 108.1755650229752,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 795960565,
+      "probe_median_px": 0.2462982297173215,
+      "probe_max_px": 0.38325171539079567,
+      "rotation_error_deg": 0.022485733367758793,
+      "camera_center_error_mm": 0.405700637063219,
+      "same_points_free_H": {
+        "probe_median_px": 0.41701113639665527,
+        "probe_max_px": 0.5259524561220124
+      }
+    },
+    {
+      "trial": 45,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1657.962725032121,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 451429072,
+      "probe_median_px": 0.25672273653503414,
+      "probe_max_px": 0.4599202080141936,
+      "rotation_error_deg": 0.02505482567936097,
+      "camera_center_error_mm": 0.3626457057132686,
+      "same_points_free_H": {
+        "probe_median_px": 0.41563179836821884,
+        "probe_max_px": 0.5865728588602138
+      }
+    },
+    {
+      "trial": 45,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1453.0737739987671,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 451429072,
+      "probe_median_px": 0.23143863740055373,
+      "probe_max_px": 0.5310466229127753,
+      "rotation_error_deg": 0.041853726386976105,
+      "camera_center_error_mm": 0.5700725521649928,
+      "same_points_free_H": {
+        "probe_median_px": 0.4024873704552231,
+        "probe_max_px": 0.5515871298831078
+      }
+    },
+    {
+      "trial": 45,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1136.6597160231322,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 451429072,
+      "probe_median_px": 0.2436791087581716,
+      "probe_max_px": 0.3937520617661984,
+      "rotation_error_deg": 0.012057081172454813,
+      "camera_center_error_mm": 0.34765379037843563,
+      "same_points_free_H": {
+        "probe_median_px": 0.41113361488318495,
+        "probe_max_px": 0.5353011334155706
+      }
+    },
+    {
+      "trial": 46,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1667.545733973384,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 997016253,
+      "probe_median_px": 0.26390412912986144,
+      "probe_max_px": 0.46712584276580643,
+      "rotation_error_deg": 0.028676517908345984,
+      "camera_center_error_mm": 0.5269211673557899,
+      "same_points_free_H": {
+        "probe_median_px": 0.4074250196432096,
+        "probe_max_px": 0.5055915031157939
+      }
+    },
+    {
+      "trial": 46,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 109.15010096505284,
+      "acquisition": "wide junction search",
+      "inliers": 60,
+      "seed": 997016253,
+      "probe_median_px": 0.2604227965076402,
+      "probe_max_px": 0.5458383364884735,
+      "rotation_error_deg": 0.03636537482016554,
+      "camera_center_error_mm": 0.5355968011686488,
+      "same_points_free_H": {
+        "probe_median_px": 0.4066764691360568,
+        "probe_max_px": 0.4663557663549371
+      }
+    },
+    {
+      "trial": 46,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1576.7187970341183,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 997016253,
+      "probe_median_px": 0.2892181455209582,
+      "probe_max_px": 0.3548914210190167,
+      "rotation_error_deg": 0.017321629170330873,
+      "camera_center_error_mm": 0.32720782749398186,
+      "same_points_free_H": {
+        "probe_median_px": 0.4483948829755094,
+        "probe_max_px": 0.519237319485572
+      }
+    },
+    {
+      "trial": 47,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 118.1594529771246,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 74282226,
+      "probe_median_px": 0.29767534946597907,
+      "probe_max_px": 0.5477275678953344,
+      "rotation_error_deg": 0.03796733392313476,
+      "camera_center_error_mm": 0.6364433557528583,
+      "same_points_free_H": {
+        "probe_median_px": 0.39746132597556666,
+        "probe_max_px": 0.5515042684906586
+      }
+    },
+    {
+      "trial": 47,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1308.362941024825,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 52,
+      "seed": 74282226,
+      "probe_median_px": 0.26207071262700576,
+      "probe_max_px": 0.528017763409704,
+      "rotation_error_deg": 0.0408760862503856,
+      "camera_center_error_mm": 0.4841563936674831,
+      "same_points_free_H": {
+        "probe_median_px": 0.3570533614403709,
+        "probe_max_px": 0.5013274075178773
+      }
+    },
+    {
+      "trial": 47,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1615.9037679899484,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 74282226,
+      "probe_median_px": 0.2441326789335533,
+      "probe_max_px": 0.38031248023391295,
+      "rotation_error_deg": 0.01697945998012496,
+      "camera_center_error_mm": 0.3819559304135281,
+      "same_points_free_H": {
+        "probe_median_px": 0.41430018572932864,
+        "probe_max_px": 0.5435240720339672
+      }
+    },
+    {
+      "trial": 48,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1449.3055940256454,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 230578046,
+      "probe_median_px": 0.3135379264049631,
+      "probe_max_px": 0.529252871653284,
+      "rotation_error_deg": 0.017990122778875923,
+      "camera_center_error_mm": 0.3265718627639295,
+      "same_points_free_H": {
+        "probe_median_px": 0.4469213455151621,
+        "probe_max_px": 0.5990409481000275
+      }
+    },
+    {
+      "trial": 48,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1231.6371910274029,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 230578046,
+      "probe_median_px": 0.2256018857409023,
+      "probe_max_px": 0.5256755244368826,
+      "rotation_error_deg": 0.0468397172968664,
+      "camera_center_error_mm": 0.5852465047540384,
+      "same_points_free_H": {
+        "probe_median_px": 0.3934143638564216,
+        "probe_max_px": 0.575250347592602
+      }
+    },
+    {
+      "trial": 48,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1036.6921260138042,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 230578046,
+      "probe_median_px": 0.22372844643740433,
+      "probe_max_px": 0.4108763756199197,
+      "rotation_error_deg": 0.024021620061692683,
+      "camera_center_error_mm": 0.446072059702416,
+      "same_points_free_H": {
+        "probe_median_px": 0.4020460718059368,
+        "probe_max_px": 0.5515664527019527
+      }
+    },
+    {
+      "trial": 49,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1735.48368900083,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 604624577,
+      "probe_median_px": 0.26460383496611717,
+      "probe_max_px": 0.5714716291586193,
+      "rotation_error_deg": 0.05600982427296459,
+      "camera_center_error_mm": 0.46447774687237775,
+      "same_points_free_H": {
+        "probe_median_px": 0.3804490708709057,
+        "probe_max_px": 0.5301206925062492
+      }
+    },
+    {
+      "trial": 49,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 116.12559802597389,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 604624577,
+      "probe_median_px": 0.2517539178141343,
+      "probe_max_px": 0.48124325989319033,
+      "rotation_error_deg": 0.044023960922761146,
+      "camera_center_error_mm": 0.4815677674748545,
+      "same_points_free_H": {
+        "probe_median_px": 0.3598966730564276,
+        "probe_max_px": 0.6088730479660133
+      }
+    },
+    {
+      "trial": 49,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1452.1101010031998,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 604624577,
+      "probe_median_px": 0.23993143465781624,
+      "probe_max_px": 0.3855760133207707,
+      "rotation_error_deg": 0.018423812472086912,
+      "camera_center_error_mm": 0.38498804976070045,
+      "same_points_free_H": {
+        "probe_median_px": 0.3999240089676932,
+        "probe_max_px": 0.5398707344337361
+      }
+    },
+    {
+      "trial": 50,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1221.7461310210638,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 226456089,
+      "probe_median_px": 0.2770983419713643,
+      "probe_max_px": 0.5520122299833168,
+      "rotation_error_deg": 0.03981056180871236,
+      "camera_center_error_mm": 0.657824089734726,
+      "same_points_free_H": {
+        "probe_median_px": 0.3836972386898979,
+        "probe_max_px": 0.5567772196954094
+      }
+    },
+    {
+      "trial": 50,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1301.7911249771714,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 226456089,
+      "probe_median_px": 0.27047298565291616,
+      "probe_max_px": 0.4686764694404862,
+      "rotation_error_deg": 0.040093082143407684,
+      "camera_center_error_mm": 0.4920532613098641,
+      "same_points_free_H": {
+        "probe_median_px": 0.39039614857988353,
+        "probe_max_px": 0.47232012916953453
+      }
+    },
+    {
+      "trial": 50,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1651.3507299823686,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 226456089,
+      "probe_median_px": 0.22345652350652934,
+      "probe_max_px": 0.4151627663205232,
+      "rotation_error_deg": 0.02013718677019511,
+      "camera_center_error_mm": 0.4115785683398,
+      "same_points_free_H": {
+        "probe_median_px": 0.38959445711437474,
+        "probe_max_px": 0.545973202802077
+      }
+    },
+    {
+      "trial": 51,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1544.8541300138459,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 725634741,
+      "probe_median_px": 0.2792114538069129,
+      "probe_max_px": 0.45791721561576715,
+      "rotation_error_deg": 0.03229092697626758,
+      "camera_center_error_mm": 0.43819070751122385,
+      "same_points_free_H": {
+        "probe_median_px": 0.3979354216953355,
+        "probe_max_px": 0.46495391473277725
+      }
+    },
+    {
+      "trial": 51,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1477.375044953078,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 725634741,
+      "probe_median_px": 0.3058894439033553,
+      "probe_max_px": 0.5605146724723369,
+      "rotation_error_deg": 0.06994501831534612,
+      "camera_center_error_mm": 0.714331151508057,
+      "same_points_free_H": {
+        "probe_median_px": 0.4105816057958855,
+        "probe_max_px": 0.5509698614448144
+      }
+    },
+    {
+      "trial": 51,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1379.030812997371,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 725634741,
+      "probe_median_px": 0.24225264683676634,
+      "probe_max_px": 0.3894055529813936,
+      "rotation_error_deg": 0.015426971929628571,
+      "camera_center_error_mm": 0.3434714777366503,
+      "same_points_free_H": {
+        "probe_median_px": 0.40807084834894997,
+        "probe_max_px": 0.5436051020448203
+      }
+    },
+    {
+      "trial": 52,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 110.76352297095582,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 208767955,
+      "probe_median_px": 0.29698489778752096,
+      "probe_max_px": 0.618222101707051,
+      "rotation_error_deg": 0.056303885951671614,
+      "camera_center_error_mm": 0.47731723168913787,
+      "same_points_free_H": {
+        "probe_median_px": 0.41430201229332864,
+        "probe_max_px": 0.5578775306558482
+      }
+    },
+    {
+      "trial": 52,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1860.868280986324,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 208767955,
+      "probe_median_px": 0.2683136126121565,
+      "probe_max_px": 0.48330344817285403,
+      "rotation_error_deg": 0.044775516641999524,
+      "camera_center_error_mm": 0.508269031426133,
+      "same_points_free_H": {
+        "probe_median_px": 0.39475577275572343,
+        "probe_max_px": 0.47424034473419613
+      }
+    },
+    {
+      "trial": 52,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1408.0847119912505,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 208767955,
+      "probe_median_px": 0.2447095305448822,
+      "probe_max_px": 0.3473742083866562,
+      "rotation_error_deg": 0.020093930075698378,
+      "camera_center_error_mm": 0.3388478125358246,
+      "same_points_free_H": {
+        "probe_median_px": 0.38050928292506775,
+        "probe_max_px": 0.46431758434056214
+      }
+    },
+    {
+      "trial": 53,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 115.11832202086225,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 120578283,
+      "probe_median_px": 0.2942917588615086,
+      "probe_max_px": 0.5373124779115791,
+      "rotation_error_deg": 0.037979391253546005,
+      "camera_center_error_mm": 0.651129593925444,
+      "same_points_free_H": {
+        "probe_median_px": 0.40190332870688483,
+        "probe_max_px": 0.5536214706889885
+      }
+    },
+    {
+      "trial": 53,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 112.99542896449566,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 120578283,
+      "probe_median_px": 0.21726935432917382,
+      "probe_max_px": 0.542603250314768,
+      "rotation_error_deg": 0.04854395696442188,
+      "camera_center_error_mm": 0.6076198611831473,
+      "same_points_free_H": {
+        "probe_median_px": 0.3775602054519472,
+        "probe_max_px": 0.567117770078503
+      }
+    },
+    {
+      "trial": 53,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 110.63772102352232,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 120578283,
+      "probe_median_px": 0.24094693874522125,
+      "probe_max_px": 0.3720733419275988,
+      "rotation_error_deg": 0.016725933339077105,
+      "camera_center_error_mm": 0.3624718218468607,
+      "same_points_free_H": {
+        "probe_median_px": 0.4095789082531126,
+        "probe_max_px": 0.5254581781887284
+      }
+    },
+    {
+      "trial": 54,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1496.2459540111013,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 833379276,
+      "probe_median_px": 0.28683717156404304,
+      "probe_max_px": 0.5756052155509236,
+      "rotation_error_deg": 0.037148907787420436,
+      "camera_center_error_mm": 0.6470782794343546,
+      "same_points_free_H": {
+        "probe_median_px": 0.3961166690544733,
+        "probe_max_px": 0.5653819931787001
+      }
+    },
+    {
+      "trial": 54,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2674.3615550221875,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 833379276,
+      "probe_median_px": 0.2710505923087511,
+      "probe_max_px": 0.4943781616062179,
+      "rotation_error_deg": 0.048513355917069824,
+      "camera_center_error_mm": 0.5250033440703428,
+      "same_points_free_H": {
+        "probe_median_px": 0.3982533774199044,
+        "probe_max_px": 0.47911433394900993
+      }
+    },
+    {
+      "trial": 54,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 115.13339303201064,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 833379276,
+      "probe_median_px": 0.285858451545122,
+      "probe_max_px": 0.37171762157263705,
+      "rotation_error_deg": 0.01933568176390874,
+      "camera_center_error_mm": 0.3219604291879298,
+      "same_points_free_H": {
+        "probe_median_px": 0.4572735193314868,
+        "probe_max_px": 0.5401060334664184
+      }
+    },
+    {
+      "trial": 55,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 111.00652400637046,
+      "acquisition": "wide junction search",
+      "inliers": 57,
+      "seed": 405462418,
+      "probe_median_px": 0.26461743858920617,
+      "probe_max_px": 0.5402968784100288,
+      "rotation_error_deg": 0.061446718149371034,
+      "camera_center_error_mm": 0.5265901060525054,
+      "same_points_free_H": {
+        "probe_median_px": 0.40879882774139936,
+        "probe_max_px": 0.5564479773007953
+      }
+    },
+    {
+      "trial": 55,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 114.74158498458564,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 405462418,
+      "probe_median_px": 0.24059504548869526,
+      "probe_max_px": 0.49435292086476346,
+      "rotation_error_deg": 0.05512134576989528,
+      "camera_center_error_mm": 0.5689274140940274,
+      "same_points_free_H": {
+        "probe_median_px": 0.3092819881334291,
+        "probe_max_px": 0.6290981787494532
+      }
+    },
+    {
+      "trial": 55,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 112.97226703027263,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 405462418,
+      "probe_median_px": 0.24511193407447374,
+      "probe_max_px": 0.3633266843360856,
+      "rotation_error_deg": 0.012098848745601595,
+      "camera_center_error_mm": 0.3229976230880305,
+      "same_points_free_H": {
+        "probe_median_px": 0.40898014526609017,
+        "probe_max_px": 0.505637406017454
+      }
+    },
+    {
+      "trial": 56,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1576.3732520281337,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 99825089,
+      "probe_median_px": 0.28334295032241436,
+      "probe_max_px": 0.4618768390526664,
+      "rotation_error_deg": 0.03085404780590011,
+      "camera_center_error_mm": 0.4395431353178186,
+      "same_points_free_H": {
+        "probe_median_px": 0.39926542277408894,
+        "probe_max_px": 0.46020610602514295
+      }
+    },
+    {
+      "trial": 56,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1506.0254719574004,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 99825089,
+      "probe_median_px": 0.26992107160930184,
+      "probe_max_px": 0.5264913498661938,
+      "rotation_error_deg": 0.03813074375576579,
+      "camera_center_error_mm": 0.5040971439670158,
+      "same_points_free_H": {
+        "probe_median_px": 0.4329536904304212,
+        "probe_max_px": 0.5608412453492313
+      }
+    },
+    {
+      "trial": 56,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1267.8029750240967,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 99825089,
+      "probe_median_px": 0.24216207941291149,
+      "probe_max_px": 0.3771542827626188,
+      "rotation_error_deg": 0.014404005583397361,
+      "camera_center_error_mm": 0.3067849354569855,
+      "same_points_free_H": {
+        "probe_median_px": 0.40454076627034236,
+        "probe_max_px": 0.5357595981135939
+      }
+    },
+    {
+      "trial": 57,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 118.16019000252709,
+      "acquisition": "wide junction search",
+      "inliers": 60,
+      "seed": 8769979,
+      "probe_median_px": 0.23436910260858196,
+      "probe_max_px": 0.34389845791522045,
+      "rotation_error_deg": 0.018190986568526028,
+      "camera_center_error_mm": 0.25115918479286625,
+      "same_points_free_H": {
+        "probe_median_px": 0.3737319083328771,
+        "probe_max_px": 0.4261076312858174
+      }
+    },
+    {
+      "trial": 57,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 104.88113499013707,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 8769979,
+      "probe_median_px": 0.3171410919204763,
+      "probe_max_px": 0.5653066256207973,
+      "rotation_error_deg": 0.06384400656159885,
+      "camera_center_error_mm": 0.6682774468191592,
+      "same_points_free_H": {
+        "probe_median_px": 0.42325270985804186,
+        "probe_max_px": 0.545152916175408
+      }
+    },
+    {
+      "trial": 57,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 107.65760997310281,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 8769979,
+      "probe_median_px": 0.23281513604930262,
+      "probe_max_px": 0.36904597729471145,
+      "rotation_error_deg": 0.01583511255920154,
+      "camera_center_error_mm": 0.32555666833058095,
+      "same_points_free_H": {
+        "probe_median_px": 0.39809525780957067,
+        "probe_max_px": 0.5134292358347635
+      }
+    },
+    {
+      "trial": 58,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 120.80476898699999,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 1017271732,
+      "probe_median_px": 0.29110913513283243,
+      "probe_max_px": 0.5639018222494822,
+      "rotation_error_deg": 0.05083527368644437,
+      "camera_center_error_mm": 0.48169459179480584,
+      "same_points_free_H": {
+        "probe_median_px": 0.4093437356525392,
+        "probe_max_px": 0.4882788418290342
+      }
+    },
+    {
+      "trial": 58,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 113.68021898670122,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 1017271732,
+      "probe_median_px": 0.2721747954226498,
+      "probe_max_px": 0.4823059386314654,
+      "rotation_error_deg": 0.034405876928274175,
+      "camera_center_error_mm": 0.46598852849520395,
+      "same_points_free_H": {
+        "probe_median_px": 0.39262627597115524,
+        "probe_max_px": 0.5274491850987886
+      }
+    },
+    {
+      "trial": 58,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1481.0287569998764,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 1017271732,
+      "probe_median_px": 0.2792848374670617,
+      "probe_max_px": 0.35555959010164045,
+      "rotation_error_deg": 0.018667109280327172,
+      "camera_center_error_mm": 0.31488552094167066,
+      "same_points_free_H": {
+        "probe_median_px": 0.4342357245569842,
+        "probe_max_px": 0.5016607232004752
+      }
+    },
+    {
+      "trial": 59,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 116.73833499662578,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 729742394,
+      "probe_median_px": 0.2962271313614309,
+      "probe_max_px": 0.6483420323766235,
+      "rotation_error_deg": 0.05734697534694475,
+      "camera_center_error_mm": 0.46130926204692374,
+      "same_points_free_H": {
+        "probe_median_px": 0.4112309940575175,
+        "probe_max_px": 0.5661471328584228
+      }
+    },
+    {
+      "trial": 59,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1611.2835799576715,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 729742394,
+      "probe_median_px": 0.2698388404533936,
+      "probe_max_px": 0.4871910465178273,
+      "rotation_error_deg": 0.04842034031074778,
+      "camera_center_error_mm": 0.5150594302816837,
+      "same_points_free_H": {
+        "probe_median_px": 0.39617472383634855,
+        "probe_max_px": 0.4758862900611983
+      }
+    },
+    {
+      "trial": 59,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 114.97661197790876,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 729742394,
+      "probe_median_px": 0.28076191330277683,
+      "probe_max_px": 0.3462840265195283,
+      "rotation_error_deg": 0.019683864810325864,
+      "camera_center_error_mm": 0.3748513545719915,
+      "same_points_free_H": {
+        "probe_median_px": 0.44851508978603377,
+        "probe_max_px": 0.5180998115966386
+      }
+    },
+    {
+      "trial": 60,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 108.73352497583255,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 392023550,
+      "probe_median_px": 0.208883172108452,
+      "probe_max_px": 0.34664866786727233,
+      "rotation_error_deg": 0.03171480352328655,
+      "camera_center_error_mm": 0.43585683285010685,
+      "same_points_free_H": {
+        "probe_median_px": 0.3385443772824197,
+        "probe_max_px": 0.44215420801553695
+      }
+    },
+    {
+      "trial": 60,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 115.23464100901037,
+      "acquisition": "wide junction search",
+      "inliers": 57,
+      "seed": 392023550,
+      "probe_median_px": 0.22842377321603718,
+      "probe_max_px": 0.49321504065978494,
+      "rotation_error_deg": 0.04641699940660547,
+      "camera_center_error_mm": 0.5166379750688066,
+      "same_points_free_H": {
+        "probe_median_px": 0.37349277003093656,
+        "probe_max_px": 0.7372842953747133
+      }
+    },
+    {
+      "trial": 60,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2840.1717619854026,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 392023550,
+      "probe_median_px": 0.19785645608616834,
+      "probe_max_px": 0.39555588305704414,
+      "rotation_error_deg": 0.019942972290178138,
+      "camera_center_error_mm": 0.4409254265928683,
+      "same_points_free_H": {
+        "probe_median_px": 0.3802525800766934,
+        "probe_max_px": 0.5191923640213351
+      }
+    },
+    {
+      "trial": 61,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1732.7427240088582,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 929424432,
+      "probe_median_px": 0.29183997628947406,
+      "probe_max_px": 0.5994690722030798,
+      "rotation_error_deg": 0.05760192033635643,
+      "camera_center_error_mm": 0.4769137996989819,
+      "same_points_free_H": {
+        "probe_median_px": 0.4069813062941669,
+        "probe_max_px": 0.5469606497865099
+      }
+    },
+    {
+      "trial": 61,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2765.9941539750434,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 929424432,
+      "probe_median_px": 0.24916612645212471,
+      "probe_max_px": 0.49440737648923455,
+      "rotation_error_deg": 0.052826683512050165,
+      "camera_center_error_mm": 0.5540775026391269,
+      "same_points_free_H": {
+        "probe_median_px": 0.33072897554178304,
+        "probe_max_px": 0.5112738230650042
+      }
+    },
+    {
+      "trial": 61,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1140.9139549941756,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 929424432,
+      "probe_median_px": 0.251039872849394,
+      "probe_max_px": 0.3763129742841001,
+      "rotation_error_deg": 0.014599876238066417,
+      "camera_center_error_mm": 0.32925340575489825,
+      "same_points_free_H": {
+        "probe_median_px": 0.4142181429375656,
+        "probe_max_px": 0.525910097316223
+      }
+    },
+    {
+      "trial": 62,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 109.48305297642946,
+      "acquisition": "wide junction search",
+      "inliers": 51,
+      "seed": 661672906,
+      "probe_median_px": 0.2599286543028188,
+      "probe_max_px": 0.5254101435244714,
+      "rotation_error_deg": 0.04567938956506127,
+      "camera_center_error_mm": 0.34746008122108174,
+      "same_points_free_H": {
+        "probe_median_px": 0.4031146984712163,
+        "probe_max_px": 0.4610562906736475
+      }
+    },
+    {
+      "trial": 62,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2593.118575983681,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 661672906,
+      "probe_median_px": 0.27504072522502315,
+      "probe_max_px": 0.4854450544138629,
+      "rotation_error_deg": 0.03238318259801673,
+      "camera_center_error_mm": 0.447311037408765,
+      "same_points_free_H": {
+        "probe_median_px": 0.3907922935977985,
+        "probe_max_px": 0.5308548602527086
+      }
+    },
+    {
+      "trial": 62,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1540.6571269850247,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 661672906,
+      "probe_median_px": 0.2872183451526119,
+      "probe_max_px": 0.3661542501132427,
+      "rotation_error_deg": 0.0184543673900779,
+      "camera_center_error_mm": 0.3196472676055565,
+      "same_points_free_H": {
+        "probe_median_px": 0.4450881276633628,
+        "probe_max_px": 0.5135437609236425
+      }
+    },
+    {
+      "trial": 63,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 113.45180799253285,
+      "acquisition": "wide junction search",
+      "inliers": 59,
+      "seed": 399830072,
+      "probe_median_px": 0.257904707791931,
+      "probe_max_px": 0.48874071365259336,
+      "rotation_error_deg": 0.03699251431475534,
+      "camera_center_error_mm": 0.5251032418680293,
+      "same_points_free_H": {
+        "probe_median_px": 0.383356439485267,
+        "probe_max_px": 0.4848562599593472
+      }
+    },
+    {
+      "trial": 63,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 119.33036003028974,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 399830072,
+      "probe_median_px": 0.23686377547810555,
+      "probe_max_px": 0.2731828317388062,
+      "rotation_error_deg": 0.014042806108638672,
+      "camera_center_error_mm": 0.16431602643524265,
+      "same_points_free_H": {
+        "probe_median_px": 0.32110282965599884,
+        "probe_max_px": 0.44006607364970735
+      }
+    },
+    {
+      "trial": 63,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2815.348293981515,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 399830072,
+      "probe_median_px": 0.3230345235860197,
+      "probe_max_px": 0.38673360967721754,
+      "rotation_error_deg": 0.06572994205043076,
+      "camera_center_error_mm": 0.6663155016846073,
+      "same_points_free_H": {
+        "probe_median_px": 0.4230947904494808,
+        "probe_max_px": 0.5527428884628046
+      }
+    },
+    {
+      "trial": 64,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1667.8105629980564,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 886265630,
+      "probe_median_px": 0.2888004784735222,
+      "probe_max_px": 0.46059883175402083,
+      "rotation_error_deg": 0.02996750779191191,
+      "camera_center_error_mm": 0.4524784935664969,
+      "same_points_free_H": {
+        "probe_median_px": 0.3998101786553887,
+        "probe_max_px": 0.4630351579374421
+      }
+    },
+    {
+      "trial": 64,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1449.4194869766943,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 886265630,
+      "probe_median_px": 0.2736080600210065,
+      "probe_max_px": 0.48627441846327074,
+      "rotation_error_deg": 0.04605187261989386,
+      "camera_center_error_mm": 0.4933933305175615,
+      "same_points_free_H": {
+        "probe_median_px": 0.39095255544963703,
+        "probe_max_px": 0.5009470264412457
+      }
+    },
+    {
+      "trial": 64,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 106.51498701190576,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 886265630,
+      "probe_median_px": 0.2790440401963571,
+      "probe_max_px": 0.3507095714711221,
+      "rotation_error_deg": 0.017207913869062206,
+      "camera_center_error_mm": 0.3024549185278272,
+      "same_points_free_H": {
+        "probe_median_px": 0.43730818355414947,
+        "probe_max_px": 0.4952386466947339
+      }
+    },
+    {
+      "trial": 65,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1309.5363510074094,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 140140841,
+      "probe_median_px": 0.30096645605762146,
+      "probe_max_px": 0.6088401008716875,
+      "rotation_error_deg": 0.05874851646017791,
+      "camera_center_error_mm": 0.49470906891477234,
+      "same_points_free_H": {
+        "probe_median_px": 0.44772951233144825,
+        "probe_max_px": 0.5883515931258275
+      }
+    },
+    {
+      "trial": 65,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1719.2904360126704,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 140140841,
+      "probe_median_px": 0.24104280342385906,
+      "probe_max_px": 0.48871406295552916,
+      "rotation_error_deg": 0.04294932617220863,
+      "camera_center_error_mm": 0.5043704648481262,
+      "same_points_free_H": {
+        "probe_median_px": 0.3525114651925296,
+        "probe_max_px": 0.6828958763729764
+      }
+    },
+    {
+      "trial": 65,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1658.072670979891,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 140140841,
+      "probe_median_px": 0.246034398917418,
+      "probe_max_px": 0.3201660328222916,
+      "rotation_error_deg": 0.010527259097831688,
+      "camera_center_error_mm": 0.25626119925367724,
+      "same_points_free_H": {
+        "probe_median_px": 0.4280100034467477,
+        "probe_max_px": 0.5093166947715607
+      }
+    },
+    {
+      "trial": 66,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1541.873372043483,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 376035120,
+      "probe_median_px": 0.3023120074327079,
+      "probe_max_px": 0.6348581415496959,
+      "rotation_error_deg": 0.04623398511090993,
+      "camera_center_error_mm": 0.7384877460488645,
+      "same_points_free_H": {
+        "probe_median_px": 0.41639278435281707,
+        "probe_max_px": 0.6157138205263646
+      }
+    },
+    {
+      "trial": 66,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1619.4917499669828,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 376035120,
+      "probe_median_px": 0.25237457660304813,
+      "probe_max_px": 0.5372367367639345,
+      "rotation_error_deg": 0.030285069987486077,
+      "camera_center_error_mm": 0.5291512602624578,
+      "same_points_free_H": {
+        "probe_median_px": 0.4134031542399352,
+        "probe_max_px": 0.534834782768318
+      }
+    },
+    {
+      "trial": 66,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 3914.145457034465,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 376035120,
+      "probe_median_px": 0.2341692113495865,
+      "probe_max_px": 0.4083409473703283,
+      "rotation_error_deg": 0.02433266099005359,
+      "camera_center_error_mm": 0.3955345051921954,
+      "same_points_free_H": {
+        "probe_median_px": 0.40634018153540563,
+        "probe_max_px": 0.5581441758890496
+      }
+    },
+    {
+      "trial": 67,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 114.38844498479739,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 947244981,
+      "probe_median_px": 0.2839710600415402,
+      "probe_max_px": 0.5222514695638942,
+      "rotation_error_deg": 0.0406615631406448,
+      "camera_center_error_mm": 0.6548896487064368,
+      "same_points_free_H": {
+        "probe_median_px": 0.37889863061860507,
+        "probe_max_px": 0.5238454573066788
+      }
+    },
+    {
+      "trial": 67,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1653.2468370278366,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 947244981,
+      "probe_median_px": 0.23138852511002603,
+      "probe_max_px": 0.5129331173893438,
+      "rotation_error_deg": 0.04491627302382352,
+      "camera_center_error_mm": 0.5210227892947858,
+      "same_points_free_H": {
+        "probe_median_px": 0.39499424291038865,
+        "probe_max_px": 0.45212747127834196
+      }
+    },
+    {
+      "trial": 67,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1745.828822022304,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 947244981,
+      "probe_median_px": 0.23593389708270862,
+      "probe_max_px": 0.34167897693311394,
+      "rotation_error_deg": 0.02004918116187016,
+      "camera_center_error_mm": 0.32804945611131536,
+      "same_points_free_H": {
+        "probe_median_px": 0.37525693515999836,
+        "probe_max_px": 0.45953102710169275
+      }
+    },
+    {
+      "trial": 68,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1379.7206269809976,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 973380407,
+      "probe_median_px": 0.28339669491730834,
+      "probe_max_px": 0.5766435088084362,
+      "rotation_error_deg": 0.043934404915130267,
+      "camera_center_error_mm": 0.6884781292135911,
+      "same_points_free_H": {
+        "probe_median_px": 0.39704296407709405,
+        "probe_max_px": 0.5789969800264946
+      }
+    },
+    {
+      "trial": 68,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1400.1614699955098,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 973380407,
+      "probe_median_px": 0.2592871076161175,
+      "probe_max_px": 0.4951598020971091,
+      "rotation_error_deg": 0.04497474652018886,
+      "camera_center_error_mm": 0.48972875906602864,
+      "same_points_free_H": {
+        "probe_median_px": 0.38502193198639884,
+        "probe_max_px": 0.481218448962101
+      }
+    },
+    {
+      "trial": 68,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1747.3326469771564,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 973380407,
+      "probe_median_px": 0.23476709024229026,
+      "probe_max_px": 0.41687670351907713,
+      "rotation_error_deg": 0.023847037550031824,
+      "camera_center_error_mm": 0.4283151810941801,
+      "same_points_free_H": {
+        "probe_median_px": 0.3955812935693993,
+        "probe_max_px": 0.5478115692595186
+      }
+    },
+    {
+      "trial": 69,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2684.687529981602,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 419227030,
+      "probe_median_px": 0.28015480755933003,
+      "probe_max_px": 0.5817897391816782,
+      "rotation_error_deg": 0.05998779363242717,
+      "camera_center_error_mm": 0.48807288346089395,
+      "same_points_free_H": {
+        "probe_median_px": 0.39829377861280896,
+        "probe_max_px": 0.5431595877144046
+      }
+    },
+    {
+      "trial": 69,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 113.41372202150524,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 419227030,
+      "probe_median_px": 0.2224309226728432,
+      "probe_max_px": 0.5120739697060191,
+      "rotation_error_deg": 0.04374649423483211,
+      "camera_center_error_mm": 0.5794794300751382,
+      "same_points_free_H": {
+        "probe_median_px": 0.39336945682585683,
+        "probe_max_px": 0.5378045860790691
+      }
+    },
+    {
+      "trial": 69,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2485.130365996156,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 419227030,
+      "probe_median_px": 0.24066382990509316,
+      "probe_max_px": 0.3643145510597364,
+      "rotation_error_deg": 0.015318445065121967,
+      "camera_center_error_mm": 0.32183826789546033,
+      "same_points_free_H": {
+        "probe_median_px": 0.41025976765747624,
+        "probe_max_px": 0.5212835822435272
+      }
+    },
+    {
+      "trial": 70,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1520.369577978272,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 951647426,
+      "probe_median_px": 0.30514014668642,
+      "probe_max_px": 0.561036460081519,
+      "rotation_error_deg": 0.04161927071394198,
+      "camera_center_error_mm": 0.36961624032677604,
+      "same_points_free_H": {
+        "probe_median_px": 0.43957746515499496,
+        "probe_max_px": 0.6007436040084866
+      }
+    },
+    {
+      "trial": 70,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 117.00752098113298,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 951647426,
+      "probe_median_px": 0.26688570626759556,
+      "probe_max_px": 0.5531708817670034,
+      "rotation_error_deg": 0.06093043792475645,
+      "camera_center_error_mm": 0.6354306595583578,
+      "same_points_free_H": {
+        "probe_median_px": 0.3920440370813664,
+        "probe_max_px": 0.5430826530531346
+      }
+    },
+    {
+      "trial": 70,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1592.1812700107694,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 951647426,
+      "probe_median_px": 0.22910406789403148,
+      "probe_max_px": 0.357862234353713,
+      "rotation_error_deg": 0.01350069950987568,
+      "camera_center_error_mm": 0.3281171186670736,
+      "same_points_free_H": {
+        "probe_median_px": 0.3988759516060071,
+        "probe_max_px": 0.5024514074728049
+      }
+    },
+    {
+      "trial": 71,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 115.37530698115006,
+      "acquisition": "wide junction search",
+      "inliers": 48,
+      "seed": 756091712,
+      "probe_median_px": 0.28122677010733194,
+      "probe_max_px": 0.7685727536876648,
+      "rotation_error_deg": 0.06632272900740276,
+      "camera_center_error_mm": 0.4981515365085165,
+      "same_points_free_H": {
+        "probe_median_px": 0.4092541122876852,
+        "probe_max_px": 0.5695384743000581
+      }
+    },
+    {
+      "trial": 71,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1704.0482540032826,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 756091712,
+      "probe_median_px": 0.25669493454361253,
+      "probe_max_px": 0.5164081378360995,
+      "rotation_error_deg": 0.033749786092590946,
+      "camera_center_error_mm": 0.5337544401505374,
+      "same_points_free_H": {
+        "probe_median_px": 0.4127175260786769,
+        "probe_max_px": 0.5350942411118147
+      }
+    },
+    {
+      "trial": 71,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1592.1617519925348,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 756091712,
+      "probe_median_px": 0.22487890721185916,
+      "probe_max_px": 0.3723872079078554,
+      "rotation_error_deg": 0.03277601484840556,
+      "camera_center_error_mm": 0.4453575472631459,
+      "same_points_free_H": {
+        "probe_median_px": 0.3614159246758623,
+        "probe_max_px": 0.4800873455756877
+      }
+    },
+    {
+      "trial": 72,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 107.80253598932177,
+      "acquisition": "wide junction search",
+      "inliers": 53,
+      "seed": 533876696,
+      "probe_median_px": 0.2908226886168446,
+      "probe_max_px": 0.568707767646182,
+      "rotation_error_deg": 0.0391892132099391,
+      "camera_center_error_mm": 0.6105399558784991,
+      "same_points_free_H": {
+        "probe_median_px": 0.4025598311907662,
+        "probe_max_px": 0.5590282591586729
+      }
+    },
+    {
+      "trial": 72,
+      "camera": 1,
+      "found": false,
+      "reason": "insufficient visible board or degenerate perspective",
+      "elapsed_ms": 2950.4213839536533,
+      "acquisition": "failed",
+      "inliers": 52,
+      "seed": 533876696
+    },
+    {
+      "trial": 72,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1639.152187970467,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 533876696,
+      "probe_median_px": 0.3252839670076335,
+      "probe_max_px": 0.39111478759830737,
+      "rotation_error_deg": 0.05518085626726073,
+      "camera_center_error_mm": 0.5987207575835102,
+      "same_points_free_H": {
+        "probe_median_px": 0.4261645956767655,
+        "probe_max_px": 0.5784428765236594
+      }
+    },
+    {
+      "trial": 73,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1595.3241759561934,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 345037485,
+      "probe_median_px": 0.31210357279002154,
+      "probe_max_px": 0.542941024515091,
+      "rotation_error_deg": 0.02458100267928544,
+      "camera_center_error_mm": 0.5222306261623368,
+      "same_points_free_H": {
+        "probe_median_px": 0.4162858142463167,
+        "probe_max_px": 0.5669498995682889
+      }
+    },
+    {
+      "trial": 73,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1451.8937340471894,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 345037485,
+      "probe_median_px": 0.26513423225926674,
+      "probe_max_px": 0.4858949641901711,
+      "rotation_error_deg": 0.041068137354152795,
+      "camera_center_error_mm": 0.4836974811905082,
+      "same_points_free_H": {
+        "probe_median_px": 0.39938026211477196,
+        "probe_max_px": 0.5007289375804135
+      }
+    },
+    {
+      "trial": 73,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2822.3441779846326,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 345037485,
+      "probe_median_px": 0.24463588472126047,
+      "probe_max_px": 0.3742252627113976,
+      "rotation_error_deg": 0.014725419367412973,
+      "camera_center_error_mm": 0.3356821483235621,
+      "same_points_free_H": {
+        "probe_median_px": 0.4131092574958395,
+        "probe_max_px": 0.521609334971509
+      }
+    },
+    {
+      "trial": 74,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1323.832007998135,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 641721733,
+      "probe_median_px": 0.2853008958174771,
+      "probe_max_px": 0.6044155310416052,
+      "rotation_error_deg": 0.05762793969307259,
+      "camera_center_error_mm": 0.4788064962422486,
+      "same_points_free_H": {
+        "probe_median_px": 0.40827485158051746,
+        "probe_max_px": 0.5423678136060547
+      }
+    },
+    {
+      "trial": 74,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1662.126346025616,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 641721733,
+      "probe_median_px": 0.2580878904410821,
+      "probe_max_px": 0.4696440796123956,
+      "rotation_error_deg": 0.04408409055665471,
+      "camera_center_error_mm": 0.5068621580955208,
+      "same_points_free_H": {
+        "probe_median_px": 0.40383998851709524,
+        "probe_max_px": 0.5457433461371972
+      }
+    },
+    {
+      "trial": 74,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 118.95575502421707,
+      "acquisition": "wide junction search",
+      "inliers": 57,
+      "seed": 641721733,
+      "probe_median_px": 0.2880919806356171,
+      "probe_max_px": 0.3607373217024253,
+      "rotation_error_deg": 0.025776134974060495,
+      "camera_center_error_mm": 0.38623770555988274,
+      "same_points_free_H": {
+        "probe_median_px": 0.4417636941452687,
+        "probe_max_px": 0.49045151654847724
+      }
+    },
+    {
+      "trial": 75,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2585.8829080243595,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 410505609,
+      "probe_median_px": 0.24732078082965833,
+      "probe_max_px": 0.5176699013423515,
+      "rotation_error_deg": 0.0504428157608021,
+      "camera_center_error_mm": 0.4532864790856955,
+      "same_points_free_H": {
+        "probe_median_px": 0.3599146827998918,
+        "probe_max_px": 0.43085204630031354
+      }
+    },
+    {
+      "trial": 75,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1770.5003470182419,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 410505609,
+      "probe_median_px": 0.22081586851108997,
+      "probe_max_px": 0.5509210543483405,
+      "rotation_error_deg": 0.05191537504614336,
+      "camera_center_error_mm": 0.5616702956927627,
+      "same_points_free_H": {
+        "probe_median_px": 0.41773977753611624,
+        "probe_max_px": 0.4994085685948835
+      }
+    },
+    {
+      "trial": 75,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1704.7961649950594,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 410505609,
+      "probe_median_px": 0.23220965372244473,
+      "probe_max_px": 0.3677427897068556,
+      "rotation_error_deg": 0.015171427965985772,
+      "camera_center_error_mm": 0.3170124654859348,
+      "same_points_free_H": {
+        "probe_median_px": 0.40741906275996886,
+        "probe_max_px": 0.5310414217866675
+      }
+    },
+    {
+      "trial": 76,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1803.8372279843315,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 553865133,
+      "probe_median_px": 0.3055278707449549,
+      "probe_max_px": 0.5174975891908855,
+      "rotation_error_deg": 0.03839964409253356,
+      "camera_center_error_mm": 0.4370827180651222,
+      "same_points_free_H": {
+        "probe_median_px": 0.39274241561146433,
+        "probe_max_px": 0.5188766881890874
+      }
+    },
+    {
+      "trial": 76,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 111.43900698516518,
+      "acquisition": "wide junction search",
+      "inliers": 58,
+      "seed": 553865133,
+      "probe_median_px": 0.2665259382472157,
+      "probe_max_px": 0.4987093433012797,
+      "rotation_error_deg": 0.0331160695067303,
+      "camera_center_error_mm": 0.4750220720828948,
+      "same_points_free_H": {
+        "probe_median_px": 0.3999086264981258,
+        "probe_max_px": 0.5468933639920484
+      }
+    },
+    {
+      "trial": 76,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1627.1281369845383,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 553865133,
+      "probe_median_px": 0.20272758466877105,
+      "probe_max_px": 0.3979203863557302,
+      "rotation_error_deg": 0.02103906400935086,
+      "camera_center_error_mm": 0.43174981783059563,
+      "same_points_free_H": {
+        "probe_median_px": 0.38941474006112364,
+        "probe_max_px": 0.5348457068960464
+      }
+    },
+    {
+      "trial": 77,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1584.8575489944778,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 494498239,
+      "probe_median_px": 0.29241616282368155,
+      "probe_max_px": 0.5180831163368932,
+      "rotation_error_deg": 0.02911628406657772,
+      "camera_center_error_mm": 0.5637554819415245,
+      "same_points_free_H": {
+        "probe_median_px": 0.4061666121522243,
+        "probe_max_px": 0.5512695497866364
+      }
+    },
+    {
+      "trial": 77,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 118.40471398318186,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 494498239,
+      "probe_median_px": 0.3088764624996294,
+      "probe_max_px": 0.5636821617377269,
+      "rotation_error_deg": 0.06818783939570183,
+      "camera_center_error_mm": 0.7112273035861136,
+      "same_points_free_H": {
+        "probe_median_px": 0.4160577152149545,
+        "probe_max_px": 0.5523832153881608
+      }
+    },
+    {
+      "trial": 77,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2327.4470689939335,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 494498239,
+      "probe_median_px": 0.27515755521113694,
+      "probe_max_px": 0.3567774170504244,
+      "rotation_error_deg": 0.021361577611201873,
+      "camera_center_error_mm": 0.31633067321843195,
+      "same_points_free_H": {
+        "probe_median_px": 0.4011802300922971,
+        "probe_max_px": 0.4784883571873957
+      }
+    },
+    {
+      "trial": 78,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1621.4728080085479,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 442557314,
+      "probe_median_px": 0.3240644970489517,
+      "probe_max_px": 0.7451519018521345,
+      "rotation_error_deg": 0.07017105620320799,
+      "camera_center_error_mm": 0.5736990296188536,
+      "same_points_free_H": {
+        "probe_median_px": 0.4416906349680452,
+        "probe_max_px": 0.5694939765256369
+      }
+    },
+    {
+      "trial": 78,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1500.665441970341,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 442557314,
+      "probe_median_px": 0.27423675800667036,
+      "probe_max_px": 0.5053012424309833,
+      "rotation_error_deg": 0.03149361032565327,
+      "camera_center_error_mm": 0.4857041140951321,
+      "same_points_free_H": {
+        "probe_median_px": 0.405506834156532,
+        "probe_max_px": 0.5573115694265207
+      }
+    },
+    {
+      "trial": 78,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1297.7439420064911,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 442557314,
+      "probe_median_px": 0.2769023133543949,
+      "probe_max_px": 0.37753259331515726,
+      "rotation_error_deg": 0.02598166826057033,
+      "camera_center_error_mm": 0.33265512085827215,
+      "same_points_free_H": {
+        "probe_median_px": 0.4153873652552968,
+        "probe_max_px": 0.46662104406636595
+      }
+    },
+    {
+      "trial": 79,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1376.6255960217677,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 521693903,
+      "probe_median_px": 0.2685778036980785,
+      "probe_max_px": 0.43861797144892767,
+      "rotation_error_deg": 0.033604469464324736,
+      "camera_center_error_mm": 0.4377188908328598,
+      "same_points_free_H": {
+        "probe_median_px": 0.3892375577181059,
+        "probe_max_px": 0.4409074260275542
+      }
+    },
+    {
+      "trial": 79,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 112.25837597157806,
+      "acquisition": "wide junction search",
+      "inliers": 60,
+      "seed": 521693903,
+      "probe_median_px": 0.2498928502133941,
+      "probe_max_px": 0.5256201630116258,
+      "rotation_error_deg": 0.03603678518377499,
+      "camera_center_error_mm": 0.5184012407026257,
+      "same_points_free_H": {
+        "probe_median_px": 0.4091846683383444,
+        "probe_max_px": 0.5385974043138426
+      }
+    },
+    {
+      "trial": 79,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1417.2868210007437,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 521693903,
+      "probe_median_px": 0.23426735384217717,
+      "probe_max_px": 0.37060259251726174,
+      "rotation_error_deg": 0.011785348992848908,
+      "camera_center_error_mm": 0.3070760767926873,
+      "same_points_free_H": {
+        "probe_median_px": 0.39792993474303556,
+        "probe_max_px": 0.5084471817318804
+      }
+    },
+    {
+      "trial": 80,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1745.3162900055759,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 476565654,
+      "probe_median_px": 0.2758397553247997,
+      "probe_max_px": 0.46979233670880494,
+      "rotation_error_deg": 0.025718370733716137,
+      "camera_center_error_mm": 0.37891283570057643,
+      "same_points_free_H": {
+        "probe_median_px": 0.4056964481658508,
+        "probe_max_px": 0.7127761515178462
+      }
+    },
+    {
+      "trial": 80,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1004.3849519570358,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 476565654,
+      "probe_median_px": 0.2650424269037752,
+      "probe_max_px": 0.48601925447019606,
+      "rotation_error_deg": 0.04596485221093078,
+      "camera_center_error_mm": 0.5039136986859853,
+      "same_points_free_H": {
+        "probe_median_px": 0.38774013202195756,
+        "probe_max_px": 0.47449228647032515
+      }
+    },
+    {
+      "trial": 80,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1265.3993620187975,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 476565654,
+      "probe_median_px": 0.2396919710372027,
+      "probe_max_px": 0.38140451525103947,
+      "rotation_error_deg": 0.01613352478061748,
+      "camera_center_error_mm": 0.3365129821924666,
+      "same_points_free_H": {
+        "probe_median_px": 0.4089681785670546,
+        "probe_max_px": 0.5396848742738279
+      }
+    },
+    {
+      "trial": 81,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1647.2588239703327,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 479309429,
+      "probe_median_px": 0.25360947552780005,
+      "probe_max_px": 0.509991073574077,
+      "rotation_error_deg": 0.06048288160255866,
+      "camera_center_error_mm": 0.47216168531465375,
+      "same_points_free_H": {
+        "probe_median_px": 0.3941887428509962,
+        "probe_max_px": 0.46290217544564144
+      }
+    },
+    {
+      "trial": 81,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1490.7412079628557,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 49,
+      "seed": 479309429,
+      "probe_median_px": 0.3123279830023866,
+      "probe_max_px": 0.7528500549193423,
+      "rotation_error_deg": 0.07877162289698078,
+      "camera_center_error_mm": 0.7884122409695001,
+      "same_points_free_H": {
+        "probe_median_px": 0.3657219527240672,
+        "probe_max_px": 0.765784702762938
+      }
+    },
+    {
+      "trial": 81,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1310.2841490181163,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 479309429,
+      "probe_median_px": 0.24802548488485107,
+      "probe_max_px": 0.3635745833241947,
+      "rotation_error_deg": 0.01851125097679206,
+      "camera_center_error_mm": 0.32873300902864383,
+      "same_points_free_H": {
+        "probe_median_px": 0.410478305160755,
+        "probe_max_px": 0.5409251443243978
+      }
+    },
+    {
+      "trial": 82,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1511.0315199708566,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 144518482,
+      "probe_median_px": 0.27529180619613586,
+      "probe_max_px": 0.4936370633964978,
+      "rotation_error_deg": 0.02551535232359649,
+      "camera_center_error_mm": 0.3871531090721143,
+      "same_points_free_H": {
+        "probe_median_px": 0.41975673047383416,
+        "probe_max_px": 0.5837266419538195
+      }
+    },
+    {
+      "trial": 82,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1423.2032179716043,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 144518482,
+      "probe_median_px": 0.25975834400882125,
+      "probe_max_px": 0.5009097265824791,
+      "rotation_error_deg": 0.046696353109137584,
+      "camera_center_error_mm": 0.49677449903167975,
+      "same_points_free_H": {
+        "probe_median_px": 0.39109478617987026,
+        "probe_max_px": 0.4868415984915696
+      }
+    },
+    {
+      "trial": 82,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1702.0775090204552,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 144518482,
+      "probe_median_px": 0.25076066889592713,
+      "probe_max_px": 0.36823375795110924,
+      "rotation_error_deg": 0.01685685651192732,
+      "camera_center_error_mm": 0.3256416499885174,
+      "same_points_free_H": {
+        "probe_median_px": 0.4202764281199344,
+        "probe_max_px": 0.5331621492388419
+      }
+    },
+    {
+      "trial": 83,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 117.00073495740071,
+      "acquisition": "wide junction search",
+      "inliers": 59,
+      "seed": 675583576,
+      "probe_median_px": 0.30888885909537994,
+      "probe_max_px": 0.4946563936224359,
+      "rotation_error_deg": 0.031215358409186832,
+      "camera_center_error_mm": 0.4294060041463852,
+      "same_points_free_H": {
+        "probe_median_px": 0.42088961050972973,
+        "probe_max_px": 0.4834414672181933
+      }
+    },
+    {
+      "trial": 83,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1492.8977760137059,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 675583576,
+      "probe_median_px": 0.2799857784404753,
+      "probe_max_px": 0.6341190012730059,
+      "rotation_error_deg": 0.035253858736540404,
+      "camera_center_error_mm": 0.5755343141578888,
+      "same_points_free_H": {
+        "probe_median_px": 0.3853049307833125,
+        "probe_max_px": 0.5698572372918089
+      }
+    },
+    {
+      "trial": 83,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1656.9881369941868,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 675583576,
+      "probe_median_px": 0.29745578997088484,
+      "probe_max_px": 0.38987952570175327,
+      "rotation_error_deg": 0.02021689890413527,
+      "camera_center_error_mm": 0.3003785169351283,
+      "same_points_free_H": {
+        "probe_median_px": 0.44279001351792,
+        "probe_max_px": 0.5089646079524156
+      }
+    },
+    {
+      "trial": 84,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1661.0328299575485,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 972694546,
+      "probe_median_px": 0.2586026708591173,
+      "probe_max_px": 0.47584875057607595,
+      "rotation_error_deg": 0.039001256021914954,
+      "camera_center_error_mm": 0.43161262334754175,
+      "same_points_free_H": {
+        "probe_median_px": 0.39723826250759453,
+        "probe_max_px": 0.4581327271843736
+      }
+    },
+    {
+      "trial": 84,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 113.60247997799888,
+      "acquisition": "wide junction search",
+      "inliers": 55,
+      "seed": 972694546,
+      "probe_median_px": 0.2224486821103643,
+      "probe_max_px": 0.49491835374445475,
+      "rotation_error_deg": 0.05773165923634504,
+      "camera_center_error_mm": 0.5857535335590568,
+      "same_points_free_H": {
+        "probe_median_px": 0.3060232841988084,
+        "probe_max_px": 0.6290969265511025
+      }
+    },
+    {
+      "trial": 84,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1151.1138849891722,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 972694546,
+      "probe_median_px": 0.27310873372268196,
+      "probe_max_px": 0.37568475247185984,
+      "rotation_error_deg": 0.017851381314218807,
+      "camera_center_error_mm": 0.35136559048051963,
+      "same_points_free_H": {
+        "probe_median_px": 0.42071429668694127,
+        "probe_max_px": 0.5447006982593848
+      }
+    },
+    {
+      "trial": 85,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1583.9450699859299,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 318073499,
+      "probe_median_px": 0.2958437395164014,
+      "probe_max_px": 0.6701806381773845,
+      "rotation_error_deg": 0.056440783661783685,
+      "camera_center_error_mm": 0.4734561542495389,
+      "same_points_free_H": {
+        "probe_median_px": 0.41065751235151077,
+        "probe_max_px": 0.5686105230470372
+      }
+    },
+    {
+      "trial": 85,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 112.0739679899998,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 318073499,
+      "probe_median_px": 0.22876276402915915,
+      "probe_max_px": 0.5021749310312621,
+      "rotation_error_deg": 0.05405345106309638,
+      "camera_center_error_mm": 0.5216969907538284,
+      "same_points_free_H": {
+        "probe_median_px": 0.2768184996051985,
+        "probe_max_px": 0.5835256429683838
+      }
+    },
+    {
+      "trial": 85,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2694.2058019922115,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 318073499,
+      "probe_median_px": 0.24202170683915938,
+      "probe_max_px": 0.40100785097648695,
+      "rotation_error_deg": 0.026975201739240843,
+      "camera_center_error_mm": 0.4120004256620321,
+      "same_points_free_H": {
+        "probe_median_px": 0.4053705614759126,
+        "probe_max_px": 0.5568871388531526
+      }
+    },
+    {
+      "trial": 86,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 114.13472704589367,
+      "acquisition": "wide junction search",
+      "inliers": 59,
+      "seed": 41003255,
+      "probe_median_px": 0.26297915233086494,
+      "probe_max_px": 0.5018231852074455,
+      "rotation_error_deg": 0.054392384177290226,
+      "camera_center_error_mm": 0.5027158695693715,
+      "same_points_free_H": {
+        "probe_median_px": 0.39640267971326015,
+        "probe_max_px": 0.4515486054202269
+      }
+    },
+    {
+      "trial": 86,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1294.0713420393877,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 41003255,
+      "probe_median_px": 0.273104827030018,
+      "probe_max_px": 0.4767381513130222,
+      "rotation_error_deg": 0.038403637620280845,
+      "camera_center_error_mm": 0.45043251375795085,
+      "same_points_free_H": {
+        "probe_median_px": 0.37802027981413355,
+        "probe_max_px": 0.47242731566873986
+      }
+    },
+    {
+      "trial": 86,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 108.52807795163244,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 41003255,
+      "probe_median_px": 0.31578419470148056,
+      "probe_max_px": 0.36725249995357234,
+      "rotation_error_deg": 0.01766274694176995,
+      "camera_center_error_mm": 0.34099151299753,
+      "same_points_free_H": {
+        "probe_median_px": 0.4694610017599817,
+        "probe_max_px": 0.546631813156819
+      }
+    },
+    {
+      "trial": 87,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2792.613277968485,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 831649040,
+      "probe_median_px": 0.2690729585208898,
+      "probe_max_px": 0.5479256209626099,
+      "rotation_error_deg": 0.03535151901055556,
+      "camera_center_error_mm": 0.4692586824144544,
+      "same_points_free_H": {
+        "probe_median_px": 0.43128080265474705,
+        "probe_max_px": 0.5145593784558141
+      }
+    },
+    {
+      "trial": 87,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1553.3518369775265,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 831649040,
+      "probe_median_px": 0.3113615322116627,
+      "probe_max_px": 0.5911314226900214,
+      "rotation_error_deg": 0.03364179034478967,
+      "camera_center_error_mm": 0.5272136913006135,
+      "same_points_free_H": {
+        "probe_median_px": 0.3976984392477643,
+        "probe_max_px": 0.5254341287310005
+      }
+    },
+    {
+      "trial": 87,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1549.3244139943272,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 831649040,
+      "probe_median_px": 0.24626774189522527,
+      "probe_max_px": 0.35880323554339877,
+      "rotation_error_deg": 0.015806967411596276,
+      "camera_center_error_mm": 0.3205856916140691,
+      "same_points_free_H": {
+        "probe_median_px": 0.3875268768873464,
+        "probe_max_px": 0.48570891006563327
+      }
+    },
+    {
+      "trial": 88,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1331.3280820148066,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 203376827,
+      "probe_median_px": 0.2816217869499644,
+      "probe_max_px": 0.5069135418109624,
+      "rotation_error_deg": 0.019165333625932403,
+      "camera_center_error_mm": 0.3181635474955293,
+      "same_points_free_H": {
+        "probe_median_px": 0.41476861901158557,
+        "probe_max_px": 0.5651848774916386
+      }
+    },
+    {
+      "trial": 88,
+      "camera": 1,
+      "found": false,
+      "reason": "insufficient visible board or degenerate perspective",
+      "elapsed_ms": 1988.3632899727672,
+      "acquisition": "failed",
+      "inliers": 51,
+      "seed": 203376827
+    },
+    {
+      "trial": 88,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1618.4340229956433,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 203376827,
+      "probe_median_px": 0.2429967534324305,
+      "probe_max_px": 0.3899622940659991,
+      "rotation_error_deg": 0.014562971814844849,
+      "camera_center_error_mm": 0.3611659759812358,
+      "same_points_free_H": {
+        "probe_median_px": 0.414017616666278,
+        "probe_max_px": 0.5455135847621639
+      }
+    },
+    {
+      "trial": 89,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 112.72600694792345,
+      "acquisition": "wide junction search",
+      "inliers": 60,
+      "seed": 46556926,
+      "probe_median_px": 0.26489367574991246,
+      "probe_max_px": 0.49732725128796673,
+      "rotation_error_deg": 0.031788906090732906,
+      "camera_center_error_mm": 0.4856579700578521,
+      "same_points_free_H": {
+        "probe_median_px": 0.3940314265049553,
+        "probe_max_px": 0.49728607770659167
+      }
+    },
+    {
+      "trial": 89,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1882.8364310320467,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 46556926,
+      "probe_median_px": 0.25337150378818407,
+      "probe_max_px": 0.3970895318050512,
+      "rotation_error_deg": 0.027993034930945584,
+      "camera_center_error_mm": 0.34760808061653675,
+      "same_points_free_H": {
+        "probe_median_px": 0.37044098833238137,
+        "probe_max_px": 0.41371911662540456
+      }
+    },
+    {
+      "trial": 89,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1344.3252939614467,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 46556926,
+      "probe_median_px": 0.24348708220478565,
+      "probe_max_px": 0.37057078661699405,
+      "rotation_error_deg": 0.017486868630090302,
+      "camera_center_error_mm": 0.3560999130836615,
+      "same_points_free_H": {
+        "probe_median_px": 0.4023855841880896,
+        "probe_max_px": 0.5271959238733168
+      }
+    },
+    {
+      "trial": 90,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 116.10606097383425,
+      "acquisition": "wide junction search",
+      "inliers": 47,
+      "seed": 1035452826,
+      "probe_median_px": 0.23442454893364728,
+      "probe_max_px": 0.5705159029356044,
+      "rotation_error_deg": 0.0606304830263898,
+      "camera_center_error_mm": 0.47760169332449814,
+      "same_points_free_H": {
+        "probe_median_px": 0.4052185886242024,
+        "probe_max_px": 0.7556374880576869
+      }
+    },
+    {
+      "trial": 90,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1250.572031014599,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 58,
+      "seed": 1035452826,
+      "probe_median_px": 0.26281731131879077,
+      "probe_max_px": 0.5116983166600063,
+      "rotation_error_deg": 0.04525559340036713,
+      "camera_center_error_mm": 0.512558654258145,
+      "same_points_free_H": {
+        "probe_median_px": 0.4083294919024588,
+        "probe_max_px": 0.5062450024355791
+      }
+    },
+    {
+      "trial": 90,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 113.1281639682129,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 1035452826,
+      "probe_median_px": 0.2282128151744359,
+      "probe_max_px": 0.3682479678910569,
+      "rotation_error_deg": 0.017963082576303198,
+      "camera_center_error_mm": 0.35494667777279326,
+      "same_points_free_H": {
+        "probe_median_px": 0.4003330236785196,
+        "probe_max_px": 0.5187856481813893
+      }
+    },
+    {
+      "trial": 91,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1851.7418399569578,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 693075583,
+      "probe_median_px": 0.30559937338418564,
+      "probe_max_px": 0.525115575903,
+      "rotation_error_deg": 0.04868945547265498,
+      "camera_center_error_mm": 0.4450872490509564,
+      "same_points_free_H": {
+        "probe_median_px": 0.4132624388962672,
+        "probe_max_px": 0.44816295658506733
+      }
+    },
+    {
+      "trial": 91,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1557.88500898052,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 693075583,
+      "probe_median_px": 0.2652450486143235,
+      "probe_max_px": 0.5227520054716935,
+      "rotation_error_deg": 0.0399838989889868,
+      "camera_center_error_mm": 0.5087864796288574,
+      "same_points_free_H": {
+        "probe_median_px": 0.40814844546493095,
+        "probe_max_px": 0.5790764645488152
+      }
+    },
+    {
+      "trial": 91,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1413.8294239528477,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 693075583,
+      "probe_median_px": 0.21264796493358495,
+      "probe_max_px": 0.4006507283911891,
+      "rotation_error_deg": 0.019662897406831813,
+      "camera_center_error_mm": 0.40021562993277326,
+      "same_points_free_H": {
+        "probe_median_px": 0.39049042153022534,
+        "probe_max_px": 0.5265211239730929
+      }
+    },
+    {
+      "trial": 92,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1730.128343042452,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 518238416,
+      "probe_median_px": 0.2758989975585142,
+      "probe_max_px": 0.521548608624927,
+      "rotation_error_deg": 0.05411341074518856,
+      "camera_center_error_mm": 0.45720844347544226,
+      "same_points_free_H": {
+        "probe_median_px": 0.392016081474051,
+        "probe_max_px": 0.4505041065925891
+      }
+    },
+    {
+      "trial": 92,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1715.2708939975128,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 518238416,
+      "probe_median_px": 0.36493137322292646,
+      "probe_max_px": 0.5733047461544668,
+      "rotation_error_deg": 0.08725474268923143,
+      "camera_center_error_mm": 0.7564664007768599,
+      "same_points_free_H": {
+        "probe_median_px": 0.38969675433428735,
+        "probe_max_px": 0.5064847721650754
+      }
+    },
+    {
+      "trial": 92,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1777.3012190009467,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 518238416,
+      "probe_median_px": 0.23824841961451226,
+      "probe_max_px": 0.3365693968493577,
+      "rotation_error_deg": 0.022439534459224107,
+      "camera_center_error_mm": 0.3427447510284071,
+      "same_points_free_H": {
+        "probe_median_px": 0.39431163187216794,
+        "probe_max_px": 0.4619053532857769
+      }
+    },
+    {
+      "trial": 93,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 120.77643699012697,
+      "acquisition": "wide junction search",
+      "inliers": 56,
+      "seed": 231859403,
+      "probe_median_px": 0.28712471274924767,
+      "probe_max_px": 0.6169401268501055,
+      "rotation_error_deg": 0.05614433384661829,
+      "camera_center_error_mm": 0.4725295000926724,
+      "same_points_free_H": {
+        "probe_median_px": 0.405032556097106,
+        "probe_max_px": 0.5502895135634003
+      }
+    },
+    {
+      "trial": 93,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2433.6327530327253,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 231859403,
+      "probe_median_px": 0.28415873838613764,
+      "probe_max_px": 0.49745287272347644,
+      "rotation_error_deg": 0.043123221349109765,
+      "camera_center_error_mm": 0.46811812698667055,
+      "same_points_free_H": {
+        "probe_median_px": 0.41120514354232107,
+        "probe_max_px": 0.510068334610515
+      }
+    },
+    {
+      "trial": 93,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1694.4555809604935,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 231859403,
+      "probe_median_px": 0.24190069162510167,
+      "probe_max_px": 0.36937384249465754,
+      "rotation_error_deg": 0.014034851963147923,
+      "camera_center_error_mm": 0.3569392640703714,
+      "same_points_free_H": {
+        "probe_median_px": 0.41581920432920966,
+        "probe_max_px": 0.5234840742547932
+      }
+    },
+    {
+      "trial": 94,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1437.8498460282572,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 366935654,
+      "probe_median_px": 0.27678987835025864,
+      "probe_max_px": 0.4553618574848384,
+      "rotation_error_deg": 0.028724432315996737,
+      "camera_center_error_mm": 0.38188219343484886,
+      "same_points_free_H": {
+        "probe_median_px": 0.38458942299377313,
+        "probe_max_px": 0.4380705482199586
+      }
+    },
+    {
+      "trial": 94,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1319.1561760031618,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 366935654,
+      "probe_median_px": 0.23165231513484025,
+      "probe_max_px": 0.49996655377102917,
+      "rotation_error_deg": 0.04997057436994045,
+      "camera_center_error_mm": 0.5200983241864996,
+      "same_points_free_H": {
+        "probe_median_px": 0.30850289184118024,
+        "probe_max_px": 0.6425775124687777
+      }
+    },
+    {
+      "trial": 94,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1881.4064129837789,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 366935654,
+      "probe_median_px": 0.20456191661103285,
+      "probe_max_px": 0.40806792566537453,
+      "rotation_error_deg": 0.022551646699187453,
+      "camera_center_error_mm": 0.4449024984517969,
+      "same_points_free_H": {
+        "probe_median_px": 0.38796827736101713,
+        "probe_max_px": 0.5472913257192623
+      }
+    },
+    {
+      "trial": 95,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1359.3194049899466,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 59,
+      "seed": 208851562,
+      "probe_median_px": 0.2901654954882765,
+      "probe_max_px": 0.48850615702359035,
+      "rotation_error_deg": 0.023796677347610096,
+      "camera_center_error_mm": 0.3813262899405605,
+      "same_points_free_H": {
+        "probe_median_px": 0.40597010418261614,
+        "probe_max_px": 0.4739977824320393
+      }
+    },
+    {
+      "trial": 95,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1214.6444380050525,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 208851562,
+      "probe_median_px": 0.2542174298647153,
+      "probe_max_px": 0.5470367474386076,
+      "rotation_error_deg": 0.03565184031941272,
+      "camera_center_error_mm": 0.5143163594220139,
+      "same_points_free_H": {
+        "probe_median_px": 0.3846782756121458,
+        "probe_max_px": 0.44908976567084924
+      }
+    },
+    {
+      "trial": 95,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2647.2495999769308,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 208851562,
+      "probe_median_px": 0.2106974814942883,
+      "probe_max_px": 0.40555933640199543,
+      "rotation_error_deg": 0.0236838222617879,
+      "camera_center_error_mm": 0.41127427513478815,
+      "same_points_free_H": {
+        "probe_median_px": 0.39743780604390716,
+        "probe_max_px": 0.5475356708518315
+      }
+    },
+    {
+      "trial": 96,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1502.2067980025895,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 60,
+      "seed": 215881551,
+      "probe_median_px": 0.28116993389159023,
+      "probe_max_px": 0.5450775870989515,
+      "rotation_error_deg": 0.03173625094880748,
+      "camera_center_error_mm": 0.48841791352658276,
+      "same_points_free_H": {
+        "probe_median_px": 0.4219093833242461,
+        "probe_max_px": 0.5400117979787618
+      }
+    },
+    {
+      "trial": 96,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1603.7166670430452,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 215881551,
+      "probe_median_px": 0.3068468264027927,
+      "probe_max_px": 0.45712912177215465,
+      "rotation_error_deg": 0.06168584538353909,
+      "camera_center_error_mm": 0.5593340248372121,
+      "same_points_free_H": {
+        "probe_median_px": 0.369890627379626,
+        "probe_max_px": 0.43932511614148273
+      }
+    },
+    {
+      "trial": 96,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1098.2748030219227,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 215881551,
+      "probe_median_px": 0.2676183262686513,
+      "probe_max_px": 0.35469608325209445,
+      "rotation_error_deg": 0.01896587552740818,
+      "camera_center_error_mm": 0.3391844500107441,
+      "same_points_free_H": {
+        "probe_median_px": 0.391781215322797,
+        "probe_max_px": 0.48609686061488905
+      }
+    },
+    {
+      "trial": 97,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1466.4256160031073,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 56,
+      "seed": 199600260,
+      "probe_median_px": 0.2991087338033364,
+      "probe_max_px": 0.6013547278429109,
+      "rotation_error_deg": 0.06077354767388317,
+      "camera_center_error_mm": 0.5125235055685975,
+      "same_points_free_H": {
+        "probe_median_px": 0.4179732480152953,
+        "probe_max_px": 0.5634705640484056
+      }
+    },
+    {
+      "trial": 97,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2717.020769021474,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 199600260,
+      "probe_median_px": 0.2722919825383458,
+      "probe_max_px": 0.49240632744302654,
+      "rotation_error_deg": 0.03837685832113992,
+      "camera_center_error_mm": 0.45461988545628285,
+      "same_points_free_H": {
+        "probe_median_px": 0.39586186336765833,
+        "probe_max_px": 0.48571660121174715
+      }
+    },
+    {
+      "trial": 97,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1389.4780849805102,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 53,
+      "seed": 199600260,
+      "probe_median_px": 0.22108492782719685,
+      "probe_max_px": 0.4293268009814046,
+      "rotation_error_deg": 0.022847743364394407,
+      "camera_center_error_mm": 0.4756194774250134,
+      "same_points_free_H": {
+        "probe_median_px": 0.39651269091728886,
+        "probe_max_px": 0.5633470312874888
+      }
+    },
+    {
+      "trial": 98,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2464.3743479973637,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 55,
+      "seed": 320782635,
+      "probe_median_px": 0.2643821620335345,
+      "probe_max_px": 0.4667853403392446,
+      "rotation_error_deg": 0.020909740000669856,
+      "camera_center_error_mm": 0.35086260115763673,
+      "same_points_free_H": {
+        "probe_median_px": 0.4003687130992559,
+        "probe_max_px": 0.5654470687201189
+      }
+    },
+    {
+      "trial": 98,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 2041.9860259862617,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 320782635,
+      "probe_median_px": 0.22896760843060945,
+      "probe_max_px": 0.528984396198511,
+      "rotation_error_deg": 0.04449501496757853,
+      "camera_center_error_mm": 0.5836218255736239,
+      "same_points_free_H": {
+        "probe_median_px": 0.4025104600889808,
+        "probe_max_px": 0.560192444366478
+      }
+    },
+    {
+      "trial": 98,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1776.6851219930686,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 54,
+      "seed": 320782635,
+      "probe_median_px": 0.24618094674505628,
+      "probe_max_px": 0.3712881555757423,
+      "rotation_error_deg": 0.029048388512899644,
+      "camera_center_error_mm": 0.4334444981799082,
+      "same_points_free_H": {
+        "probe_median_px": 0.3715931242107453,
+        "probe_max_px": 0.49398073729502645
+      }
+    },
+    {
+      "trial": 99,
+      "camera": 0,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1389.388790994417,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 985705878,
+      "probe_median_px": 0.27926243900821524,
+      "probe_max_px": 0.5105989311269394,
+      "rotation_error_deg": 0.03907479088117552,
+      "camera_center_error_mm": 0.459256861040844,
+      "same_points_free_H": {
+        "probe_median_px": 0.4016260659100624,
+        "probe_max_px": 0.5511028798725047
+      }
+    },
+    {
+      "trial": 99,
+      "camera": 1,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 1602.8532959753647,
+      "acquisition": "grayscale whole-pattern recovery + junction graph",
+      "inliers": 57,
+      "seed": 985705878,
+      "probe_median_px": 0.25573027634227086,
+      "probe_max_px": 0.48633360095876477,
+      "rotation_error_deg": 0.04736576314424696,
+      "camera_center_error_mm": 0.5249715027656546,
+      "same_points_free_H": {
+        "probe_median_px": 0.3825701455330624,
+        "probe_max_px": 0.47968764748331766
+      }
+    },
+    {
+      "trial": 99,
+      "camera": 2,
+      "found": true,
+      "reason": "fresh grayscale junction graph + seeded metric PnP/LM",
+      "elapsed_ms": 96.5659610228613,
+      "acquisition": "wide junction search",
+      "inliers": 54,
+      "seed": 985705878,
+      "probe_median_px": 0.2415550956062106,
+      "probe_max_px": 0.3722573979793687,
+      "rotation_error_deg": 0.014250903457968736,
+      "camera_center_error_mm": 0.342685692886217,
+      "same_points_free_H": {
+        "probe_median_px": 0.4079813222812716,
+        "probe_max_px": 0.5182001776043568
+      }
+    }
+  ],
+  "known_to_detector": "Exact K/D and nominal mount orientation/position; no saved board photograph.",
+  "withheld": "Sampled true pose and ground-truth homography; used only for rendering/evaluation.",
+  "priors": "Positions sampled within a 50.8mm ball; aim sigma8mm; roll clipped4deg; FOV75-81deg; existing Monte Carlo Brown distortion ranges.",
+  "timing": "Each worker uses one OpenCV thread; acquisition wall time includes local search and any whole-pattern/PnP fallback. Concurrent workers contend for CPU."
+}

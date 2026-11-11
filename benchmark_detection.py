@@ -53,7 +53,8 @@ def score_result(point,ids,reason,board,truth):
 
 
 def trial(task):
-    index,seed,fixed,stress,output,save_images=task
+    index,seed,fixed,stress,output,save_images,*options=task
+    calibration_method=options[0] if options else "template"
     cv.setNumThreads(1);cv.setRNGSeed(int(seed%(2**31-1)))
     rng=np.random.default_rng(seed);board=Board();texture=board_texture(board)
     if fixed:
@@ -98,7 +99,12 @@ def trial(task):
         raw_pairs.append((reference_raw,changed_raw,changed_jpg))
         H=None
         try:
-            H,info=automatic_homography(clear,board,nominal_homography(board,k,POSITIONS[i]),k)
+            if calibration_method=='pattern':
+                from board_pattern import PatternDetector
+                H,info=PatternDetector(board).acquire(cv.cvtColor(clear,cv.COLOR_BGR2GRAY),nominal_homography(board,k,POSITIONS[i]),k)
+                if H is None:raise ValueError(info['reason'])
+            else:
+                H,info=automatic_homography(clear,board,nominal_homography(board,k,POSITIONS[i]),k)
             error=np.linalg.norm(project(board.landmarks(),H@np.linalg.inv(H_truth))-board.landmarks(),axis=1)
             calibration.append(dict(camera=i,success=True,median_px=float(np.median(error)),max_px=float(error.max()),H=H.tolist(),oracle_H_evaluation_only=H_truth.tolist()))
         except (ValueError,cv.error,np.linalg.LinAlgError) as exc:
@@ -174,6 +180,7 @@ def summarize(rows):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--calibration-method',choices=['template','pattern'],default='template')
     p.add_argument('--fixed',action='store_true');p.add_argument('--trials',type=int,default=100)
     p.add_argument('--seed',type=int,default=20261110);p.add_argument('--workers',type=int,default=4)
     p.add_argument('--stress',action='store_true',help='Vary dart tilt, length, colours, flight size and 0-2 existing darts')
@@ -182,13 +189,13 @@ def main():
     if args.trials<1 or args.workers<1:p.error('Positive trials/workers required')
     count=len(CASES) if args.fixed else args.trials
     seeds=np.random.default_rng(args.seed).integers(1,2**30,count)
-    tasks=[(i,int(seed),args.fixed,args.stress,args.output,i<args.save_images) for i,seed in enumerate(seeds)]
+    tasks=[(i,int(seed),args.fixed,args.stress,args.output,i<args.save_images,args.calibration_method) for i,seed in enumerate(seeds)]
     rows=[]
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         for r in pool.map(trial,tasks,chunksize=1):
             rows.append(r)
             print(f"{len(rows)}/{count}: "+str({m:r['results'][m]['outcome'] for m in MODES}),flush=True)
-    report=dict(seed=args.seed,fixed=args.fixed,stress=args.stress,summary=summarize(rows),trials=rows,
+    report=dict(seed=args.seed,fixed=args.fixed,stress=args.stress,calibration_method=args.calibration_method,summary=summarize(rows),trials=rows,
                 conventions='All errors are board-plane millimetres. Oracle truth-H diagnostic is not deployable calibration. Estimated modes use actual automatic calibration.',
                 limitations=['Exact synthetic K/D supplied. One board texture, mild blur/noise/JPEG; no photorealistic shadows or hands.',
                              'The stress renderer uses painter-order darts and pixel-width shafts; it is not a depth-tested cylinder renderer.',
