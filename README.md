@@ -62,6 +62,13 @@ It uses depth-sorted triangles, without cast shadows or photorealistic optics.
 The [OBJ mesh](raised_wire_evidence/spider_mm.obj) is in millimetres. No SolidCraft
 integration or measured wire dimensions are claimed.
 
+A [three-dart sequence averaged across the three rectified cameras](three_dart_evidence/average_after_3.jpg)
+is generated with `python render_three_darts.py`. The
+[comparison image](three_dart_evidence/comparison_after_3.jpg) includes each source
+rectification. Equal weights apply to valid camera pixels; warp padding is
+excluded. Raised shafts and flights remain ghosted because their projections
+are above the scoring plane.
+
 ## Install
 
 Python 3.10 or newer. Use a desktop OpenCV build for the live display.
