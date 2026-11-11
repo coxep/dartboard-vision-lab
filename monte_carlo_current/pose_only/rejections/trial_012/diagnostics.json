@@ -1,0 +1,112 @@
+{
+  "mode": "pose_only",
+  "trial": 12,
+  "target": {
+    "label": "SB",
+    "score": 25,
+    "x_mm": 0.0,
+    "y_mm": -10.999999999999988,
+    "radius_mm": 10.999999999999988,
+    "boundary_review": false
+  },
+  "estimated_score": {
+    "outcome": "calibration_rejected",
+    "estimate": null,
+    "error_mm": null
+  },
+  "oracle_score": {
+    "outcome": "correct",
+    "reason": "three views",
+    "cameras": [
+      0,
+      1,
+      2
+    ],
+    "estimate": {
+      "label": "SB",
+      "score": 25,
+      "x_mm": 0.014264896780031433,
+      "y_mm": -10.901351509099726,
+      "radius_mm": 10.901360842217407,
+      "boundary_review": false
+    },
+    "error_mm": 0.09967453053335061,
+    "pixel": [
+      450.0271872150396,
+      429.22330653559817
+    ],
+    "requires_review": false,
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ]
+  },
+  "calibration": [
+    {
+      "camera": 0,
+      "reason": "direct template registration failed: Direct template appearance fit lacks correlation or exceeds local capture range",
+      "replay_reason": "direct template registration failed: Direct template appearance fit lacks correlation or exceeds local capture range",
+      "recovery_failures": [
+        "Grayscale board template lacks correlation"
+      ],
+      "events": [
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.5724510852408569,
+          "max_update_px": 107.87808990478516
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.5139765784849215,
+          "max_update_px": 108.94820404052734
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "Grayscale board template lacks correlation"
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "junction graph lacks distributed support",
+          "candidates": 31,
+          "inliers": 18
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.5017996929788714,
+          "max_update_px": 107.96446990966797
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "correlation": 0.49259038064139066,
+          "max_update_px": 110.33876037597656
+        },
+        {
+          "stage": "refine_appearance",
+          "gate_error": "Direct template appearance fit lacks correlation or exceeds local capture range"
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.5724510852408569,
+          "max_update_px": 107.87808990478516
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.5139765784849215,
+          "max_update_px": 108.94820404052734
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "Grayscale board template lacks correlation"
+        }
+      ],
+      "image": "pose_only/rejections/trial_012/camera_0_calibration.jpg"
+    }
+  ]
+}

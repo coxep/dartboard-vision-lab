@@ -1,0 +1,337 @@
+{
+  "mode": "mixed_stress",
+  "trial": 0,
+  "target": {
+    "label": "T20",
+    "score": 60,
+    "x_mm": 0.0,
+    "y_mm": -103.0,
+    "radius_mm": 103.0,
+    "boundary_review": false
+  },
+  "estimated_score": {
+    "outcome": "calibration_rejected",
+    "estimate": null,
+    "error_mm": null
+  },
+  "oracle_score": {
+    "outcome": "correct",
+    "reason": "three views",
+    "cameras": [
+      0,
+      1,
+      2
+    ],
+    "estimate": {
+      "label": "T20",
+      "score": 60,
+      "x_mm": 0.042154867650860225,
+      "y_mm": -103.00199520208865,
+      "radius_mm": 103.00200382829433,
+      "boundary_review": false
+    },
+    "error_mm": 0.042202057983422164,
+    "pixel": [
+      450.08034221834635,
+      253.69031502660752
+    ],
+    "requires_review": false,
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ]
+  },
+  "calibration": [
+    {
+      "camera": 1,
+      "reason": "direct template registration failed: insufficient visible board or degenerate perspective",
+      "replay_reason": "direct template registration failed: insufficient visible board or degenerate perspective",
+      "recovery_failures": [
+        "Grayscale board template lacks correlation"
+      ],
+      "events": [
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.6078074013181941,
+          "max_update_px": 76.2936019897461
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.5736056784873973,
+          "max_update_px": 54.18561553955078
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "Grayscale board template lacks correlation"
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "junction graph lacks distributed support",
+          "candidates": 32,
+          "inliers": 17
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.5622108115751344,
+          "max_update_px": 50.41500473022461
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "correlation": 0.4497133467580137,
+          "max_update_px": 49.92344665527344
+        },
+        {
+          "stage": "refine_appearance",
+          "gate_error": "Direct template appearance fit lacks correlation or exceeds local capture range"
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9873223730369882,
+          "max_update_px": 7.279409408569336
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9763023875018129,
+          "max_update_px": 7.656176567077637
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.987725823401586,
+          "max_update_px": 0.28664079308509827
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9750352109148641,
+          "max_update_px": 0.5038668513298035
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.9760911204365395,
+          "max_update_px": 0.03508568927645683
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "correlation": 0.9705536130192151,
+          "max_update_px": 0.6125404834747314
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "insufficient visible board or degenerate perspective",
+          "candidates": 67,
+          "inliers": 67,
+          "perimeter_inside_fraction": 0.6875,
+          "horizon_crosses": false,
+          "projected_area_px2": 728219.5992426197
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9874683723153876,
+          "max_update_px": 6.874793529510498
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9764507989788249,
+          "max_update_px": 7.166174411773682
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9880934757487407,
+          "max_update_px": 0.54692143201828
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9752666175154314,
+          "max_update_px": 0.3700260519981384
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.9761116415394886,
+          "max_update_px": 0.04975716769695282
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "correlation": 0.9704988746117351,
+          "max_update_px": 0.6222723126411438
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "insufficient visible board or degenerate perspective",
+          "candidates": 67,
+          "inliers": 67,
+          "perimeter_inside_fraction": 0.6875,
+          "horizon_crosses": false,
+          "projected_area_px2": 728219.1052098861
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9864929272353021,
+          "max_update_px": 6.607849597930908
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.976075001467874,
+          "max_update_px": 6.4556355476379395
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.987732626534767,
+          "max_update_px": 0.574447751045227
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9750549536546527,
+          "max_update_px": 0.1447986215353012
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.9760806470770846,
+          "max_update_px": 0.05163484811782837
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "correlation": 0.9704773374550777,
+          "max_update_px": 0.6235318183898926
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "insufficient visible board or degenerate perspective",
+          "candidates": 67,
+          "inliers": 67,
+          "perimeter_inside_fraction": 0.6875,
+          "horizon_crosses": false,
+          "projected_area_px2": 728219.2553178055
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9866474743306796,
+          "max_update_px": 6.927001953125
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9746748742953504,
+          "max_update_px": 6.9054789543151855
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9878089983667782,
+          "max_update_px": 0.5983061194419861
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9750463145068642,
+          "max_update_px": 0.06051182374358177
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.9761267547248488,
+          "max_update_px": 0.062261901795864105
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "correlation": 0.9705410797664354,
+          "max_update_px": 0.6179698705673218
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "insufficient visible board or degenerate perspective",
+          "candidates": 67,
+          "inliers": 67,
+          "perimeter_inside_fraction": 0.6875,
+          "horizon_crosses": false,
+          "projected_area_px2": 728218.5657788969
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9861941818268143,
+          "max_update_px": 8.325837135314941
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9747073189037236,
+          "max_update_px": 8.314156532287598
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.9878086339985693,
+          "max_update_px": 0.5504987835884094
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.9750607256411076,
+          "max_update_px": 0.05345217138528824
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.9761165828574239,
+          "max_update_px": 0.060819391161203384
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "correlation": 0.9704790849137318,
+          "max_update_px": 0.625041127204895
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "insufficient visible board or degenerate perspective",
+          "candidates": 67,
+          "inliers": 67,
+          "perimeter_inside_fraction": 0.6875,
+          "horizon_crosses": false,
+          "projected_area_px2": 728217.2177065408
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.6078074013181941,
+          "max_update_px": 76.2936019897461
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.5736056784873973,
+          "max_update_px": 54.18561553955078
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "Grayscale board template lacks correlation"
+        }
+      ],
+      "image": "mixed_stress/rejections/trial_000/camera_1_calibration.jpg"
+    }
+  ]
+}

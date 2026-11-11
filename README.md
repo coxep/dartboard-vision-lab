@@ -168,6 +168,32 @@ establish automatic live throw timing.
 
 ## Validation status
 
+The [two-inch pose Monte Carlo](monte_carlo_current/README.md) evaluates 100
+paired three-camera setups in each of two conditions. The frozen independent
+grayscale solver accepted 297/300 pose-only views and 295/300 mixed-stress views;
+the 95th percentiles of maximum visible plane error were 0.297 and 0.431 mm,
+conditional on acceptance. Known synthetic lens correction is supplied.
+[All rejection images and reasons](https://dartboard-vision-lab.spunky-cabin-7615.chatgpt.site/rejections.html)
+include failed optimizer traces, visibility checks and dart masks. These results
+do not evaluate the proposed shared-appearance joint refinement.
+
+An optional foreground filter uses HSV/scaled-RGB consistency and agreement
+across rectified cameras to identify common board-plane dimming. Hue alone would
+lose neutral darts. Enable it with:
+
+```sh
+python dartboard.py run --sources 0 1 2 --shadow-aware-difference
+```
+
+`python benchmark_shadows.py` runs 32 added-dart and 16 moving-shadow-only
+fixtures with faint, soft shadows from sampled area lights. Both ordinary
+grayscale differences and the optional filter scored 28/32 added darts, rejected
+the four misses, and reported no hits in the 16 shadow-only pairs. Shadow pixels
+were suppressed, but no scoring gain was demonstrated. This colour/plane
+heuristic is experimental: coloured lighting, self-shading, sensor changes and
+certain material/illumination ambiguities remain unvalidated. It does not change
+calibration or the frozen Monte Carlo results.
+
 The current direct-template implementation has been exercised on synthetic raised-wire
 inputs with camera movement, partial occlusion and uneven lighting. The original
 photo also has a boundary-check fixture; it is not synchronized multi-view footage. Synchronized
@@ -179,5 +205,5 @@ JPEG compression; they do not reproduce real hands, lighting or depth occlusion.
 Run the regression checks with:
 
 ```sh
-python -m unittest -q test_pipeline test_detection test_recording_replay test_board_pattern test_wire_geometry
+python -m unittest -q test_pipeline test_detection test_recording_replay test_board_pattern test_wire_geometry test_shadow_difference
 ```

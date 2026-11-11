@@ -1,0 +1,68 @@
+{
+  "mode": "mixed_stress",
+  "trial": 7,
+  "target": {
+    "label": "MISS",
+    "score": 0,
+    "x_mm": 144.00502499874062,
+    "y_mm": -104.62577490806022,
+    "radius_mm": 178.0,
+    "boundary_review": false
+  },
+  "estimated_score": {
+    "outcome": "rejected",
+    "reason": "fewer than two usable shaft axes",
+    "cameras": [],
+    "estimate": null,
+    "error_mm": null,
+    "candidate_counts": [
+      0,
+      1,
+      0
+    ]
+  },
+  "oracle_score": {
+    "outcome": "rejected",
+    "reason": "no supported nonparallel axis intersection",
+    "cameras": [],
+    "estimate": null,
+    "error_mm": null,
+    "candidate_counts": [
+      0,
+      1,
+      1
+    ]
+  },
+  "calibration": [],
+  "dart": {
+    "reason": "fewer than two usable shaft axes",
+    "candidate_counts": [
+      0,
+      1,
+      0
+    ],
+    "hypotheses": 0,
+    "truth_support_evaluation_only": [
+      {
+        "camera": 0,
+        "axis_candidates": 0,
+        "closest_changed_to_truth_mm": 0.32004895240831777,
+        "closest_axis_to_truth_mm": null
+      },
+      {
+        "camera": 1,
+        "axis_candidates": 1,
+        "closest_changed_to_truth_mm": 0.32004895240831777,
+        "closest_axis_to_truth_mm": 0.062269217107761766
+      },
+      {
+        "camera": 2,
+        "axis_candidates": 0,
+        "closest_changed_to_truth_mm": 0.32004895240831777,
+        "closest_axis_to_truth_mm": null
+      }
+    ],
+    "image": "mixed_stress/rejections/trial_007/dart_rejection.jpg",
+    "closeup_image": "mixed_stress/rejections/trial_007/tip_closeups.jpg"
+  }
+}

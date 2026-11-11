@@ -1039,11 +1039,12 @@ def run(args, inputs):
             print(f"Saved rectified views to {args.output}; registration valid={valid}")
             return
         gray = [gray_image(image) for image in images]
+        difference_frames=images if getattr(args,'shadow_aware_difference',False) else gray
         # Any recovered/moved camera invalidates temporal differences. Rebase together.
         if background is None or moved or reset or (valid and not was_valid):
-            background = [g.copy() for g in gray]
+            background = [g.copy() for g in difference_frames]
             background_H = [t.H.copy() for t in trackers]
-            previous = gray
+            previous = difference_frames
             stable_since, reset = None, False
             if moved:
                 last_event = "Camera movement corrected; baseline refreshed; throw the NEXT dart"
@@ -1051,11 +1052,17 @@ def run(args, inputs):
         if status != last_status:
             print(status, "; ".join(f"camera {i}: {t.reason}" for i, t in enumerate(trackers)))
             last_status = status
-        deltas = [change_mask(g, b, board_mask, args.diff_threshold) for g, b in zip(gray, background)]
-        motion = max(float(np.count_nonzero(change_mask(g, p, board_mask, args.diff_threshold)))
-                     / np.count_nonzero(board_mask) for g, p in zip(gray, previous))
+        shadow_info=None
+        if getattr(args,'shadow_aware_difference',False):
+            from shadow_difference import shadow_aware_masks
+            deltas,shadow_info=shadow_aware_masks(images,background,masks,board_mask,args.diff_threshold)
+            temporal,_=shadow_aware_masks(images,previous,masks,board_mask,args.diff_threshold)
+        else:
+            deltas=[change_mask(g,b,board_mask,args.diff_threshold) for g,b in zip(gray,background)]
+            temporal=[change_mask(g,p,board_mask,args.diff_threshold) for g,p in zip(gray,previous)]
+        motion=max(float(np.count_nonzero(d))/np.count_nonzero(board_mask) for d in temporal)
         fractions = [np.count_nonzero(d) / np.count_nonzero(board_mask) for d in deltas]
-        previous = gray
+        previous = difference_frames
         if not valid or paused or motion > .002 or max(fractions) > .12:
             stable_since = None
         elif stable_since is None:
@@ -1072,6 +1079,7 @@ def run(args, inputs):
             from dart_detection import detect_dart, diagnostic_image
             p, ids, reason, lines, detection_info = detect_dart(deltas, board)
             event = dict(timestamp=time.time(), cameras=ids, note=reason, estimated=False,
+                         difference_method=shadow_info['method'] if shadow_info else 'grayscale absolute difference',
                          candidate_counts=detection_info['candidate_counts'],
                          axis_residual_px=detection_info.get('axis_residual_px'))
             if p is not None and np.linalg.norm(p - board.center) <= board.radii[-1] * board.ppm * 1.08:
@@ -1095,7 +1103,8 @@ def run(args, inputs):
             for i, (d, line) in enumerate(zip(deltas, lines)):
                 diagnostic = diagnostic_image(images[i],d,detection_info['candidates'][i],line,p)
                 cv.imwrite(str(event_dir / f"camera_{i}_shaft.png"), diagnostic)
-            background = [g.copy() for g in gray]
+                if shadow_info:cv.imwrite(str(event_dir/f'camera_{i}_suppressed_shadow.png'),shadow_info['suppressed'][i])
+            background = [g.copy() for g in difference_frames]
             background_H = [t.H.copy() for t in trackers]
             stable_since = None
         if not args.headless:
@@ -1205,6 +1214,7 @@ def main():
     parser.add_argument("--rectify-interval", type=float, default=.5, help="Seconds between broad pattern reacquisition checks; local geometric detection runs each frame")
     parser.add_argument("--settle-seconds", type=float, default=.8)
     parser.add_argument("--diff-threshold", type=int, default=28)
+    parser.add_argument('--shadow-aware-difference',action='store_true',help='Experimental run: HSV/RGB dimming consistency across rectified views to suppress shared planar shadows')
     parser.add_argument("--boundary-mm", type=float, default=2., help="Flag scores near a wire for review")
     parser.add_argument("--log", default="dart_events.jsonl")
     parser.add_argument("--output", default="dartboard_output")

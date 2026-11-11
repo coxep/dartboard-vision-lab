@@ -1,0 +1,84 @@
+{
+  "mode": "mixed_stress",
+  "trial": 66,
+  "target": {
+    "label": "S6",
+    "score": 6,
+    "x_mm": 135.0,
+    "y_mm": 0.0,
+    "radius_mm": 135.0,
+    "boundary_review": false
+  },
+  "estimated_score": {
+    "outcome": "rejected",
+    "reason": "usable camera axes disagree",
+    "cameras": [],
+    "estimate": null,
+    "error_mm": null,
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ]
+  },
+  "oracle_score": {
+    "outcome": "correct",
+    "reason": "three views",
+    "cameras": [
+      0,
+      1,
+      2
+    ],
+    "estimate": {
+      "label": "S6",
+      "score": 6,
+      "x_mm": 134.8916113269833,
+      "y_mm": 0.2728965444301828,
+      "radius_mm": 134.89188737249506,
+      "boundary_review": false
+    },
+    "error_mm": 0.29363349332160754,
+    "pixel": [
+      707.0875415878976,
+      450.5201087082081
+    ],
+    "requires_review": false,
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ]
+  },
+  "calibration": [],
+  "dart": {
+    "reason": "usable camera axes disagree",
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ],
+    "hypotheses": 2,
+    "truth_support_evaluation_only": [
+      {
+        "camera": 0,
+        "axis_candidates": 1,
+        "closest_changed_to_truth_mm": 13.996156417104867,
+        "closest_axis_to_truth_mm": 0.5762408632055996
+      },
+      {
+        "camera": 1,
+        "axis_candidates": 1,
+        "closest_changed_to_truth_mm": 1.2499047365010125,
+        "closest_axis_to_truth_mm": 0.011995678773198534
+      },
+      {
+        "camera": 2,
+        "axis_candidates": 1,
+        "closest_changed_to_truth_mm": 0.5469149736626284,
+        "closest_axis_to_truth_mm": 0.10345007246762088
+      }
+    ],
+    "image": "mixed_stress/rejections/trial_066/dart_rejection.jpg",
+    "closeup_image": "mixed_stress/rejections/trial_066/tip_closeups.jpg"
+  }
+}

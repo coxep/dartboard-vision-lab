@@ -1,0 +1,68 @@
+{
+  "mode": "mixed_stress",
+  "trial": 34,
+  "target": {
+    "label": "S6",
+    "score": 6,
+    "x_mm": 135.0,
+    "y_mm": 0.0,
+    "radius_mm": 135.0,
+    "boundary_review": false
+  },
+  "estimated_score": {
+    "outcome": "rejected",
+    "reason": "no supported nonparallel axis intersection",
+    "cameras": [],
+    "estimate": null,
+    "error_mm": null,
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ]
+  },
+  "oracle_score": {
+    "outcome": "rejected",
+    "reason": "no supported nonparallel axis intersection",
+    "cameras": [],
+    "estimate": null,
+    "error_mm": null,
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ]
+  },
+  "calibration": [],
+  "dart": {
+    "reason": "no supported nonparallel axis intersection",
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ],
+    "hypotheses": 0,
+    "truth_support_evaluation_only": [
+      {
+        "camera": 0,
+        "axis_candidates": 1,
+        "closest_changed_to_truth_mm": 1.0375145872822165,
+        "closest_axis_to_truth_mm": 0.10120500772564182
+      },
+      {
+        "camera": 1,
+        "axis_candidates": 1,
+        "closest_changed_to_truth_mm": 15.110034356053646,
+        "closest_axis_to_truth_mm": 0.1086939593586419
+      },
+      {
+        "camera": 2,
+        "axis_candidates": 1,
+        "closest_changed_to_truth_mm": 20.890775861127473,
+        "closest_axis_to_truth_mm": 0.002863069144967557
+      }
+    ],
+    "image": "mixed_stress/rejections/trial_034/dart_rejection.jpg",
+    "closeup_image": "mixed_stress/rejections/trial_034/tip_closeups.jpg"
+  }
+}

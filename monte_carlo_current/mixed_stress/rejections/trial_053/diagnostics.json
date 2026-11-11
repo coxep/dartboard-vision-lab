@@ -1,0 +1,94 @@
+{
+  "mode": "mixed_stress",
+  "trial": 53,
+  "target": {
+    "label": "T19",
+    "score": 57,
+    "x_mm": -31.828750420619563,
+    "y_mm": 97.95882117840083,
+    "radius_mm": 103.0,
+    "boundary_review": false
+  },
+  "estimated_score": {
+    "outcome": "calibration_rejected",
+    "estimate": null,
+    "error_mm": null
+  },
+  "oracle_score": {
+    "outcome": "correct",
+    "reason": "three views",
+    "cameras": [
+      0,
+      1,
+      2
+    ],
+    "estimate": {
+      "label": "T19",
+      "score": 57,
+      "x_mm": -31.729737229158886,
+      "y_mm": 97.92172275906408,
+      "radius_mm": 102.93415377188701,
+      "boundary_review": false
+    },
+    "error_mm": 0.10573506892471218,
+    "pixel": [
+      389.5268537514854,
+      636.6272833760986
+    ],
+    "requires_review": false,
+    "candidate_counts": [
+      1,
+      1,
+      2
+    ]
+  },
+  "calibration": [
+    {
+      "camera": 1,
+      "reason": "direct template registration failed: OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+      "replay_reason": "direct template registration failed: OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+      "recovery_failures": [
+        "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n"
+      ],
+      "events": [
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+          "max_update_px": 0.0
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n"
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "too few compatible grayscale junctions",
+          "candidates": 17,
+          "inliers": null
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+          "max_update_px": 0.0
+        },
+        {
+          "stage": "refine_appearance",
+          "gate_error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n"
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+          "max_update_px": 0.0
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n"
+        }
+      ],
+      "image": "mixed_stress/rejections/trial_053/camera_1_calibration.jpg"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "mode": "mixed_stress",
+  "trial": 11,
+  "target": {
+    "label": "DB",
+    "score": 50,
+    "x_mm": 0.0,
+    "y_mm": 0.0,
+    "radius_mm": 0.0,
+    "boundary_review": false
+  },
+  "estimated_score": {
+    "outcome": "calibration_rejected",
+    "estimate": null,
+    "error_mm": null
+  },
+  "oracle_score": {
+    "outcome": "correct",
+    "reason": "three views",
+    "cameras": [
+      0,
+      1,
+      2
+    ],
+    "estimate": {
+      "label": "DB",
+      "score": 50,
+      "x_mm": -0.01042919327750199,
+      "y_mm": -0.024307184469351546,
+      "radius_mm": 0.02645009053380683,
+      "boundary_review": false
+    },
+    "error_mm": 0.02645009053380683,
+    "pixel": [
+      449.980123184577,
+      449.9536733660702
+    ],
+    "requires_review": false,
+    "candidate_counts": [
+      1,
+      1,
+      1
+    ]
+  },
+  "calibration": [
+    {
+      "camera": 2,
+      "reason": "direct template registration failed: OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+      "replay_reason": "direct template registration failed: OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+      "recovery_failures": [
+        "Grayscale board template lacks correlation"
+      ],
+      "events": [
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.09611544615160435,
+          "max_update_px": 250.45018005371094
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.0776501325352242,
+          "max_update_px": 260.55029296875
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "Grayscale board template lacks correlation"
+        },
+        {
+          "stage": "junction_validation",
+          "reason": "too few compatible grayscale junctions",
+          "candidates": 7,
+          "inliers": null
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 0.5,
+          "correlation": 0.08166026367161114,
+          "max_update_px": 34.0737419128418
+        },
+        {
+          "stage": "refine_appearance",
+          "scale": 1.0,
+          "error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n",
+          "max_update_px": 325746.25
+        },
+        {
+          "stage": "refine_appearance",
+          "gate_error": "OpenCV(4.6.0) ./modules/video/src/ecc.cpp:589: error: (-7:Iterations do not converge) The algorithm stopped before its convergence. The correlation is going to be minimized. Images may be uncorrelated or non-overlapped in function 'findTransformECC'\n"
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.25,
+          "correlation": 0.09611544615160435,
+          "max_update_px": 250.45018005371094
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "scale": 0.5,
+          "correlation": 0.0776501325352242,
+          "max_update_px": 260.55029296875
+        },
+        {
+          "stage": "coarse_grayscale_seed",
+          "gate_error": "Grayscale board template lacks correlation"
+        }
+      ],
+      "image": "mixed_stress/rejections/trial_011/camera_2_calibration.jpg"
+    }
+  ]
+}

@@ -1,0 +1,4263 @@
+{
+  "summary": {
+    "gray": {
+      "new_dart": {
+        "correct": 28,
+        "rejected": 4
+      },
+      "shadow_only": {
+        "no_detection": 16
+      }
+    },
+    "shadow_aware": {
+      "new_dart": {
+        "correct": 28,
+        "rejected": 4
+      },
+      "shadow_only": {
+        "no_detection": 16
+      }
+    }
+  },
+  "trials": [
+    {
+      "trial": 0,
+      "pose_trial": 8,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "T20",
+        "score": 60,
+        "x_mm": 0.0,
+        "y_mm": -103.0,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7818669080734253,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.11304006710727461,
+            "y_mm": -102.95026260650133,
+            "radius_mm": 102.95032466585211,
+            "boundary_review": false
+          },
+          "error_mm": 0.12349844162441329,
+          "pixel": [
+            449.78455893092496,
+            253.78891126760925
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.14658504646571885,
+            "y_mm": -102.88756959644509,
+            "radius_mm": 102.8876740170521,
+            "boundary_review": false
+          },
+          "error_mm": 0.1847370333497728,
+          "pixel": [
+            449.7206261467359,
+            253.9083967691282
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        1,
+        80,
+        38
+      ],
+      "image": "trial_000/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 1,
+      "pose_trial": 1,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "D16",
+        "score": 32,
+        "x_mm": -134.29682106624128,
+        "y_mm": 97.57235188055058,
+        "radius_mm": 166.00000000000003,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7800349593162537,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.26594240742634,
+            "y_mm": 97.46778274818482,
+            "radius_mm": 165.91356775261534,
+            "boundary_review": false
+          },
+          "error_mm": 0.10903299965578636,
+          "pixel": [
+            194.1049097646698,
+            635.7621271200699
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.28705849689496,
+            "y_mm": 97.49195181141958,
+            "radius_mm": 165.94485453833346,
+            "boundary_review": false
+          },
+          "error_mm": 0.08099060980454693,
+          "pixel": [
+            194.06466498238845,
+            635.8081905111761
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_001/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 2,
+      "pose_trial": 2,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "S6",
+        "score": 6,
+        "x_mm": 135.0,
+        "y_mm": 0.0,
+        "radius_mm": 135.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7803160548210144,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 133.85728266348173,
+            "y_mm": 1.847020163679129,
+            "radius_mm": 133.87002504495277,
+            "boundary_review": false
+          },
+          "error_mm": 2.1719314897612825,
+          "pixel": [
+            705.1162328409887,
+            453.5202031354826
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            2,
+            2
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 135.06406483414398,
+            "y_mm": -0.20539850242088764,
+            "radius_mm": 135.06422101380753,
+            "boundary_review": false
+          },
+          "error_mm": 0.21515772765727004,
+          "pixel": [
+            707.4162176838979,
+            449.6085346189155
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        115,
+        234,
+        200
+      ],
+      "image": "trial_002/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 3,
+      "pose_trial": 3,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "DB",
+        "score": 50,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "radius_mm": 0.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7838486433029175,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.11325625398468223,
+            "y_mm": 0.1369392320458035,
+            "radius_mm": 0.17770574650229312,
+            "boundary_review": false
+          },
+          "error_mm": 0.17770574650229312,
+          "pixel": [
+            450.21585309582963,
+            450.2609900657814
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.13038686869809396,
+            "y_mm": 0.14149742843631818,
+            "radius_mm": 0.19241168827019053,
+            "boundary_review": false
+          },
+          "error_mm": 0.19241168827019053,
+          "pixel": [
+            450.24850203210696,
+            450.26967745184334
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_003/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 4,
+      "pose_trial": 4,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "SB",
+        "score": 25,
+        "x_mm": 0.0,
+        "y_mm": -10.999999999999988,
+        "radius_mm": 10.999999999999988,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.781254231929779,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.038606009070556176,
+            "y_mm": -11.049882146291154,
+            "radius_mm": 11.049949586801759,
+            "boundary_review": false
+          },
+          "error_mm": 0.06307656026583273,
+          "pixel": [
+            450.07357851140506,
+            428.9402246153039
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.012545560107430855,
+            "y_mm": -11.035527856711019,
+            "radius_mm": 11.035534987816554,
+            "boundary_review": false
+          },
+          "error_mm": 0.0376778407142544,
+          "pixel": [
+            450.0239103616165,
+            428.9675822025037
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        1,
+        10,
+        0
+      ],
+      "image": "trial_004/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 5,
+      "pose_trial": 5,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "T19",
+        "score": 57,
+        "x_mm": -31.828750420619563,
+        "y_mm": 97.95882117840083,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7805214524269104,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.80867696673652,
+            "y_mm": 97.80143473718135,
+            "radius_mm": 102.84411780469186,
+            "boundary_review": false
+          },
+          "error_mm": 0.15866138607275584,
+          "pixel": [
+            389.3764038986904,
+            636.3980285579221
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.826024665441114,
+            "y_mm": 97.82119043774797,
+            "radius_mm": 102.86827083539133,
+            "boundary_review": false
+          },
+          "error_mm": 0.13765772958300027,
+          "pixel": [
+            389.3433412258652,
+            636.435680599002
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        36,
+        57,
+        58
+      ],
+      "image": "trial_005/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 6,
+      "pose_trial": 6,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "D3",
+        "score": 6,
+        "x_mm": 2.982525063684371e-14,
+        "y_mm": 166.0,
+        "radius_mm": 166.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7839508652687073,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": -0.006622519131220531,
+            "y_mm": 165.77292085174454,
+            "radius_mm": 165.7729209840272,
+            "boundary_review": false
+          },
+          "error_mm": 0.22717569705423463,
+          "pixel": [
+            449.9873782576558,
+            765.9436844468543
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": -0.0009274818419948678,
+            "y_mm": 165.76826165246834,
+            "radius_mm": 165.768261655063,
+            "boundary_review": false
+          },
+          "error_mm": 0.23174020354543054,
+          "pixel": [
+            449.99823232872467,
+            765.9348045611749
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_006/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 7,
+      "pose_trial": 7,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "MISS",
+        "score": 0,
+        "x_mm": 144.00502499874062,
+        "y_mm": -104.62577490806022,
+        "radius_mm": 178.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7820881605148315,
+      "results": {
+        "gray": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_007/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 8,
+      "pose_trial": 8,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "T20",
+        "score": 60,
+        "x_mm": 0.0,
+        "y_mm": -103.0,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7527049779891968,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.18364037173988643,
+            "y_mm": -102.84227345488635,
+            "radius_mm": 102.84243741352961,
+            "boundary_review": false
+          },
+          "error_mm": 0.24207736194500046,
+          "pixel": [
+            449.6500030562134,
+            253.99472588598132
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.1865941804127148,
+            "y_mm": -102.85813763677379,
+            "radius_mm": 102.85830688619012,
+            "boundary_review": false
+          },
+          "error_mm": 0.23439777785639868,
+          "pixel": [
+            449.6443734443899,
+            253.9644906216782
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        19,
+        17
+      ],
+      "image": "trial_008/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 9,
+      "pose_trial": 1,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "D16",
+        "score": 32,
+        "x_mm": -134.29682106624128,
+        "y_mm": 97.57235188055058,
+        "radius_mm": 166.00000000000003,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7505653500556946,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.25997807850294,
+            "y_mm": 97.46114118594822,
+            "radius_mm": 165.90483945595867,
+            "boundary_review": false
+          },
+          "error_mm": 0.11715470259202607,
+          "pixel": [
+            194.11627707391204,
+            635.7494690838072
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.2625391473669,
+            "y_mm": 97.44651115805043,
+            "radius_mm": 165.89831812039048,
+            "boundary_review": false
+          },
+          "error_mm": 0.13042675109451657,
+          "pixel": [
+            194.11139597795957,
+            635.7215859718137
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_009/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 10,
+      "pose_trial": 2,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "S6",
+        "score": 6,
+        "x_mm": 135.0,
+        "y_mm": 0.0,
+        "radius_mm": 135.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7506783604621887,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 135.07126854572013,
+            "y_mm": -0.1583609834102828,
+            "radius_mm": 135.07136137890635,
+            "boundary_review": false
+          },
+          "error_mm": 0.17365888020984505,
+          "pixel": [
+            707.4299471106666,
+            449.69818259632393
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            2,
+            1,
+            2
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 135.09832660029795,
+            "y_mm": -0.20606438036956393,
+            "radius_mm": 135.09848375436945,
+            "boundary_review": false
+          },
+          "error_mm": 0.2283213725940889,
+          "pixel": [
+            707.4815165793914,
+            449.6072655338839
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        176,
+        183,
+        152
+      ],
+      "image": "trial_010/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 11,
+      "pose_trial": 3,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "DB",
+        "score": 50,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "radius_mm": 0.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7504739761352539,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.11174966055841547,
+            "y_mm": 0.19293727274414976,
+            "radius_mm": 0.2229636244970724,
+            "boundary_review": false
+          },
+          "error_mm": 0.2229636244970724,
+          "pixel": [
+            450.21298170600545,
+            450.3677157433477
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            2,
+            1,
+            3
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.10764657676952784,
+            "y_mm": 0.18647823261904464,
+            "radius_mm": 0.21531817557029498,
+            "boundary_review": false
+          },
+          "error_mm": 0.21531817557029498,
+          "pixel": [
+            450.20516171101957,
+            450.3554055727563
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        221,
+        5,
+        237
+      ],
+      "image": "trial_011/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 12,
+      "pose_trial": 4,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "SB",
+        "score": 25,
+        "x_mm": 0.0,
+        "y_mm": -10.999999999999988,
+        "radius_mm": 10.999999999999988,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7512744665145874,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.025420418637415766,
+            "y_mm": -11.063197528847544,
+            "radius_mm": 11.0632267336425,
+            "boundary_review": false
+          },
+          "error_mm": 0.06811846545643205,
+          "pixel": [
+            450.0484483272854,
+            428.91484706266704
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.02317666944444307,
+            "y_mm": -11.045512372896805,
+            "radius_mm": 11.045536688537274,
+            "boundary_review": false
+          },
+          "error_mm": 0.05107381024787468,
+          "pixel": [
+            450.0441720052941,
+            428.94855288930256
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        43,
+        24,
+        0
+      ],
+      "image": "trial_012/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 13,
+      "pose_trial": 5,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "T19",
+        "score": 57,
+        "x_mm": -31.828750420619563,
+        "y_mm": 97.95882117840083,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7514991760253906,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.790474744783538,
+            "y_mm": 97.76563449584107,
+            "radius_mm": 102.80444335179831,
+            "boundary_review": false
+          },
+          "error_mm": 0.1969419246355443,
+          "pixel": [
+            389.4110951922949,
+            636.3297975097206
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            2,
+            1,
+            2
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.790259756964506,
+            "y_mm": 97.83281763750782,
+            "radius_mm": 102.86826926856084,
+            "boundary_review": false
+          },
+          "error_mm": 0.13175137003532708,
+          "pixel": [
+            389.4115049337853,
+            636.4578406738384
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        190,
+        56,
+        180
+      ],
+      "image": "trial_013/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 14,
+      "pose_trial": 6,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "D3",
+        "score": 6,
+        "x_mm": 2.982525063684371e-14,
+        "y_mm": 166.0,
+        "radius_mm": 166.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7535964250564575,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": 0.019462525708548378,
+            "y_mm": 165.87480233917037,
+            "radius_mm": 165.87480348096497,
+            "boundary_review": false
+          },
+          "error_mm": 0.12670139771985586,
+          "pixel": [
+            450.0370932842916,
+            766.1378585758306
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": 0.02062995404981149,
+            "y_mm": 165.87718721181744,
+            "radius_mm": 165.87718849467922,
+            "boundary_review": false
+          },
+          "error_mm": 0.12453343304217378,
+          "pixel": [
+            450.0393182653655,
+            766.1424038625227
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_014/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 15,
+      "pose_trial": 7,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "MISS",
+        "score": 0,
+        "x_mm": 144.00502499874062,
+        "y_mm": -104.62577490806022,
+        "radius_mm": 178.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7530525326728821,
+      "results": {
+        "gray": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_015/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 16,
+      "pose_trial": 8,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "T20",
+        "score": 60,
+        "x_mm": 0.0,
+        "y_mm": -103.0,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.8407704830169678,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.14304799356671363,
+            "y_mm": -102.91097269587124,
+            "radius_mm": 102.91107211538912,
+            "boundary_review": false
+          },
+          "error_mm": 0.1684891371688288,
+          "pixel": [
+            449.72736735343756,
+            253.86379321492777
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.1268746440927559,
+            "y_mm": -102.91739494963053,
+            "radius_mm": 102.91747315394772,
+            "boundary_review": false
+          },
+          "error_mm": 0.15139606883999857,
+          "pixel": [
+            449.7581918547879,
+            253.85155315482183
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        3,
+        2
+      ],
+      "image": "trial_016/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 17,
+      "pose_trial": 1,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "D16",
+        "score": 32,
+        "x_mm": -134.29682106624128,
+        "y_mm": 97.57235188055058,
+        "radius_mm": 166.00000000000003,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.8438151478767395,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.2715753741027,
+            "y_mm": 97.46136779604149,
+            "radius_mm": 165.914357926367,
+            "boundary_review": false
+          },
+          "error_mm": 0.11381920745585723,
+          "pixel": [
+            194.09417399288665,
+            635.7499009759849
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.29268082620263,
+            "y_mm": 97.48554724649428,
+            "radius_mm": 165.94564183923842,
+            "boundary_review": false
+          },
+          "error_mm": 0.08690331455834971,
+          "pixel": [
+            194.05394948417856,
+            635.7959841639067
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_017/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 18,
+      "pose_trial": 2,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "S6",
+        "score": 6,
+        "x_mm": 135.0,
+        "y_mm": 0.0,
+        "radius_mm": 135.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.8405166268348694,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 135.04092294256472,
+            "y_mm": -0.16790133122440676,
+            "radius_mm": 135.04102732146526,
+            "boundary_review": false
+          },
+          "error_mm": 0.17281650457952202,
+          "pixel": [
+            707.3721119611233,
+            449.6799998157841
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            2,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 134.96940705326483,
+            "y_mm": -0.08618719009137416,
+            "radius_mm": 134.96943457146745,
+            "boundary_review": false
+          },
+          "error_mm": 0.09145578235292935,
+          "pixel": [
+            707.2358110897518,
+            449.83573735535526
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        56,
+        103,
+        20
+      ],
+      "image": "trial_018/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 19,
+      "pose_trial": 3,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "DB",
+        "score": 50,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "radius_mm": 0.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.840840756893158,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.11718305454365392,
+            "y_mm": 0.12992592310348247,
+            "radius_mm": 0.17496460718234705,
+            "boundary_review": false
+          },
+          "error_mm": 0.17496460718234708,
+          "pixel": [
+            450.2233371157185,
+            450.2476235240325
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.12901358534536533,
+            "y_mm": 0.14394838581688138,
+            "radius_mm": 0.1933019476957012,
+            "boundary_review": false
+          },
+          "error_mm": 0.1933019476957012,
+          "pixel": [
+            450.2458847155994,
+            450.27434868826276
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_019/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 20,
+      "pose_trial": 4,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "SB",
+        "score": 25,
+        "x_mm": 0.0,
+        "y_mm": -10.999999999999988,
+        "radius_mm": 10.999999999999988,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.8408037424087524,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.005457935879431059,
+            "y_mm": -10.983843302255957,
+            "radius_mm": 10.983844658295979,
+            "boundary_review": false
+          },
+          "error_mm": 0.017053678373182602,
+          "pixel": [
+            450.0104021836761,
+            429.06608688275924
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.012700515770721964,
+            "y_mm": -11.017979804222206,
+            "radius_mm": 11.01798712421417,
+            "boundary_review": false
+          },
+          "error_mm": 0.02201309748108303,
+          "pixel": [
+            450.02420568888067,
+            429.0010267260706
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_020/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 21,
+      "pose_trial": 5,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "T19",
+        "score": 57,
+        "x_mm": -31.828750420619563,
+        "y_mm": 97.95882117840083,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.842530369758606,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.801703197851605,
+            "y_mm": 97.8140980925325,
+            "radius_mm": 102.85400386927003,
+            "boundary_review": false
+          },
+          "error_mm": 0.14722881458027043,
+          "pixel": [
+            389.38969508174165,
+            636.4221634234149
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.82085273424095,
+            "y_mm": 97.84507411336207,
+            "radius_mm": 102.88938330548768,
+            "boundary_review": false
+          },
+          "error_mm": 0.11402091148146973,
+          "pixel": [
+            389.3531983182702,
+            636.4812000748783
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_021/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 22,
+      "pose_trial": 6,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "D3",
+        "score": 6,
+        "x_mm": 2.982525063684371e-14,
+        "y_mm": 166.0,
+        "radius_mm": 166.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.8408723473548889,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": 0.006626002686404653,
+            "y_mm": 165.7883279371879,
+            "radius_mm": 165.7883280695974,
+            "boundary_review": false
+          },
+          "error_mm": 0.21177574480270533,
+          "pixel": [
+            450.01262838159056,
+            765.973048539111
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": 0.0022155622080998892,
+            "y_mm": 165.79194036392036,
+            "radius_mm": 165.7919403787242,
+            "boundary_review": false
+          },
+          "error_mm": 0.20807143216090307,
+          "pixel": [
+            450.00422260091426,
+            765.9799333994717
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_022/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 23,
+      "pose_trial": 7,
+      "added_dart": true,
+      "neutral_dart": false,
+      "target": {
+        "label": "MISS",
+        "score": 0,
+        "x_mm": 144.00502499874062,
+        "y_mm": -104.62577490806022,
+        "radius_mm": 178.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -450.0,
+            400.0,
+            1000.0
+          ],
+          "radius_mm": 90.0,
+          "strength": 0.16
+        },
+        {
+          "position_mm": [
+            400.0,
+            -350.0,
+            1200.0
+          ],
+          "radius_mm": 120.0,
+          "strength": 0.14
+        }
+      ],
+      "min_board_transmission": 0.8437362909317017,
+      "results": {
+        "gray": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_023/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 24,
+      "pose_trial": 8,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "T20",
+        "score": 60,
+        "x_mm": 0.0,
+        "y_mm": -103.0,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7307429313659668,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.21552875496350635,
+            "y_mm": -102.85626197865653,
+            "radius_mm": 102.85648779180748,
+            "boundary_review": false
+          },
+          "error_mm": 0.2590622762886438,
+          "pixel": [
+            449.58922754936367,
+            253.96806540538404
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T20",
+            "score": 60,
+            "x_mm": -0.19123032248734192,
+            "y_mm": -102.85948931801484,
+            "radius_mm": 102.85966707995436,
+            "boundary_review": false
+          },
+          "error_mm": 0.23730210279419747,
+          "pixel": [
+            449.6355375030241,
+            253.9619144762541
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        2,
+        4
+      ],
+      "image": "trial_024/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 25,
+      "pose_trial": 1,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "D16",
+        "score": 32,
+        "x_mm": -134.29682106624128,
+        "y_mm": 97.57235188055058,
+        "radius_mm": 166.00000000000003,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7581658363342285,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.27319122514132,
+            "y_mm": 97.47580685949987,
+            "radius_mm": 165.9241477443651,
+            "boundary_review": false
+          },
+          "error_mm": 0.09939472058461095,
+          "pixel": [
+            194.09109437090714,
+            635.7774201322233
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D16",
+            "score": 32,
+            "x_mm": -134.27025102748567,
+            "y_mm": 97.48289386769586,
+            "radius_mm": 165.92593199317722,
+            "boundary_review": false
+          },
+          "error_mm": 0.0933204319717151,
+          "pixel": [
+            194.0966980417332,
+            635.7909271360792
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        10,
+        3,
+        0
+      ],
+      "image": "trial_025/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 26,
+      "pose_trial": 2,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "S6",
+        "score": 6,
+        "x_mm": 135.0,
+        "y_mm": 0.0,
+        "radius_mm": 135.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7209264039993286,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 135.10730432203454,
+            "y_mm": -0.18521202065386785,
+            "radius_mm": 135.1074312710424,
+            "boundary_review": false
+          },
+          "error_mm": 0.21405071857385732,
+          "pixel": [
+            707.4986270608188,
+            449.6470076782832
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            2,
+            1,
+            2
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "S6",
+            "score": 6,
+            "x_mm": 135.1071894676563,
+            "y_mm": -0.19453970736463344,
+            "radius_mm": 135.10732952562907,
+            "boundary_review": false
+          },
+          "error_mm": 0.2221154648329602,
+          "pixel": [
+            707.4984081618861,
+            449.6292302047874
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        281,
+        343,
+        261
+      ],
+      "image": "trial_026/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 27,
+      "pose_trial": 3,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "DB",
+        "score": 50,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "radius_mm": 0.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7148830890655518,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.09163331157259967,
+            "y_mm": 0.16197548429407452,
+            "radius_mm": 0.18609868699714435,
+            "boundary_review": false
+          },
+          "error_mm": 0.18609868699714438,
+          "pixel": [
+            450.1746423114678,
+            450.3087062171252
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "DB",
+            "score": 50,
+            "x_mm": 0.09566437114583193,
+            "y_mm": 0.1643576079679857,
+            "radius_mm": 0.1901712260140465,
+            "boundary_review": false
+          },
+          "error_mm": 0.1901712260140465,
+          "pixel": [
+            450.18232503677206,
+            450.3132462645978
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        6,
+        0,
+        1
+      ],
+      "image": "trial_027/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 28,
+      "pose_trial": 4,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "SB",
+        "score": 25,
+        "x_mm": 0.0,
+        "y_mm": -10.999999999999988,
+        "radius_mm": 10.999999999999988,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7334176301956177,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.013962501164824932,
+            "y_mm": -11.052102113200295,
+            "radius_mm": 11.052110932851027,
+            "boundary_review": false
+          },
+          "error_mm": 0.05394053799060057,
+          "pixel": [
+            450.02661088457296,
+            428.9359936195477
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            2,
+            2,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "SB",
+            "score": 25,
+            "x_mm": 0.006502491634898608,
+            "y_mm": -11.044028139515998,
+            "radius_mm": 11.044030053781032,
+            "boundary_review": false
+          },
+          "error_mm": 0.04450572397684573,
+          "pixel": [
+            450.0123929840571,
+            428.9513816635107
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        122,
+        128,
+        67
+      ],
+      "image": "trial_028/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 29,
+      "pose_trial": 5,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "T19",
+        "score": 57,
+        "x_mm": -31.828750420619563,
+        "y_mm": 97.95882117840083,
+        "radius_mm": 103.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7193968296051025,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.805325746526144,
+            "y_mm": 97.80397091127597,
+            "radius_mm": 102.84549320148334,
+            "boundary_review": false
+          },
+          "error_mm": 0.15661200651618395,
+          "pixel": [
+            389.3827909301502,
+            636.402862207373
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            2,
+            2,
+            2
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "T19",
+            "score": 57,
+            "x_mm": -31.804101356311424,
+            "y_mm": 97.8011467780654,
+            "radius_mm": 102.84242886176514,
+            "boundary_review": false
+          },
+          "error_mm": 0.15958945106869096,
+          "pixel": [
+            389.3851244738535,
+            636.3974797417246
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        109,
+        140,
+        96
+      ],
+      "image": "trial_029/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 30,
+      "pose_trial": 6,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "D3",
+        "score": 6,
+        "x_mm": 2.982525063684371e-14,
+        "y_mm": 166.0,
+        "radius_mm": 166.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7177553176879883,
+      "results": {
+        "gray": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": -0.010959206323132038,
+            "y_mm": 165.8590466968998,
+            "radius_mm": 165.8590470589669,
+            "boundary_review": false
+          },
+          "error_mm": 0.14137870369362887,
+          "pixel": [
+            449.9791130420665,
+            766.1078301752678
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "correct",
+          "reason": "three views",
+          "cameras": [
+            0,
+            1,
+            2
+          ],
+          "estimate": {
+            "label": "D3",
+            "score": 6,
+            "x_mm": -0.013148051187821143,
+            "y_mm": 165.85433539712798,
+            "radius_mm": 165.85433591828183,
+            "boundary_review": false
+          },
+          "error_mm": 0.14625678712423504,
+          "pixel": [
+            449.97494136126556,
+            766.0988509921733
+          ],
+          "requires_review": false,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_030/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 31,
+      "pose_trial": 7,
+      "added_dart": true,
+      "neutral_dart": true,
+      "target": {
+        "label": "MISS",
+        "score": 0,
+        "x_mm": 144.00502499874062,
+        "y_mm": -104.62577490806022,
+        "radius_mm": 178.0,
+        "boundary_review": false
+      },
+      "light_before": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -400.0,
+            -500.0,
+            1000.0
+          ],
+          "radius_mm": 150.0,
+          "strength": 0.3
+        }
+      ],
+      "min_board_transmission": 0.7446898221969604,
+      "results": {
+        "gray": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "rejected",
+          "reason": "fewer than two usable shaft axes",
+          "cameras": [],
+          "estimate": null,
+          "error_mm": null,
+          "candidate_counts": [
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_031/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 32,
+      "pose_trial": 8,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7813579440116882,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        10
+      ],
+      "image": "trial_032/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 33,
+      "pose_trial": 1,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7820491194725037,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        28,
+        24,
+        0
+      ],
+      "image": "trial_033/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 34,
+      "pose_trial": 2,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7832533717155457,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        11,
+        0,
+        0
+      ],
+      "image": "trial_034/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 35,
+      "pose_trial": 3,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.781390368938446,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        5
+      ],
+      "image": "trial_035/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 36,
+      "pose_trial": 4,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.781457245349884,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        75,
+        23,
+        1
+      ],
+      "image": "trial_036/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 37,
+      "pose_trial": 5,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7817302346229553,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        1,
+        0
+      ],
+      "image": "trial_037/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 38,
+      "pose_trial": 6,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7823823690414429,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        79,
+        0,
+        0
+      ],
+      "image": "trial_038/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 39,
+      "pose_trial": 7,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            -150.0,
+            400.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            -500.0,
+            600.0,
+            1100.0
+          ],
+          "radius_mm": 100.0,
+          "strength": 0.22
+        }
+      ],
+      "min_board_transmission": 0.7840379476547241,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "fewer than two usable shaft axes",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        0,
+        0,
+        0
+      ],
+      "image": "trial_039/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 40,
+      "pose_trial": 8,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7518367171287537,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        36,
+        24,
+        29
+      ],
+      "image": "trial_040/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 41,
+      "pose_trial": 1,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7537919282913208,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        19,
+        32,
+        3
+      ],
+      "image": "trial_041/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 42,
+      "pose_trial": 2,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7503917813301086,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        45,
+        31,
+        50
+      ],
+      "image": "trial_042/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 43,
+      "pose_trial": 3,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7514370679855347,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        36,
+        12,
+        45
+      ],
+      "image": "trial_043/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 44,
+      "pose_trial": 4,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7513691186904907,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            0
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            0
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        61,
+        68,
+        34
+      ],
+      "image": "trial_044/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 45,
+      "pose_trial": 5,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7505928874015808,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        51,
+        29,
+        45
+      ],
+      "image": "trial_045/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 46,
+      "pose_trial": 6,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7537025213241577,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            0,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        73,
+        65,
+        62
+      ],
+      "image": "trial_046/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    },
+    {
+      "trial": 47,
+      "pose_trial": 7,
+      "added_dart": false,
+      "neutral_dart": false,
+      "target": null,
+      "light_before": [
+        {
+          "position_mm": [
+            850.0,
+            150.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "light_after": [
+        {
+          "position_mm": [
+            500.0,
+            350.0,
+            900.0
+          ],
+          "radius_mm": 80.0,
+          "strength": 0.25
+        }
+      ],
+      "min_board_transmission": 0.7522250413894653,
+      "results": {
+        "gray": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        },
+        "shadow_aware": {
+          "outcome": "no_detection",
+          "reason": "no supported nonparallel axis intersection",
+          "pixel": null,
+          "candidate_counts": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "suppressed_changed_pixels": [
+        35,
+        41,
+        75
+      ],
+      "image": "trial_047/pipeline.jpg",
+      "assumptions": "Estimated H from accepted mixed-stress Monte Carlo; no calibration rerun. Known lens correction. Shared board-plane area-light shadow, ambient floor; dart/wire self-shading not modelled."
+    }
+  ],
+  "limitations": [
+    "48 deterministic fixtures, not a new Monte Carlo acceptance claim.",
+    "32 added darts and 16 moving-shadow-only pairs; 8 repeated fixed targets.",
+    "Shadows are neutral multiplicative board-plane attenuation, 12 sampled light points, with 14\u201330% source strengths and a high ambient floor.",
+    "No coloured-light reflections, dart self-shading, people or camera movement within an event.",
+    "HSV/RGB tests and cross-view agreement can still confuse certain material changes with shadows. Real footage remains necessary."
+  ],
+  "algorithm_sha256": {
+    "shadow_difference.py": "7c93efc7500552e5c27db32be2a6c4f45b66c5ef0001e8415f65efabbbe61802",
+    "soft_shadows.py": "ba9699ebfd42177fb27f0e4cf65deaaf74acee2e08b861f6b52db2b212955b7d",
+    "dart_detection.py": "5c8f1c3318fa07715b7821474bec86fa363beea8244bb7b7745e889fd180dd9c",
+    "render_synthetic.py": "a6063f185d901b4ecca50c264f26137a4120a827ab13066a58a173c857ba25f5",
+    "benchmark_shadows.py": "bd1f3baa0860001655fc7375386e44ab86872893f4c743bc2c57e87096f7e4a4"
+  },
+  "fixture_design": "Eight fixed accepted mixed-stress pose/target setups repeated across four lighting/material conditions; plus sixteen moving-shadow-only pairs. Foreground evaluation, no calibration refit."
+}
