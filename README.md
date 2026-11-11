@@ -1,420 +1,148 @@
 # Dartboard Vision Lab
 
-Experimental OpenCV script for three-camera board rectification, continuous tracking,
-shaft-axis intersection and per-dart score estimates. The published tests include
-failures and wrong estimates. This is not yet reliable unattended scoring.
+An OpenCV prototype for continuous dartboard calibration, three-camera
+rectification and dart scoring.
 
-Public pipeline and raw frames: https://dartboard-vision-lab.spunky-cabin-7615.chatgpt.site/
+[View the current pipeline](https://dartboard-vision-lab.spunky-cabin-7615.chatgpt.site/)
 
-## Fresh board-pattern calibration
+## Current approach
 
-The default tracker now re-detects the board geometry in every frame, including
-grayscale input, without a saved appearance reference. Known K enables seeded
-metric PnP and LM, followed by a pose-derived homography. Unknown K uses a free H.
-Both paths remeasure actual junctions; a prior H alone is never a valid detection.
+Each camera is aligned independently to the same metric board plane. The script
+remeasures the board pattern every frame and combines the dart observations
+across cameras to estimate the hit.
 
-The 60-frame, three-camera synthetic sequence detects 165/165 visible views,
-rejects all 15 deliberately blank views, and includes motion, a mount jump, a
-flat partial occlusion, a dart, exposure changes and fresh texture perturbations.
-Worst independent probe error is 0.748 canonical pixels. A separate 100-setup
-acquisition seed accepts 297/300 views, with three retained failures and worst
-probe error 0.787 pixels. Median camera-centre error is 0.453 mm with exact K/D;
-this is synthetic precision, not measured real-camera accuracy. Same-detection
-free-H comparisons and every view are in `pattern_evidence/`.
+1. **Correct lens distortion.** Apply the camera’s calibrated intrinsic matrix K
+   and distortion coefficients D before estimating the board alignment.
+2. **Seed the plane projection.** Use the approximate mount pose or the previous
+   accepted pose to establish scale, orientation and a search region.
+3. **Detect fresh board junctions.** Match multiscale grayscale ring/spoke
+   templates, refine their locations to subpixel precision, and check the cyclic
+   and radial neighbour structure against known board geometry.
+4. **Fit the geometry.** RANSAC removes inconsistent correspondences. With K,
+   seeded iterative solvePnP and LM fit the measured pixels to millimetre board
+   coordinates at Z=0; the homography is derived from that physical pose. Without
+   K, use an eight-parameter homography.
+5. **Rectify observed pixels.** Warp each actual image into the common plane.
+   Fresh detection runs continuously; larger movement triggers broader recovery.
+   Scoring pauses when alignment is lost and the temporal background is refreshed
+   when the alignment changes.
+6. **Locate and score the dart.** Threshold settled-frame changes, retain shaft
+   candidates, and jointly select axes across the cameras. Their supported
+   intersection gives the hit, which is mapped to a sector and scoring band.
+   Close wire calls and ambiguous intersections require review.
 
-The original photo exposed an important gap: a low corner residual on three
-boundaries did not validate the unsupported outer double boundary. The photo
-tool now keeps each of six discrete colour boundaries separate, uses disjoint
-association windows, and audits their offsets. The optional labelled H/k1 fit
-uses fixed metric radii, not free fitted circles or a union of interchangeable
-nearby edges. Before/after overlays show the actual pixels. The corrected photo
-passes the stated 2px median / 4px p95 internal edge check on every boundary.
-Its K is assumed, and paint edges differ from wire apexes: this is not a measured
-phone/C920 intrinsic calibration or independent physical accuracy validation.
-
-Board profiles need the same physical boundary definition as the detected
-features. [UKDA specifications](https://ww2.ukdartsassociation.com/membership/policies/general-playing-tournament-rules.php)
-distinguish 8 mm inside-to-inside wire spacing from 10 mm apex-to-apex strip
-spacing. `--board-profile strip10` selects nominal 97.4/107.4/160/170 mm for
-strip/blade construction; `legacy8` retains 99/107/162/170 for historical runs.
-`--radii` overrides either. These are nominal models, not measurements of your
-particular wire apexes or painted boundaries. Existing synthetic fixtures retain
-their original legacy8 geometry; the real-photo correction uses strip10.
-
-```sh
-python benchmark_board_pattern.py --skip-acquisition
-python benchmark_board_pattern.py --skip-sequence --cold-trials 100 --seed 20261115 --workers 4 --output pattern_evidence/holdout
-python benchmark_detection.py --fixed --calibration-method pattern --workers 4 --save-images 8 --output pattern_evidence/scoring_fixed
-python pattern_photo.py /path/to/original-close-up.jpg
-python plot_board_pattern.py
-python -m unittest -q test_pipeline test_detection test_recording_replay test_board_pattern
-```
-
-All 31 checks pass. The new calibration scores 8/8 fixed targets correctly
-(median 0.170 mm, worst 0.336 mm). Larger paired scoring tests below use the earlier
-calibration. Timing reports include recovery and exclude rendering, capture,
-decoding and lens correction; this is not three-camera 30 FPS validation.
-Real camera recordings remain unavailable.
-
-## Updated dart detection
-
-The live script now uses the same detector as the paired benchmark. It retains
-multiple elongated-fragment hypotheses, fits thin cross-section centres to reduce
-flight/barrel bias, and selects shaft axes jointly across the cameras. Tiny tip
-fragments remain available as hit evidence. At least two views must show changed
-pixels near the inferred hit; a third view can bridge a bounded invisible tip.
-Every camera with usable axes must agree. Multiple separated supported hits are
-rejected. No known target, rendered shaft axis, or truth H enters detection.
-
-| Paired synthetic test | Correct | Wrong | Detector rejections | Calibration failures | Median / 95th position error |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Original 100, old detector / estimated H | 32 | 0 | 65 | 3 | 0.291 / 0.451 mm |
-| Original 100, new detector / estimated H | 94 | 0 | 3 | 3 | 0.335 / 0.480 mm |
-| Stress holdout 100, old detector / estimated H | 26 | 0 | 72 | 2 | 0.285 / 0.492 mm |
-| Stress holdout 100, new detector / estimated H | 93 | 1 | 4 | 2 | 0.293 / 0.477 mm |
-
-Position errors include all returned estimates, including wrong scores. Each row
-uses the same images and estimated calibration as its paired comparison. The
-holdout varies dart tilt (x/y slopes ±0.45), length (60–90 mm), flight width
-(3–8 mm), colours, and 0–2 unchanged existing darts. It uses a separate seed and
-was not used to tune the detector. The single wrong score is S9 → S12, 0.288 mm
-across a sector boundary; the existing 2 mm boundary rule flags it for review.
-Neither suite produced an unflagged wrong score; this is not a real-world guarantee.
-
-With exact H supplied only to the oracle diagnostic, the new detector scores
-96/100 correctly in each randomized suite, rejecting four. On eight fixed targets,
-the old detector scores 4/8 even with perfect H; the new detector scores 8/8 both
-with perfect H and with estimated H. Seven of the eight use all three views.
-This isolates the earlier detection failures from calibration.
-
-Sixty negative controls produce no estimates: 20 no-change pairs, 20 inconsistent
-three-camera darts, 10 simultaneous two-dart additions, five simple planar shadows,
-and five brightness steps. These are limited synthetic nuisances, not realistic
-hand/shadow validation. Twenty-five checks cover the calibration/tracking paths,
-candidate ambiguity, fragmented shafts, and encoded-video replay.
-
-```sh
-python benchmark_detection.py --fixed --workers 4 --save-images 8 --output detection_evidence/fixed
-python benchmark_detection.py --trials 100 --seed 20261110 --workers 4 --output detection_evidence/randomized
-python benchmark_detection.py --trials 100 --seed 20261112 --stress --workers 4 --output detection_evidence/stress_holdout
-python benchmark_detection_negatives.py
-python -m unittest -q test_pipeline test_detection test_recording_replay
-python -m pip install -r requirements-evidence.txt
-python refresh_detection_inputs.py
-python plot_detection.py
-```
-
-Full rows, rejection reasons, input scenes, observed masks, fitted axes, and the
-wrong-score close-up are in `detection_evidence/`. `detection_baseline.py` freezes
-the earlier implementation for reproducible comparisons. Exact synthetic K/D
-remain supplied to both detectors. One board texture and simplified painter-order
-darts with pixel-width shafts are used; occlusion/depth, hands, real lighting,
-automatic event timing, and real-camera accuracy remain unvalidated.
-
-## Replay recorded event windows
-
-No real camera recordings were available for this update. `replay_recordings.py`
-is ready for three recordings plus the saved calibration. It checks alignment,
-rejects large scene changes or camera movement during an event, and saves masks,
-candidate/selected axes, estimates and optional truth errors. This replays supplied
-reference/settled windows; it does not validate automatic throw timing.
-
-```sh
-python replay_recordings.py --sources left.mp4 right.mp4 bottom.mp4 --calibration calibration.json --events examples/replay_events.json --output recording_validation
-```
-
-Edit the three frame indices in each event to account for synchronization offsets.
-Optional `truth_label` evaluates the score; optional `truth_xy_mm` evaluates
-position, with x right and y down from the bull. Neither enters the estimator.
-The integration test encodes three synthetic videos and checks no change, one
-dart, and a large opaque occluder; it is not a real-camera validation result.
+The continuous detector accepts grayscale input and does not need a saved board
+photograph, ORB descriptors or optical flow. Colour masks can supplement boundary
+checks. Rectified images always contain warped input pixels. There is no joint
+camera bundle adjustment; the shaft-intersection stage combines the views.
 
 ## Install
 
-Python 3.10 or newer, with a desktop OpenCV build for the live dashboard:
+Python 3.10 or newer. Use a desktop OpenCV build for the live display.
 
 ```sh
 python -m pip install -r requirements.txt
 ```
 
-## Use cameras or streams
+## Camera setup and board geometry
 
-Camera order is upper left, upper right, bottom. Sources may be USB indices, stream
-URLs or video paths. No hardware is accessed until you run the commands.
+Input order is **upper left, upper right, bottom**. The board is upright with 20
+at the top, and camera images are upright.
 
-```sh
-python dartboard.py calibrate --sources 0 1 2 --board-profile strip10 --geometry-prior measured_setup/scene.json
-python dartboard.py run --sources 0 1 2
-```
+The nominal setup in `measured_setup/scene.json` places each lens approximately
+14.75 inches (374.65 mm) from the bull across the board plane and 8.5 inches
+(215.9 mm) in front of the scoring surface. Camera azimuths are approximate.
+Update those positions to match the mounts. Coordinates are x right, y up and
+z toward the player; the scoring plane is Z=0.
 
-Use the same source order, resolution, lens settings and crop for calibration and
-operation. For URLs, replace `0 1 2` with your three stream URLs. Local USB cameras
-must be attached to the computer running the script; network streams can be remote.
-Change the nominal positions in `measured_setup/scene.json` to match your mounts.
+The initial mount/orientation prior resolves the repeating sector pattern.
+Recovery searches around that belief; this is not unconstrained discovery of an
+arbitrarily oriented board in a room.
 
-Your initial measurements are encoded in that scene: 14.75 inches (374.65 mm) from
-bull to lens across the board plane; approximately 8.5 inches (215.9 mm) lens
-stand-off. Board coordinates are x right, y up, z toward the player; the board
-surface is z=0. Camera azimuths are approximate, based on the setup photograph.
-Camera images are assumed upright and the board has 20 at the top.
+Match the model to the physical boundaries used for calibration:
 
-For real lens correction, pass one OpenCV pinhole calibration NPZ per camera:
+- `--board-profile strip10`: nominal strip/blade profile, radii
+  97.4 / 107.4 / 160 / 170 mm.
+- `--radii TREBLE_IN TREBLE_OUT DOUBLE_IN DOUBLE_OUT`: supply measured radii
+  instead. These override the named profile.
 
-```sh
-python dartboard.py calibrate --sources 0 1 2 --board-profile strip10 --geometry-prior measured_setup/scene.json --intrinsics cam0.npz cam1.npz cam2.npz
-```
+Paint edges, wire apexes and wire outside edges are distinct physical references.
+An 8 mm inside-to-inside measurement is not the same as 10 mm apex-to-apex strip
+spacing. The script retains `legacy8` as its default for the existing synthetic
+fixtures; choose the board profile explicitly for your setup.
 
-Each NPZ contains `K` (3×3 camera matrix), `D` (OpenCV distortion coefficients) and
-`image_size` (`[width, height]`). Synthetic coefficients in this repository are
-illustrative; they are not measurements of your individual Logitech C920 cameras.
-Fisheye-model coefficients are not supported. Lock focus/zoom after calibration.
+## Lens calibration
 
-Automatic calibration requires no clicked points. With a nominal mount/orientation
-prior, the default detector now remeasures the dartboard pattern in grayscale:
+Supply one OpenCV pinhole-calibration NPZ per camera. Each file contains:
 
-1. Correct lens distortion and warp observed pixels with the current pose belief.
-2. Locate ring/spoke junctions with coarse/fine normalized template responses and
-   subpixel peak interpolation. Templates describe local dark/light/band geometry,
-   not a saved photograph. This is an original dartboard detector inspired by
-   OpenCV checkerboard detectors, not a port of their symmetric X-corner test.
-3. Select consistent correspondences with planar RANSAC and robust least squares.
-   Require at least 20 inliers, nine spokes, three ring boundaries, all four
-   quadrants and 20 cyclic/radial neighbor links, plus visibility/residual checks.
-4. With K, convert those model points to millimetre coordinates at Z=0. Seed
-   iterative solvePnP from the previous pose, refine inliers with LM, check positive
-   depth and the mount bound, and derive H from K[R1 R2 t]. No free homography
-   refinement follows. Without K, retain the eight-parameter homography fit.
-5. Remeasure the pattern on every frame. Large corrections must converge under
-   successive fresh measurements. Failure invalidates the frame; the last H is
-   retained only as a search prior, never accepted as a stale detection.
-6. For larger movement, try a wider search, then grayscale whole-board recovery
-   and seeded Hungarian/greedy PnP hypotheses. Every recovered fit must pass the
-   same fresh junction graph checks. Absolute sector phase still needs the
-   orientation prior because the pattern repeats. HSV is optional diagnostics.
+- `K`: 3×3 intrinsic matrix.
+- `D`: OpenCV distortion coefficients.
+- `image_size`: `[width, height]` used for that calibration.
 
-All rectified images contain warped input pixels. K/D stay fixed; this is not
-blind intrinsic calibration. Without a mount prior, legacy color-assisted
-acquisition supplies an initial H before mandatory pattern detection. Manual
-four-point calibration remains available through --manual. Board radii must match
-the actual physical boundaries; --radii 99 107 162 170 is the default profile.
+Keep source order, resolution, crop and focus/zoom consistent with calibration.
+Lens parameters stay fixed when only the camera mount moves. The supplied
+synthetic coefficients are illustrative, not measurements of your C920 cameras.
+The OpenCV fisheye model is not supported by this loader.
 
-The standalone calibration tracker performs no dart scoring:
+## Run
+
+Calibrate the board, inspect continuous rectification alone, then run scoring:
 
 ```sh
 python dartboard.py calibrate --sources 0 1 2 --board-profile strip10 --geometry-prior measured_setup/scene.json --intrinsics cam0.npz cam1.npz cam2.npz
 python dartboard.py track-board --sources 0 1 2 --log board_tracking.jsonl
+python dartboard.py run --sources 0 1 2
 ```
 
-It displays actual rectified frames and measured junction graphs, reports loss,
-and attempts recovery. Use --headless for logs only and --once for still images.
-The full run command uses this same fresh geometry tracker and resets the temporal
-background when cumulative camera movement makes it stale. Each camera is fitted
-independently to the common board plane; dart axes are combined across views.
-This is not joint camera bundle adjustment. The old appearance tracker is retained
-as ReferenceTracker only for historical comparisons.
+Sources can be USB indices, network stream URLs or video paths. Local cameras
+must be attached to the computer running the script; network streams can be
+remote. No hardware is accessed until you run a camera/stream command.
 
-Start with an empty board. Throw one dart, then wait for the estimate. Keys:
-`P` pauses for dart retrieval, `R` refreshes the background and resumes, `G` toggles
-the grid, `S` saves a snapshot, `Q` quits. Pause **before** removing darts: an
-absolute difference cannot reliably distinguish adding from removing a dart.
-`--headless` hides the dashboard. Ctrl+C stops. Use `--once` to save one rectified
-set without scoring. Estimates and review/rejection reasons go to JSONL, with
-diagnostic frames and masks under `dartboard_output/`.
+For saved images, use `--images left.jpg right.jpg bottom.jpg`; add `--once` to
+`track-board` or `run`. `--headless` hides the dashboard. Ctrl+C stops execution.
+`--manual` enables an optional four-click calibration fallback.
 
-## Reproduce the synthetic experiments
+Start with an empty board. Throw **one dart at a time**, then wait for the result.
+Existing darts remain part of the reference state; simultaneous additions are
+ambiguous and may be rejected. Pause before retrieving darts.
+
+| Key | Action |
+| --- | --- |
+| P | Pause for dart retrieval |
+| R | Refresh the background and resume |
+| G | Toggle the scoring grid |
+| S | Save a snapshot |
+| Q | Quit |
+
+The scoring command writes estimates and review/rejection reasons to JSONL, with
+frames and masks under `dartboard_output/`. The calibration-only command reports
+fresh detections, loss and recovery without scoring.
+
+## Replay recordings
+
+Use the saved calibration with three recordings and explicit reference/settled
+frame indices for each throw. Per-camera indices account for synchronization
+offsets. See `examples/replay_events.json`.
 
 ```sh
-python render_synthetic.py
-python benchmark_c920.py
-python monte_carlo.py --trials 100 --workers 4 --seed 20261110
-python -m unittest -v test_pipeline.py
-
-# Calibration-only ablation and recovery evidence
-OPENBLAS_NUM_THREADS=1 python monte_carlo.py --trials 100 --workers 4 --calibration-only --no-pose --output c920_benchmark/calibration_sweep_before_pnp.json
-OPENBLAS_NUM_THREADS=1 python monte_carlo.py --trials 100 --workers 4 --calibration-only --output c920_benchmark/calibration_sweep.json
-OPENBLAS_NUM_THREADS=1 python monte_carlo.py --trials 20 --workers 4 --seed 20261111 --calibration-only --output c920_benchmark/calibration_holdout.json
-python calibration_evidence.py
+python replay_recordings.py --sources left.mp4 right.mp4 bottom.mp4 --calibration calibration.json --events examples/replay_events.json --output recording_validation
 ```
 
-The renderer projects a 900×900 textured board plane and simple 3D dart into
-1920×1080 C920-like frames. It uses the published 78-degree diagonal field of view,
-illustrative Brown–Conrady distortion, blur, Gaussian noise and JPEG compression.
-There is no 4K intermediate. The detector rectifies actual input pixels with
-`remap`/`warpPerspective`; it never substitutes a newly rendered clean board.
+Optional truth labels or hit coordinates are evaluated after detection and are
+not supplied to the estimator. This tool replays event windows; it does not
+establish automatic live throw timing.
 
-Synthetic K/D and the nominal mounting geometry are supplied to the detector.
-Monte Carlo true camera positions are sampled within a 50.8 mm ball around each
-nominal mount, with additional aim/roll and optical variation. Sampled true poses,
-homographies and dart hit locations are withheld. The model compares recovered
-landmarks and hit locations with ground truth only during evaluation.
+## Validation status
 
-The ranges in `monte_carlo.py` are engineering stress assumptions, not measured C920
-population distributions. Test reports retain every trial, including calibration
-failures, rejected intersections and wrong score estimates. Position-error
-statistics include wrong-score estimates. Review flags are tolerances and checks,
-not calibrated statistical confidence intervals.
+The current implementation has been exercised on synthetic camera inputs with
+known lens parameters and an original-photo boundary check. Synchronized
+recordings from the actual C920 setup are still needed to assess real-camera
+accuracy and live scoring reliability. Synthetic inputs use a textured board
+plane and a simplified projected 3D dart with lens distortion, blur, noise and
+JPEG compression; they do not reproduce real hands, lighting or depth occlusion.
 
-`initial_geometry_report.json` and `initial_geometry_monte_carlo.json` retain the
-earlier geometry-based experiment. It produced 5 correct estimates and 3 rejections
-on 8 fixed targets; the original 100-trial run produced 18 correct estimates,
-3 wrong estimates, 43 intersection rejections and 36 calibration failures. Later
-reports use the corrected mount dimensions and/or optimizer and must be read as
-separate experiments. The website reports which experiment each image belongs to.
-
-## Experimental joint edge/lens fit and post-fit circles
-
-`--estimate-radial-distortion` is an opt-in calibration path. It initializes from
-the pose/template belief, then fits an eight-parameter homography and radial k1
-jointly against observed RAW HSV-ring and adaptive-spoke edges. K stays fixed;
-k2, p1, p2 and k3 stay at their supplied priors (zero without an NPZ). Fitting k2
-as well is available in the Python API, but the first single-view test overfit
-those two coefficients. This does not estimate all camera intrinsics.
-
-After fitting, the script undistorts/rectifies actual pixels and checks paired
-ring boundaries near nominal radii. Missing or inconsistent boundaries are reported. Circle detections never feed the edge optimizer. This is
-a consistency diagnostic, not independent geometric ground truth.
+Run the regression checks with:
 
 ```sh
-python dartboard.py calibrate --sources 0 1 2 --geometry-prior measured_setup/scene.json --estimate-radial-distortion
-python benchmark_edge_lens.py
-python monte_carlo_edge_lens.py --setups 20 --workers 8
+python -m unittest -q test_pipeline test_detection test_recording_replay test_board_pattern
 ```
-
-Known/measured K can be supplied through `--intrinsics`; otherwise the C920-like
-78-degree nominal K is used. The fixed benchmark and randomized evaluation supply
-exact K but WITHHOLD ALL true distortion coefficients. They initialize D to zero.
-The 20-setup replay accepted 60/60 views. Median per-view probe error changed from
-0.568 to 0.517 canonical pixels, with 42 view medians improving and 18 worsening.
-Worst probe error increased from 1.515 to 1.773 pixels; none exceeded 2 pixels.
-Median absolute k1 error was 0.00372. This is a modest, mixed improvement, so the
-new path is not the default and has not demonstrated better dart scoring.
-
-`edge_lens_evidence/comparison.jpg` shows the observed edges, H-only result,
-joint result, and post-fit detected circles. The original-photo circle overlay
-uses its existing rectification; no phone lens coefficients were estimated there.
-All circle candidates and failures are retained in the JSON reports.
-
-## Wedge-scale thresholding and real-photo validation
-
-The old 31-pixel adaptive window highlighted board texture and turned dark wedge
-interiors white. `binarize()` now uses a Gaussian adaptive window equal to half the
-shorter image dimension, rounded to an odd integer: **541 pixels at 1920×1080**,
-**451 at 900×900**. A 5×5 Gaussian blur (sigma 1.2) suppresses fine texture before
-thresholding; C remains 5. `binarize(gray, block_size=...)` allows an explicit odd
-window override. No model sectors are painted into the result.
-
-Separate HSV masks preserve scoring-ring boundaries lost in black/white conversion:
-red H=0–12 or 170–179, S>=65, V>=30; green H=35–110, S>=55, V>=30. OpenCV hue is
-0–179. Each mask gets a 3×3 median filter. Harris candidates and geometry-check
-edges combine adaptive wedges, red, and green; the masks remain separate so their
-segment boundaries survive. These defaults assume a red/green board.
-
-`threshold_evidence/comparison.jpg` shows the old and new outputs on all three
-fixed synthetic views. Correct black/white classification in the evaluated wedge
-interiors rises from about 58% to 100%. This excludes coloured bands, bull and
-wire neighborhoods, and is not a pose accuracy measurement.
-
-The supplied original close-up also passes the no-click calibration: 67 Harris
-inliers, 90.3% combined wire-edge support, and 99.96% correct wedge-interior
-classification. Its 1.23-pixel median correspondence residual is an internal fit
-statistic, not independent ground-truth error. No real-camera lens K/D were
-available. The wider setup photo's automatic calibration remains rejected for low
-whole-pattern correlation; its threshold/masks are still available for inspection.
-Only board crops and derived outputs are included in `real_photo_validation/`.
-The current 300-view regression with large-window adaptive + HSV features still
-calibrates 297/300 views (97/100 complete setups), with the same three initialization
-failures and worst accepted landmark error of 0.996 canonical pixels.
-
-```sh
-python benchmark_c920.py
-python threshold_evidence.py
-python validate_photo.py /path/to/board.jpg /path/to/setup.jpg
-python monte_carlo.py --trials 100 --workers 8 --calibration-only --output c920_benchmark/calibration_sweep_hsv.json
-```
-
-## Seeded pose experiment
-
-With the same 100 randomized setups (300 views, seed 20261110), the dense-only
-baseline calibrated 284/300 views and all three cameras in 84/100 setups. The
-seeded pose/reassociation initializer calibrated **297/300 views**, with all three
-cameras in **97/100 setups**. Of the 297 accepted views, 296 used a pose hypothesis;
-one used the explicit dense-only fallback. Median per-view landmark error was
-0.605 canonical pixels; the worst individual landmark error was 0.996 pixels and
-the worst interior-probe error was 0.901 pixels. The remaining failures were bottom
-camera views in trials 72, 78 and 92. No accepted view exceeded the 2-pixel
-landmark/interior-probe evaluation threshold.
-
-A separate seed (20261111), using the same scene generator and stress ranges,
-calibrated all 60 views in 20 setups. Its worst landmark error was 0.989 pixels.
-This is synthetic evidence with exact K/D, not a real-camera validation or a test
-of different board textures and lighting.
-
-Reports: `c920_benchmark/calibration_sweep_before_pnp.json`,
-`c920_benchmark/calibration_sweep.json`, and `c920_benchmark/calibration_holdout.json`.
-`calibration_evidence/pipeline.jpg` shows actual pixels at every stage of trial 0,
-including the previously failing bottom view. The fourteen unit/integration checks
-include 25% corrupted correspondences and a 12-frame moving-camera sequence.
-
-## Colour topology and explicit corner least squares
-
-`corner_geometry.py` checks four observed patches around every geometrically
-plausible band/spoke match. The expected dark/light/red/green arrangement rejects
-wrong inward/outward assignments before Hungarian matching. Unmatched corners
-are allowed. RANSAC selects a distributed consensus; explicit soft-L1 least
-squares fits its image coordinates to fixed metric board coordinates. The coarse
-ellipse initializer uses this fit. The final default calibration still retains
-the dense template homography and uses these corners for validation.
-
-Run `python corner_evidence.py` for a separate comparison of the dense and corner
-homographies on actual input pixels. Correct colour patterns pass 80/80 controlled
-synthetic assignments; swapping every inner/outer band association passes 0/80.
-With exact synthetic K/D supplied, three fixed camera views have withheld-probe
-median errors of 0.324, 0.504 and 0.478 pixels after corner fitting (maximum errors
-1.660, 0.972 and 1.397 pixels). This is not a new scoring or Monte Carlo result.
-
-The original photo yields 39 consensus corners with the historical 8 mm profile,
-median fitting residual 1.00 pixels. A nominal strip profile
-`--radii 97.4 107.4 160 170` yields 46 corners and a 1.29 pixel median. Neither is
-a measured physical profile or independent real-photo accuracy result. The
-post-fit detector now measures paired HSV annulus boundaries with free circle
-centres/radii, replacing independent Hough radius queries. Visible colour edges
-can differ from wire apexes, and the photo still exposes model/rectification
-disagreement. Earlier Hough figures and Monte Carlo reports are historical.
-
-`corner_evidence/real_comparison.jpg`, `synthetic_comparison.jpg`, and `report.json`
-retain the observed points, rejected associations, fitted mappings, and residuals.
-Seventeen unit/integration checks cover topology swaps, withheld-plane-point
-accuracy, both measured band edges, and the existing pose/tracking paths.
-The updated default calibration also passes all 60 views in a 20-setup randomized
-regression (seed 20261110, first 20 setups of the existing sweep), with worst
-landmark error 0.942 pixels. This tests the default dense calibration plus the
-new corner validation, not the separate corner-corrected homography. Full report:
-`c920_benchmark/calibration_sweep_colour_corners.json`.
-
-## Important practical limits
-
-The earlier detector's measured-setup fixed-target run produced 4 correct estimates
-and 4 rejections; see the updated paired detection results above. The dense template mapping
-had roughly 0.54–0.65 canonical-pixel median landmark error in those fixed views.
-The historical scoring run, before the seeded pose loop, with each camera sampled within a 50.8 mm ball of its
-nominal position, produced 14 correct estimates, 2 wrong estimates, 23 rejected
-intersections and 61 calibration failures. There were 16 estimates (16% coverage);
-median position error was 0.267 mm, 95th percentile 24.128 mm and worst 36.555 mm.
-The apparently small median must not obscure the wrong estimates and low coverage.
-See `c920_benchmark/report.json` and `c920_benchmark/monte_carlo.json` for every case.
-
-Real hands, overlapping darts, realistic shadows, changing illumination and automatic
-dart removal remain unvalidated. Detection and calibration failures remain material.
-Two-view estimates and near-wire calls need review. A camera movement concurrent
-with a throw can cause that event to be skipped during baseline refresh.
-The static benchmarks do not exercise the full live event state machine.
-The included tracking test separately checks a sequence of changing camera poses.
-
-USB `grab`/`retrieve` provides approximate synchronization, not hardware sync;
-network buffering and blocking capture depend on the OpenCV backend. The script
-waits for a settled scene before evaluating a dart. It records per-dart estimates,
-not a full 301/501 game.
-
-Logitech source: https://support.logi.com/hc/en-ca/articles/360023307774-C920-C-Webcam-Technical-Specifications
-OpenCV: https://docs.opencv.org/4.x/dd/d1a/group__imgproc__feature.html
-Camera models: https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html
