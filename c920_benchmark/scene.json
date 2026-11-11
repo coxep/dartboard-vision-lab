@@ -1,0 +1,59 @@
+{
+  "units": "mm",
+  "board_plane": "z=0, x right, y up, z toward player",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "diagonal_fov_degrees": 78.0,
+  "specification_source": "https://support.logi.com/hc/en-ca/articles/360023307774-C920-C-Webcam-Technical-Specifications",
+  "camera_positions_mm": [
+    [
+      -285.0464401014715,
+      243.12784596890216,
+      215.89999999999998
+    ],
+    [
+      285.0464401014715,
+      243.12784596890216,
+      215.89999999999998
+    ],
+    [
+      0.0,
+      -374.65,
+      215.89999999999998
+    ]
+  ],
+  "mount_radius_mm": 374.65,
+  "standoff_mm": 215.89999999999998,
+  "look_at_mm": [
+    0,
+    0,
+    0
+  ],
+  "K": [
+    [
+      1360.1819002226537,
+      0.0,
+      960.0
+    ],
+    [
+      0.0,
+      1360.1819002226537,
+      540.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "D": [
+    -0.045,
+    0.012,
+    0.0007,
+    -0.0005,
+    0.0
+  ],
+  "assumptions": "User supplied 14.75-inch radius and approximately 8.5-inch stand-off. Azimuths estimated from photo. Distortion illustrative. K/D and nominal pose are supplied; corrected H and hit are estimated. In these fixed cases the nominal pose equals the rendered pose; Monte Carlo perturbs it."
+}

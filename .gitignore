@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+dartboard_output/
+dart_events.jsonl
+/calibration.json
+/calibration_camera_*_reference.png
+synthetic/debug_*

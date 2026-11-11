@@ -1,0 +1,21 @@
+{
+  "camera_recovery_median_px": 0.49470943212509155,
+  "camera_recovery_max_px": 0.7506167888641357,
+  "detected_tip": [
+    450.24159036642004,
+    253.6481030800165
+  ],
+  "cameras": [
+    0,
+    1,
+    2
+  ],
+  "note": "three views",
+  "label": "T20",
+  "score": 60,
+  "x_mm": 0.1267603774426143,
+  "y_mm": -103.02414344567036,
+  "radius_mm": 103.02422142829982,
+  "boundary_review": false,
+  "tip_error_mm": 0.12903913847446324
+}

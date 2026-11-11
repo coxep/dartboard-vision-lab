@@ -1,0 +1,881 @@
+{
+  "scene": {
+    "units": "mm",
+    "board_plane": "z=0, x right, y up, z toward player",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "diagonal_fov_degrees": 78.0,
+    "specification_source": "https://support.logi.com/hc/en-ca/articles/360023307774-C920-C-Webcam-Technical-Specifications",
+    "camera_positions_mm": [
+      [
+        -285.0464401014715,
+        243.12784596890216,
+        215.89999999999998
+      ],
+      [
+        285.0464401014715,
+        243.12784596890216,
+        215.89999999999998
+      ],
+      [
+        0.0,
+        -374.65,
+        215.89999999999998
+      ]
+    ],
+    "mount_radius_mm": 374.65,
+    "standoff_mm": 215.89999999999998,
+    "look_at_mm": [
+      0,
+      0,
+      0
+    ],
+    "K": [
+      [
+        1360.1819002226537,
+        0.0,
+        960.0
+      ],
+      [
+        0.0,
+        1360.1819002226537,
+        540.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "D": [
+      -0.045,
+      0.012,
+      0.0007,
+      -0.0005,
+      0.0
+    ],
+    "assumptions": "User supplied 14.75-inch radius and approximately 8.5-inch stand-off. Azimuths estimated from photo. Distortion illustrative. K/D and nominal pose are supplied; corrected H and hit are estimated. In these fixed cases the nominal pose equals the rendered pose; Monte Carlo perturbs it."
+  },
+  "calibration": [
+    {
+      "refined": true,
+      "inliers": 13,
+      "fit_median_px": 1.2891710996627808,
+      "matched_source_px": [
+        [
+          870.793701171875,
+          843.2396240234375
+        ],
+        [
+          1101.5999755859375,
+          238.72006225585938
+        ],
+        [
+          1110.8546142578125,
+          532.39111328125
+        ],
+        [
+          737.7041015625,
+          1010.472412109375
+        ],
+        [
+          778.0,
+          804.0
+        ],
+        [
+          898.0,
+          29.0
+        ],
+        [
+          927.0,
+          261.0
+        ],
+        [
+          1116.0,
+          311.0
+        ],
+        [
+          515.0,
+          771.0
+        ],
+        [
+          763.0,
+          819.0
+        ],
+        [
+          630.0,
+          1011.0
+        ],
+        [
+          1053.0,
+          230.0
+        ],
+        [
+          1201.0,
+          411.0
+        ]
+      ],
+      "matched_target_px": [
+        [
+          357.4179992675781,
+          631.7024536132812
+        ],
+        [
+          594.1998901367188,
+          305.8001403808594
+        ],
+        [
+          631.7024536132812,
+          542.58203125
+        ],
+        [
+          231.67869567871094,
+          668.3212890625
+        ],
+        [
+          281.8827819824219,
+          535.6599731445312
+        ],
+        [
+          401.7004089355469,
+          145.04832458496094
+        ],
+        [
+          420.48358154296875,
+          263.640625
+        ],
+        [
+          618.1171875,
+          364.3399963378906
+        ],
+        [
+          129.98898315429688,
+          399.31524658203125
+        ],
+        [
+          268.2975769042969,
+          542.58203125
+        ],
+        [
+          161.3138885498047,
+          597.0928955078125
+        ],
+        [
+          535.6599731445312,
+          281.8827819824219
+        ],
+        [
+          754.95166015625,
+          498.2995910644531
+        ]
+      ],
+      "harris_role": "validation only; dense plane-template H retained",
+      "method": "prior plane projection + full wire-template optimization",
+      "template_median_source_px": 0.6138429733726326,
+      "template_p90_source_px": 1.1090877122922287,
+      "correction": [
+        0.0015032842878670923,
+        4.407624571408291e-05,
+        -0.001155175939758011,
+        -0.00033511052965164845,
+        0.0013172413571540319,
+        -0.0010547267043994639,
+        -0.0005868068370581931,
+        -0.000723855978394383
+      ],
+      "binary_template_support": 0.9863372093023256,
+      "camera": 0,
+      "median_error_px": 0.6287243366241455,
+      "max_error_px": 0.7492777705192566
+    },
+    {
+      "refined": true,
+      "inliers": 14,
+      "fit_median_px": 1.3183996677398682,
+      "matched_source_px": [
+        [
+          1183.037109375,
+          1012.6162109375
+        ],
+        [
+          1190.16552734375,
+          550.1117553710938
+        ],
+        [
+          1182.0726318359375,
+          655.142822265625
+        ],
+        [
+          782.2506103515625,
+          368.6932067871094
+        ],
+        [
+          1063.0,
+          332.0
+        ],
+        [
+          985.6211547851562,
+          787.2984008789062
+        ],
+        [
+          1347.0,
+          915.0
+        ],
+        [
+          1020.0,
+          29.0
+        ],
+        [
+          1102.0,
+          846.0
+        ],
+        [
+          1315.0,
+          322.0
+        ],
+        [
+          985.0,
+          802.0
+        ],
+        [
+          1292.0,
+          335.0
+        ],
+        [
+          1419.60009765625,
+          788.0848999023438
+        ],
+        [
+          999.0,
+          933.0
+        ]
+      ],
+      "matched_target_px": [
+        [
+          668.3212890625,
+          668.3212890625
+        ],
+        [
+          631.7024536132812,
+          357.4179992675781
+        ],
+        [
+          636.359375,
+          420.48358154296875
+        ],
+        [
+          248.581298828125,
+          418.0984191894531
+        ],
+        [
+          535.6599731445312,
+          281.8827819824219
+        ],
+        [
+          479.51641845703125,
+          636.359375
+        ],
+        [
+          754.95166015625,
+          498.2995910644531
+        ],
+        [
+          498.2995910644531,
+          145.04832458496094
+        ],
+        [
+          594.1998901367188,
+          594.1998901367188
+        ],
+        [
+          679.1026000976562,
+          220.89739990234375
+        ],
+        [
+          481.9015808105469,
+          651.418701171875
+        ],
+        [
+          668.3212890625,
+          231.67869567871094
+        ],
+        [
+          770.0110473632812,
+          399.31524658203125
+        ],
+        [
+          500.68475341796875,
+          770.0110473632812
+        ]
+      ],
+      "harris_role": "validation only; dense plane-template H retained",
+      "method": "prior plane projection + full wire-template optimization",
+      "template_median_source_px": 0.6497119704105451,
+      "template_p90_source_px": 1.136126915582292,
+      "correction": [
+        0.0011916149193612114,
+        9.75600018676977e-05,
+        -0.0012480032311560352,
+        0.0005436158993451734,
+        0.0013640021962133592,
+        -0.0009007795065041717,
+        -0.0021647697186585224,
+        -0.000497774499992385
+      ],
+      "binary_template_support": 0.9875,
+      "camera": 1,
+      "median_error_px": 0.5391322374343872,
+      "max_error_px": 0.7812653183937073
+    },
+    {
+      "refined": true,
+      "inliers": 15,
+      "fit_median_px": 1.1866683959960938,
+      "matched_source_px": [
+        [
+          684.9122924804688,
+          470.176025390625
+        ],
+        [
+          1150.7393798828125,
+          726.424560546875
+        ],
+        [
+          1089.2308349609375,
+          413.1776123046875
+        ],
+        [
+          1436.3155517578125,
+          501.899169921875
+        ],
+        [
+          478.0,
+          504.0
+        ],
+        [
+          1229.0,
+          469.0
+        ],
+        [
+          619.0,
+          569.0
+        ],
+        [
+          899.0,
+          748.0
+        ],
+        [
+          1308.0,
+          876.0
+        ],
+        [
+          469.0,
+          789.0
+        ],
+        [
+          896.0,
+          348.0
+        ],
+        [
+          407.0,
+          586.0
+        ],
+        [
+          403.0,
+          685.0
+        ],
+        [
+          781.0,
+          722.0
+        ],
+        [
+          848.0,
+          932.0
+        ]
+      ],
+      "matched_target_px": [
+        [
+          268.2975769042969,
+          357.4179992675781
+        ],
+        [
+          542.58203125,
+          631.7024536132812
+        ],
+        [
+          542.58203125,
+          268.2975769042969
+        ],
+        [
+          754.95166015625,
+          401.7004089355469
+        ],
+        [
+          145.04832458496094,
+          401.7004089355469
+        ],
+        [
+          631.7024536132812,
+          357.4179992675781
+        ],
+        [
+          248.581298828125,
+          481.9015808105469
+        ],
+        [
+          418.0984191894531,
+          651.418701171875
+        ],
+        [
+          597.0928955078125,
+          738.6860961914062
+        ],
+        [
+          220.89739990234375,
+          679.1026000976562
+        ],
+        [
+          401.7004089355469,
+          145.04832458496094
+        ],
+        [
+          129.98898315429688,
+          500.68475341796875
+        ],
+        [
+          161.3138885498047,
+          597.0928955078125
+        ],
+        [
+          357.4179992675781,
+          631.7024536132812
+        ],
+        [
+          399.31524658203125,
+          770.0110473632812
+        ]
+      ],
+      "harris_role": "validation only; dense plane-template H retained",
+      "method": "prior plane projection + full wire-template optimization",
+      "template_median_source_px": 0.6569935407768999,
+      "template_p90_source_px": 1.1695428302704023,
+      "correction": [
+        0.0017249367104438152,
+        0.0005985272554187612,
+        -0.0011852629425750589,
+        -0.00024706752923404115,
+        0.0017218557761397473,
+        -0.0009342570071219327,
+        -0.001094691711250405,
+        -0.0015342573694130705
+      ],
+      "binary_template_support": 0.9953488372093023,
+      "camera": 2,
+      "median_error_px": 0.647617757320404,
+      "max_error_px": 0.7733344435691833
+    }
+  ],
+  "cases": [
+    {
+      "id": "treble20",
+      "truth": {
+        "label": "T20",
+        "score": 60,
+        "pixel": [
+          450.0,
+          253.69411764705885
+        ],
+        "x_mm": 0.0,
+        "y_mm": -103.0
+      },
+      "cameras": [],
+      "note": "shaft axes do not meet near the observed dart",
+      "detection": null,
+      "error_mm": null,
+      "correct": false,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": true,
+          "raw": "treble20/camera_0_input.jpg",
+          "mask": "treble20/camera_0_mask.png",
+          "detected": "treble20/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": false,
+          "raw": "treble20/camera_1_input.jpg",
+          "mask": "treble20/camera_1_mask.png",
+          "detected": "treble20/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": true,
+          "raw": "treble20/camera_2_input.jpg",
+          "mask": "treble20/camera_2_mask.png",
+          "detected": "treble20/camera_2_detected.jpg"
+        }
+      ]
+    },
+    {
+      "id": "double16",
+      "truth": {
+        "label": "D16",
+        "score": 32,
+        "pixel": [
+          194.04605867375196,
+          635.9614235841082
+        ],
+        "x_mm": -134.29682106624128,
+        "y_mm": 97.57235188055058
+      },
+      "cameras": [],
+      "note": "third camera disagrees; manual review required",
+      "detection": null,
+      "error_mm": null,
+      "correct": false,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": true,
+          "raw": "double16/camera_0_input.jpg",
+          "mask": "double16/camera_0_mask.png",
+          "detected": "double16/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": true,
+          "raw": "double16/camera_1_input.jpg",
+          "mask": "double16/camera_1_mask.png",
+          "detected": "double16/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": true,
+          "raw": "double16/camera_2_input.jpg",
+          "mask": "double16/camera_2_mask.png",
+          "detected": "double16/camera_2_detected.jpg"
+        }
+      ]
+    },
+    {
+      "id": "single6",
+      "truth": {
+        "label": "S6",
+        "score": 6,
+        "pixel": [
+          707.2941176470588,
+          450.0
+        ],
+        "x_mm": 135.0,
+        "y_mm": 0.0
+      },
+      "cameras": [],
+      "note": "shaft axes do not meet near the observed dart",
+      "detection": null,
+      "error_mm": null,
+      "correct": false,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": true,
+          "raw": "single6/camera_0_input.jpg",
+          "mask": "single6/camera_0_mask.png",
+          "detected": "single6/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": true,
+          "raw": "single6/camera_1_input.jpg",
+          "mask": "single6/camera_1_mask.png",
+          "detected": "single6/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": true,
+          "raw": "single6/camera_2_input.jpg",
+          "mask": "single6/camera_2_mask.png",
+          "detected": "single6/camera_2_detected.jpg"
+        }
+      ]
+    },
+    {
+      "id": "doublebull",
+      "truth": {
+        "label": "DB",
+        "score": 50,
+        "pixel": [
+          450.0,
+          450.0
+        ],
+        "x_mm": 0.0,
+        "y_mm": 0.0
+      },
+      "cameras": [
+        1,
+        2
+      ],
+      "note": "two views; reduced confidence",
+      "detection": {
+        "label": "DB",
+        "score": 50,
+        "x_mm": 0.14133716530200274,
+        "y_mm": 0.32410950160897617,
+        "radius_mm": 0.35358614696962404,
+        "boundary_review": false,
+        "pixel": [
+          450.2693720091638,
+          450.6177145795371
+        ]
+      },
+      "error_mm": 0.35358614696962404,
+      "correct": true,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": false,
+          "raw": "doublebull/camera_0_input.jpg",
+          "mask": "doublebull/camera_0_mask.png",
+          "detected": "doublebull/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": true,
+          "raw": "doublebull/camera_1_input.jpg",
+          "mask": "doublebull/camera_1_mask.png",
+          "detected": "doublebull/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": true,
+          "raw": "doublebull/camera_2_input.jpg",
+          "mask": "doublebull/camera_2_mask.png",
+          "detected": "doublebull/camera_2_detected.jpg"
+        }
+      ]
+    },
+    {
+      "id": "singlebull",
+      "truth": {
+        "label": "SB",
+        "score": 25,
+        "pixel": [
+          450.0,
+          429.0352941176471
+        ],
+        "x_mm": 0.0,
+        "y_mm": -10.999999999999988
+      },
+      "cameras": [
+        1,
+        2
+      ],
+      "note": "two views; reduced confidence",
+      "detection": {
+        "label": "SB",
+        "score": 25,
+        "x_mm": 0.2951387025088099,
+        "y_mm": -11.13858114335391,
+        "radius_mm": 11.142490598640768,
+        "boundary_review": false,
+        "pixel": [
+          450.5624996447815,
+          428.77117476207843
+        ]
+      },
+      "error_mm": 0.32605457673810423,
+      "correct": true,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": false,
+          "raw": "singlebull/camera_0_input.jpg",
+          "mask": "singlebull/camera_0_mask.png",
+          "detected": "singlebull/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": true,
+          "raw": "singlebull/camera_1_input.jpg",
+          "mask": "singlebull/camera_1_mask.png",
+          "detected": "singlebull/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": true,
+          "raw": "singlebull/camera_2_input.jpg",
+          "mask": "singlebull/camera_2_mask.png",
+          "detected": "singlebull/camera_2_detected.jpg"
+        }
+      ]
+    },
+    {
+      "id": "treble19",
+      "truth": {
+        "label": "T19",
+        "score": 57,
+        "pixel": [
+          389.3381462571721,
+          636.6979885988345
+        ],
+        "x_mm": -31.828750420619563,
+        "y_mm": 97.95882117840083
+      },
+      "cameras": [
+        0,
+        1
+      ],
+      "note": "two views; reduced confidence",
+      "detection": {
+        "label": "T19",
+        "score": 57,
+        "x_mm": -31.509069118812757,
+        "y_mm": 98.0826403648287,
+        "radius_mm": 103.01954075645283,
+        "boundary_review": false,
+        "pixel": [
+          389.947421208851,
+          636.9339734012029
+        ]
+      },
+      "error_mm": 0.3428225862637346,
+      "correct": true,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": true,
+          "raw": "treble19/camera_0_input.jpg",
+          "mask": "treble19/camera_0_mask.png",
+          "detected": "treble19/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": true,
+          "raw": "treble19/camera_1_input.jpg",
+          "mask": "treble19/camera_1_mask.png",
+          "detected": "treble19/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": false,
+          "raw": "treble19/camera_2_input.jpg",
+          "mask": "treble19/camera_2_mask.png",
+          "detected": "treble19/camera_2_detected.jpg"
+        }
+      ]
+    },
+    {
+      "id": "double3",
+      "truth": {
+        "label": "D3",
+        "score": 6,
+        "pixel": [
+          450.00000000000006,
+          766.3764705882353
+        ],
+        "x_mm": 2.982525063684371e-14,
+        "y_mm": 166.0
+      },
+      "cameras": [
+        0,
+        1,
+        2
+      ],
+      "note": "three views",
+      "detection": {
+        "label": "D3",
+        "score": 6,
+        "x_mm": 0.2583631090303638,
+        "y_mm": 165.85547832468774,
+        "radius_mm": 165.85567955848563,
+        "boundary_review": false,
+        "pixel": [
+          450.492409690152,
+          766.1010292776401
+        ]
+      },
+      "error_mm": 0.2960371779741329,
+      "correct": true,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": true,
+          "raw": "double3/camera_0_input.jpg",
+          "mask": "double3/camera_0_mask.png",
+          "detected": "double3/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": true,
+          "raw": "double3/camera_1_input.jpg",
+          "mask": "double3/camera_1_mask.png",
+          "detected": "double3/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": true,
+          "raw": "double3/camera_2_input.jpg",
+          "mask": "double3/camera_2_mask.png",
+          "detected": "double3/camera_2_detected.jpg"
+        }
+      ]
+    },
+    {
+      "id": "miss",
+      "truth": {
+        "label": "MISS",
+        "score": 0,
+        "pixel": [
+          724.4566358799527,
+          250.5955819399323
+        ],
+        "x_mm": 144.00502499874062,
+        "y_mm": -104.62577490806022
+      },
+      "cameras": [],
+      "note": "fewer than two usable shaft axes",
+      "detection": null,
+      "error_mm": null,
+      "correct": false,
+      "views": [
+        {
+          "camera": 0,
+          "shaft_found": false,
+          "raw": "miss/camera_0_input.jpg",
+          "mask": "miss/camera_0_mask.png",
+          "detected": "miss/camera_0_detected.jpg"
+        },
+        {
+          "camera": 1,
+          "shaft_found": true,
+          "raw": "miss/camera_1_input.jpg",
+          "mask": "miss/camera_1_mask.png",
+          "detected": "miss/camera_1_detected.jpg"
+        },
+        {
+          "camera": 2,
+          "shaft_found": false,
+          "raw": "miss/camera_2_input.jpg",
+          "mask": "miss/camera_2_mask.png",
+          "detected": "miss/camera_2_detected.jpg"
+        }
+      ]
+    }
+  ],
+  "correct": 4,
+  "total": 8,
+  "detected": 4,
+  "max_error_mm": 0.35358614696962404,
+  "negative_test": {
+    "rejected": true,
+    "reason": "third camera disagrees; manual review required"
+  },
+  "limitations": [
+    "Clean synthetic scene; no hands, overlapping darts or realistic shadows.",
+    "Known injected lens coefficients; this does not demonstrate blind lens calibration.",
+    "One static dart per case; continuous video event timing not tested here.",
+    "Camera-up and 20-at-top assumed; mounted cameras must supply an orientation cue."
+  ]
+}
