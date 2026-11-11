@@ -1,0 +1,403 @@
+{
+  "cameras": [
+    {
+      "camera": 0,
+      "truth_D_evaluation_only": [
+        -0.045,
+        0.012,
+        0.0007,
+        -0.0005,
+        0.0
+      ],
+      "estimated_D": [
+        -0.03869977788877653,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "before_probe_median_px": 0.5318663816759165,
+      "before_probe_max_px": 1.0780746039673965,
+      "after_probe_median_px": 0.4740874281107456,
+      "after_probe_max_px": 0.6539980349736843,
+      "fit": {
+        "method": "raw observed HSV-ring / adaptive-spoke edges: joint H + radial coefficients",
+        "estimated": [
+          "homography",
+          "k1"
+        ],
+        "fixed": [
+          "K",
+          "p1",
+          "p2",
+          "k3",
+          "k2"
+        ],
+        "distortion_prior": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "D": [
+          -0.03869977788877653,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "history": [
+          {
+            "scale": 0.5,
+            "evaluations": 15,
+            "median_source_px": 0.9581728242715016,
+            "p90_source_px": 4.782649838059479,
+            "k1": -0.04376104707484474,
+            "k2": 0.0
+          },
+          {
+            "scale": 1.0,
+            "evaluations": 12,
+            "median_source_px": 0.7838277415821464,
+            "p90_source_px": 4.765673042448753,
+            "k1": -0.03869977788877653,
+            "k2": 0.0
+          }
+        ],
+        "samples": 2802,
+        "median_source_px": 0.7838277415821464,
+        "p90_source_px": 4.765673042448753
+      },
+      "circle_detector": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            451.5
+          ],
+          "radius_px": 189.0,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": 0.31764705882355315
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 203.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.1294087129480488
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 323.6000061035156,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.399993896484375
+        }
+      ]
+    },
+    {
+      "camera": 1,
+      "truth_D_evaluation_only": [
+        -0.045,
+        0.012,
+        0.0007,
+        -0.0005,
+        0.0
+      ],
+      "estimated_D": [
+        -0.04373813579727774,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "before_probe_median_px": 0.6054201532721101,
+      "before_probe_max_px": 0.9397290489091801,
+      "after_probe_median_px": 0.5025452727226054,
+      "after_probe_max_px": 0.8384333076408285,
+      "fit": {
+        "method": "raw observed HSV-ring / adaptive-spoke edges: joint H + radial coefficients",
+        "estimated": [
+          "homography",
+          "k1"
+        ],
+        "fixed": [
+          "K",
+          "p1",
+          "p2",
+          "k3",
+          "k2"
+        ],
+        "distortion_prior": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "D": [
+          -0.04373813579727774,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "history": [
+          {
+            "scale": 0.5,
+            "evaluations": 14,
+            "median_source_px": 0.9751315375363625,
+            "p90_source_px": 4.673131210275081,
+            "k1": -0.049185662909271614,
+            "k2": 0.0
+          },
+          {
+            "scale": 1.0,
+            "evaluations": 13,
+            "median_source_px": 0.8069786520764514,
+            "p90_source_px": 5.182696515746271,
+            "k1": -0.04373813579727774,
+            "k2": 0.0
+          }
+        ],
+        "samples": 2803,
+        "median_source_px": 0.8069786520764514,
+        "p90_source_px": 5.182696515746271
+      },
+      "circle_detector": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 204.6999969482422,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7705851835363262
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 324.3999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.399993896484375
+        }
+      ]
+    },
+    {
+      "camera": 2,
+      "truth_D_evaluation_only": [
+        -0.045,
+        0.012,
+        0.0007,
+        -0.0005,
+        0.0
+      ],
+      "estimated_D": [
+        -0.04324222130100014,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "before_probe_median_px": 0.48123715657332916,
+      "before_probe_max_px": 1.1686824998036698,
+      "after_probe_median_px": 0.5767461697087347,
+      "after_probe_max_px": 1.2672744060875627,
+      "fit": {
+        "method": "raw observed HSV-ring / adaptive-spoke edges: joint H + radial coefficients",
+        "estimated": [
+          "homography",
+          "k1"
+        ],
+        "fixed": [
+          "K",
+          "p1",
+          "p2",
+          "k3",
+          "k2"
+        ],
+        "distortion_prior": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "D": [
+          -0.04324222130100014,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "history": [
+          {
+            "scale": 0.5,
+            "evaluations": 15,
+            "median_source_px": 1.0212014286683693,
+            "p90_source_px": 5.159795031784249,
+            "k1": -0.03970201300401921,
+            "k2": 0.0
+          },
+          {
+            "scale": 1.0,
+            "evaluations": 15,
+            "median_source_px": 0.8378071381609051,
+            "p90_source_px": 5.286110427681079,
+            "k1": -0.04324222130100014,
+            "k2": 0.0
+          }
+        ],
+        "samples": 2840,
+        "median_source_px": 0.8378071381609051,
+        "p90_source_px": 5.286110427681079
+      },
+      "circle_detector": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    }
+  ],
+  "known_to_fit": "Exact K, board geometry, nominal camera pose. Distortion prior is zero.",
+  "withheld": "All true distortion coefficients, true H, independent probe locations.",
+  "limitation": "Fixed synthetic poses only. H+k1 estimated; k2/p1/p2/k3 fixed to zero. Hough uses nominal radius search bands and is a post-fit consistency diagnostic, not independent accuracy ground truth."
+}

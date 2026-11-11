@@ -60,6 +60,32 @@ class PipelineTests(unittest.TestCase):
         binary=binarize(cv.cvtColor(warp(image,H,self.board),cv.COLOR_BGR2GRAY))
         self.assertGreater(wedge_accuracy(binary,self.board)['correct_fraction'],.99)
 
+    def test_forward_distortion_matches_opencv(self):
+        from edge_calibration import distort_pixels
+        K=np.array([[700.,0,480.],[0,710.,360.],[0,0,1.]])
+        D=np.array([-.07,.02,.0008,-.0005,.001])
+        rng=np.random.default_rng(17)
+        xy=rng.uniform(-.6,.6,(50,2))
+        points=np.c_[xy,np.ones(len(xy))]
+        pixels=xy*np.array([K[0,0],K[1,1]])+K[:2,2]
+        expected=cv.projectPoints(points,np.zeros(3),np.zeros(3),K,D)[0].reshape(-1,2)
+        np.testing.assert_allclose(distort_pixels(pixels,K,D),expected,atol=1e-9)
+
+    def test_joint_edges_estimate_radial_without_true_coefficients(self):
+        from benchmark_c920 import K,D,WIDTH,HEIGHT,POSITIONS,distortion_map,observed
+        from edge_calibration import calibrate_unknown_radial,distort_pixels
+        b=self.board;position=POSITIONS[0]
+        image,true_H,_=render_camera(self.texture,b,position,dart=False,width=WIDTH,height=HEIGHT,focal=K[0,0])
+        raw,_=observed(image,distortion_map(K,D,WIDTH,HEIGHT),100)
+        H,lens,report,_,_=calibrate_unknown_radial(raw,b,K,nominal_homography(b,K,position))
+        estimate=np.array(lens['D'])
+        self.assertLess(abs(float(estimate[0]-D[0])),.02)
+        points=b.landmarks()
+        raw_points=distort_pixels(project(points,np.linalg.inv(true_H)),K,D)
+        corrected=cv.undistortPoints(raw_points.reshape(-1,1,2),K,estimate,P=K).reshape(-1,2)
+        self.assertLess(float(np.linalg.norm(project(corrected,H)-points,axis=1).max()),2.)
+        self.assertGreaterEqual(report['inliers'],12)
+
     def test_known_scoring_locations(self):
         b = self.board
         for radius, angle, label, score in [(130, 0, 'S20', 20), (130, 90, 'S6', 6),

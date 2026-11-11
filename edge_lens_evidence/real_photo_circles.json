@@ -1,0 +1,65 @@
+{
+  "circles": [
+    {
+      "nominal_radius_mm": 15.9,
+      "found": true,
+      "consistent": true,
+      "center_px": [
+        451.5,
+        450.5
+      ],
+      "radius_px": 30.0,
+      "center_offset_px": 1.5811388492584229,
+      "radius_offset_px": -0.3035294117647034
+    },
+    {
+      "nominal_radius_mm": 99.0,
+      "found": true,
+      "consistent": false,
+      "center_px": [
+        439.5,
+        443.5
+      ],
+      "radius_px": 193.39999389648438,
+      "center_offset_px": 12.349088668823242,
+      "radius_offset_px": 4.717640955307928
+    },
+    {
+      "nominal_radius_mm": 107.0,
+      "found": true,
+      "consistent": true,
+      "center_px": [
+        447.5,
+        450.5
+      ],
+      "radius_px": 205.10000610351562,
+      "center_offset_px": 2.5495097637176514,
+      "radius_offset_px": 1.1705943388097637
+    },
+    {
+      "nominal_radius_mm": 162.0,
+      "found": true,
+      "consistent": true,
+      "center_px": [
+        448.5,
+        449.5
+      ],
+      "radius_px": 307.8999938964844,
+      "center_offset_px": 1.5811388492584229,
+      "radius_offset_px": -0.8529472799862106
+    },
+    {
+      "nominal_radius_mm": 170.0,
+      "found": true,
+      "consistent": false,
+      "center_px": [
+        449.5,
+        450.5
+      ],
+      "radius_px": 328.3999938964844,
+      "center_offset_px": 0.7071067690849304,
+      "radius_offset_px": 4.399993896484375
+    }
+  ],
+  "note": "Post-fit detection on original real-photo rectification. No lens coefficients estimated in this real-photo example."
+}

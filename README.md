@@ -131,6 +131,41 @@ on 8 fixed targets; the original 100-trial run produced 18 correct estimates,
 reports use the corrected mount dimensions and/or optimizer and must be read as
 separate experiments. The website reports which experiment each image belongs to.
 
+## Experimental joint edge/lens fit and post-fit circles
+
+`--estimate-radial-distortion` is an opt-in calibration path. It initializes from
+the pose/template belief, then fits an eight-parameter homography and radial k1
+jointly against observed RAW HSV-ring and adaptive-spoke edges. K stays fixed;
+k2, p1, p2 and k3 stay at their supplied priors (zero without an NPZ). Fitting k2
+as well is available in the Python API, but the first single-view test overfit
+those two coefficients. This does not estimate all camera intrinsics.
+
+After fitting, the script undistorts/rectifies actual pixels and runs a separate
+Hough gradient circle detector. It searches near nominal ring radii. Yellow
+circles pass the post-fit center/radius checks; red candidates fail them. Missing
+circles are reported. Circle detections never feed the edge optimizer. This is
+a consistency diagnostic, not independent geometric ground truth.
+
+```sh
+python dartboard.py calibrate --sources 0 1 2 --geometry-prior measured_setup/scene.json --estimate-radial-distortion
+python benchmark_edge_lens.py
+python monte_carlo_edge_lens.py --setups 20 --workers 8
+```
+
+Known/measured K can be supplied through `--intrinsics`; otherwise the C920-like
+78-degree nominal K is used. The fixed benchmark and randomized evaluation supply
+exact K but WITHHOLD ALL true distortion coefficients. They initialize D to zero.
+The 20-setup replay accepted 60/60 views. Median per-view probe error changed from
+0.568 to 0.517 canonical pixels, with 42 view medians improving and 18 worsening.
+Worst probe error increased from 1.515 to 1.773 pixels; none exceeded 2 pixels.
+Median absolute k1 error was 0.00372. This is a modest, mixed improvement, so the
+new path is not the default and has not demonstrated better dart scoring.
+
+`edge_lens_evidence/comparison.jpg` shows the observed edges, H-only result,
+joint result, and post-fit detected circles. The original-photo circle overlay
+uses its existing rectification; no phone lens coefficients were estimated there.
+All circle candidates and failures are retained in the JSON reports.
+
 ## Wedge-scale thresholding and real-photo validation
 
 The old 31-pixel adaptive window highlighted board texture and turned dark wedge
@@ -189,7 +224,7 @@ of different board textures and lighting.
 Reports: `c920_benchmark/calibration_sweep_before_pnp.json`,
 `c920_benchmark/calibration_sweep.json`, and `c920_benchmark/calibration_holdout.json`.
 `calibration_evidence/pipeline.jpg` shows actual pixels at every stage of trial 0,
-including the previously failing bottom view. The twelve unit/integration checks
+including the previously failing bottom view. The fourteen unit/integration checks
 include 25% corrupted correspondences and a 12-frame moving-camera sequence.
 
 ## Important practical limits

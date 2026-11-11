@@ -720,7 +720,17 @@ def calibrate(args, inputs):
                 focal = math.hypot(raw.shape[1], raw.shape[0]) / (2 * math.tan(math.radians(78 / 2)))
                 K = np.asarray(data["K"]) if data else np.array([[focal, 0, raw.shape[1]/2], [0, focal, raw.shape[0]/2], [0, 0, 1.]])
                 seed = nominal_homography(board, K, positions[i])
-            H, report = automatic_homography(frame, board, seed, K if positions is not None else None)
+            if args.estimate_radial_distortion:
+                from edge_calibration import calibrate_unknown_radial
+                if positions is None:
+                    focal = math.hypot(raw.shape[1], raw.shape[0]) / (2 * math.tan(math.radians(78 / 2)))
+                    K = np.asarray(data["K"]) if data else np.array([[focal,0,raw.shape[1]/2],[0,focal,raw.shape[0]/2],[0,0,1.]])
+                H, data, report, frame, circle_overlay = calibrate_unknown_radial(
+                    raw,board,K,seed,np.asarray(data["D"]) if data else None)
+                Path(args.output).mkdir(parents=True,exist_ok=True)
+                cv.imwrite(str(Path(args.output)/f"camera_{i}_postfit_circles.png"),circle_overlay)
+            else:
+                H, report = automatic_homography(frame, board, seed, K if positions is not None else None)
             print(f"Camera {i}: automatic calibration; {report['inliers']} Harris inliers; template support {report['binary_template_support']:.3f}")
             Path(args.output).mkdir(parents=True, exist_ok=True)
             cv.imwrite(str(Path(args.output) / f"camera_{i}_calibration.png"), board.grid(warp(frame, H, board)))
@@ -732,7 +742,7 @@ def calibrate(args, inputs):
             raise IOError("Could not save calibration reference")
         entries.append(dict(H=H.tolist(), shape=list(raw.shape[:2]), lens=data,
                             reference=ref, harris=report,
-                            pose_K=K.tolist() if positions is not None and not args.manual else None))
+                            pose_K=K.tolist() if (positions is not None or args.estimate_radial_distortion) and not args.manual else None))
     config = dict(version=1, size=board.size, radii=board.radii, cameras=entries)
     Path(args.calibration).write_text(json.dumps(config, indent=2) + "\n")
     print(f"Saved {args.calibration}. Camera order must remain the same when running.")
@@ -1157,6 +1167,7 @@ def main():
     parser.add_argument("--radii", type=float, nargs=4, default=DEFAULT_RADII,
                         metavar=("TREBLE_IN", "TREBLE_OUT", "DOUBLE_IN", "DOUBLE_OUT"))
     parser.add_argument("--intrinsics", nargs="+", help="Calibration: one NPZ per camera, containing K, D, image_size")
+    parser.add_argument("--estimate-radial-distortion", action="store_true", help="Experimental calibration: jointly fit H and k1 to raw edges; hold K and other distortion terms fixed; save post-fit Hough circles")
     parser.add_argument("--manual", action="store_true", help="Optional four-click calibration fallback; default is automatic upright-board detection")
     parser.add_argument("--geometry-prior", help="JSON with nominal camera_positions_mm or positions_mm, in source order")
     parser.add_argument("--rectify-interval", type=float, default=.5, help="Seconds between automatic registration checks")
@@ -1172,6 +1183,8 @@ def main():
             or not 0 < args.diff_threshold < 256 or args.boundary_mm < 0
             or not 15.9 < args.radii[0] < args.radii[1] < args.radii[2] < args.radii[3]):
         parser.error("Invalid size, timing, threshold, uncertainty, or increasing ring radii")
+    if args.manual and args.estimate_radial_distortion:
+        parser.error("Choose automatic radial fitting or manual calibration")
     if args.command == "run" and args.images and not args.once:
         parser.error("Use --once with still images; live scoring requires streams/videos")
     inputs = None

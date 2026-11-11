@@ -1,0 +1,7161 @@
+{
+  "summary": {
+    "views": 60,
+    "accepted": 60,
+    "rejected": 0,
+    "median_view_error_before_px": 0.5680563149513935,
+    "median_view_error_after_px": 0.5165007730689899,
+    "worst_probe_before_px": 1.5148640133504605,
+    "worst_probe_after_px": 1.7731967485458753,
+    "improved_view_medians": 42,
+    "worse_view_medians": 18,
+    "accepted_views_above_2px": 0,
+    "median_k1_absolute_error": 0.0037158196330353745
+  },
+  "views": [
+    {
+      "trial": 0,
+      "camera": 0,
+      "seed": 828491106,
+      "parameters": {
+        "position_mm": [
+          -283.84524372224547,
+          254.69773060263162,
+          261.9319970007429
+        ],
+        "look_at_mm": [
+          3.426146957811801,
+          -6.779078993039577,
+          0.0
+        ],
+        "roll_deg": -0.6640706832219443,
+        "diagonal_fov_deg": 77.64902214080278,
+        "K": [
+          [
+            1368.7325043971307,
+            0.0,
+            939.6635965188005
+          ],
+          [
+            0.0,
+            1368.7325043971307,
+            546.2883408886855
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.015146648291189724,
+          0.033067677679286894,
+          0.00024647378197555233,
+          -0.0008618176887848861,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6106045599021145,
+      "before_max_px": 0.8139688163843051,
+      "after_median_px": 0.49551607687722815,
+      "after_max_px": 0.6186486018033391,
+      "estimated_D": [
+        -0.00314637128981211,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.012000277001377613,
+      "edge_median_source_px": 0.7727844754091426,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 188.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.11765011058136565
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 308.79998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.04704661649816444
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 0,
+      "camera": 1,
+      "seed": 828491106,
+      "parameters": {
+        "position_mm": [
+          286.5746030934728,
+          260.15263383080435,
+          239.60130953137065
+        ],
+        "look_at_mm": [
+          5.068894491356547,
+          7.039333680550995,
+          0.0
+        ],
+        "roll_deg": -2.536893937317595,
+        "diagonal_fov_deg": 76.68022257449994,
+        "K": [
+          [
+            1392.676506679502,
+            0.0,
+            972.3406127993635
+          ],
+          [
+            0.0,
+            1392.676506679502,
+            535.2507480960938
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.014494127329854709,
+          0.035106477367115585,
+          -0.00035446972975462776,
+          -0.00017747729052939752,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5506266152596637,
+      "before_max_px": 0.7646972007617377,
+      "after_median_px": 0.5281414509667057,
+      "after_max_px": 0.7939133638037736,
+      "estimated_D": [
+        -0.00875573524705636,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.005738392082798348,
+      "edge_median_source_px": 0.7930242612389888,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 323.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 0,
+      "camera": 2,
+      "seed": 828491106,
+      "parameters": {
+        "position_mm": [
+          45.01467396447592,
+          -386.9482080286034,
+          228.64799065285212
+        ],
+        "look_at_mm": [
+          -18.8108842389534,
+          8.764653361223695,
+          0.0
+        ],
+        "roll_deg": 1.5385418359144354,
+        "diagonal_fov_deg": 76.54607076355555,
+        "K": [
+          [
+            1396.0324180154469,
+            0.0,
+            953.5026526572992
+          ],
+          [
+            0.0,
+            1396.0324180154469,
+            533.4763824952398
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.0059554379933538515,
+          0.001359205304799424,
+          0.00010998327584413109,
+          0.0009358258272432289,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5691038223093425,
+      "before_max_px": 0.7701560645515562,
+      "after_median_px": 0.5606173523366488,
+      "after_max_px": 1.2395834138907877,
+      "estimated_D": [
+        0.0026080684991805153,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003347369494173336,
+      "edge_median_source_px": 0.7887649890105357,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 188.5,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.18235294117644685
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "camera": 0,
+      "seed": 672247042,
+      "parameters": {
+        "position_mm": [
+          -317.72644235223845,
+          210.26470962521313,
+          224.51956636016448
+        ],
+        "look_at_mm": [
+          5.644722884700268,
+          -6.024081286072956,
+          0.0
+        ],
+        "roll_deg": -0.950793098096969,
+        "diagonal_fov_deg": 79.13363704887992,
+        "K": [
+          [
+            1332.9997057292528,
+            0.0,
+            947.8919327807897
+          ],
+          [
+            0.0,
+            1332.9997057292528,
+            546.9551364348624
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.008715450323438054,
+          0.018214634156020416,
+          -0.0006948318726350349,
+          0.00011254269350320883,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6020323917737189,
+      "before_max_px": 0.6717510779659985,
+      "after_median_px": 0.4803547112552108,
+      "after_max_px": 0.6858768893323022,
+      "estimated_D": [
+        -0.0005401709584103226,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.00817527936502773,
+      "edge_median_source_px": 0.778103245412285,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "camera": 1,
+      "seed": 672247042,
+      "parameters": {
+        "position_mm": [
+          304.7744078798844,
+          251.6497616262789,
+          220.7935155573997
+        ],
+        "look_at_mm": [
+          5.71779331521851,
+          -5.321641406773072,
+          0.0
+        ],
+        "roll_deg": 1.249201098831145,
+        "diagonal_fov_deg": 77.07996038271624,
+        "K": [
+          [
+            1382.7353695723184,
+            0.0,
+            952.4958154963922
+          ],
+          [
+            0.0,
+            1382.7353695723184,
+            532.0501005784834
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.03890225907670217,
+          0.00047685788436584164,
+          -0.0005715556664277913,
+          0.0002021130875813587,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6140055709313607,
+      "before_max_px": 0.9244344539564239,
+      "after_median_px": 0.4855915258148996,
+      "after_max_px": 0.8770266755859115,
+      "estimated_D": [
+        -0.04238431708135496,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003482058004652795,
+      "edge_median_source_px": 0.7826233293442564,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            452.5
+          ],
+          "radius_px": 32.20000076293945,
+          "center_offset_px": 2.5495097637176514,
+          "radius_offset_px": 1.8964713511747497
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 189.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.31764705882355315
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            451.5
+          ],
+          "radius_px": 323.1000061035156,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": -0.899993896484375
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "camera": 2,
+      "seed": 672247042,
+      "parameters": {
+        "position_mm": [
+          -11.215953598410051,
+          -383.05899345587494,
+          195.8961302752824
+        ],
+        "look_at_mm": [
+          -8.114862679857932,
+          7.252793544219667,
+          0.0
+        ],
+        "roll_deg": 1.325709375519994,
+        "diagonal_fov_deg": 75.32697501613114,
+        "K": [
+          [
+            1426.9929132882717,
+            0.0,
+            958.1433639468843
+          ],
+          [
+            0.0,
+            1426.9929132882717,
+            553.9016135851418
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.053927231659848536,
+          -0.016601359707124907,
+          -0.0005548879431027786,
+          -0.0005623654890963508,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6142089572017425,
+      "before_max_px": 1.2712939806352155,
+      "after_median_px": 0.5375162708890189,
+      "after_max_px": 1.6053846644706122,
+      "estimated_D": [
+        -0.05676701833797764,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0028397866781291053,
+      "edge_median_source_px": 0.8410773047420419,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 203.8000030517578,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.1294087129480488
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "camera": 0,
+      "seed": 884873519,
+      "parameters": {
+        "position_mm": [
+          -289.61767219155195,
+          220.49006941500926,
+          185.75590111581928
+        ],
+        "look_at_mm": [
+          -17.50022146871076,
+          8.490388793200717,
+          0.0
+        ],
+        "roll_deg": 1.4128311575628907,
+        "diagonal_fov_deg": 80.58308175401235,
+        "K": [
+          [
+            1299.1782798327085,
+            0.0,
+            955.7415889752161
+          ],
+          [
+            0.0,
+            1299.1782798327085,
+            538.6745017626795
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.05477562974447302,
+          0.031157023773397127,
+          -0.0007632623263393752,
+          0.0007494463970464309,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6123083885346313,
+      "before_max_px": 1.2581524689382326,
+      "after_median_px": 0.5160678217103442,
+      "after_max_px": 0.8669333741446174,
+      "estimated_D": [
+        -0.049294844105607215,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0054807856388658024,
+      "edge_median_source_px": 0.7964180946567194,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            447.5,
+            450.5
+          ],
+          "radius_px": 306.79998779296875,
+          "center_offset_px": 2.5495097637176514,
+          "radius_offset_px": -1.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            451.5
+          ],
+          "radius_px": 323.29998779296875,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": -0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "camera": 1,
+      "seed": 884873519,
+      "parameters": {
+        "position_mm": [
+          283.44476769033406,
+          256.27302896404615,
+          191.19717307294655
+        ],
+        "look_at_mm": [
+          -5.178721139998624,
+          9.092714680822322,
+          0.0
+        ],
+        "roll_deg": -2.5280837336354036,
+        "diagonal_fov_deg": 79.58443728344288,
+        "K": [
+          [
+            1322.370794510716,
+            0.0,
+            963.0635065110221
+          ],
+          [
+            0.0,
+            1322.370794510716,
+            539.3040291033622
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.007740367292925238,
+          0.00803939509984411,
+          -0.00046453166774195246,
+          0.0006519641257863881,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.49237630703712115,
+      "before_max_px": 0.7500114705056535,
+      "after_median_px": 0.5572521588311083,
+      "after_max_px": 0.9522505436108732,
+      "estimated_D": [
+        -0.005232461199686591,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0025079060932386467,
+      "edge_median_source_px": 0.7960770401375055,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            452.5,
+            450.5
+          ],
+          "radius_px": 306.79998779296875,
+          "center_offset_px": 2.5495097637176514,
+          "radius_offset_px": -1.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 324.3999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.399993896484375
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "camera": 2,
+      "seed": 884873519,
+      "parameters": {
+        "position_mm": [
+          16.72125092672244,
+          -339.83626143214843,
+          242.73363231132208
+        ],
+        "look_at_mm": [
+          -6.634653654165639,
+          -0.8237505443564034,
+          0.0
+        ],
+        "roll_deg": -1.2405058687663346,
+        "diagonal_fov_deg": 78.6525224189333,
+        "K": [
+          [
+            1344.45559032744,
+            0.0,
+            955.6688480552906
+          ],
+          [
+            0.0,
+            1344.45559032744,
+            543.0755743295285
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.053315438491063336,
+          0.004161577777078984,
+          -0.000320750738699964,
+          -0.0006461401143804617,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6504810801741371,
+      "before_max_px": 1.2285246028296855,
+      "after_median_px": 0.5057747492751526,
+      "after_max_px": 1.0705080186384062,
+      "estimated_D": [
+        -0.05613178927775131,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.002816350786687974,
+      "edge_median_source_px": 0.8327372812688243,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 323.29998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "camera": 0,
+      "seed": 152598115,
+      "parameters": {
+        "position_mm": [
+          -294.36735642208913,
+          242.5902456373957,
+          166.01316382368512
+        ],
+        "look_at_mm": [
+          -3.7876041268706624,
+          5.80395948158511,
+          0.0
+        ],
+        "roll_deg": 1.9764422525289984,
+        "diagonal_fov_deg": 79.12554630069118,
+        "K": [
+          [
+            1333.191391982604,
+            0.0,
+            953.221148869205
+          ],
+          [
+            0.0,
+            1333.191391982604,
+            535.0362516216123
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.011716692872935183,
+          -0.018478695876858093,
+          -0.0007578101057918969,
+          -7.974160771063012e-05,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5413888777244172,
+      "before_max_px": 0.9203091107492722,
+      "after_median_px": 0.5201218045476015,
+      "after_max_px": 0.7388750220359607,
+      "estimated_D": [
+        -0.011309158848053854,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.00040753402488132896,
+      "edge_median_source_px": 0.8005257865935697,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 188.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.11765011058136565
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "camera": 1,
+      "seed": 152598115,
+      "parameters": {
+        "position_mm": [
+          265.4404045758432,
+          289.4561689770221,
+          220.69551227021185
+        ],
+        "look_at_mm": [
+          -9.607094889594823,
+          -0.557511556432415,
+          0.0
+        ],
+        "roll_deg": -1.1924015986594962,
+        "diagonal_fov_deg": 78.04420929882177,
+        "K": [
+          [
+            1359.1094509592308,
+            0.0,
+            970.1749336248611
+          ],
+          [
+            0.0,
+            1359.1094509592308,
+            542.5214742623898
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.022529756674806306,
+          0.023159943501845078,
+          -0.000666348632417642,
+          0.0002652072717083383,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5172283875755147,
+      "before_max_px": 0.7966211951650669,
+      "after_median_px": 0.4901741208347943,
+      "after_max_px": 0.7378102080896685,
+      "estimated_D": [
+        -0.019409325049258606,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0031204316255477003,
+      "edge_median_source_px": 0.789810539452377,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 325.70001220703125,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "camera": 2,
+      "seed": 152598115,
+      "parameters": {
+        "position_mm": [
+          -6.210205148729608,
+          -375.4891136852942,
+          227.9329311063639
+        ],
+        "look_at_mm": [
+          -6.710273782976952,
+          2.7470525855324546,
+          0.0
+        ],
+        "roll_deg": -0.4863568828421194,
+        "diagonal_fov_deg": 80.6225439550438,
+        "K": [
+          [
+            1298.2716219076663,
+            0.0,
+            978.7351928798099
+          ],
+          [
+            0.0,
+            1298.2716219076663,
+            552.1648469651549
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.022654947862370996,
+          0.002726378337760016,
+          -0.0001395259144189769,
+          -0.0005167108104737717,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.46272498485564423,
+      "before_max_px": 0.886336716735845,
+      "after_median_px": 0.5712224639466844,
+      "after_max_px": 1.3932203429824805,
+      "estimated_D": [
+        -0.022646830230470948,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 8.117631900048106e-06,
+      "edge_median_source_px": 0.8281355680188645,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            451.5
+          ],
+          "radius_px": 323.6000061035156,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": -0.399993896484375
+        }
+      ]
+    },
+    {
+      "trial": 4,
+      "camera": 0,
+      "seed": 238835380,
+      "parameters": {
+        "position_mm": [
+          -279.4235294755576,
+          221.11714695187175,
+          223.15761379067825
+        ],
+        "look_at_mm": [
+          10.868021928876276,
+          -8.65956958309985,
+          0.0
+        ],
+        "roll_deg": 1.2306427945803875,
+        "diagonal_fov_deg": 75.2431641434369,
+        "K": [
+          [
+            1429.1527008585851,
+            0.0,
+            954.178333824183
+          ],
+          [
+            0.0,
+            1429.1527008585851,
+            539.0015336911592
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.009163759238391259,
+          0.03697827928960705,
+          -0.000931431100256787,
+          0.00025847816107694077,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5550200962391864,
+      "before_max_px": 0.8814327943063497,
+      "after_median_px": 0.49738731328169655,
+      "after_max_px": 0.6983420389289142,
+      "estimated_D": [
+        0.017787909861439005,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.008624150623047746,
+      "edge_median_source_px": 0.8391421386202355,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 188.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.11765011058136565
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 4,
+      "camera": 1,
+      "seed": 238835380,
+      "parameters": {
+        "position_mm": [
+          285.41543768026446,
+          248.25536723438753,
+          258.69769132003916
+        ],
+        "look_at_mm": [
+          13.120053487727828,
+          -2.3829628788388146,
+          0.0
+        ],
+        "roll_deg": -0.2540878283472974,
+        "diagonal_fov_deg": 75.92086751311795,
+        "K": [
+          [
+            1411.8047841419484,
+            0.0,
+            950.42290992109
+          ],
+          [
+            0.0,
+            1411.8047841419484,
+            526.2785822513924
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.06232566575733327,
+          0.006578850708188363,
+          -0.0009724067876928629,
+          0.0007928131685589698,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6940763490057729,
+      "before_max_px": 0.9677571295715871,
+      "after_median_px": 0.4706116247706266,
+      "after_max_px": 0.6820056998529259,
+      "estimated_D": [
+        -0.0662399214434194,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003914255686086138,
+      "edge_median_source_px": 0.8003218625777347,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            448.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 4,
+      "camera": 2,
+      "seed": 238835380,
+      "parameters": {
+        "position_mm": [
+          -9.81757806396062,
+          -375.69313496730894,
+          209.18396446159556
+        ],
+        "look_at_mm": [
+          -11.208094610086535,
+          -17.745174959302783,
+          0.0
+        ],
+        "roll_deg": 0.08999444631021226,
+        "diagonal_fov_deg": 77.02514348118291,
+        "K": [
+          [
+            1384.0934591853231,
+            0.0,
+            951.6809608810663
+          ],
+          [
+            0.0,
+            1384.0934591853231,
+            547.40537206003
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.07516836956965474,
+          0.017811283332826642,
+          0.0002555709981117238,
+          0.0008503835636203157,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.7280205168909915,
+      "before_max_px": 1.4952455568875276,
+      "after_median_px": 0.5715202100864842,
+      "after_max_px": 1.3448887794705562,
+      "estimated_D": [
+        -0.07060747289376772,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.004560896675887022,
+      "edge_median_source_px": 0.8253019613807722,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 5,
+      "camera": 0,
+      "seed": 684764337,
+      "parameters": {
+        "position_mm": [
+          -317.8097620367367,
+          251.55951482446983,
+          250.73625394777847
+        ],
+        "look_at_mm": [
+          2.096236486827135,
+          -2.662809034589274,
+          0.0
+        ],
+        "roll_deg": -1.0920479342717924,
+        "diagonal_fov_deg": 75.05260115258989,
+        "K": [
+          [
+            1434.0787598517902,
+            0.0,
+            950.8189646569303
+          ],
+          [
+            0.0,
+            1434.0787598517902,
+            538.8915916992196
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.07343426842551581,
+          0.036461486678757885,
+          0.00011552771330100857,
+          0.00016129545563582344,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5948799625709174,
+      "before_max_px": 1.007419315729354,
+      "after_median_px": 0.4847918094352934,
+      "after_max_px": 0.6716500748881719,
+      "estimated_D": [
+        -0.06562840818717053,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.007805860238345286,
+      "edge_median_source_px": 0.7766452963163616,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 189.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.31764705882355315
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 323.5,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.5
+        }
+      ]
+    },
+    {
+      "trial": 5,
+      "camera": 1,
+      "seed": 684764337,
+      "parameters": {
+        "position_mm": [
+          250.1996827846465,
+          210.8159925505093,
+          223.31542219005667
+        ],
+        "look_at_mm": [
+          0.7497341147037735,
+          0.9347018114736432,
+          0.0
+        ],
+        "roll_deg": -0.8509717794786841,
+        "diagonal_fov_deg": 77.05136039678206,
+        "K": [
+          [
+            1383.4437310704807,
+            0.0,
+            955.6007319433388
+          ],
+          [
+            0.0,
+            1383.4437310704807,
+            544.0276195112857
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.06135313117336931,
+          -0.0121856753182194,
+          -0.0009782753933488613,
+          0.0007342162847351155,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.7140127828771555,
+      "before_max_px": 1.0532462095917918,
+      "after_median_px": 0.4629309832348109,
+      "after_max_px": 0.7825853704423882,
+      "estimated_D": [
+        -0.06688980456694349,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.005536673393574179,
+      "edge_median_source_px": 0.8577090849363023,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 188.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.11765011058136565
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            448.5
+          ],
+          "radius_px": 326.0,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": 2.0
+        }
+      ]
+    },
+    {
+      "trial": 5,
+      "camera": 2,
+      "seed": 684764337,
+      "parameters": {
+        "position_mm": [
+          14.865065658290275,
+          -362.5375939185601,
+          236.67237876957606
+        ],
+        "look_at_mm": [
+          -4.711270732428881,
+          -9.561330036670055,
+          0.0
+        ],
+        "roll_deg": -1.476485252509561,
+        "diagonal_fov_deg": 80.00929686583703,
+        "K": [
+          [
+            1312.4450085641286,
+            0.0,
+            972.318708516757
+          ],
+          [
+            0.0,
+            1312.4450085641286,
+            546.7493291836952
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.029874133126300155,
+          -0.01637814403746521,
+          4.053864093307388e-05,
+          0.0001497145818313314,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.45902441969295704,
+      "before_max_px": 0.981532457081834,
+      "after_median_px": 0.5169337244276357,
+      "after_max_px": 1.2590612207524225,
+      "estimated_D": [
+        -0.03427470154434164,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.004400568418041484,
+      "edge_median_source_px": 0.8146356706689135,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 6,
+      "camera": 0,
+      "seed": 69980740,
+      "parameters": {
+        "position_mm": [
+          -252.21727469471176,
+          275.7596878616056,
+          211.74271818695922
+        ],
+        "look_at_mm": [
+          -4.521957743914008,
+          13.629620972741623,
+          0.0
+        ],
+        "roll_deg": 0.31195627373475987,
+        "diagonal_fov_deg": 78.85886828209267,
+        "K": [
+          [
+            1339.5279361040332,
+            0.0,
+            961.7833864458768
+          ],
+          [
+            0.0,
+            1339.5279361040332,
+            551.2252678334271
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.07225555918487714,
+          0.03719681441114657,
+          -0.0006623010947448273,
+          0.0009858574866448452,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.7340052383752619,
+      "before_max_px": 1.1286384857596166,
+      "after_median_px": 0.49439927019351143,
+      "after_max_px": 0.8293535339014225,
+      "estimated_D": [
+        -0.0610993781241048,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.01115618106077234,
+      "edge_median_source_px": 0.7834089946441074,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 325.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.0
+        }
+      ]
+    },
+    {
+      "trial": 6,
+      "camera": 1,
+      "seed": 69980740,
+      "parameters": {
+        "position_mm": [
+          282.6408440205936,
+          261.46854470860006,
+          216.87716822232198
+        ],
+        "look_at_mm": [
+          -15.925138844599832,
+          -1.0793830381537166,
+          0.0
+        ],
+        "roll_deg": 3.0162593427733286,
+        "diagonal_fov_deg": 77.01822132961708,
+        "K": [
+          [
+            1384.2650717049721,
+            0.0,
+            955.0419331647987
+          ],
+          [
+            0.0,
+            1384.2650717049721,
+            532.2197456390211
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.06996322561179218,
+          -0.009340914226127197,
+          0.00025527089754077644,
+          -0.0007644953590008463,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.604054063488769,
+      "before_max_px": 1.1063229284839726,
+      "after_median_px": 0.5185178341757708,
+      "after_max_px": 0.9339599591509017,
+      "estimated_D": [
+        -0.07468817187421088,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0047249462624187055,
+      "edge_median_source_px": 0.7936754645288697,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 6,
+      "camera": 2,
+      "seed": 69980740,
+      "parameters": {
+        "position_mm": [
+          24.149631358691593,
+          -375.41256141943853,
+          251.4110309470141
+        ],
+        "look_at_mm": [
+          14.070526147730304,
+          -13.875586669654517,
+          0.0
+        ],
+        "roll_deg": 1.6292262290838835,
+        "diagonal_fov_deg": 77.81070212054163,
+        "K": [
+          [
+            1364.7855572660744,
+            0.0,
+            978.2904211133996
+          ],
+          [
+            0.0,
+            1364.7855572660744,
+            543.5422818382806
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.059902322844226766,
+          -0.00489468046221065,
+          0.0006981898206560734,
+          -0.0009583696180981727,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5470237726891676,
+      "before_max_px": 1.3912241235840448,
+      "after_median_px": 0.5673327728779988,
+      "after_max_px": 1.2050235117179267,
+      "estimated_D": [
+        -0.06221956065549941,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.002317237811272646,
+      "edge_median_source_px": 0.8016348662561341,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 325.79998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.79998779296875
+        }
+      ]
+    },
+    {
+      "trial": 7,
+      "camera": 0,
+      "seed": 563326376,
+      "parameters": {
+        "position_mm": [
+          -310.11640911092655,
+          268.75904149137585,
+          196.94053351054865
+        ],
+        "look_at_mm": [
+          15.6703275610559,
+          -6.408941407763204,
+          0.0
+        ],
+        "roll_deg": -1.1393714885680026,
+        "diagonal_fov_deg": 76.72018575139693,
+        "K": [
+          [
+            1391.678717082198,
+            0.0,
+            964.9385374529485
+          ],
+          [
+            0.0,
+            1391.678717082198,
+            532.7624903013394
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.022975792811866985,
+          0.021960352552642556,
+          -4.5468744843856195e-05,
+          5.811362250637288e-05,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5116524064120807,
+      "before_max_px": 0.9559497090940685,
+      "after_median_px": 0.5273645257452527,
+      "after_max_px": 0.746452602518321,
+      "estimated_D": [
+        -0.016504199388970787,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.006471593422896198,
+      "edge_median_source_px": 0.780511066681908,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.6999969482422,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9823559929342593
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 325.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.0
+        }
+      ]
+    },
+    {
+      "trial": 7,
+      "camera": 1,
+      "seed": 563326376,
+      "parameters": {
+        "position_mm": [
+          299.04901624442823,
+          251.53103025042398,
+          262.9738803366404
+        ],
+        "look_at_mm": [
+          -6.121936864007318,
+          1.2927793926747029,
+          0.0
+        ],
+        "roll_deg": -0.4070179178911226,
+        "diagonal_fov_deg": 80.2259322123562,
+        "K": [
+          [
+            1307.4175646959507,
+            0.0,
+            950.1654006302499
+          ],
+          [
+            0.0,
+            1307.4175646959507,
+            532.165075409867
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.022643079028024808,
+          0.008088228794981656,
+          0.00046813572748741574,
+          0.0007760406670895114,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5714701980740117,
+      "before_max_px": 0.8662042217058626,
+      "after_median_px": 0.5284337725711679,
+      "after_max_px": 0.7920712049944649,
+      "estimated_D": [
+        -0.02300647355190429,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.000363394523879481,
+      "edge_median_source_px": 0.7820122414748112,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 324.3999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.399993896484375
+        }
+      ]
+    },
+    {
+      "trial": 7,
+      "camera": 2,
+      "seed": 563326376,
+      "parameters": {
+        "position_mm": [
+          -12.042320490609631,
+          -336.4970174830083,
+          195.92711751271617
+        ],
+        "look_at_mm": [
+          -6.192861333849479,
+          -6.27413300888132,
+          0.0
+        ],
+        "roll_deg": -1.72957170731971,
+        "diagonal_fov_deg": 78.39223030360581,
+        "K": [
+          [
+            1350.7024978377017,
+            0.0,
+            969.367842563542
+          ],
+          [
+            0.0,
+            1350.7024978377017,
+            536.1595030968621
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.019996766167911198,
+          0.02881724410411309,
+          0.0002876392082631215,
+          0.0002802939952051306,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6367190036558574,
+      "before_max_px": 1.077270825242083,
+      "after_median_px": 0.5531313720992298,
+      "after_max_px": 1.3115320817629936,
+      "estimated_D": [
+        0.025232669418421224,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.005235903250510026,
+      "edge_median_source_px": 0.8714847413295095,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 8,
+      "camera": 0,
+      "seed": 571568156,
+      "parameters": {
+        "position_mm": [
+          -297.2730751459128,
+          271.27428999067877,
+          184.12787979868807
+        ],
+        "look_at_mm": [
+          -4.5878828178094455,
+          5.909017871772824,
+          0.0
+        ],
+        "roll_deg": -0.7231737392302383,
+        "diagonal_fov_deg": 75.7513754761919,
+        "K": [
+          [
+            1416.1186997604582,
+            0.0,
+            953.6283545215399
+          ],
+          [
+            0.0,
+            1416.1186997604582,
+            544.1915724633847
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.01833681600935945,
+          -0.0091239201144804,
+          0.00018724660572074468,
+          0.00019631771010408263,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.49950003510262264,
+      "before_max_px": 1.0420966031650556,
+      "after_median_px": 0.5180789656804156,
+      "after_max_px": 0.780628396888028,
+      "estimated_D": [
+        -0.015406603923321228,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0029302120860382214,
+      "edge_median_source_px": 0.786020652728308,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 188.6999969482422,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.017644007065740652
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            450.5
+          ],
+          "radius_px": 323.6000061035156,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.399993896484375
+        }
+      ]
+    },
+    {
+      "trial": 8,
+      "camera": 1,
+      "seed": 571568156,
+      "parameters": {
+        "position_mm": [
+          307.0542752010069,
+          237.27159079453256,
+          227.98922269597367
+        ],
+        "look_at_mm": [
+          -5.820647135633562,
+          -2.463164234366035,
+          0.0
+        ],
+        "roll_deg": -1.8827222297076378,
+        "diagonal_fov_deg": 75.92260473589552,
+        "K": [
+          [
+            1411.760653020398,
+            0.0,
+            959.7330569702358
+          ],
+          [
+            0.0,
+            1411.760653020398,
+            537.9359432193348
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.012094896030543853,
+          -0.004601906618649412,
+          0.00078985693385632,
+          -0.0004354458263012633,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6122142863332175,
+      "before_max_px": 0.8413652942271942,
+      "after_median_px": 0.5330994776829354,
+      "after_max_px": 0.9103708045471657,
+      "estimated_D": [
+        0.00763091005583553,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.004463985974708323,
+      "edge_median_source_px": 0.7987287781179029,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 325.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.0
+        }
+      ]
+    },
+    {
+      "trial": 8,
+      "camera": 2,
+      "seed": 571568156,
+      "parameters": {
+        "position_mm": [
+          -1.9664941402006537,
+          -411.224348018525,
+          190.48491764128687
+        ],
+        "look_at_mm": [
+          -0.1845539293876556,
+          3.1133964095135003,
+          0.0
+        ],
+        "roll_deg": 2.3799677449012075,
+        "diagonal_fov_deg": 79.89230045064178,
+        "K": [
+          [
+            1315.169566072105,
+            0.0,
+            939.0915097232836
+          ],
+          [
+            0.0,
+            1315.169566072105,
+            529.3751054576865
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.009804758750051087,
+          0.0336708489161234,
+          0.00047617122718416976,
+          0.0004326207615493109,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5360448515961599,
+      "before_max_px": 0.9015339765614019,
+      "after_median_px": 0.6857069535728912,
+      "after_max_px": 1.7731967485458753,
+      "estimated_D": [
+        -0.0017101129995325084,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.008094645750518579,
+      "edge_median_source_px": 0.8231155118400448,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 9,
+      "camera": 0,
+      "seed": 760062680,
+      "parameters": {
+        "position_mm": [
+          -284.8858924781492,
+          235.57699783062407,
+          243.88320777763033
+        ],
+        "look_at_mm": [
+          0.4499243941423966,
+          1.8423028400063308,
+          0.0
+        ],
+        "roll_deg": -0.7122702518697849,
+        "diagonal_fov_deg": 77.8437748734864,
+        "K": [
+          [
+            1363.9798821807674,
+            0.0,
+            965.8476330054426
+          ],
+          [
+            0.0,
+            1363.9798821807674,
+            542.3092616761772
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.07706457146735497,
+          0.0023645170030211216,
+          0.0002340836586888174,
+          7.209573398695487e-06,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.7603663624059678,
+      "before_max_px": 1.1733305517392763,
+      "after_median_px": 0.4641744476303715,
+      "after_max_px": 0.6723060940255315,
+      "estimated_D": [
+        -0.07179660283690428,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0052679686304506895,
+      "edge_median_source_px": 0.7982445052365366,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 326.1000061035156,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 2.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 9,
+      "camera": 1,
+      "seed": 760062680,
+      "parameters": {
+        "position_mm": [
+          280.3122718233491,
+          256.25595236110667,
+          186.29218400998826
+        ],
+        "look_at_mm": [
+          16.79605400335848,
+          6.102922956875897,
+          0.0
+        ],
+        "roll_deg": -2.443540590155689,
+        "diagonal_fov_deg": 80.49250872532684,
+        "K": [
+          [
+            1301.262015220862,
+            0.0,
+            966.30049433152
+          ],
+          [
+            0.0,
+            1301.262015220862,
+            547.0337723095583
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.03469232186494641,
+          0.00018049431297315413,
+          0.0007585063476051302,
+          0.0009223820737865069,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5738146231003931,
+      "before_max_px": 0.9149358012149353,
+      "after_median_px": 0.5476789463264342,
+      "after_max_px": 0.9332822737879123,
+      "estimated_D": [
+        -0.03649796429345614,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0018056424285097308,
+      "edge_median_source_px": 0.7981973716325585,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 323.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 9,
+      "camera": 2,
+      "seed": 760062680,
+      "parameters": {
+        "position_mm": [
+          -5.133962387419047,
+          -333.6412510441642,
+          238.41150700391407
+        ],
+        "look_at_mm": [
+          2.7450055675834433,
+          -4.863633049405562,
+          0.0
+        ],
+        "roll_deg": -0.6973128889657163,
+        "diagonal_fov_deg": 77.74243200488364,
+        "K": [
+          [
+            1366.4504883583152,
+            0.0,
+            948.8606041014282
+          ],
+          [
+            0.0,
+            1366.4504883583152,
+            554.8141099215595
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.05442591928766361,
+          0.03662999262261661,
+          -0.0004086221383497377,
+          0.0008333663963597153,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6067856877247625,
+      "before_max_px": 1.2038958973539797,
+      "after_median_px": 0.484082474224608,
+      "after_max_px": 1.0562022186949893,
+      "estimated_D": [
+        -0.0506553249376262,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003770594350037411,
+      "edge_median_source_px": 0.8850503071091053,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 324.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.79998779296875
+        }
+      ]
+    },
+    {
+      "trial": 10,
+      "camera": 0,
+      "seed": 896959357,
+      "parameters": {
+        "position_mm": [
+          -320.7064629934137,
+          226.91963804715397,
+          248.0838068567271
+        ],
+        "look_at_mm": [
+          4.503708722287978,
+          4.8726526149843,
+          0.0
+        ],
+        "roll_deg": -0.4035796717967346,
+        "diagonal_fov_deg": 79.47204207385013,
+        "K": [
+          [
+            1325.011415125162,
+            0.0,
+            963.5467789806755
+          ],
+          [
+            0.0,
+            1325.011415125162,
+            535.4799268662445
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.03136174399402652,
+          0.0014122633663891625,
+          -0.0008579764306630322,
+          0.0007424775227364705,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.4846799614200046,
+      "before_max_px": 0.9020984472369122,
+      "after_median_px": 0.5260094246872152,
+      "after_max_px": 0.7617888060621953,
+      "estimated_D": [
+        -0.026121402874170214,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0052403411198563045,
+      "edge_median_source_px": 0.7826011673229032,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.6999969482422,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9823559929342593
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 204.60000610351562,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.6705943388097637
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 325.29998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.29998779296875
+        }
+      ]
+    },
+    {
+      "trial": 10,
+      "camera": 1,
+      "seed": 896959357,
+      "parameters": {
+        "position_mm": [
+          299.11038671553104,
+          221.06597203705198,
+          235.77948128950143
+        ],
+        "look_at_mm": [
+          -9.504171630888598,
+          -2.7681792919536448,
+          0.0
+        ],
+        "roll_deg": -2.8713070801417646,
+        "diagonal_fov_deg": 77.34606791506383,
+        "K": [
+          [
+            1376.1656515186337,
+            0.0,
+            962.521283264608
+          ],
+          [
+            0.0,
+            1376.1656515186337,
+            534.2969568229557
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.006261550755273543,
+          -0.006185641178066751,
+          0.0009391093464512655,
+          -0.0009025151266926259,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.528650749241722,
+      "before_max_px": 0.8011076270902006,
+      "after_median_px": 0.4892286014020701,
+      "after_max_px": 0.9454430597168078,
+      "estimated_D": [
+        -0.011545282419362203,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.005283731664088661,
+      "edge_median_source_px": 0.8147655359410784,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 204.60000610351562,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.6705943388097637
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 325.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.0
+        }
+      ]
+    },
+    {
+      "trial": 10,
+      "camera": 2,
+      "seed": 896959357,
+      "parameters": {
+        "position_mm": [
+          -34.8864219460665,
+          -354.19816281547935,
+          243.3954936416843
+        ],
+        "look_at_mm": [
+          1.435587344056809,
+          9.033120568135672,
+          0.0
+        ],
+        "roll_deg": -0.5955041491557859,
+        "diagonal_fov_deg": 79.35879638010337,
+        "K": [
+          [
+            1327.678326879939,
+            0.0,
+            969.4870893823077
+          ],
+          [
+            0.0,
+            1327.678326879939,
+            538.8662411024811
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.01877636239665314,
+          -0.0008849432236860723,
+          -0.0005863417096088829,
+          -0.000981748489942299,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.37562209260681717,
+      "before_max_px": 0.7459359563707314,
+      "after_median_px": 0.5159013850784895,
+      "after_max_px": 1.2028319245654713,
+      "estimated_D": [
+        -0.023185351712300753,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.004408989315647614,
+      "edge_median_source_px": 0.8310566963108339,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 11,
+      "camera": 0,
+      "seed": 656678650,
+      "parameters": {
+        "position_mm": [
+          -263.50079724314924,
+          232.48418787288898,
+          205.97742795400924
+        ],
+        "look_at_mm": [
+          -13.111459435295682,
+          -13.27623051129349,
+          0.0
+        ],
+        "roll_deg": -2.380196061332157,
+        "diagonal_fov_deg": 79.54547328686435,
+        "K": [
+          [
+            1323.285512455055,
+            0.0,
+            954.9566542222325
+          ],
+          [
+            0.0,
+            1323.285512455055,
+            547.4852099538533
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.0076868613289822335,
+          -0.006949406648440567,
+          0.00015139149056130454,
+          -0.0004078345759633244,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5670088075934444,
+      "before_max_px": 0.7748557267329484,
+      "after_median_px": 0.4113022734508637,
+      "after_max_px": 0.6181252235962363,
+      "estimated_D": [
+        -0.007032039621894998,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0006548217070872359,
+      "edge_median_source_px": 0.7996117937261293,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            447.5,
+            449.5
+          ],
+          "radius_px": 322.8999938964844,
+          "center_offset_px": 2.5495097637176514,
+          "radius_offset_px": -1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 11,
+      "camera": 1,
+      "seed": 656678650,
+      "parameters": {
+        "position_mm": [
+          292.1386165299711,
+          231.89215036445728,
+          177.7274881555357
+        ],
+        "look_at_mm": [
+          4.373861646796067,
+          5.996575373518812,
+          0.0
+        ],
+        "roll_deg": -0.08467218502975211,
+        "diagonal_fov_deg": 80.38114830734719,
+        "K": [
+          [
+            1303.8293282150057,
+            0.0,
+            960.1376011919443
+          ],
+          [
+            0.0,
+            1303.8293282150057,
+            546.6111347676051
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.030444412302812224,
+          0.038719803322197974,
+          0.0007108312326331049,
+          -0.0005497912609089052,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5457292518883303,
+      "before_max_px": 0.8958228030570945,
+      "after_median_px": 0.5628673198215652,
+      "after_max_px": 1.079853267777682,
+      "estimated_D": [
+        -0.020682187248345484,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.00976222505446674,
+      "edge_median_source_px": 0.8097438175565034,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            448.5
+          ],
+          "radius_px": 325.0,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": 1.0
+        }
+      ]
+    },
+    {
+      "trial": 11,
+      "camera": 2,
+      "seed": 656678650,
+      "parameters": {
+        "position_mm": [
+          -16.711617107934792,
+          -367.6183313004659,
+          237.72835271419933
+        ],
+        "look_at_mm": [
+          0.8811323494400337,
+          5.735975337307998,
+          0.0
+        ],
+        "roll_deg": -2.397649487570959,
+        "diagonal_fov_deg": 79.99834292191082,
+        "K": [
+          [
+            1312.6998174618777,
+            0.0,
+            953.3129810324089
+          ],
+          [
+            0.0,
+            1312.6998174618777,
+            546.5269180102705
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.06439470471672724,
+          0.025232168375383533,
+          0.0008193409115526693,
+          -0.0003148409797638982,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6164158491741181,
+      "before_max_px": 1.2580240700470586,
+      "after_median_px": 0.5658074138831759,
+      "after_max_px": 1.2345688797519119,
+      "estimated_D": [
+        -0.06130931972406313,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003085384992664114,
+      "edge_median_source_px": 0.8297120393369737,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            448.5
+          ],
+          "radius_px": 205.10000610351562,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.1705943388097637
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 12,
+      "camera": 0,
+      "seed": 325321798,
+      "parameters": {
+        "position_mm": [
+          -279.4729777862201,
+          227.4991950115636,
+          231.24129056315516
+        ],
+        "look_at_mm": [
+          -18.531136666134334,
+          -4.461476642669676,
+          0.0
+        ],
+        "roll_deg": -1.266856139283545,
+        "diagonal_fov_deg": 75.65633121893008,
+        "K": [
+          [
+            1418.5449548927195,
+            0.0,
+            964.9575423994397
+          ],
+          [
+            0.0,
+            1418.5449548927195,
+            534.2684307082296
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.06885407407547499,
+          0.01579448736531407,
+          0.000328293619903732,
+          0.00016352442705356283,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.7470549137850483,
+      "before_max_px": 1.5148640133504605,
+      "after_median_px": 0.45890242300774514,
+      "after_max_px": 0.7642068980916505,
+      "estimated_D": [
+        -0.06364934894609522,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.005204725129379764,
+      "edge_median_source_px": 0.8071358415503498,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 188.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.11765011058136565
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 325.29998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.29998779296875
+        }
+      ]
+    },
+    {
+      "trial": 12,
+      "camera": 1,
+      "seed": 325321798,
+      "parameters": {
+        "position_mm": [
+          285.76182375965146,
+          230.8117698331249,
+          236.82739189803664
+        ],
+        "look_at_mm": [
+          1.0148764261427894,
+          -21.207340366031435,
+          0.0
+        ],
+        "roll_deg": -0.1638973444641188,
+        "diagonal_fov_deg": 75.01048998310966,
+        "K": [
+          [
+            1435.1702130612598,
+            0.0,
+            964.8930511482963
+          ],
+          [
+            0.0,
+            1435.1702130612598,
+            537.2878496381668
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.037279253209741944,
+          0.02225730196210589,
+          0.00031122761969302136,
+          0.00045710966435997657,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6200850899278858,
+      "before_max_px": 0.933406978828181,
+      "after_median_px": 0.45099985890619215,
+      "after_max_px": 0.8231029603534576,
+      "estimated_D": [
+        -0.04044289096205909,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003163637752317143,
+      "edge_median_source_px": 0.8236602781042299,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 12,
+      "camera": 2,
+      "seed": 325321798,
+      "parameters": {
+        "position_mm": [
+          6.234388017167309,
+          -369.9108265519937,
+          239.32146785872018
+        ],
+        "look_at_mm": [
+          3.288369608356883,
+          -0.37426664919634134,
+          0.0
+        ],
+        "roll_deg": 1.9065541388724563,
+        "diagonal_fov_deg": 78.97480628194441,
+        "K": [
+          [
+            1336.7687322789423,
+            0.0,
+            960.2382523085947
+          ],
+          [
+            0.0,
+            1336.7687322789423,
+            536.763263877173
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.04545373832945878,
+          -0.0001915741967640737,
+          -0.0002904854697955723,
+          8.601114402776301e-05,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5696636048441848,
+      "before_max_px": 1.099327064550472,
+      "after_median_px": 0.5447747616325923,
+      "after_max_px": 1.2945683740198144,
+      "estimated_D": [
+        -0.048755058101999295,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0033013197725405147,
+      "edge_median_source_px": 0.8123667240668099,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 13,
+      "camera": 0,
+      "seed": 947202092,
+      "parameters": {
+        "position_mm": [
+          -318.90850630449785,
+          266.7371072802857,
+          200.68541542892626
+        ],
+        "look_at_mm": [
+          -9.604407351176985,
+          7.883452089737738,
+          0.0
+        ],
+        "roll_deg": -0.7820952478458225,
+        "diagonal_fov_deg": 80.62433019817392,
+        "K": [
+          [
+            1298.2305997581839,
+            0.0,
+            965.629326695525
+          ],
+          [
+            0.0,
+            1298.2305997581839,
+            539.1372228890792
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.04047535988182994,
+          0.005141370173538974,
+          0.0005697255129280326,
+          0.0009235102175519977,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.4439688005626601,
+      "before_max_px": 0.9210498775041775,
+      "after_median_px": 0.5791185815712123,
+      "after_max_px": 0.9573033623056902,
+      "estimated_D": [
+        -0.0389417562127353,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0015336036690946353,
+      "edge_median_source_px": 0.7701598312613461,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 187.6999969482422,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9823559929342593
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 323.5,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.5
+        }
+      ]
+    },
+    {
+      "trial": 13,
+      "camera": 1,
+      "seed": 947202092,
+      "parameters": {
+        "position_mm": [
+          251.88943863331463,
+          229.8490394296101,
+          235.95572272893656
+        ],
+        "look_at_mm": [
+          0.5076300050679378,
+          -6.860331109159475,
+          0.0
+        ],
+        "roll_deg": -1.3949561842493543,
+        "diagonal_fov_deg": 76.32226100924326,
+        "K": [
+          [
+            1401.6534187323184,
+            0.0,
+            958.6015340267318
+          ],
+          [
+            0.0,
+            1401.6534187323184,
+            535.4970647101936
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.05191148617053701,
+          -0.009710387311373928,
+          -2.8951626715121356e-05,
+          -0.000442934077941026,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.7302934373401107,
+      "before_max_px": 0.9802767840104698,
+      "after_median_px": 0.44672350147587747,
+      "after_max_px": 0.7869938087736139,
+      "estimated_D": [
+        -0.055603019151083226,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003691532980546218,
+      "edge_median_source_px": 0.8291801547657696,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            450.5
+          ],
+          "radius_px": 32.20000076293945,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.8964713511747497
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 204.6999969482422,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7705851835363262
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 13,
+      "camera": 2,
+      "seed": 947202092,
+      "parameters": {
+        "position_mm": [
+          0.34183724603496285,
+          -387.9476061112169,
+          242.34690397375041
+        ],
+        "look_at_mm": [
+          -2.4352292602733034,
+          -11.961351507016504,
+          0.0
+        ],
+        "roll_deg": 0.026292539792107508,
+        "diagonal_fov_deg": 78.60506090191957,
+        "K": [
+          [
+            1345.5920624026203,
+            0.0,
+            956.7669109733936
+          ],
+          [
+            0.0,
+            1345.5920624026203,
+            532.436871130963
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.016791819186104562,
+          0.02083151974508155,
+          -0.0006182936027090804,
+          -0.0002569848002220754,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6074169761777362,
+      "before_max_px": 0.9100933059819374,
+      "after_median_px": 0.5462496080505722,
+      "after_max_px": 1.2957871813299926,
+      "estimated_D": [
+        0.02043024344432755,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0036384242582229893,
+      "edge_median_source_px": 0.8265326836249767,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            451.5
+          ],
+          "radius_px": 31.0,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": 0.6964705882352966
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 324.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.79998779296875
+        }
+      ]
+    },
+    {
+      "trial": 14,
+      "camera": 0,
+      "seed": 1042837441,
+      "parameters": {
+        "position_mm": [
+          -291.511837396113,
+          201.55988484194773,
+          208.28656731534917
+        ],
+        "look_at_mm": [
+          -17.683014236387706,
+          -14.318415511422847,
+          0.0
+        ],
+        "roll_deg": -0.5325241582907813,
+        "diagonal_fov_deg": 75.91548203497102,
+        "K": [
+          [
+            1411.9416037429069,
+            0.0,
+            971.2115753641272
+          ],
+          [
+            0.0,
+            1411.9416037429069,
+            546.154334247055
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.018246804049629868,
+          -0.0005213665170750899,
+          -0.00030046641212727425,
+          0.0007222448299458888,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5278644520682036,
+      "before_max_px": 1.0230584616671192,
+      "after_median_px": 0.5041366117213691,
+      "after_max_px": 0.8673278130147508,
+      "estimated_D": [
+        -0.018335541731731936,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 8.873768210206773e-05,
+      "edge_median_source_px": 0.8347835903776712,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 32.20000076293945,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 1.8964713511747497
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 188.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.11765011058136565
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            448.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 324.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.899993896484375
+        }
+      ]
+    },
+    {
+      "trial": 14,
+      "camera": 1,
+      "seed": 1042837441,
+      "parameters": {
+        "position_mm": [
+          269.18104897221224,
+          201.07382025026354,
+          216.47968415211923
+        ],
+        "look_at_mm": [
+          2.4353726712206765,
+          0.38168136212111364,
+          0.0
+        ],
+        "roll_deg": 0.5748930405785618,
+        "diagonal_fov_deg": 80.13961823485889,
+        "K": [
+          [
+            1309.417939692913,
+            0.0,
+            960.7880231013575
+          ],
+          [
+            0.0,
+            1309.417939692913,
+            546.1827535446009
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.012242785405518347,
+          0.029594048458160275,
+          -4.8088191522067687e-05,
+          3.5320155533406176e-05,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5197948343609489,
+      "before_max_px": 0.8532986215628238,
+      "after_median_px": 0.4643237043176955,
+      "after_max_px": 0.8283839690613884,
+      "estimated_D": [
+        0.013925817837010808,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0016830324314924608,
+      "edge_median_source_px": 0.8341722871707181,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 325.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.0
+        }
+      ]
+    },
+    {
+      "trial": 14,
+      "camera": 2,
+      "seed": 1042837441,
+      "parameters": {
+        "position_mm": [
+          -28.8915780895221,
+          -372.6848381063551,
+          181.92683969214087
+        ],
+        "look_at_mm": [
+          -1.0631232057644748,
+          -7.3785346209586145,
+          0.0
+        ],
+        "roll_deg": 4.0,
+        "diagonal_fov_deg": 79.22011423311768,
+        "K": [
+          [
+            1330.9529296366889,
+            0.0,
+            964.7639423380032
+          ],
+          [
+            0.0,
+            1330.9529296366889,
+            536.6183612069516
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.04571119949529647,
+          0.009682534244271943,
+          0.000978193456586412,
+          0.0004040699669537434,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.4829343823481751,
+      "before_max_px": 1.447662011016053,
+      "after_median_px": 0.5992840310677374,
+      "after_max_px": 1.7448163074848537,
+      "estimated_D": [
+        -0.04337461028879961,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0023365892064968613,
+      "edge_median_source_px": 0.8389871459133121,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 203.8000030517578,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.1294087129480488
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 324.5,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.5
+        }
+      ]
+    },
+    {
+      "trial": 15,
+      "camera": 0,
+      "seed": 277048875,
+      "parameters": {
+        "position_mm": [
+          -287.8719321497841,
+          250.3027875052426,
+          193.98366436242534
+        ],
+        "look_at_mm": [
+          7.442120682524006,
+          -15.605034117391371,
+          0.0
+        ],
+        "roll_deg": 0.1816609240212378,
+        "diagonal_fov_deg": 77.4050356213404,
+        "K": [
+          [
+            1374.7150035846703,
+            0.0,
+            969.6167555599037
+          ],
+          [
+            0.0,
+            1374.7150035846703,
+            541.4130785021035
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.014778261808461271,
+          0.012576722041607095,
+          -6.976882933461476e-05,
+          0.0001825330118252525,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.4915516117502833,
+      "before_max_px": 0.8336458113630575,
+      "after_median_px": 0.49886954673678846,
+      "after_max_px": 0.8011216838956036,
+      "estimated_D": [
+        0.022359381537587684,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.007581119729126413,
+      "edge_median_source_px": 0.7880933129059438,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 325.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.0
+        }
+      ]
+    },
+    {
+      "trial": 15,
+      "camera": 1,
+      "seed": 277048875,
+      "parameters": {
+        "position_mm": [
+          315.95854996103304,
+          212.38229189705697,
+          205.5268657339394
+        ],
+        "look_at_mm": [
+          -0.1793769830553028,
+          11.591674829876816,
+          0.0
+        ],
+        "roll_deg": 0.7979195396391983,
+        "diagonal_fov_deg": 78.31931031949588,
+        "K": [
+          [
+            1352.458791025237,
+            0.0,
+            941.4931549268763
+          ],
+          [
+            0.0,
+            1352.458791025237,
+            531.9886519606608
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.008168242173274942,
+          -0.0068864740346580335,
+          -0.0005487483247527076,
+          -0.0005766865612694522,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.4737801530310042,
+      "before_max_px": 0.8087912810166202,
+      "after_median_px": 0.5038778129820535,
+      "after_max_px": 1.0220298214572858,
+      "estimated_D": [
+        -0.010059540595076561,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0018912984218016193,
+      "edge_median_source_px": 0.7980167389244144,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            452.5,
+            449.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 2.5495097637176514,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 324.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "trial": 15,
+      "camera": 2,
+      "seed": 277048875,
+      "parameters": {
+        "position_mm": [
+          20.296540786510626,
+          -374.20933926434327,
+          238.73421321727466
+        ],
+        "look_at_mm": [
+          -3.580321314894496,
+          -8.549243300693691,
+          0.0
+        ],
+        "roll_deg": 3.0306969517998033,
+        "diagonal_fov_deg": 80.84587288181544,
+        "K": [
+          [
+            1293.1543929685688,
+            0.0,
+            964.8922096861993
+          ],
+          [
+            0.0,
+            1293.1543929685688,
+            533.198675827989
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.03984299327440079,
+          0.030528707911927046,
+          -0.0008916174745451642,
+          -0.0002471596614315439,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.49269005459693843,
+      "before_max_px": 1.0409424802953309,
+      "after_median_px": 0.5588598746391615,
+      "after_max_px": 1.3940493472831914,
+      "estimated_D": [
+        -0.035352606718923756,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.004490386555477031,
+      "edge_median_source_px": 0.8110874571877016,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            451.5
+          ],
+          "radius_px": 323.6000061035156,
+          "center_offset_px": 2.1213202476501465,
+          "radius_offset_px": -0.399993896484375
+        }
+      ]
+    },
+    {
+      "trial": 16,
+      "camera": 0,
+      "seed": 501542599,
+      "parameters": {
+        "position_mm": [
+          -259.8920360389889,
+          286.03090013550485,
+          217.7080952134988
+        ],
+        "look_at_mm": [
+          0.7032065193201898,
+          8.018398603904785,
+          0.0
+        ],
+        "roll_deg": -0.2962642728747763,
+        "diagonal_fov_deg": 79.96191655329751,
+        "K": [
+          [
+            1313.5475795732164,
+            0.0,
+            961.6443757527965
+          ],
+          [
+            0.0,
+            1313.5475795732164,
+            540.7285040379315
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.03161829484947431,
+          0.015322932289840541,
+          -0.00032623128174170653,
+          -9.508257387710103e-05,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.4896423755084985,
+      "before_max_px": 0.8843807773748577,
+      "after_median_px": 0.44530800221030203,
+      "after_max_px": 0.6895124267184276,
+      "estimated_D": [
+        -0.024977933086357335,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.006640361763116973,
+      "edge_median_source_px": 0.7760647668940492,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 188.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.11765011058136565
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 323.5,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.5
+        }
+      ]
+    },
+    {
+      "trial": 16,
+      "camera": 1,
+      "seed": 501542599,
+      "parameters": {
+        "position_mm": [
+          289.45816211933715,
+          261.9225192962425,
+          257.64038638880027
+        ],
+        "look_at_mm": [
+          12.67008317904647,
+          -4.196772300128015,
+          0.0
+        ],
+        "roll_deg": -0.4158023304047923,
+        "diagonal_fov_deg": 79.16171610622536,
+        "K": [
+          [
+            1332.3347098789206,
+            0.0,
+            952.6135493123103
+          ],
+          [
+            0.0,
+            1332.3347098789206,
+            547.2302490120987
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.023692571200330532,
+          -0.00012899175305550528,
+          -0.0009569262995191521,
+          0.0006741776071116745,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5326880383822425,
+      "before_max_px": 0.8286021617864757,
+      "after_median_px": 0.5119354200399874,
+      "after_max_px": 0.7707912144083507,
+      "estimated_D": [
+        -0.027432677485855064,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003740106285524531,
+      "edge_median_source_px": 0.7848691779088061,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 203.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.1294087129480488
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 16,
+      "camera": 2,
+      "seed": 501542599,
+      "parameters": {
+        "position_mm": [
+          5.643927236753453,
+          -395.4610071278,
+          203.7786009420917
+        ],
+        "look_at_mm": [
+          1.5284597701864853,
+          -8.951803699470057,
+          0.0
+        ],
+        "roll_deg": 1.2811567360448786,
+        "diagonal_fov_deg": 76.90318989697938,
+        "K": [
+          [
+            1387.120726803137,
+            0.0,
+            952.7947969595103
+          ],
+          [
+            0.0,
+            1387.120726803137,
+            538.7275798420857
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.01136774273604603,
+          -0.0032546573933873585,
+          0.0007081862985762826,
+          0.0007386721016622256,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.47449174977189273,
+      "before_max_px": 0.9912403707304771,
+      "after_median_px": 0.6888672023130588,
+      "after_max_px": 1.549253556113251,
+      "estimated_D": [
+        -0.010741476356330626,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0006262663797154035,
+      "edge_median_source_px": 0.8364002276374278,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 17,
+      "camera": 0,
+      "seed": 733262728,
+      "parameters": {
+        "position_mm": [
+          -295.8071586171174,
+          252.75972561347518,
+          205.90658475808462
+        ],
+        "look_at_mm": [
+          3.6154164051833195,
+          -1.771817891803244,
+          0.0
+        ],
+        "roll_deg": -1.421750339182868,
+        "diagonal_fov_deg": 76.05902615893757,
+        "K": [
+          [
+            1408.3004497823752,
+            0.0,
+            950.3653047467211
+          ],
+          [
+            0.0,
+            1408.3004497823752,
+            550.456804907366
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.021669596184267954,
+          -0.01165174490976432,
+          -0.00044435141393499864,
+          0.0005909318969257746,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.4936626454302958,
+      "before_max_px": 0.9565980669414461,
+      "after_median_px": 0.45559291319971534,
+      "after_max_px": 0.7709881956756478,
+      "estimated_D": [
+        -0.02178168946247081,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0001120932782028572,
+      "edge_median_source_px": 0.7970848853163393,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 187.6999969482422,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9823559929342593
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 325.1000061035156,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 1.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 17,
+      "camera": 1,
+      "seed": 733262728,
+      "parameters": {
+        "position_mm": [
+          254.10965132499123,
+          222.36386757934758,
+          189.36852206730558
+        ],
+        "look_at_mm": [
+          -4.072283296171825,
+          8.791355110270201,
+          0.0
+        ],
+        "roll_deg": -0.8696611751639274,
+        "diagonal_fov_deg": 80.40460069271259,
+        "K": [
+          [
+            1303.2881641337087,
+            0.0,
+            968.8958909941352
+          ],
+          [
+            0.0,
+            1303.2881641337087,
+            532.3651104007241
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.020414201191096985,
+          -0.004265418093446053,
+          -0.0009344481337075852,
+          0.00043736249910143504,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5464280213941562,
+      "before_max_px": 0.8703280240319673,
+      "after_median_px": 0.480564141156374,
+      "after_max_px": 0.8363955787933479,
+      "estimated_D": [
+        -0.022161192203946592,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0017469910128496066,
+      "edge_median_source_px": 0.8313394293553064,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 204.60000610351562,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.6705943388097637
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            448.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 324.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "trial": 17,
+      "camera": 2,
+      "seed": 733262728,
+      "parameters": {
+        "position_mm": [
+          -17.00219113879672,
+          -362.77996801072055,
+          209.96659930488244
+        ],
+        "look_at_mm": [
+          -4.91679503968116,
+          18.551897008286826,
+          0.0
+        ],
+        "roll_deg": -1.1633236005819438,
+        "diagonal_fov_deg": 75.58067681677515,
+        "K": [
+          [
+            1420.4799409608868,
+            0.0,
+            959.1181300195814
+          ],
+          [
+            0.0,
+            1420.4799409608868,
+            541.5354087235588
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.004740618546694386,
+          0.0039978639791924085,
+          0.0009849273295539293,
+          -0.00037784747388429764,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6205701341672419,
+      "before_max_px": 0.8553012768285846,
+      "after_median_px": 0.5836673702491746,
+      "after_max_px": 1.229710850936865,
+      "estimated_D": [
+        -0.005649287369319124,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0009086688226247379,
+      "edge_median_source_px": 0.861383209904621,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    },
+    {
+      "trial": 18,
+      "camera": 0,
+      "seed": 46277518,
+      "parameters": {
+        "position_mm": [
+          -313.8226099094942,
+          211.57428597763723,
+          221.1530241279342
+        ],
+        "look_at_mm": [
+          1.118860823831437,
+          -0.7435964841671056,
+          0.0
+        ],
+        "roll_deg": -0.1439226582205475,
+        "diagonal_fov_deg": 77.23182164964302,
+        "K": [
+          [
+            1378.9815069456747,
+            0.0,
+            946.8067961721243
+          ],
+          [
+            0.0,
+            1378.9815069456747,
+            542.0589272380494
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.002018369349465407,
+          0.02399555207780869,
+          -0.00011827084571267065,
+          -0.00021107692147230117,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6429094359839741,
+      "before_max_px": 0.778579908768965,
+      "after_median_px": 0.47222373068025764,
+      "after_max_px": 0.6350701681578789,
+      "estimated_D": [
+        0.009181242085787298,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.007162872736321891,
+      "edge_median_source_px": 0.7928275871760205,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            451.5
+          ],
+          "radius_px": 189.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.31764705882355315
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 307.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.9529533835018356
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            448.5
+          ],
+          "radius_px": 326.1000061035156,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 2.100006103515625
+        }
+      ]
+    },
+    {
+      "trial": 18,
+      "camera": 1,
+      "seed": 46277518,
+      "parameters": {
+        "position_mm": [
+          242.04759137170112,
+          253.22789626009452,
+          210.31082534498012
+        ],
+        "look_at_mm": [
+          2.010297630306242,
+          0.2070558325965705,
+          0.0
+        ],
+        "roll_deg": 0.029292698915060155,
+        "diagonal_fov_deg": 79.18926204644148,
+        "K": [
+          [
+            1331.6827227745891,
+            0.0,
+            966.0187621741352
+          ],
+          [
+            0.0,
+            1331.6827227745891,
+            523.1360053644914
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.031536480650388894,
+          -0.016598438813291094,
+          -0.0003321793986288999,
+          0.0007339974058477605,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5801017287181658,
+      "before_max_px": 0.8215099383047204,
+      "after_median_px": 0.4729089488348243,
+      "after_max_px": 0.7631692421898443,
+      "estimated_D": [
+        -0.040341510965334094,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.0088050303149452,
+      "edge_median_source_px": 0.8189805056649214,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 30.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.3035294117647034
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            450.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 308.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.14705272001378944
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 324.5,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.5
+        }
+      ]
+    },
+    {
+      "trial": 18,
+      "camera": 2,
+      "seed": 46277518,
+      "parameters": {
+        "position_mm": [
+          -31.11637233246424,
+          -360.4508655342245,
+          223.09497435330044
+        ],
+        "look_at_mm": [
+          -6.021803876213048,
+          -9.903959348277263,
+          0.0
+        ],
+        "roll_deg": 3.528645109651518,
+        "diagonal_fov_deg": 80.02044391273952,
+        "K": [
+          [
+            1312.1857673194127,
+            0.0,
+            960.3338248673167
+          ],
+          [
+            0.0,
+            1312.1857673194127,
+            545.7537562956499
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.018474935274266018,
+          0.02066059761091962,
+          -0.00035598303271530576,
+          0.00016412594093810151,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.46242722876122644,
+      "before_max_px": 0.77323028134082,
+      "after_median_px": 0.5241128313687592,
+      "after_max_px": 1.3107300186950261,
+      "estimated_D": [
+        -0.01606574324175559,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.002409192032510426,
+      "edge_median_source_px": 0.8373042812278966,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 204.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.9705821317785137
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 324.5,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.5
+        }
+      ]
+    },
+    {
+      "trial": 19,
+      "camera": 0,
+      "seed": 178848570,
+      "parameters": {
+        "position_mm": [
+          -316.1276618017036,
+          254.07372293564256,
+          220.92233300194957
+        ],
+        "look_at_mm": [
+          4.134424164582701,
+          -15.879025842793896,
+          0.0
+        ],
+        "roll_deg": 0.4020901067755114,
+        "diagonal_fov_deg": 78.4509233024806,
+        "K": [
+          [
+            1349.2908544292761,
+            0.0,
+            966.414616935594
+          ],
+          [
+            0.0,
+            1349.2908544292761,
+            539.7027503770692
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.0007760259679982368,
+          0.026488858723278542,
+          0.0008712327405556084,
+          0.000250860952600043,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.6798614839571612,
+      "before_max_px": 0.819845078110332,
+      "after_median_px": 0.5533515310136001,
+      "after_max_px": 0.8700332868119312,
+      "estimated_D": [
+        0.011683637919316172,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.012459663887314409,
+      "edge_median_source_px": 0.7671598905136082,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            449.5
+          ],
+          "radius_px": 204.0,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.07058823529413871
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            448.5,
+            449.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 324.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.79998779296875
+        }
+      ]
+    },
+    {
+      "trial": 19,
+      "camera": 1,
+      "seed": 178848570,
+      "parameters": {
+        "position_mm": [
+          274.13365954355424,
+          256.1796707657437,
+          234.0788843705343
+        ],
+        "look_at_mm": [
+          -10.344459206738021,
+          10.31672009892546,
+          0.0
+        ],
+        "roll_deg": -1.1688850672587927,
+        "diagonal_fov_deg": 78.36821020892083,
+        "K": [
+          [
+            1351.2807239908582,
+            0.0,
+            959.4471816163056
+          ],
+          [
+            0.0,
+            1351.2807239908582,
+            516.6747209572409
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.0417534045167292,
+          -0.00396807217021037,
+          -0.0006222362041689048,
+          -0.000613074583635113,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.43347837261567285,
+      "before_max_px": 0.8825405339703858,
+      "after_median_px": 0.48454573060422246,
+      "after_max_px": 0.8292126281781206,
+      "estimated_D": [
+        -0.044825236907184325,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.003071832390455123,
+      "edge_median_source_px": 0.8097339031660663,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            449.5,
+            450.5
+          ],
+          "radius_px": 187.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.7823590446920718
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            451.5,
+            449.5
+          ],
+          "radius_px": 204.60000610351562,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.6705943388097637
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 324.79998779296875,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.79998779296875
+        }
+      ]
+    },
+    {
+      "trial": 19,
+      "camera": 2,
+      "seed": 178848570,
+      "parameters": {
+        "position_mm": [
+          15.13518424901683,
+          -359.4236977710038,
+          239.85326650103116
+        ],
+        "look_at_mm": [
+          -1.4867761326367983,
+          -0.536581867227012,
+          0.0
+        ],
+        "roll_deg": -0.42738903535407785,
+        "diagonal_fov_deg": 79.2747361577419,
+        "K": [
+          [
+            1329.6620389807517,
+            0.0,
+            961.6525236943896
+          ],
+          [
+            0.0,
+            1329.6620389807517,
+            558.4630741573496
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.011231903969189008,
+          0.0341211525927987,
+          0.0003575881754880072,
+          -0.000357647083979965,
+          0.0
+        ]
+      },
+      "success": true,
+      "before_median_px": 0.5738237135650653,
+      "before_max_px": 0.8836989848503212,
+      "after_median_px": 0.5497341724649126,
+      "after_max_px": 1.207201556350802,
+      "estimated_D": [
+        0.013673967789823058,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "k1_absolute_error": 0.00244206382063405,
+      "edge_median_source_px": 0.8264490077452331,
+      "circle_detections": [
+        {
+          "nominal_radius_mm": 15.9,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            450.5
+          ],
+          "radius_px": 31.100000381469727,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": 0.7964709697050232
+        },
+        {
+          "nominal_radius_mm": 99.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 187.8000030517578,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.8823498894186343
+        },
+        {
+          "nominal_radius_mm": 107.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            449.5
+          ],
+          "radius_px": 203.89999389648438,
+          "center_offset_px": 0.7071067690849304,
+          "radius_offset_px": -0.029417868221486287
+        },
+        {
+          "nominal_radius_mm": 162.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 307.8999938964844,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": -0.8529472799862106
+        },
+        {
+          "nominal_radius_mm": 170.0,
+          "found": true,
+          "consistent": true,
+          "center_px": [
+            450.5,
+            451.5
+          ],
+          "radius_px": 324.70001220703125,
+          "center_offset_px": 1.5811388492584229,
+          "radius_offset_px": 0.70001220703125
+        }
+      ]
+    }
+  ],
+  "known": "Exact K, nominal mounts, board geometry. All distortion priors zero.",
+  "withheld": "All sampled true distortion coefficients and camera poses, true H and independent probes.",
+  "method": "Coarse initialization, then raw-edge joint H+k1; k2/p1/p2/k3 fixed zero. Post-fit Hough circles do not feed optimizer.",
+  "limitations": "Synthetic replay of the first recorded setups. Internal acceptance gates do not guarantee ground-truth accuracy. No darts or temporal tracking tested."
+}
