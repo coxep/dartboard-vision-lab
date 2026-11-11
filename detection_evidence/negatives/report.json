@@ -1,0 +1,829 @@
+{
+  "summary": {
+    "no_change": {
+      "trials": 20,
+      "false_estimates": 0,
+      "rejection_reasons": {
+        "fewer than two usable shaft axes": 20
+      }
+    },
+    "disjoint_cameras": {
+      "trials": 20,
+      "false_estimates": 0,
+      "rejection_reasons": {
+        "usable camera axes disagree": 7,
+        "no supported nonparallel axis intersection": 13
+      }
+    },
+    "two_new_darts": {
+      "trials": 10,
+      "false_estimates": 0,
+      "rejection_reasons": {
+        "multiple separated supported intersections": 10
+      }
+    },
+    "planar_shadow": {
+      "trials": 5,
+      "false_estimates": 0,
+      "rejection_reasons": {
+        "fewer than two usable shaft axes": 4,
+        "no supported nonparallel axis intersection": 1
+      }
+    },
+    "brightness_change": {
+      "trials": 5,
+      "false_estimates": 0,
+      "rejection_reasons": {
+        "fewer than two usable shaft axes": 5
+      }
+    }
+  },
+  "trials": [
+    {
+      "kind": "no_change",
+      "trial": 0,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ],
+      "image": "no_change_00.jpg"
+    },
+    {
+      "kind": "no_change",
+      "trial": 1,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 2,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 3,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 4,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 5,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 6,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 7,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 8,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 9,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 10,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 11,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 12,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 13,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 14,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 15,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 16,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 17,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 18,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "no_change",
+      "trial": 19,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 0,
+      "estimated": false,
+      "cameras": [],
+      "reason": "usable camera axes disagree",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ],
+      "image": "disjoint_cameras_00.jpg"
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 1,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 2,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 3,
+      "estimated": false,
+      "cameras": [],
+      "reason": "usable camera axes disagree",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 4,
+      "estimated": false,
+      "cameras": [],
+      "reason": "usable camera axes disagree",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 5,
+      "estimated": false,
+      "cameras": [],
+      "reason": "usable camera axes disagree",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 6,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 7,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 8,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 9,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 10,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 11,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 12,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 13,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 14,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 15,
+      "estimated": false,
+      "cameras": [],
+      "reason": "usable camera axes disagree",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 16,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 17,
+      "estimated": false,
+      "cameras": [],
+      "reason": "usable camera axes disagree",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 18,
+      "estimated": false,
+      "cameras": [],
+      "reason": "usable camera axes disagree",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "kind": "disjoint_cameras",
+      "trial": 19,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 0,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        2
+      ],
+      "image": "two_new_darts_00.jpg"
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 1,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 2,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 3,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 4,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 5,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 6,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 7,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 8,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "two_new_darts",
+      "trial": 9,
+      "estimated": false,
+      "cameras": [],
+      "reason": "multiple separated supported intersections",
+      "pixel": null,
+      "candidate_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "planar_shadow",
+      "trial": 0,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        1,
+        0
+      ],
+      "image": "planar_shadow_00.jpg"
+    },
+    {
+      "kind": "planar_shadow",
+      "trial": 1,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "kind": "planar_shadow",
+      "trial": 2,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "planar_shadow",
+      "trial": 3,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "planar_shadow",
+      "trial": 4,
+      "estimated": false,
+      "cameras": [],
+      "reason": "no supported nonparallel axis intersection",
+      "pixel": null,
+      "candidate_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "brightness_change",
+      "trial": 0,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ],
+      "image": "brightness_change_00.jpg"
+    },
+    {
+      "kind": "brightness_change",
+      "trial": 1,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "brightness_change",
+      "trial": 2,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "brightness_change",
+      "trial": 3,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "brightness_change",
+      "trial": 4,
+      "estimated": false,
+      "cameras": [],
+      "reason": "fewer than two usable shaft axes",
+      "pixel": null,
+      "candidate_counts": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "limitation": "Synthetic negative controls. Planar Gaussian shadow and brightness steps are simple image perturbations, not realistic hands or lighting."
+}

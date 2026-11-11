@@ -77,27 +77,37 @@ def project3(points, P):
     return p[:, :2] / p[:, 2:]
 
 
-def render_camera(texture, board, position, dart=True, tip=None, width=960, height=720, focal=650, look_at=None, roll=0):
+def render_camera(texture, board, position, dart=True, tip=None, width=960, height=720, focal=650, look_at=None, roll=0, dart_config=None, existing_darts=None):
     P = camera_matrix(position, width, height, focal, look_at, roll)
     plane = np.array([[1 / board.ppm, 0, -board.center[0] / board.ppm],
                       [0, -1 / board.ppm, board.center[1] / board.ppm],
                       [0, 0, 0], [0, 0, 1.]])
     board_to_camera = P @ plane
     image = cv.warpPerspective(texture, board_to_camera, (width, height), borderValue=(46, 43, 40))
-    tip = np.array([0., 103., 0.]) if tip is None else np.asarray(tip, float)
-    direction = np.array([.12, -.18, 1.])
-    points3 = np.array([tip, tip + 13 * direction, tip + 40 * direction, tip + 73 * direction])
-    pixels = project3(points3, P)
-    if dart:
-        def line(a, b, color, thickness):
-            cv.line(image, tuple(np.rint(a).astype(int)), tuple(np.rint(b).astype(int)), color, thickness, cv.LINE_AA)
-        line(pixels[0], pixels[1], (225, 230, 235), 2)
-        line(pixels[1], pixels[2], (100, 110, 120), 6)
-        line(pixels[2], pixels[3], (215, 220, 225), 3)
-        # Small flight, symmetric around the physical axis.
-        base = tip + 59 * direction
-        flight = project3([base + [-5, 0, 0], points3[-1], base + [5, 0, 0], tip + 54 * direction], P)
-        cv.fillConvexPoly(image, np.rint(flight).astype(np.int32), (60, 160, 235), cv.LINE_AA)
+    # Existing darts appear in both reference and changed frames. Painter-order
+    # rendering is an approximation; this is not a depth-tested mesh renderer.
+    configurations=list(existing_darts or [])
+    if dart:configurations.append(dict(dart_config or {},tip=[0.,103.,0.] if tip is None else tip))
+    pixels=None
+    for config in configurations:
+        tip3=np.asarray(config.get('tip',[0.,103.,0.]),float)
+        direction=np.asarray(config.get('direction',[.12,-.18,1.]),float)
+        length=float(config.get('length',73.))
+        points3=np.array([tip3,tip3+13/73*length*direction,tip3+40/73*length*direction,tip3+length*direction])
+        pixels=project3(points3,P)
+        def line(a,b,color,thickness):
+            cv.line(image,tuple(np.rint(a).astype(int)),tuple(np.rint(b).astype(int)),color,thickness,cv.LINE_AA)
+        line(pixels[0],pixels[1],tuple(config.get('tip_color',(225,230,235))),2)
+        line(pixels[1],pixels[2],tuple(config.get('barrel_color',(100,110,120))),6)
+        line(pixels[2],pixels[3],tuple(config.get('shaft_color',(215,220,225))),3)
+        base=tip3+59/73*length*direction
+        width=float(config.get('flight_width',5.))
+        flight=project3([base+[-width,0,0],points3[-1],base+[width,0,0],tip3+54/73*length*direction],P)
+        cv.fillConvexPoly(image,np.rint(flight).astype(np.int32),tuple(config.get('flight_color',(60,160,235))),cv.LINE_AA)
+    if pixels is None:
+        tip3=np.array([0.,103.,0.]) if tip is None else np.asarray(tip,float)
+        pixels=project3([tip3,tip3+73*np.array([.12,-.18,1.])],P)
+
     return image, np.linalg.inv(board_to_camera), pixels[[0, -1]]
 
 

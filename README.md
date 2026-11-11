@@ -6,6 +6,79 @@ failures and wrong estimates. This is not yet reliable unattended scoring.
 
 Public pipeline and raw frames: https://dartboard-vision-lab.spunky-cabin-7615.chatgpt.site/
 
+## Updated dart detection
+
+The live script now uses the same detector as the paired benchmark. It retains
+multiple elongated-fragment hypotheses, fits thin cross-section centres to reduce
+flight/barrel bias, and selects shaft axes jointly across the cameras. Tiny tip
+fragments remain available as hit evidence. At least two views must show changed
+pixels near the inferred hit; a third view can bridge a bounded invisible tip.
+Every camera with usable axes must agree. Multiple separated supported hits are
+rejected. No known target, rendered shaft axis, or truth H enters detection.
+
+| Paired synthetic test | Correct | Wrong | Detector rejections | Calibration failures | Median / 95th position error |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Original 100, old detector / estimated H | 32 | 0 | 65 | 3 | 0.291 / 0.451 mm |
+| Original 100, new detector / estimated H | 94 | 0 | 3 | 3 | 0.335 / 0.480 mm |
+| Stress holdout 100, old detector / estimated H | 26 | 0 | 72 | 2 | 0.285 / 0.492 mm |
+| Stress holdout 100, new detector / estimated H | 93 | 1 | 4 | 2 | 0.293 / 0.477 mm |
+
+Position errors include all returned estimates, including wrong scores. Each row
+uses the same images and estimated calibration as its paired comparison. The
+holdout varies dart tilt (x/y slopes ±0.45), length (60–90 mm), flight width
+(3–8 mm), colours, and 0–2 unchanged existing darts. It uses a separate seed and
+was not used to tune the detector. The single wrong score is S9 → S12, 0.288 mm
+across a sector boundary; the existing 2 mm boundary rule flags it for review.
+Neither suite produced an unflagged wrong score; this is not a real-world guarantee.
+
+With exact H supplied only to the oracle diagnostic, the new detector scores
+96/100 correctly in each randomized suite, rejecting four. On eight fixed targets,
+the old detector scores 4/8 even with perfect H; the new detector scores 8/8 both
+with perfect H and with estimated H. Seven of the eight use all three views.
+This isolates the earlier detection failures from calibration.
+
+Sixty negative controls produce no estimates: 20 no-change pairs, 20 inconsistent
+three-camera darts, 10 simultaneous two-dart additions, five simple planar shadows,
+and five brightness steps. These are limited synthetic nuisances, not realistic
+hand/shadow validation. Twenty-five checks cover the calibration/tracking paths,
+candidate ambiguity, fragmented shafts, and encoded-video replay.
+
+```sh
+python benchmark_detection.py --fixed --workers 4 --save-images 8 --output detection_evidence/fixed
+python benchmark_detection.py --trials 100 --seed 20261110 --workers 4 --output detection_evidence/randomized
+python benchmark_detection.py --trials 100 --seed 20261112 --stress --workers 4 --output detection_evidence/stress_holdout
+python benchmark_detection_negatives.py
+python -m unittest -q test_pipeline test_detection test_recording_replay
+python -m pip install -r requirements-evidence.txt
+python refresh_detection_inputs.py
+python plot_detection.py
+```
+
+Full rows, rejection reasons, input scenes, observed masks, fitted axes, and the
+wrong-score close-up are in `detection_evidence/`. `detection_baseline.py` freezes
+the earlier implementation for reproducible comparisons. Exact synthetic K/D
+remain supplied to both detectors. One board texture and simplified painter-order
+darts with pixel-width shafts are used; occlusion/depth, hands, real lighting,
+automatic event timing, and real-camera accuracy remain unvalidated.
+
+## Replay recorded event windows
+
+No real camera recordings were available for this update. `replay_recordings.py`
+is ready for three recordings plus the saved calibration. It checks alignment,
+rejects large scene changes or camera movement during an event, and saves masks,
+candidate/selected axes, estimates and optional truth errors. This replays supplied
+reference/settled windows; it does not validate automatic throw timing.
+
+```sh
+python replay_recordings.py --sources left.mp4 right.mp4 bottom.mp4 --calibration calibration.json --events examples/replay_events.json --output recording_validation
+```
+
+Edit the three frame indices in each event to account for synchronization offsets.
+Optional `truth_label` evaluates the score; optional `truth_xy_mm` evaluates
+position, with x right and y down from the bull. Neither enters the estimator.
+The integration test encodes three synthetic videos and checks no change, one
+dart, and a large opaque occluder; it is not a real-camera validation result.
+
 ## Install
 
 Python 3.10 or newer, with a desktop OpenCV build for the live dashboard:
@@ -265,8 +338,8 @@ new corner validation, not the separate corner-corrected homography. Full report
 
 ## Important practical limits
 
-The latest measured-setup fixed-target run produced 4 correct estimates and
-4 rejections; estimated-hit errors were 0.296–0.364 mm. The dense template mapping
+The earlier detector's measured-setup fixed-target run produced 4 correct estimates
+and 4 rejections; see the updated paired detection results above. The dense template mapping
 had roughly 0.54–0.65 canonical-pixel median landmark error in those fixed views.
 The historical scoring run, before the seeded pose loop, with each camera sampled within a 50.8 mm ball of its
 nominal position, produced 14 correct estimates, 2 wrong estimates, 23 rejected
@@ -275,8 +348,8 @@ median position error was 0.267 mm, 95th percentile 24.128 mm and worst 36.555 m
 The apparently small median must not obscure the wrong estimates and low coverage.
 See `c920_benchmark/report.json` and `c920_benchmark/monte_carlo.json` for every case.
 
-Hands, dart overlap, realistic shadows, changing illumination and automatic dart
-removal are not solved. Shaft segmentation and calibration failures remain material.
+Real hands, overlapping darts, realistic shadows, changing illumination and automatic
+dart removal remain unvalidated. Detection and calibration failures remain material.
 Two-view estimates and near-wire calls need review. A camera movement concurrent
 with a throw can cause that event to be skipped during baseline refresh.
 The static benchmarks do not exercise the full live event state machine.

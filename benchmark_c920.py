@@ -19,6 +19,7 @@ from dartboard import (Board, Lens, automatic_homography, binarize, change_mask,
                        nominal_homography, adaptive_block_size, board_color_masks)
 from render_synthetic import board_texture, panel, render_camera, COLORS
 from pose_alignment import homography_from_pose
+from dart_detection import detect_dart, diagnostic_image
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "c920_benchmark"
@@ -85,7 +86,7 @@ def evaluate_case(name, radius, angle, label, score, board, texture, cameras, ma
     truth_pixel = board.point(radius, angle)
     xy = (truth_pixel - board.center) / board.ppm
     tip3 = [float(xy[0]), float(-xy[1]), 0.]
-    lines, rectified, camera_rows = [], [], []
+    lines, rectified, camera_rows, deltas = [], [], [], []
     diagnostics = []
     for i, camera in enumerate(cameras):
         ideal, true_H, _ = render_camera(texture, board, camera["position_mm"], tip=tip3,
@@ -96,8 +97,8 @@ def evaluate_case(name, radius, angle, label, score, board, texture, cameras, ma
         H = camera["H"]
         rect = warp(corrected, H, board)
         delta = change_mask(gray_image(rect), camera["background"], board.mask(1.08), 28)
-        line = shaft_line(delta, board)
-        lines.append(line)
+        deltas.append(delta)
+        line = None
         rectified.append(rect)
         write_image(folder / f"camera_{i}_mask.png", delta)
         axis_image = draw_axis(rect, line, COLORS[i])
@@ -107,7 +108,12 @@ def evaluate_case(name, radius, angle, label, score, board, texture, cameras, ma
                                 mask=f"{name}/camera_{i}_mask.png",
                                 detected=f"{name}/camera_{i}_detected.jpg"))
         camera_rows.append(panel(distorted, f"CAMERA {i + 1}: DISTORTED INPUT", "1920 x 1080 / 78 deg diagonal / mild barrel + tangential distortion", COLORS[i], 640, 440))
-    point, ids, reason = intersect_lines(lines, tolerance=5, support_distance=16)
+    point, ids, reason, lines, info = detect_dart(deltas, board)
+    for i,(rect,delta,line) in enumerate(zip(rectified,deltas,lines)):
+        write_image(folder / f"camera_{i}_detected.jpg", diagnostic_image(rect,delta,info['candidates'][i],line,point))
+        diagnostics[i]['shaft_found']=bool(info['candidates'][i])
+        diagnostics[i]['selected']=i in ids
+        diagnostics[i]['candidates']=len(info['candidates'][i])
     result = dict(id=name, truth=dict(label=label, score=score, pixel=truth_pixel.tolist(),
                                      x_mm=float(xy[0]), y_mm=float(xy[1])), cameras=ids,
                   note=reason, detection=None, error_mm=None, correct=False,
@@ -205,8 +211,8 @@ def main():
                                     width=WIDTH, height=HEIGHT, focal=FOCAL)
         raw, _ = observed(ideal, maps, 700 + i)
         rect = warp(cameras[i]["lens"].apply(raw), cameras[i]["H"], board)
-        disjoint.append(shaft_line(change_mask(gray_image(rect), cameras[i]["background"], board.mask(1.08), 28), board))
-    negative_point, _, negative_reason = intersect_lines(disjoint)
+        disjoint.append(change_mask(gray_image(rect), cameras[i]["background"], board.mask(1.08), 28))
+    negative_point, _, negative_reason, _, _ = detect_dart(disjoint,board)
     scene = dict(units="mm", board_plane="z=0, x right, y up, z toward player",
                  resolution=[WIDTH, HEIGHT], diagonal_fov_degrees=DFOV,
                  specification_source="https://support.logi.com/hc/en-ca/articles/360023307774-C920-C-Webcam-Technical-Specifications",

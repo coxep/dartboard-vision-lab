@@ -18,6 +18,7 @@ from benchmark_c920 import (WIDTH, HEIGHT, POSITIONS, distortion_map, observed)
 from dartboard import (Board, Lens, automatic_homography, change_mask, gray_image,
                        intersect_lines, project, shaft_line, warp, nominal_homography)
 from render_synthetic import board_texture, render_camera
+from dart_detection import detect_dart
 
 PRIORS = dict(
     provenance="Engineering stress ranges, NOT empirically measured C920 coefficient distributions",
@@ -109,13 +110,13 @@ def trial(task):
         dart, _ = observed(dart, maps, int(seed + i * 2 + 1))
         baseline = gray_image(warp(empty, H, board))
         image = gray_image(warp(lens.apply(dart), H, board))
-        lines.append(shaft_line(change_mask(image, baseline, board.mask(1.08), 28), board))
+        lines.append(change_mask(image, baseline, board.mask(1.08), 28))
     if failed:
         return result
     if calibration_only:
         result["outcome"] = "calibrated"
         return result
-    point, cameras, reason = intersect_lines(lines, tolerance=5, support_distance=16)
+    point, cameras, reason, _, _ = detect_dart(lines,board)
     result["cameras"], result["reason"] = cameras, reason
     if point is None:
         return result
