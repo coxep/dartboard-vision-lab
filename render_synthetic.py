@@ -17,7 +17,7 @@ from dartboard import Board, NUMBERS, Tracker, project, shaft_line, intersect_li
 COLORS = [(65, 185, 255), (255, 205, 75), (185, 100, 255)]
 
 
-def board_texture(board):
+def board_texture(board,wires=True):
     s = board.size
     yy, xx = np.mgrid[:s, :s]
     x, y = (xx - s / 2) / board.ppm, (yy - s / 2) / board.ppm
@@ -45,12 +45,13 @@ def board_texture(board):
         if r[py, px] < 220:
             color = tuple(int(c) for c in np.clip(image[py, px].astype(int) + rng.integers(-35, 36), 0, 255))
             cv.line(image, (int(px), int(py)), (int(px + rng.integers(-2, 3)), int(py + rng.integers(2, 6))), color, 1)
-    for rad in (6.35, 15.9, *board.radii, 223):
+    for rad in ((6.35,15.9,*board.radii,223) if wires else (223,)):
         cv.circle(image, tuple(board.center.astype(int)), round(rad * board.ppm), (155, 160, 165), 1, cv.LINE_AA)
     for k in range(20):
         angle = -9 + 18 * k
-        cv.line(image, tuple(board.point(15.9, angle).astype(int)),
-                tuple(board.point(170, angle).astype(int)), (155, 160, 165), 1, cv.LINE_AA)
+        if wires:
+            cv.line(image, tuple(board.point(15.9, angle).astype(int)),
+                    tuple(board.point(board.radii[-1], angle).astype(int)), (155, 160, 165), 1, cv.LINE_AA)
         p = board.point(202, 18 * k)
         size, _ = cv.getTextSize(str(NUMBERS[k]), cv.FONT_HERSHEY_SIMPLEX, .8, 2)
         text(image, str(NUMBERS[k]), p + [-size[0] / 2, size[1] / 2], scale=.8)
@@ -77,13 +78,17 @@ def project3(points, P):
     return p[:, :2] / p[:, 2:]
 
 
-def render_camera(texture, board, position, dart=True, tip=None, width=960, height=720, focal=650, look_at=None, roll=0, dart_config=None, existing_darts=None):
+def render_camera(texture, board, position, dart=True, tip=None, width=960, height=720, focal=650, look_at=None, roll=0, dart_config=None, existing_darts=None,wire_geometry=None):
     P = camera_matrix(position, width, height, focal, look_at, roll)
     plane = np.array([[1 / board.ppm, 0, -board.center[0] / board.ppm],
                       [0, -1 / board.ppm, board.center[1] / board.ppm],
                       [0, 0, 0], [0, 0, 1.]])
     board_to_camera = P @ plane
     image = cv.warpPerspective(texture, board_to_camera, (width, height), borderValue=(46, 43, 40))
+    if wire_geometry and wire_geometry.get('height_mm',0)>0:
+        from wire_model import mesh,draw_mesh
+        vertices,faces=mesh(board,wire_geometry['height_mm'],wire_geometry.get('width_mm',.8))
+        draw_mesh(image,vertices,faces,project3(vertices,P),position)
     # Existing darts appear in both reference and changed frames. Painter-order
     # rendering is an approximation; this is not a depth-tested mesh renderer.
     configurations=list(existing_darts or [])

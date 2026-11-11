@@ -54,7 +54,6 @@ def cold_trial(task):
                  acquisition=report.get('acquisition'),inliers=report.get('inliers'),seed=seed)
         if H is not None:
             row.update(metric(H,truth,b),**pose_metric(H,truth,k,b))
-            row['same_points_free_H']=metric(np.asarray(report['unconstrained_H']),truth,b)
         rows.append(row)
     return rows
 
@@ -95,7 +94,6 @@ def sequence(output,frames):
                      median_residual_px=report.get('median_residual_px'))
             if tracker.valid:
                 row.update(metric(tracker.H,truth,b),**pose_metric(tracker.H,truth,K,b))
-                row['same_points_free_H']=metric(np.asarray(report['unconstrained_H']),truth,b)
             rows.append(row)
             if frame in (0,12,24,40,45,frames-1):
                 rect=warp(gray,tracker.H,b);overlay=draw_pattern(rect,b,report,tracker.H)
@@ -127,8 +125,6 @@ def summarize(rows):
         for key in ('rotation_error_deg','camera_center_error_mm'):
             result['median_'+key]=float(np.median([r[key] for r in good]))
             result['worst_'+key]=max(r[key] for r in good)
-        result['same_points_free_H_median_view_probe_error_px']=float(np.median([r['same_points_free_H']['probe_median_px'] for r in good]))
-        result['same_points_free_H_worst_probe_error_px']=max(r['same_points_free_H']['probe_max_px'] for r in good)
     return result
 
 

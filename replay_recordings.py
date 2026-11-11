@@ -42,7 +42,7 @@ def main():
                 base=frame(i,event['reference_frames'][i]);changed=frame(i,event['settled_frames'][i])
                 if list(base.shape[:2])!=entry['shape'] or changed.shape!=base.shape:raise ValueError('Recording resolution differs from calibration')
                 lens=Lens(base.shape,entry['lens']);base=lens.apply(base);changed=lens.apply(changed)
-                tracker=Tracker(None,entry['H'],board,entry.get('pose_K'))
+                tracker=Tracker(None,entry['H'],board,entry.get('pose_K'),entry.get('wire_geometry'))
                 tracker.update(base)
                 if not tracker.valid:failure=f'camera {i}: reference alignment failed';break
                 old_H=tracker.H.copy();base_plane=warp(base,old_H,board)

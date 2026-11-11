@@ -1,10 +1,10 @@
-"""Fresh dartboard-pattern measurements in grayscale, independent of board texture.
+"""Continuous direct registration of the observed grayscale dartboard pattern.
 
 Inspired by the multiscale local responses and ordered-pattern checks used by
 OpenCV's checkerboard detectors. This is an original dartboard-specific detector,
 not a port of the symmetric X-corner test or rectangular checkerboard topology.
 
-Input pixels must already be lens-corrected. A plane/orientation prior supplies
+Input pixels should be lens-corrected when curvature is significant. A plane/orientation prior supplies
 the search region and resolves the board's repeated sector pattern. Cold/broad
 acquisition and small per-frame updates are separate operations.
 """
@@ -21,9 +21,11 @@ def gray_image(image):
 
 
 class PatternDetector:
-    def __init__(self,board):
+    def __init__(self,board,wire_geometry=None):
         self.board=board
-        self.targets=board.landmarks()
+        self.wire_geometry=wire_geometry
+        from wire_model import elevated_landmarks
+        self.targets=elevated_landmarks(board,wire_geometry).astype(np.float32)
         self.scale=board.size/900
         self.patch=max(7,round(11*self.scale))
         # Continuous metric templates centred exactly on each known junction.
@@ -47,6 +49,13 @@ class PatternDetector:
         self.templates=[]
         for sigma in (1.6*self.scale,.8*self.scale):
             self.templates.append([cv.GaussianBlur(m.astype(np.float32),(0,0),sigma) for m in model])
+        if wire_geometry and wire_geometry.get('height_mm',0)>0:
+            from wire_model import canonical_template
+            template=canonical_template(board,wire_geometry).astype(np.float32)
+            self.templates=[]
+            for sigma in (1.6*self.scale,.8*self.scale):
+                smooth=cv.GaussianBlur(template,(0,0),sigma)
+                self.templates.append([cv.getRectSubPix(smooth,(2*self.patch+1,2*self.patch+1),tuple(map(float,p))) for p in self.targets])
 
     def _measure(self,gray,H,search):
         from dartboard import project
@@ -166,28 +175,56 @@ class PatternDetector:
         return physical,report
 
     def detect(self,image,prior_H,search=6.,iterations=1,colour=False,K=None):
+        """Refine template pixels; iterations is retained for call compatibility.
+
+        Multiscale ECC controls optimizer iterations internally. K is used only
+        by acquire() for optional broad-search pose hypotheses.
+        """
         if iterations<1:raise ValueError('iterations must be positive')
         start=time.perf_counter();gray=gray_image(image)
         H=np.asarray(prior_H,float).copy();report={};found=False
         if gray.std()<5:
             return None,dict(found=False,reason='image lacks contrast',elapsed_ms=(time.perf_counter()-start)*1000)
-        for _ in range(iterations):
-            candidate,report=self._measure(gray,H,search)
-            if candidate is None:break
-            if K is not None:
-                candidate,report=self.physical_fit(candidate,H,report,K)
-                if candidate is None:break
-            H=candidate;found=True
-        if found and candidate is None:found=False
-        if found and colour and image.ndim==3:
+        from template_registration import coarse_binary_seed,refine_appearance,measure_ring_boundaries,verify_scoring_boundaries
+        try:
+            seed=H.copy()
+            try:
+                H,binary=coarse_binary_seed(image,H,self.board,self.wire_geometry)
+            except (cv.error,ValueError) as exc:
+                binary=dict(found=False,reason=str(exc))
+                # A bounded geometric hypothesis is only a coarse fallback.
+                proposal,_=self._measure(gray,H,search)
+                if proposal is not None:H=proposal
+            H,appearance=refine_appearance(image,H,self.board,self.wire_geometry)
+            # Junctions validate the resulting geometry; their proposed sparse
+            # refit is intentionally discarded. The final objective is pixels.
+            checked,report=self._measure(gray,H,6)
+            if checked is None:raise ValueError(report['reason'])
+            boundaries=measure_ring_boundaries(image,H,self.board,self.wire_geometry)
+            report.update(binary=binary,appearance=appearance,boundaries=boundaries,geometric_seed_H=seed.tolist(),
+                          corner_role='validation only; sparse refit discarded',wire_geometry=self.wire_geometry)
+            if not verify_scoring_boundaries(boundaries,self.board):
+                raise ValueError('template fit lacks consistent observed support on every treble/double boundary')
+            from dartboard import project
+            residual=np.linalg.norm(project(report['source_px'],H)-np.asarray(report['target_px']),axis=1)
+            up=project([self.board.center,self.board.center+[0,-100]],H@np.linalg.inv(seed))
+            v=up[1]-up[0]
+            if abs(math.degrees(math.atan2(v[0],-v[1])))>12 or np.percentile(residual,95)>3*self.scale:
+                raise ValueError('template fit disagrees with orientation or independent junction geometry')
+            report.update(median_residual_px=float(np.median(residual)),p95_residual_px=float(np.percentile(residual,95)),
+                          reason='direct template appearance fit; all scoring-ring boundaries measured')
+            found=True
+        except (cv.error,ValueError,np.linalg.LinAlgError) as exc:
+            report['reason']='direct template registration failed: '+str(exc)
+        if found and colour and image.ndim==3 and not self.wire_geometry:
             # Colour is supplementary evidence, never required for grayscale.
             from corner_geometry import colour_corner_scores
             points=np.array(report['source_px'],np.float32)
             agreement,_=colour_corner_scores(image,H,self.board,points,np.arange(len(points)),report['accepted_ids'])
             report['colour_agreement']=float(np.mean(agreement))
         report.update(found=found,elapsed_ms=(time.perf_counter()-start)*1000,
-                      method='multiscale grayscale junction templates + cyclic/radial graph + robust least squares',
-                      fit_model='seeded metric PnP + LM (6 DOF)' if K is not None else 'unconstrained homography (8 DOF)',
+                      method='geometric pattern seed + direct multiscale template registration + explicit boundary verification',
+                      fit_model='direct template homography (8 DOF)',
                       appearance_reference_used=False)
         return H if found else None,report
 
@@ -218,7 +255,7 @@ class PatternDetector:
         if H is not None:
             H,report=self.stabilize(image,H,report,K)
             if H is not None:
-                report.update(acquisition='wide junction search',elapsed_ms=(time.perf_counter()-start)*1000)
+                report.update(acquisition='binary and appearance registration from the current belief',elapsed_ms=(time.perf_counter()-start)*1000)
                 return H,report
         if gray_image(image).std()<5:return None,report
         from dartboard import refine_plane_template,ideal_board_template
@@ -238,7 +275,7 @@ class PatternDetector:
                 if H is not None:
                     H,report=self.stabilize(image,H,report,K)
                     if H is not None:
-                        report.update(acquisition='grayscale whole-pattern recovery + junction graph',elapsed_ms=(time.perf_counter()-start)*1000)
+                        report.update(acquisition='whole-pattern seed and direct appearance registration',elapsed_ms=(time.perf_counter()-start)*1000)
                         return H,report
             except (ValueError,cv.error,np.linalg.LinAlgError) as exc:failures.append(str(exc))
         report.update(found=False,acquisition='failed',elapsed_ms=(time.perf_counter()-start)*1000,recovery_failures=failures)
@@ -247,9 +284,9 @@ class PatternDetector:
 
 class GeometryTracker:
     """Compatibility API: every update remeasures the pattern; no saved texture."""
-    def __init__(self,reference,H,board,K=None):
+    def __init__(self,reference,H,board,K=None,wire_geometry=None):
         self.board=board;self.H=np.asarray(H,float).copy();self.reference_H=self.H.copy()
-        self.K=K;self.detector=PatternDetector(board);self.valid=False
+        self.K=K;self.detector=PatternDetector(board,wire_geometry);self.valid=False
         self.reason='awaiting pattern detection';self.report={}
 
     def _update(self,frame,recover):
@@ -267,7 +304,7 @@ class GeometryTracker:
             self.valid=False;self.reason=report['reason'];return False
         drift=np.linalg.norm(project(self.board.landmarks(),H@np.linalg.inv(self.H))-self.board.landmarks(),axis=1).max()
         self.H=H;self.valid=True
-        self.reason=f"{report['inliers']} fresh junctions; {report['median_residual_px']:.2f}px residual"
+        self.reason='template aligned; treble and double boundaries verified'
         return bool(drift>.75*self.board.size/900)
 
     def track(self,frame):return self._update(frame,False)
@@ -281,11 +318,21 @@ def draw_pattern(rectified,board,report,H):
     if not report.get('found'):return out
     points=project(report['source_px'],H)
     ids=report['accepted_ids'];lookup={i:p for i,p in zip(ids,points)}
+    targets=dict(zip(ids,np.asarray(report['target_px'])))
     for i,p in lookup.items():
         r,s=divmod(i,20)
         for j in (r*20+(s+1)%20,i+20 if r<3 else -1):
             if j in lookup:cv.line(out,tuple(np.rint(p).astype(int)),tuple(np.rint(lookup[j]).astype(int)),(110,200,60),1,cv.LINE_AA)
         cv.circle(out,tuple(np.rint(p).astype(int)),3,(60,255,130),1,cv.LINE_AA)
-        q=board.landmarks()[i]
+        q=targets[i]
         cv.line(out,tuple(np.rint(p).astype(int)),tuple(np.rint(p+5*(q-p)).astype(int)),(255,210,40),1,cv.LINE_AA)
+    for boundary in report.get('boundaries',[]):
+        if not boundary['found']:continue
+        measured=project(boundary['source_px'],H)
+        angles=np.asarray(boundary['angles_deg']);order=np.argsort(angles)
+        for a,b in zip(order,np.roll(order,-1)):
+            if (angles[b]-angles[a])%360<=7:
+                cv.line(out,tuple(np.rint(measured[a]).astype(int)),tuple(np.rint(measured[b]).astype(int)),(210,100,240),1,cv.LINE_AA)
+        for point in measured:
+            cv.circle(out,tuple(np.rint(point).astype(int)),1,(210,100,240),-1,cv.LINE_AA)
     return out

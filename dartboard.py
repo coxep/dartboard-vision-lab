@@ -270,7 +270,7 @@ def refine_edge_template(frame, seed, board):
     return refined, info
 
 
-def ideal_board_template(board):
+def ideal_board_template(board,wires=True):
     """Geometry-only grayscale template; no renderer texture or camera truth."""
     yy, xx = np.mgrid[:board.size, :board.size]
     x, y = (xx-board.center[0])/board.ppm, (yy-board.center[1])/board.ppm
@@ -285,11 +285,12 @@ def ideal_board_template(board):
     template[radius <= 15.9] = 106
     template[radius <= 6.35] = 97
     template[radius > do] = 30
-    for r in (6.35, 15.9, *board.radii):
-        cv.circle(template, tuple(board.center.astype(int)), round(r*board.ppm), 160, 1, cv.LINE_AA)
-    for s in range(20):
-        cv.line(template, tuple(board.point(15.9, -9+18*s).astype(int)),
-                tuple(board.point(do, -9+18*s).astype(int)), 160, 1, cv.LINE_AA)
+    if wires:
+        for r in (6.35, 15.9, *board.radii):
+            cv.circle(template, tuple(board.center.astype(int)), round(r*board.ppm), 160, 1, cv.LINE_AA)
+        for s in range(20):
+            cv.line(template, tuple(board.point(15.9, -9+18*s).astype(int)),
+                    tuple(board.point(do, -9+18*s).astype(int)), 160, 1, cv.LINE_AA)
     return template
 
 
@@ -724,8 +725,12 @@ def calibrate(args, inputs):
         raise ValueError("Provide one nominal camera position per input in the geometry prior")
     if args.intrinsics and len(args.intrinsics) != len(frames):
         raise ValueError("Provide one intrinsics NPZ per camera")
+    if args.wire_height_mm>0 and positions is None:
+        raise ValueError('Raised-wire modelling requires --geometry-prior camera centres')
     entries = []
     for i, raw in enumerate(frames):
+        wire_geometry=(dict(camera_center_mm=positions[i],height_mm=args.wire_height_mm,
+                            width_mm=args.wire_width_mm) if args.wire_height_mm>0 else None)
         data = None
         if args.intrinsics:
             with np.load(args.intrinsics[i], allow_pickle=False) as z:
@@ -750,7 +755,7 @@ def calibrate(args, inputs):
             else:
                 report = None
             from board_pattern import PatternDetector
-            detector=PatternDetector(board)
+            detector=PatternDetector(board,wire_geometry)
             initialization=report
             if args.estimate_radial_distortion:
                 H,report=detector.detect(frame,H,search=6,iterations=2,colour=True,K=K)
@@ -775,7 +780,7 @@ def calibrate(args, inputs):
             raise IOError("Could not save calibration reference")
         entries.append(dict(H=H.tolist(), shape=list(raw.shape[:2]), lens=data,
                             reference=ref, pattern=report, harris=report if args.manual else None,
-                            pose_K=K.tolist() if K is not None else None))
+                            pose_K=K.tolist() if K is not None else None,wire_geometry=wire_geometry))
     config = dict(version=1, size=board.size, radii=board.radii, cameras=entries)
     Path(args.calibration).write_text(json.dumps(config, indent=2) + "\n")
     print(f"Saved {args.calibration}. Camera order must remain the same when running.")
@@ -1004,7 +1009,7 @@ def run(args, inputs):
     lenses, trackers = [], []
     for entry in entries:
         lenses.append(Lens(tuple(entry["shape"]) + (3,), entry["lens"]))
-        trackers.append(Tracker(None, entry["H"], board, entry.get("pose_K")))
+        trackers.append(Tracker(None, entry["H"], board, entry.get("pose_K"),entry.get("wire_geometry")))
     board_mask = board.mask(1.08)
     background, previous, stable_since = None, None, None
     background_H = None
@@ -1139,7 +1144,7 @@ def track_board(args, inputs):
     lenses=[];trackers=[]
     for entry in config['cameras']:
         lenses.append(Lens(tuple(entry['shape'])+(3,),entry['lens']))
-        trackers.append(GeometryTracker(None,entry['H'],board,entry.get('pose_K')))
+        trackers.append(GeometryTracker(None,entry['H'],board,entry.get('pose_K'),entry.get('wire_geometry')))
     folder=Path(args.output);folder.mkdir(parents=True,exist_ok=True)
     log_path=Path(args.log);log_path.parent.mkdir(parents=True,exist_ok=True)
     last_recovery=-math.inf;frame_number=0
@@ -1154,6 +1159,8 @@ def track_board(args, inputs):
                 tracker.update(frame)
             report={k:v for k,v in tracker.report.items() if k not in
                     ('source_px','target_px','observed_plane_px','correlation','inlier_mask','model_ids')}
+            if not args.once and 'boundaries' in report:
+                report['boundaries']=[{k:v for k,v in b.items() if k not in ('source_px','angles_deg')} for b in report['boundaries']]
             rows.append(dict(camera=i,valid=tracker.valid,H=tracker.H.tolist() if tracker.valid else None,report=report))
             rect=warp(frame,tracker.H,board)
             from board_pattern import draw_pattern
@@ -1194,6 +1201,8 @@ def main():
     parser.add_argument("--intrinsics", nargs="+", help="Calibration: one NPZ per camera, containing K, D, image_size")
     parser.add_argument("--estimate-radial-distortion", action="store_true", help="Experimental calibration: jointly fit H and k1 to raw edges; hold K and other distortion terms fixed; save paired-boundary circle diagnostics")
     parser.add_argument("--manual", action="store_true", help="Optional four-click calibration fallback; default is automatic upright-board detection")
+    parser.add_argument('--wire-height-mm',type=float,default=0.,help='Optional raised-wire apex height above scoring plane; 0 uses planar template')
+    parser.add_argument('--wire-width-mm',type=float,default=.8,help='Optional triangular wire base width; millimetres')
     parser.add_argument("--geometry-prior", help="JSON with nominal camera_positions_mm or positions_mm, in source order")
     parser.add_argument("--rectify-interval", type=float, default=.5, help="Seconds between broad pattern reacquisition checks; local geometric detection runs each frame")
     parser.add_argument("--settle-seconds", type=float, default=.8)
@@ -1206,7 +1215,7 @@ def main():
     args = parser.parse_args()
     if args.radii is None:args.radii=BOARD_PROFILES[args.board_profile]
     if (args.size < 400 or not 0 < args.rectify_interval or not 0 < args.settle_seconds
-            or not 0 < args.diff_threshold < 256 or args.boundary_mm < 0
+            or not 0 < args.diff_threshold < 256 or args.boundary_mm < 0 or args.wire_height_mm<0 or args.wire_width_mm<=0
             or not 15.9 < args.radii[0] < args.radii[1] < args.radii[2] < args.radii[3]):
         parser.error("Invalid size, timing, threshold, uncertainty, or increasing ring radii")
     if args.manual and args.estimate_radial_distortion:

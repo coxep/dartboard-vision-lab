@@ -62,24 +62,17 @@ class PatternTests(unittest.TestCase):
             fitted,report=detector.detect(image,H)
             self.assertIsNone(fitted,report)
 
-    def test_known_intrinsics_produce_metric_pose_and_pose_derived_H(self):
-        from pose_alignment import homography_from_pose,pose_from_homography
-        from benchmark_board_pattern import pose_metric
-        b=self.board;focal=1000.
-        K=np.array([[focal,0,640],[0,focal,480],[0,0,1.]])
-        _,prior,_=render_camera(self.texture,b,[-285,243,216],dart=False,width=1280,height=960,focal=focal)
-        image,truth,_=render_camera(self.texture,b,[-276,238,220],dart=True,width=1280,height=960,focal=focal)
-        H,report=PatternDetector(b).acquire(cv.cvtColor(image,cv.COLOR_BGR2GRAY),prior,K)
+    def test_direct_template_fit_is_independent_of_intrinsics(self):
+        b=self.board
+        _,prior,_=render_camera(self.texture,b,[-285,243,216],dart=False)
+        image,truth,_=render_camera(self.texture,b,[-276,238,220],dart=True)
+        H,report=PatternDetector(b).acquire(cv.cvtColor(image,cv.COLOR_BGR2GRAY),prior)
         self.assertIsNotNone(H,report)
-        self.assertEqual(report['pose']['degrees_of_freedom'],6)
-        r=np.array(report['pose']['rvec']);t=np.array(report['pose']['tvec_mm'])[:,None]
-        derived=homography_from_pose(r,t,K,b)
-        np.testing.assert_allclose(H/H[2,2],derived/derived[2,2],atol=1e-8)
-        R=cv.Rodrigues(r)[0];np.testing.assert_allclose(R.T@R,np.eye(3),atol=1e-10)
-        self.assertAlmostEqual(float(np.linalg.det(R)),1.,places=10)
-        accuracy=pose_metric(H,truth,K,b)
-        self.assertLess(accuracy['rotation_error_deg'],.3)
-        self.assertLess(accuracy['camera_center_error_mm'],2.)
+        self.assertFalse(report['appearance']['correspondence_refit_after_registration'])
+        self.assertEqual(report['corner_role'],'validation only; sparse refit discarded')
+        error=np.linalg.norm(project(b.landmarks(),H@np.linalg.inv(truth))-b.landmarks(),axis=1)
+        self.assertLess(float(error.max()),2.)
+        self.assertTrue(all(r['found'] for r in report['boundaries'][2:]))
 
     def test_discrete_boundary_check_rejects_wrong_ring_widths(self):
         from boundary_audit import audit_boundaries,boundary_geometry_valid
