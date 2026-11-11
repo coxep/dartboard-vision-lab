@@ -49,7 +49,8 @@ class PipelineTests(unittest.TestCase):
     def test_continuous_tracking_follows_camera_movement(self):
         b, base = self.board, np.array([-340., 240., 270.])
         reference, initial_H, _ = render_camera(self.texture, b, base, dart=False)
-        tracker = Tracker(reference, initial_H, b)
+        K = np.array([[650., 0, 480.], [0, 650., 360.], [0, 0, 1.]])
+        tracker = Tracker(reference, initial_H, b, K)
         tracker.update(reference)
         self.assertTrue(tracker.valid)
         for frame in range(1, 13):
@@ -70,6 +71,42 @@ class PipelineTests(unittest.TestCase):
         self.assertLess(float(np.median(after)), float(np.median(before)))
         self.assertLess(float(np.median(after)), 2.)
         self.assertIn('validation only', info['harris_role'])
+
+    def test_seeded_pnp_rejects_correspondence_outliers(self):
+        from pose_alignment import pose_from_homography, fit_seeded_pose, homography_from_pose
+        b = self.board
+        K = np.array([[650., 0, 480.], [0, 650., 360.], [0, 0, 1.]])
+        true_H = nominal_homography(b, K, [-280., 240., 220.])
+        seed = nominal_homography(b, K, [-295., 246., 226.])
+        xy = (b.landmarks()-b.center)/b.ppm
+        objects = np.c_[xy[:, 0], -xy[:, 1], np.zeros(len(xy))].astype(float)
+        pixels = project(b.landmarks(), np.linalg.inv(true_H)).astype(float)
+        rng = np.random.default_rng(92)
+        pixels += rng.normal(0, .15, pixels.shape)
+        bad = rng.choice(len(pixels), 20, replace=False)
+        pixels[bad] = rng.uniform([100, 100], [850, 600], (len(bad), 2))
+        r, t = pose_from_homography(seed, K, b)
+        fit = fit_seeded_pose(objects, pixels, K, r, t)
+        self.assertIsNotNone(fit)
+        _, r, t, inliers, _ = fit
+        self.assertLessEqual(int(inliers[bad].sum()), 1)
+        self.assertGreaterEqual(int(inliers.sum()), 59)
+        H = homography_from_pose(r, t, K, b)
+        error = np.linalg.norm(project(b.landmarks(), H@np.linalg.inv(true_H))-b.landmarks(), axis=1)
+        self.assertLess(float(error.max()), 1.)
+
+    def test_pose_association_recovers_oblique_bottom_camera(self):
+        b = self.board
+        K = np.array([[1000., 0, 720.], [0, 1000., 405.], [0, 0, 1.]])
+        nominal = np.array([0., -374.65, 215.9])
+        image, true_H, _ = render_camera(self.texture, b, nominal+[45., -12., 13.],
+                                         dart=False, width=1440, height=810, focal=1000.,
+                                         look_at=[-18., 9., 0], roll=1.5)
+        seed = nominal_homography(b, K, nominal)
+        H, report = automatic_homography(image, b, seed, K)
+        error = np.linalg.norm(project(b.landmarks(), H@np.linalg.inv(true_H))-b.landmarks(), axis=1)
+        self.assertTrue(report['pose_initializer_used'])
+        self.assertLess(float(error.max()), 1.5)
 
     def test_three_rendered_dart_silhouettes_intersect_at_tip(self):
         b, lines = self.board, []

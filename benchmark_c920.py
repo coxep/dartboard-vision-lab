@@ -18,6 +18,7 @@ from dartboard import (Board, Lens, automatic_homography, binarize, change_mask,
                        gray_image, intersect_lines, project, shaft_line, text, warp,
                        nominal_homography)
 from render_synthetic import board_texture, panel, render_camera, COLORS
+from pose_alignment import homography_from_pose
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "c920_benchmark"
@@ -151,12 +152,15 @@ def main():
         # true_H is withheld and used ONLY to evaluate recovered calibration.
         preliminary = nominal_homography(board, K, position)
         write_image(OUT / f"camera_{i}_preliminary.jpg", board.grid(warp(corrected, preliminary, board)))
-        H, report = automatic_homography(corrected, board, preliminary)
+        H, report = automatic_homography(corrected, board, preliminary, K)
+        pose = report.get("pose_initialization")
+        pose_H = homography_from_pose(np.array(pose["rvec"]), np.array(pose["tvec_mm"]), K, board) if pose else preliminary
+        write_image(OUT / f"camera_{i}_pose.jpg", board.grid(warp(corrected, pose_H, board)))
         error = np.linalg.norm(project(board.landmarks(), H @ np.linalg.inv(true_H)) - board.landmarks(), axis=1)
         reference_name = f"camera_{i}_reference.png"
         write_image(OUT / reference_name, corrected)
         calibration.append(dict(H=H.tolist(), shape=[HEIGHT, WIDTH], lens=lens_data,
-                                reference=reference_name, harris=report))
+                                reference=reference_name, harris=report, pose_K=K.tolist()))
         camera = dict(position_mm=position, H=H, lens=lens,
                       background=gray_image(warp(corrected, H, board)))
         cameras.append(camera)

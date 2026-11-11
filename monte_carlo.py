@@ -33,7 +33,9 @@ PRIORS = dict(
 
 
 def trial(task):
-    trial_id, seed = task
+    trial_id, seed, *mode = task
+    calibration_only = bool(mode and mode[0])
+    pose_enabled = bool(mode[1]) if len(mode)>1 else True
     cv.setNumThreads(1)
     rng = np.random.default_rng(seed)
     cv.setRNGSeed(int(seed % (2**31-1)))
@@ -46,6 +48,7 @@ def trial(task):
     result = dict(trial=trial_id, seed=int(seed), truth=truth_score,
                   truth_pixel=truth.tolist(), outcome="rejected", reason="", cameras=[],
                   estimate=None, error_mm=None, calibration=calibration, parameters=params)
+    failed = False
     for i, nominal in enumerate(POSITIONS):
         direction = rng.normal(size=3)
         direction /= np.linalg.norm(direction)
@@ -73,14 +76,32 @@ def trial(task):
         empty, _ = observed(empty, maps, int(seed + i * 2))
         empty = lens.apply(empty)
         try:
-            H, info = automatic_homography(empty, board, nominal_homography(board, K, nominal))
+            prior = nominal_homography(board, K, nominal)
+            H, info = automatic_homography(empty, board, prior, K if pose_enabled else None)
         except (ValueError, cv.error, np.linalg.LinAlgError) as exc:
             result["reason"] = f"camera {i}: {exc}"
             result["outcome"] = "calibration_failed"
-            return result
+            calibration.append(dict(camera=i, success=False, reason=str(exc)))
+            failed = True
+            lines.append(None)
+            continue
         error = np.linalg.norm(project(board.landmarks(), H @ np.linalg.inv(H_truth)) - board.landmarks(), axis=1)
-        calibration.append(dict(camera=i, inliers=info["inliers"], median_px=float(np.median(error)),
-                                max_px=float(error.max()), template_support=info["binary_template_support"]))
+        prior_error = np.linalg.norm(project(board.landmarks(), prior @ np.linalg.inv(H_truth)) - board.landmarks(), axis=1)
+        # Independent interior probes, not points on the fitted circles or spokes.
+        angles = np.linspace(0, 2*math.pi, 257, endpoint=False)
+        radii = np.sqrt(np.linspace(.01, .99, 257))*board.radii[-1]*board.ppm
+        probes = board.center + np.c_[np.cos(angles)*radii, np.sin(angles)*radii]
+        interior_error = np.linalg.norm(project(probes, H @ np.linalg.inv(H_truth))-probes, axis=1)
+        calibration.append(dict(camera=i, success=True, inliers=info["inliers"], median_px=float(np.median(error)),
+                                max_px=float(error.max()), prior_median_px=float(np.median(prior_error)),
+                                probe_median_px=float(np.median(interior_error)), probe_max_px=float(interior_error.max()),
+                                ecc_correlation=info.get("ecc_correlation"),
+                                initialization_attempt=info.get("initialization_attempt"),
+                                pose_initializer_used=info.get("pose_initializer_used", False),
+                                pose_search=info.get("pose_search"), pose_initialization=info.get("pose_initialization"),
+                                template_support=info["binary_template_support"]))
+        if calibration_only:
+            continue
         dart, _, _ = render_camera(texture, board, position, tip=[xy[0], -xy[1], 0],
                                    width=WIDTH, height=HEIGHT, focal=focal,
                                    look_at=look_at, roll=roll)
@@ -89,6 +110,11 @@ def trial(task):
         baseline = gray_image(warp(empty, H, board))
         image = gray_image(warp(lens.apply(dart), H, board))
         lines.append(shaft_line(change_mask(image, baseline, board.mask(1.08), 28), board))
+    if failed:
+        return result
+    if calibration_only:
+        result["outcome"] = "calibrated"
+        return result
     point, cameras, reason = intersect_lines(lines, tolerance=5, support_distance=16)
     result["cameras"], result["reason"] = cameras, reason
     if point is None:
@@ -110,11 +136,13 @@ def main():
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--seed", type=int, default=20261110)
     p.add_argument("--output", default="c920_benchmark/monte_carlo.json")
+    p.add_argument("--calibration-only", action="store_true", help="Evaluate all three calibration views in every setup, without any dart detection")
+    p.add_argument("--no-pose", action="store_true", help="Ablation: use the dense-template initializer without the pose/association loop")
     args = p.parse_args()
     if args.trials < 1 or args.workers < 1:
         p.error("Trials and workers must be positive")
     seeds = np.random.default_rng(args.seed).integers(1, 2**30, args.trials)
-    tasks = [(i, int(seed)) for i, seed in enumerate(seeds)]
+    tasks = [(i, int(seed), args.calibration_only, not args.no_pose) for i, seed in enumerate(seeds)]
     rows = []
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         for row in pool.map(trial, tasks, chunksize=1):
@@ -133,10 +161,21 @@ def main():
                    position_error_median_mm=float(np.median(errors)) if errors else None,
                    position_error_p95_mm=float(np.percentile(errors, 95)) if errors else None,
                    position_error_max_mm=max(errors) if errors else None)
+    views = [c for row in rows for c in row["calibration"]]
+    successful = [c for c in views if c.get("success")]
+    summary["calibration"] = dict(views=len(views), successful=len(successful), failed=len(views)-len(successful),
+        all_three_setups=sum(all(c.get("success") for c in row["calibration"]) for row in rows),
+        prior_median_landmark_error_px=float(np.median([c["prior_median_px"] for c in successful])) if successful else None,
+        refined_median_landmark_error_px=float(np.median([c["median_px"] for c in successful])) if successful else None,
+        p95_view_median_error_px=float(np.percentile([c["median_px"] for c in successful],95)) if successful else None,
+        worst_landmark_error_px=max((c["max_px"] for c in successful),default=None),
+        worst_interior_probe_error_px=max((c["probe_max_px"] for c in successful),default=None),
+        views_above_2px=sum(c["max_px"]>2 or c["probe_max_px"]>2 for c in successful))
     result = dict(seed=args.seed, priors=PRIORS, summary=summary, trials=rows,
+                  method="dense template only" if args.no_pose else "seeded PnP / reassociation + dense template, with explicit dense-only fallback",
                   limitations=["Synthetic-only; these coefficient/extrinsic priors are assumed, not measured.",
                                "Exact lens K/D supplied. No test of blind lens calibration.",
-                               "Each trial independently calibrates an empty board and detects one static dart.",
+                               "Each trial calibrates an empty board; no dart detection in calibration-only mode." if args.calibration_only else "Each trial independently calibrates an empty board and detects one static dart.",
                                "No hands, occlusions, overlapping darts, realistic shadows or event timing."])
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

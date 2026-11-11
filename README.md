@@ -46,21 +46,40 @@ Each NPZ contains `K` (3×3 camera matrix), `D` (OpenCV distortion coefficients)
 illustrative; they are not measurements of your individual Logitech C920 cameras.
 Fisheye-model coefficients are not supported. Lock focus/zoom after calibration.
 
-Automatic calibration requires no clicked points. With a geometry prior, it starts
-by projecting the observed image to the nominal board plane, then iteratively
-aligns the full concentric-circle and spoke template. Harris corners from Gaussian
-adaptive thresholding validate the dense fit; their sparse homography is not used
-to overwrite it. Without a prior it falls back to
-color-assisted ellipse/bull initialization. `--manual` enables an optional four-click
-fallback. Nominal radii are configurable with `--radii 99 107 162 170`; measure the
-wire boundaries of your board for better accuracy.
+Automatic calibration requires no clicked points. With a geometry prior and camera
+matrix K, it uses this sequence:
 
-The live script tracks board texture each frame with forward/backward optical flow.
-It fits against fixed canonical coordinates and periodically re-registers to an
-immutable reference using ORB and Harris refinement. It refreshes the temporal
-baseline when a camera moves and pauses scoring if registration fails. These are
-independent per-camera plane fits; hit estimation combines the usable shaft axes.
-It is not a joint camera bundle adjustment.
+1. Warp observed pixels using the nominal camera pose.
+2. Detect Shi–Tomasi corners in that preliminary plane image. Try the current pose
+   and six bounded mount offsets (±35 mm along each axis).
+3. Alternate one-to-one feature assignment (Hungarian and greedy alternatives)
+   with seeded iterative `solvePnP`, shrinking the association gate over five
+   iterations. Local quadrant appearance helps distinguish ring/spoke crossings.
+4. Use planar homography RANSAC to find consistent correspondence subsets, then
+   seeded PnP and LM to refine their physical poses. This deliberately does not
+   rely on `solvePnPRansac`'s planar minimal-set behavior. Keep only distributed
+   inliers, positive depth, and poses within 85 mm of the initial mount belief.
+5. Rank pose hypotheses by observed whole-board image correlation. Refine the best
+   candidates using multiscale ECC and metric wire-edge alignment. The final dense
+   refinement has eight homography parameters; it is not a six-parameter PnP pose.
+6. Validate with adaptive-binary Harris features and the full wire template.
+   Check final orientation against the original belief. Retain the previous
+   dense-only initializer as an explicit fallback if pose hypotheses fail.
+
+The geometry model is separate from the textured renderer. All rectified outputs
+contain warped input pixels, never a replacement rendering. K and lens distortion
+are fixed during these fits; this is not blind intrinsic calibration. Without a
+mount prior, the script falls back to color-assisted ellipse/bull initialization.
+`--manual` enables an optional four-click fallback. Nominal radii are configurable
+with `--radii 99 107 162 170`.
+
+The live script tracks board texture each frame with forward/backward optical flow
+and periodically re-registers to an immutable ORB appearance reference. If K was
+saved during calibration, tracked/reference correspondences refine the previous
+physical camera pose using seeded PnP. Older calibration files retain homography
+tracking. It refreshes the temporal baseline when a camera moves and pauses scoring
+if registration fails. These are independent per-camera plane fits; hit estimation
+combines usable shaft axes. It is not a joint camera bundle adjustment.
 
 Start with an empty board. Throw one dart, then wait for the estimate. Keys:
 `P` pauses for dart retrieval, `R` refreshes the background and resumes, `G` toggles
@@ -77,6 +96,12 @@ python render_synthetic.py
 python benchmark_c920.py
 python monte_carlo.py --trials 100 --workers 4 --seed 20261110
 python -m unittest -v test_pipeline.py
+
+# Calibration-only ablation and recovery evidence
+OPENBLAS_NUM_THREADS=1 python monte_carlo.py --trials 100 --workers 4 --calibration-only --no-pose --output c920_benchmark/calibration_sweep_before_pnp.json
+OPENBLAS_NUM_THREADS=1 python monte_carlo.py --trials 100 --workers 4 --calibration-only --output c920_benchmark/calibration_sweep.json
+OPENBLAS_NUM_THREADS=1 python monte_carlo.py --trials 20 --workers 4 --seed 20261111 --calibration-only --output c920_benchmark/calibration_holdout.json
+python calibration_evidence.py
 ```
 
 The renderer projects a 900×900 textured board plane and simple 3D dart into
@@ -104,12 +129,35 @@ on 8 fixed targets; the original 100-trial run produced 18 correct estimates,
 reports use the corrected mount dimensions and/or optimizer and must be read as
 separate experiments. The website reports which experiment each image belongs to.
 
+## Seeded pose experiment
+
+With the same 100 randomized setups (300 views, seed 20261110), the dense-only
+baseline calibrated 284/300 views and all three cameras in 84/100 setups. The
+seeded pose/reassociation initializer calibrated **297/300 views**, with all three
+cameras in **97/100 setups**. Of the 297 accepted views, 296 used a pose hypothesis;
+one used the explicit dense-only fallback. Median per-view landmark error was
+0.605 canonical pixels; the worst individual landmark error was 0.996 pixels and
+the worst interior-probe error was 0.901 pixels. The remaining failures were bottom
+camera views in trials 72, 78 and 92. No accepted view exceeded the 2-pixel
+landmark/interior-probe evaluation threshold.
+
+A separate seed (20261111), using the same scene generator and stress ranges,
+calibrated all 60 views in 20 setups. Its worst landmark error was 0.989 pixels.
+This is synthetic evidence with exact K/D, not a real-camera validation or a test
+of different board textures and lighting.
+
+Reports: `c920_benchmark/calibration_sweep_before_pnp.json`,
+`c920_benchmark/calibration_sweep.json`, and `c920_benchmark/calibration_holdout.json`.
+`calibration_evidence/pipeline.jpg` shows actual pixels at every stage of trial 0,
+including the previously failing bottom view. The nine unit/integration checks
+include 25% corrupted correspondences and a 12-frame moving-camera sequence.
+
 ## Important practical limits
 
 The latest measured-setup fixed-target run produced 4 correct estimates and
-4 rejections; estimated-hit errors were 0.296–0.354 mm. The dense template mapping
+4 rejections; estimated-hit errors were 0.296–0.364 mm. The dense template mapping
 had roughly 0.54–0.65 canonical-pixel median landmark error in those fixed views.
-The latest 100-trial run, with each camera sampled within a 50.8 mm ball of its
+The historical scoring run, before the seeded pose loop, with each camera sampled within a 50.8 mm ball of its
 nominal position, produced 14 correct estimates, 2 wrong estimates, 23 rejected
 intersections and 61 calibration failures. There were 16 estimates (16% coverage);
 median position error was 0.267 mm, 95th percentile 24.128 mm and worst 36.555 mm.

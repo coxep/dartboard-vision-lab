@@ -16,7 +16,7 @@ from pathlib import Path
 
 import cv2 as cv
 import numpy as np
-from scipy.optimize import least_squares
+from scipy.optimize import least_squares, linear_sum_assignment
 
 
 NUMBERS = np.array([20, 1, 18, 4, 13, 6, 10, 15, 2, 17,
@@ -165,7 +165,7 @@ def nominal_homography(board, K, position, look_at=(0, 0, 0)):
     return np.linalg.inv(camera @ plane)
 
 
-def refine_plane_template(frame, seed, board):
+def refine_edge_template(frame, seed, board):
     """Iteratively align the entire metric wire pattern to observed image edges.
 
     Optimize an 8-parameter correction to the PRIOR homography. Concentric
@@ -230,21 +230,156 @@ def refine_plane_template(frame, seed, board):
     return refined, info
 
 
-def automatic_homography(frame, board, nominal_H=None):
+def ideal_board_template(board):
+    """Geometry-only grayscale template; no renderer texture or camera truth."""
+    yy, xx = np.mgrid[:board.size, :board.size]
+    x, y = (xx-board.center[0])/board.ppm, (yy-board.center[1])/board.ppm
+    radius = np.hypot(x, y)
+    angle = np.degrees(np.arctan2(x, -y)) % 360
+    sector = ((angle+9)//18).astype(int) % 20
+    template = np.where(sector % 2 == 0, 41, 191).astype(np.uint8)
+    ti, to, di, do = board.radii
+    band = ((radius >= ti) & (radius <= to)) | ((radius >= di) & (radius <= do))
+    template[band & (sector % 2 == 0)] = 97
+    template[band & (sector % 2 == 1)] = 106
+    template[radius <= 15.9] = 106
+    template[radius <= 6.35] = 97
+    template[radius > do] = 30
+    for r in (6.35, 15.9, *board.radii):
+        cv.circle(template, tuple(board.center.astype(int)), round(r*board.ppm), 160, 1, cv.LINE_AA)
+    for s in range(20):
+        cv.line(template, tuple(board.point(15.9, -9+18*s).astype(int)),
+                tuple(board.point(do, -9+18*s).astype(int)), 160, 1, cv.LINE_AA)
+    return template
+
+
+def refine_plane_template(frame, seed, board):
+    """Coarse-to-fine whole-pattern registration, followed by metric edge polish."""
+    template = ideal_board_template(board)
+    preliminary = warp(frame, seed, board)
+    observed = cv.cvtColor(preliminary, cv.COLOR_BGR2GRAY)
+    valid = warp(np.full(frame.shape[:2], 255, np.uint8), seed, board)
+    mask = np.uint8((valid > 250) & (board.mask(.97) > 0))*255
+    def register(initial, affine_first):
+        W = initial.copy()  # ECC maps TEMPLATE pixels to OBSERVED pixels.
+        correlation = None
+        for scale in (.25, .5, 1.):
+            shape = (round(board.size*scale), round(board.size*scale))
+            T = np.diag([scale, scale, 1.]).astype(np.float32)
+            small_W = T @ W @ np.linalg.inv(T)
+            ref = cv.resize(template, shape, interpolation=cv.INTER_AREA)
+            image = cv.resize(observed, shape, interpolation=cv.INTER_AREA)
+            roi = cv.resize(mask, shape, interpolation=cv.INTER_NEAREST)
+            criteria = (cv.TERM_CRITERIA_EPS | cv.TERM_CRITERIA_COUNT, 100, 1e-5)
+            if scale == .25 and affine_first:
+                try:
+                    _, affine = cv.findTransformECC(ref, image, small_W[:2].copy(), cv.MOTION_AFFINE,
+                                                    criteria, inputMask=roi, gaussFiltSize=5)
+                    small_W = np.vstack([affine, [0, 0, 1]]).astype(np.float32)
+                except cv.error:
+                    pass
+            correlation, small_W = cv.findTransformECC(ref, image, small_W, cv.MOTION_HOMOGRAPHY,
+                                                       criteria, inputMask=roi, gaussFiltSize=5)
+            W = np.linalg.inv(T) @ small_W @ T
+        return W, correlation
+
+    identity = np.eye(3, dtype=np.float32)
+    starts = [(identity, True), (identity, False)]
+    # A separate translation estimate supplies a bounded recovery when the coarse
+    # affine iteration diverges. No true camera pose or hit location is consulted.
+    window = cv.createHanningWindow((board.size, board.size), cv.CV_32F)
+    shift, response = cv.phaseCorrelate(template.astype(np.float32), observed.astype(np.float32), window)
+    if response > .05 and max(abs(shift[0]), abs(shift[1])) < board.size*.25:
+        translated = identity.copy()
+        translated[:2, 2] = shift
+        starts.extend([(translated, True), (translated, False)])
+    # The projected bull is an observed origin cue. It improves the translation
+    # seed without assigning any of the repeated treble/double ring boundaries.
+    hsv = cv.cvtColor(preliminary, cv.COLOR_BGR2HSV)
+    red = cv.inRange(hsv, (0, 110, 45), (12, 255, 255)) | cv.inRange(hsv, (170, 110, 45), (179, 255, 255))
+    yy, xx = np.mgrid[:board.size, :board.size]
+    red[np.hypot(xx-board.center[0], yy-board.center[1]) > board.size*.18] = 0
+    contours, _ = cv.findContours(red, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
+    expected_area = math.pi*(6.35*board.ppm)**2
+    bulls = []
+    for c in contours:
+        area = cv.contourArea(c)
+        if len(c) < 5 or not expected_area*.2 < area < expected_area*3:
+            continue
+        ellipse = cv.fitEllipse(c)
+        if min(ellipse[1])/max(ellipse[1]) < .25:
+            continue
+        fill = area/(math.pi*np.prod(ellipse[1])/4)
+        if fill > .65:
+            bulls.append((abs(math.log(area/expected_area)), np.array(ellipse[0])))
+    if bulls:
+        origin = min(bulls, key=lambda b:b[0])[1]
+        translated = identity.copy()
+        translated[:2, 2] = origin-board.center
+        starts.extend([(translated, True), (translated, False)])
+    failures = []
+    for attempt, (initial, affine_first) in enumerate(starts):
+        try:
+            W, correlation = register(initial, affine_first)
+            if correlation is None or correlation < .85:
+                raise ValueError("Whole-board template correlation is too low")
+            up = project([board.center, board.center + [0, -100]], W)
+            vector = up[1]-up[0]
+            rotation = math.degrees(math.atan2(vector[0], -vector[1]))
+            if abs(rotation) > 12:
+                raise ValueError("Template fit violates upright-camera orientation prior")
+            candidate = np.linalg.inv(W) @ seed
+            H, info = refine_edge_template(frame, candidate, board)
+            info.update(method="nominal plane projection + multiscale ECC + metric edge polish",
+                        ecc_correlation=float(correlation), initialization_attempt=attempt+1)
+            return H, info
+        except (cv.error, ValueError, np.linalg.LinAlgError) as exc:
+            failures.append(str(exc))
+    raise ValueError("Whole-board template registration failed all bounded starts: " + failures[-1])
+
+
+def automatic_homography(frame, board, nominal_H=None, K=None):
+    """Rectify actual pixels; optional known K enables pose/association hypotheses."""
     if nominal_H is None:
         return ellipse_homography(frame, board)
-    H, info = refine_plane_template(frame, nominal_H, board)
-    _, corners = harris_refine(frame, H, board, gate=8)
-    if not corners["refined"]:
-        raise ValueError("Plane-template fit did not pass the Harris geometry check")
-    # Wire edges produce adjacent Harris corners, not exact mathematical wire
-    # centerline crossings. Their sparse refit can bias an otherwise good dense fit.
-    corners["harris_role"] = "validation only; dense plane-template H retained"
-    corners.update(info)
-    corners["binary_template_support"] = binary_template_support(frame, H, board)
-    if corners["binary_template_support"] < .6:
-        raise ValueError("Final plane-template edge support is too low")
-    return H, corners
+    candidates, pose_search = [], None
+    if K is not None:
+        from pose_alignment import seeded_pose_hypotheses
+        try:
+            hypotheses, pose_search = seeded_pose_hypotheses(frame, board, K, nominal_H, ideal_board_template(board))
+            candidates = [(H, info) for H, info in hypotheses if info["correlation"] > .75]
+        except (cv.error, ValueError, np.linalg.LinAlgError) as exc:
+            pose_search = dict(reason=str(exc), hypotheses=0)
+    # Retain the existing full-pattern initializer as an explicit fallback.
+    candidates.append((nominal_H, None))
+    failures = []
+    for initialization, pose_info in candidates:
+        try:
+            H, info = refine_plane_template(frame, initialization, board)
+            # Verify orientation against the ORIGINAL belief, not just the latest
+            # hypothesis, so a periodic sector shift cannot reset the prior.
+            up = project([board.center, board.center+[0, -100]], nominal_H@np.linalg.inv(H))
+            v = up[1]-up[0]
+            if abs(math.degrees(math.atan2(v[0], -v[1]))) > 12:
+                raise ValueError("Final alignment violates original upright pose belief")
+            _, corners = harris_refine(warp(frame, H, board), np.eye(3), board, gate=6)
+            if not corners["refined"]:
+                raise ValueError("Plane-template fit did not pass the Harris geometry check")
+            # Sparse wire-edge corners can bias a dense fit; use for validation.
+            corners["harris_role"] = "validation only; dense plane-template H retained"
+            corners["matched_source_px"] = project(corners["matched_source_px"], np.linalg.inv(H)).tolist()
+            corners.update(info)
+            corners["binary_template_support"] = binary_template_support(frame, H, board)
+            if corners["binary_template_support"] < .6:
+                raise ValueError("Final plane-template edge support is too low")
+            corners["pose_search"] = pose_search
+            corners["pose_initialization"] = pose_info
+            corners["pose_initializer_used"] = pose_info is not None
+            corners["failed_initializations"] = failures
+            return H, corners
+        except (cv.error, ValueError, np.linalg.LinAlgError) as exc:
+            failures.append(str(exc))
+    raise ValueError("All pose/template hypotheses failed: "+failures[-1])
 
 
 def binary_template_support(frame, H, board):
@@ -373,14 +508,14 @@ def harris_refine(frame, seed, board, gate=6.0):
     corners = corners.reshape(-1, 2)
     target = board.landmarks()
     distance = np.linalg.norm(project(corners, seed)[:, None] - target[None], axis=2)
-    ci, ti = np.where(distance < gate * board.size / 900)
-    used_c, used_t, pairs = set(), set(), []
-    for k in np.argsort(distance[ci, ti]):
-        c, t = int(ci[k]), int(ti[k])
-        if c not in used_c and t not in used_t:
-            pairs.append((c, t))
-            used_c.add(c)
-            used_t.add(t)
+    # Gated global one-to-one association, with explicit unmatched model slots.
+    # This avoids the order-dependent correspondences of greedy nearest matching.
+    limit = gate * board.size / 900
+    costs = np.where(distance.T < limit, distance.T/limit, 1e6)
+    costs = np.c_[costs, np.full((len(target), len(target)), 100.)]
+    model_ids, detections = linear_sum_assignment(costs)
+    pairs = [(int(c), int(t)) for t,c in zip(model_ids,detections)
+             if c < len(corners) and distance[c,t] < limit]
     if len(pairs) < 12:
         return seed, dict(refined=False, reason=f"Only {len(pairs)} matched corners")
     c, t = np.array(pairs).T
@@ -528,7 +663,7 @@ def calibrate(args, inputs):
                 focal = math.hypot(raw.shape[1], raw.shape[0]) / (2 * math.tan(math.radians(78 / 2)))
                 K = np.asarray(data["K"]) if data else np.array([[focal, 0, raw.shape[1]/2], [0, focal, raw.shape[0]/2], [0, 0, 1.]])
                 seed = nominal_homography(board, K, positions[i])
-            H, report = automatic_homography(frame, board, seed)
+            H, report = automatic_homography(frame, board, seed, K if positions is not None else None)
             print(f"Camera {i}: automatic calibration; {report['inliers']} Harris inliers; template support {report['binary_template_support']:.3f}")
             Path(args.output).mkdir(parents=True, exist_ok=True)
             cv.imwrite(str(Path(args.output) / f"camera_{i}_calibration.png"), board.grid(warp(frame, H, board)))
@@ -539,7 +674,8 @@ def calibrate(args, inputs):
         if not cv.imwrite(str(folder / ref), frame):
             raise IOError("Could not save calibration reference")
         entries.append(dict(H=H.tolist(), shape=list(raw.shape[:2]), lens=data,
-                            reference=ref, harris=report))
+                            reference=ref, harris=report,
+                            pose_K=K.tolist() if positions is not None and not args.manual else None))
     config = dict(version=1, size=board.size, radii=board.radii, cameras=entries)
     Path(args.calibration).write_text(json.dumps(config, indent=2) + "\n")
     print(f"Saved {args.calibration}. Camera order must remain the same when running.")
@@ -571,10 +707,11 @@ def manual_calibration(frame, board, i):
 
 
 class Tracker:
-    """Appearance registration recovers larger movement; Harris refines geometry."""
-    def __init__(self, reference, H, board):
+    """Track fixed board features; known K enables seeded physical pose updates."""
+    def __init__(self, reference, H, board, K=None):
         self.board, self.H = board, np.asarray(H, np.float64)
         self.reference_H = self.H.copy()
+        self.K = None if K is None else np.asarray(K, np.float64)
         self.orb = cv.ORB_create(nfeatures=6000, fastThreshold=12)
         mask = cv.warpPerspective(board.mask(1.03), np.linalg.inv(self.H),
                                   (reference.shape[1], reference.shape[0]), flags=cv.INTER_NEAREST)
@@ -582,6 +719,22 @@ class Tracker:
         self.matcher = cv.BFMatcher(cv.NORM_HAMMING)
         self.valid, self.reason = False, "awaiting registration"
         self.previous_gray, self.flow_points, self.flow_targets = None, None, None
+
+    def physical_fit(self, points, targets):
+        """Refine the CURRENT pose belief using tracked/reference correspondences."""
+        from pose_alignment import (pose_from_homography, fit_seeded_pose,
+                                    homography_from_pose, pose_is_plausible)
+        xy = (targets-self.board.center)/self.board.ppm
+        objects = np.c_[xy[:, 0], -xy[:, 1], np.zeros(len(xy))].astype(float)
+        r, t = pose_from_homography(self.H, self.K, self.board)
+        center = (-cv.Rodrigues(r)[0].T@t).ravel()
+        fit = fit_seeded_pose(objects, points, self.K, r, t)
+        if fit is None:
+            raise ValueError("Tracked features did not support a physical pose")
+        _, r, t, good, _ = fit
+        if good.sum()<16 or good.mean()<.65 or not pose_is_plausible(r,t,center,objects):
+            raise ValueError("Tracked pose lacks sufficient support or violates mount belief")
+        return homography_from_pose(r,t,self.K,self.board)
 
     def track(self, frame):
         """Per-frame LK tracking against FIXED canonical targets, not accumulated Hs."""
@@ -617,6 +770,12 @@ class Tracker:
         if keep.sum() < 16 or keep.mean() < .65 or cv.contourArea(hull) < .25 * area:
             self.valid, self.reason = False, "tracked points lack reliable board coverage"
             return False
+        if self.K is not None:
+            try:
+                H = self.physical_fit(points[keep], targets[keep])
+            except (ValueError, cv.error) as exc:
+                self.valid, self.reason = False, str(exc)
+                return False
         drift = np.linalg.norm(project(self.board.landmarks(), H @ np.linalg.inv(self.H))
                                - self.board.landmarks(), axis=1).max()
         self.H = H
@@ -652,7 +811,16 @@ class Tracker:
             self.reason = "reference matches not sufficiently consistent/spread out"
             return False
         candidate = self.reference_H @ relative
-        candidate, report = harris_refine(frame, candidate, self.board)
+        if self.K is not None:
+            try:
+                candidate = self.physical_fit(src[keep], canonical)
+            except (ValueError, cv.error) as exc:
+                self.reason = str(exc)
+                return False
+            # Preserve the physical pose; corners validate without a sparse refit.
+            _, report = harris_refine(frame, candidate, self.board)
+        else:
+            candidate, report = harris_refine(frame, candidate, self.board)
         # Reject horizons crossing the board and implausibly small/offscreen boards.
         perimeter = np.float32([self.board.point(self.board.radii[-1], a)
                                  for a in np.linspace(0, 360, 80, endpoint=False)])
@@ -805,7 +973,7 @@ def run(args, inputs):
         ref = cv.imread(str(config_path.parent / entry["reference"]))
         if ref is None:
             raise ValueError("Missing calibration reference image")
-        trackers.append(Tracker(ref, entry["H"], board))
+        trackers.append(Tracker(ref, entry["H"], board, entry.get("pose_K")))
     board_mask = board.mask(1.08)
     background, previous, stable_since = None, None, None
     last_check, last_status = -math.inf, ""
