@@ -6,3 +6,9 @@ dart_events.jsonl
 /calibration.json
 /calibration_camera_*_reference.png
 synthetic/debug_*
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+/build/
+/dist/
+/evaluation_runs/*/

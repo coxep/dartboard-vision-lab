@@ -1,0 +1,450 @@
+{
+  "board": {
+    "size": 900,
+    "radii": [
+      97.4,
+      107.4,
+      160.0,
+      170.0
+    ]
+  },
+  "cameras": [
+    "A",
+    "B",
+    "C"
+  ],
+  "models": [
+    {
+      "inverse_homography_normalized": [
+        [
+          0.6262286027451098,
+          -0.022840757911658904,
+          0.02743515215361108
+        ],
+        [
+          0.03358005353034307,
+          0.33607796728470646,
+          -0.09783922855780801
+        ],
+        [
+          0.008440526033558516,
+          -0.3492249588219852,
+          1.0
+        ]
+      ],
+      "division_lambda": 0.03920815301516715,
+      "distortion_centre_px": [
+        960.0,
+        540.0
+      ],
+      "normalization_radius_px": 960.0,
+      "model": "u = d / (1 + lambda * |d|^2), normalized about image centre",
+      "focal_length_used": false,
+      "geometry_radii_changed": false,
+      "metrics": {
+        "train": {
+          "correlation": 0.61949895199285,
+          "rmse": 0.48898163329347205
+        },
+        "held_out_sectors": {
+          "correlation": 0.5970538331555479,
+          "rmse": 0.49451279678987786
+        }
+      },
+      "optimization": [
+        {
+          "step": 6,
+          "samples": 7532,
+          "cost": 471.2923890621504,
+          "evaluations": 36,
+          "optimality": 7.847181454226623,
+          "status": 3
+        },
+        {
+          "step": 3,
+          "samples": 30084,
+          "cost": 1908.2281825140049,
+          "evaluations": 23,
+          "optimality": 8.588041787201504,
+          "status": 3
+        }
+      ],
+      "elapsed_s": 1.505849412002135,
+      "boundaries": [
+        {
+          "boundary": "inner bull",
+          "radius_mm": 6.35,
+          "found": false,
+          "samples": 10,
+          "visible_profiles": 100,
+          "quadrants": 1,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 0.5316371778476798,
+          "p95_absolute_offset_px": 3.075702419607498,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.2789454328213135
+        },
+        {
+          "boundary": "outer bull",
+          "radius_mm": 15.9,
+          "found": false,
+          "samples": 36,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 0.3745984232596156,
+          "p95_absolute_offset_px": 4.444774125430498,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.19654855541399585
+        },
+        {
+          "boundary": "treble inner",
+          "radius_mm": 97.4,
+          "found": true,
+          "samples": 93,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -1.2231569825635389,
+          "p95_absolute_offset_px": 3.9138779794959064,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.641779898258647
+        },
+        {
+          "boundary": "treble outer",
+          "radius_mm": 107.4,
+          "found": true,
+          "samples": 91,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -2.3399123019403594,
+          "p95_absolute_offset_px": 3.9730346589061805,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -1.2277317633637688
+        },
+        {
+          "boundary": "double inner",
+          "radius_mm": 160.0,
+          "found": true,
+          "samples": 84,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 1.1904593886843866,
+          "p95_absolute_offset_px": 3.3838973351036947,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.6246237533220548
+        },
+        {
+          "boundary": "double outer",
+          "radius_mm": 170.0,
+          "found": true,
+          "samples": 77,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -0.04425923391617671,
+          "p95_absolute_offset_px": 2.370898901726416,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.02322243754861124
+        }
+      ],
+      "scoring_boundary_check_passed": true,
+      "coefficient_at_bound": false,
+      "residual_radial4": 0.008526224372566392,
+      "tangential": [
+        0.0007051676127276714,
+        0.003102418493831407
+      ]
+    },
+    {
+      "inverse_homography_normalized": [
+        [
+          -0.3336852677968725,
+          -0.5263069593995596,
+          -0.023789765035404958
+        ],
+        [
+          0.2975338639932162,
+          -0.16949598939580618,
+          -0.11814098189571175
+        ],
+        [
+          -0.2965011465051023,
+          0.20360437699743728,
+          1.0
+        ]
+      ],
+      "division_lambda": 0.04586735160491688,
+      "distortion_centre_px": [
+        960.0,
+        540.0
+      ],
+      "normalization_radius_px": 960.0,
+      "model": "u = d / (1 + lambda * |d|^2), normalized about image centre",
+      "focal_length_used": false,
+      "geometry_radii_changed": false,
+      "metrics": {
+        "train": {
+          "correlation": 0.6619464889727655,
+          "rmse": 0.4484378088859658
+        },
+        "held_out_sectors": {
+          "correlation": 0.6841876822651357,
+          "rmse": 0.42449328639238426
+        }
+      },
+      "optimization": [
+        {
+          "step": 6,
+          "samples": 7532,
+          "cost": 419.74433564601827,
+          "evaluations": 37,
+          "optimality": 4.428512333713326,
+          "status": 3
+        },
+        {
+          "step": 3,
+          "samples": 30084,
+          "cost": 1719.663030584647,
+          "evaluations": 13,
+          "optimality": 13.364150148651639,
+          "status": 2
+        }
+      ],
+      "elapsed_s": 1.1430270209675655,
+      "boundaries": [
+        {
+          "boundary": "inner bull",
+          "radius_mm": 6.35,
+          "found": true,
+          "samples": 56,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -0.976098853500214,
+          "p95_absolute_offset_px": 2.7468600220829,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.5121506330093716
+        },
+        {
+          "boundary": "outer bull",
+          "radius_mm": 15.9,
+          "found": true,
+          "samples": 51,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 1.4043740695286915,
+          "p95_absolute_offset_px": 4.68511387764754,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.7368629377156715
+        },
+        {
+          "boundary": "treble inner",
+          "radius_mm": 97.4,
+          "found": true,
+          "samples": 91,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -0.9480337618473527,
+          "p95_absolute_offset_px": 2.4365045275973625,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.4974251219569443
+        },
+        {
+          "boundary": "treble outer",
+          "radius_mm": 107.4,
+          "found": true,
+          "samples": 84,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -1.0625708034275343,
+          "p95_absolute_offset_px": 3.022719515625439,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.5575217178477804
+        },
+        {
+          "boundary": "double inner",
+          "radius_mm": 160.0,
+          "found": true,
+          "samples": 91,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 0.8937061796311822,
+          "p95_absolute_offset_px": 2.5315415742588234,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.46891990906574377
+        },
+        {
+          "boundary": "double outer",
+          "radius_mm": 170.0,
+          "found": true,
+          "samples": 84,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 0.16858977942792924,
+          "p95_absolute_offset_px": 2.3301827005278333,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.08845760031712337
+        }
+      ],
+      "scoring_boundary_check_passed": true,
+      "coefficient_at_bound": false,
+      "residual_radial4": 0.0013680404356070622,
+      "tangential": [
+        0.0007029770625517078,
+        -0.0013728328060104442
+      ]
+    },
+    {
+      "inverse_homography_normalized": [
+        [
+          -0.34824229587553557,
+          0.5270660532151356,
+          0.028935675287609777
+        ],
+        [
+          -0.2937381835800765,
+          -0.1929206509402977,
+          -0.11722152278178624
+        ],
+        [
+          0.3041839020112507,
+          0.20103212994574157,
+          1.0
+        ]
+      ],
+      "division_lambda": 0.037508313222985507,
+      "distortion_centre_px": [
+        960.0,
+        540.0
+      ],
+      "normalization_radius_px": 960.0,
+      "model": "u = d / (1 + lambda * |d|^2), normalized about image centre",
+      "focal_length_used": false,
+      "geometry_radii_changed": false,
+      "metrics": {
+        "train": {
+          "correlation": 0.6107009592660474,
+          "rmse": 0.5022598698580086
+        },
+        "held_out_sectors": {
+          "correlation": 0.6179742913942032,
+          "rmse": 0.4949555493044705
+        }
+      },
+      "optimization": [
+        {
+          "step": 6,
+          "samples": 7532,
+          "cost": 482.68859957377896,
+          "evaluations": 34,
+          "optimality": 2.1989388268351115,
+          "status": 3
+        },
+        {
+          "step": 3,
+          "samples": 30084,
+          "cost": 1968.7689160158945,
+          "evaluations": 15,
+          "optimality": 6.548675891390645,
+          "status": 3
+        }
+      ],
+      "elapsed_s": 1.1174421689938754,
+      "boundaries": [
+        {
+          "boundary": "inner bull",
+          "radius_mm": 6.35,
+          "found": false,
+          "samples": 13,
+          "visible_profiles": 100,
+          "quadrants": 3,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -1.1204055346222181,
+          "p95_absolute_offset_px": 5.456916957332114,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.587867101499312
+        },
+        {
+          "boundary": "outer bull",
+          "radius_mm": 15.9,
+          "found": false,
+          "samples": 33,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 1.0302331943340128,
+          "p95_absolute_offset_px": 4.2673289454344365,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.540554453817229
+        },
+        {
+          "boundary": "treble inner",
+          "radius_mm": 97.4,
+          "found": true,
+          "samples": 87,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -0.7418510563269967,
+          "p95_absolute_offset_px": 3.2626886208244157,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.3892428381962637
+        },
+        {
+          "boundary": "treble outer",
+          "radius_mm": 107.4,
+          "found": true,
+          "samples": 94,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": -0.7832040451355116,
+          "p95_absolute_offset_px": 3.2745582038869254,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": -0.41094039405258326
+        },
+        {
+          "boundary": "double inner",
+          "radius_mm": 160.0,
+          "found": true,
+          "samples": 87,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 0.8311328535763141,
+          "p95_absolute_offset_px": 2.7414938063461984,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.4360882256418932
+        },
+        {
+          "boundary": "double outer",
+          "radius_mm": 170.0,
+          "found": true,
+          "samples": 81,
+          "visible_profiles": 100,
+          "quadrants": 4,
+          "search_halfwidth_px": 6.0,
+          "median_offset_px": 0.06779740376166482,
+          "p95_absolute_offset_px": 3.1108323975166403,
+          "location_definition": "photometric transition near the model boundary",
+          "median_offset_mm": 0.03557271185025623
+        }
+      ],
+      "scoring_boundary_check_passed": true,
+      "coefficient_at_bound": false,
+      "residual_radial4": 0.002154026701747163,
+      "tangential": [
+        0.0006993510690316751,
+        -0.00031480584898245143
+      ]
+    }
+  ]
+}

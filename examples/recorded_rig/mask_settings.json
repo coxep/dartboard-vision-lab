@@ -1,0 +1,26 @@
+[
+  {
+    "saturation_change": 0.12105093866586697,
+    "hue_chroma_change": 0.15318287312984494,
+    "value_change": 0.06,
+    "local_value_change": 0.075,
+    "color_value_change": 0.075,
+    "illumination_sigma": 9.0
+  },
+  {
+    "saturation_change": 0.1464126065373424,
+    "hue_chroma_change": 0.22822784930467643,
+    "value_change": 0.06,
+    "local_value_change": 0.075,
+    "color_value_change": 0.075,
+    "illumination_sigma": 9.0
+  },
+  {
+    "saturation_change": 0.14621031433343906,
+    "hue_chroma_change": 0.19693908363580773,
+    "value_change": 0.06,
+    "local_value_change": 0.075,
+    "color_value_change": 0.075,
+    "illumination_sigma": 9.0
+  }
+]

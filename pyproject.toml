@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dartboard-vision-lab"
+version = "0.1.0"
+description = "Joint board-plane alignment and multiview dart contact detection"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "opencv-contrib-python>=4.6,<5", "scipy>=1.10,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.9"]
+
+[project.scripts]
+dartboard-replay = "dartboard_vision.replay:main"
+dartboard-render = "dartboard_vision.render:main"
+
+[tool.setuptools]
+packages = ["dartboard_vision"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+include = ["dartboard_vision/**/*.py", "tests/**/*.py", "pyproject.toml"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
