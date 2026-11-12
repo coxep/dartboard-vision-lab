@@ -70,6 +70,12 @@ longer diluted by views that show only the board at that position. This display
 operation does not change the contact estimator. Shadow false positives and
 mask timing errors remain possible.
 
+The video renderer tracks alignment and recomputes each camera's mask on every
+output frame using the same timestamp-paired RGB images for background and
+foreground. Empty references stay fixed for differencing. A failed alignment
+keeps its last accepted map; missing source frames naturally repeat. Saved
+contact markers still update at their original cadence, separately from masks.
+
 ## Historical material
 
 Root-level scripts and `LEGACY_README.md` are the earlier synthetic prototype.

@@ -43,13 +43,16 @@ Render the average, mask-selected foreground and board inset:
 dartboard-render --dataset /path/to/darts_sample_3cams_3darts \
   --calibration examples/recorded_rig/calibration.json \
   --tracking examples/recorded_rig/tracking.json \
+  --mask-settings examples/recorded_rig/mask_settings.json \
   --session /tmp/dartboard-replay --rotation 180 --output /tmp/dartboard-video
 ```
 
-The video uses current camera pixels inside each view's mask and averages only
-mask-contributing views at overlaps. Outside the masks it keeps the original
-current-camera average. Saved masks/maps are held between their sample times;
-30 fps playback does not imply 30 fps detection.
+The video updates alignment and HSV masks on every rendered frame. It uses the
+same current camera pixels inside each view's mask and averages only contributing
+views at overlaps. Outside the masks it keeps the current-camera average. The
+tracking file supplies the initial maps and replay time window; its later maps
+are not held during rendering. Only contact markers reuse the saved roughly
+2 Hz contact results. This is offline video rendering, not a live speed claim.
 
 ## Use the components
 
